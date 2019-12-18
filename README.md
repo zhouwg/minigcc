@@ -1,5 +1,9 @@
 1) History of minigcc
 
+   as we know the basic pipeline in gcc as following:
+          
+          preprocess  ----> compile ----> assemble ----> link
+
    the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407
   
 2) Purpose of minigcc
