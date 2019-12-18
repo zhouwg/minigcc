@@ -53,7 +53,7 @@ the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is ru
 
 4.2)refine the build system in minigcc;
 
-4.3)asan feature enablement in minigcc;
+4.3)cc1 can't work well as expected in minigcc;
 
 
 
