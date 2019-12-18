@@ -4,7 +4,8 @@
           
           preprocess  ----> compile ----> assemble ----> link
 
-   the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407
+   the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407, then I fall in love with gcc.
+   
   
 2) Purpose of minigcc
 
