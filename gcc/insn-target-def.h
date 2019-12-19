@@ -119,23 +119,14 @@ target_gen_call (rtx x0, rtx opt1, rtx opt2, rtx)
 #undef TARGET_CODE_FOR_CALL
 #define TARGET_CODE_FOR_CALL CODE_FOR_call
 
-static bool
-target_have_call_pop (void)
-{
-  return 
-#line 12074 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
-(!TARGET_64BIT);
-}
-
 static rtx_insn *
 target_gen_call_pop (rtx x0, rtx opt1, rtx opt2, rtx opt3)
 {
-  gcc_checking_assert (targetm.have_call_pop ());
   return insnify (gen_call_pop (x0, opt1, opt2, opt3));
 }
 
 #undef TARGET_HAVE_CALL_POP
-#define TARGET_HAVE_CALL_POP target_have_call_pop
+#define TARGET_HAVE_CALL_POP hook_bool_void_true
 #undef TARGET_GEN_CALL_POP
 #define TARGET_GEN_CALL_POP target_gen_call_pop
 #undef TARGET_CODE_FOR_CALL_POP
@@ -157,12 +148,11 @@ target_gen_call_value (rtx x0, rtx x1, rtx opt2, rtx opt3, rtx)
 static rtx_insn *
 target_gen_call_value_pop (rtx x0, rtx x1, rtx opt2, rtx opt3, rtx opt4)
 {
-  gcc_checking_assert (targetm.have_call_value_pop ());
   return insnify (gen_call_value_pop (x0, x1, opt2, opt3, opt4));
 }
 
 #undef TARGET_HAVE_CALL_VALUE_POP
-#define TARGET_HAVE_CALL_VALUE_POP target_have_call_pop
+#define TARGET_HAVE_CALL_VALUE_POP hook_bool_void_true
 #undef TARGET_GEN_CALL_VALUE_POP
 #define TARGET_GEN_CALL_VALUE_POP target_gen_call_value_pop
 #undef TARGET_CODE_FOR_CALL_VALUE_POP

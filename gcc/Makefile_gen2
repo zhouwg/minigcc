@@ -47,14 +47,10 @@ genchecksum:
 
 genmatch:
 	g++  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genmatch build/genmatch.o ..//libcpp/libcpp.a build/errors.o build/vec.o build/hash-table.o ..//libiberty/libiberty.a
-	build/genmatch --gimple /android/gcc/gcc-6.4.0/gcc/match.pd \
-	    > tmp-gimple-match.c
-	build/genmatch --generic /android/gcc/gcc-6.4.0/gcc/match.pd \
-	    > tmp-generic-match.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-gimple-match.c \
-	    					gimple-match.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-generic-match.c \
-	    					generic-match.c
+	build/genmatch --gimple /android/gcc/gcc-6.4.0/gcc/match.pd > tmp-gimple-match.c
+	build/genmatch --generic /android/gcc/gcc-6.4.0/gcc/match.pd > tmp-generic-match.c
+	/bin/bash ../move-if-change tmp-gimple-match.c gimple-match.c
+	/bin/bash ../move-if-change tmp-generic-match.c generic-match.c
 	echo timestamp > s-match
 
 
@@ -66,56 +62,62 @@ genattrtab:
 genautomata:
 	@echo "do nothing"
 	g++  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genautomata build/genautomata.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a -lm
-	build/genautomata /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md \
+	build/genautomata ./common.md ./config/i386/i386.md \
 	  insn-conditions.md > tmp-automata.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-automata.c insn-automata.c
+	/bin/bash ../move-if-change tmp-automata.c insn-automata.c
 	echo timestamp > s-automata
 
 
 
 genemit:
 	g++  $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/genemit build/genemit.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
+	g++  $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/genemit build/genemit.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
+	build/genemit ./common.md ./config/i386/i386.md insn-conditions.md > tmp-emit.c
+	/bin/cp tmp-emit.c my-tmp-emit.c
+	/bin/bash ../move-if-change tmp-emit.c insn-emit.c
+	echo timestamp > s-emit
 
 
 genextract:
 	g++  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genextract build/genextract.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
-	build/genextract /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-extract.c
+	build/genextract ./common.md ./config/i386/i386.md insn-conditions.md > tmp-extract.c
 	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-extract.c insn-extract.c
 	echo timestamp > s-extract
 	build/genmodes > tmp-modes.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-modes.c insn-modes.c
+	/bin/bash ../move-if-change tmp-modes.c insn-modes.c
 	echo timestamp > s-modes
 
 
 genoutput:
 	g++ $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genoutput build/genoutput.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
-	build/genoutput /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md \
+	build/genoutput ./common.md ./config/i386/i386.md \
 	  insn-conditions.md > tmp-output.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-output.c insn-output.c
+	/bin/bash ../move-if-change tmp-output.c insn-output.c
 	echo timestamp > s-output
 
 
 
 genpeep:
 	g++  $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/genpeep build/genpeep.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
-	build/genpeep /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-peep.c
+	build/genpeep ./common.md ./config/i386/i386.md insn-conditions.md > tmp-peep.c
 	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-peep.c insn-peep.c
 	echo timestamp > s-peep
-	build/genpreds /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-preds.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-preds.c insn-preds.c
+	build/genpreds ./common.md ./config/i386/i386.md > tmp-preds.c
+	/bin/bash ../move-if-change tmp-preds.c insn-preds.c
 	echo timestamp > s-preds
 
 
 genrecog:
 	g++ $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genrecog build/genrecog.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o build/inchash.o ..//libiberty/libiberty.a
-	build/genrecog /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-recog.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-recog.c insn-recog.c
+	build/genrecog ./common.md ./config/i386/i386.md insn-conditions.md > tmp-recog.c
+	/bin/cp tmp-recog.c my-tmp-recog.c
+	/bin/bash ../move-if-change tmp-recog.c insn-recog.c
 	echo timestamp > s-recog
 
 
 genenums:
 	g++  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genenums build/genenums.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
-	build/genenums /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-enums.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-enums.c insn-enums.c
+	build/genenums ./common.md ./config/i386/i386.md > tmp-enums.c
+	/bin/bash ../move-if-change tmp-enums.c insn-enums.c
 	echo timestamp > s-enums
 
