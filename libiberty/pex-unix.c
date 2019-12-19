@@ -607,23 +607,23 @@ pex_unix_exec_child (struct pex_obj *obj, int flags, const char *executable,
   char **save_environ = environ;
 
   char **p = argv;
-  LOGV("pwd:%s\n", get_current_dir_name());
-  LOGV("path:%s\n", getenv("PATH"));
+  //LOGV("pwd:%s\n", get_current_dir_name());
+  //LOGV("path:%s\n", getenv("PATH"));
   char path[256];
   memset(path, 0, 256);
   snprintf(path, 256, "PATH=%s:%s", getenv("PATH"), get_current_dir_name());
   if (0 == putenv(path)) {
-      LOGV("set path ok");
+      //LOGV("set path ok");
   } else {
-      LOGV("set path failed");
+      //LOGV("set path failed");
   }
-  LOGV("path:%s\n", getenv("PATH"));
-  LOGV("argv:\n");
+  //LOGV("path:%s\n", getenv("PATH"));
+  LOGV("cmd:");
   while (*p != NULL) {
       printf("%s ", *p++);
   }
   printf("\n");
-  LOGV("\n");
+  //LOGV("\n");
   char **q = environ;
   while (*q != NULL) {
       //LOGV("env:%s", *q);
