@@ -1,6 +1,11 @@
 1) History of minigcc
 
-   the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407
+   as we know the basic pipeline in gcc as following:
+          
+          preprocess  ----> compile ----> assemble ----> link
+
+   the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407.
+   
   
 2) Purpose of minigcc
 
@@ -53,7 +58,9 @@ the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is ru
 
 4.2)refine the build system in minigcc;
 
-4.3)asan feature enablement in minigcc;
+4.3)cc1 bringup in minigcc; (https://github.com/zhouwg/minigcc/issues/3)
+
+4.4)asan feature enablement in minigcc;
 
 
 
