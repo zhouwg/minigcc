@@ -64,6 +64,7 @@ genattrtab:
 
 
 genautomata:
+	@echo "do nothing"
 	g++  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genautomata build/genautomata.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a -lm
 	build/genautomata /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md \
 	  insn-conditions.md > tmp-automata.c
@@ -74,10 +75,6 @@ genautomata:
 
 genemit:
 	g++  $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/genemit build/genemit.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ..//libiberty/libiberty.a
-	build/genemit /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md \
-	  insn-conditions.md > tmp-emit.c
-	/bin/bash /android/gcc/gcc-6.4.0/gcc/../move-if-change tmp-emit.c insn-emit.c
-	echo timestamp > s-emit
 
 
 genextract:

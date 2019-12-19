@@ -7462,10 +7462,8 @@ add_vect (state_ainsn_table_t tab, int vect_num, vla_hwint_t vect)
     if (vect[vect_index] != undefined_vect_el_value)
       {
 	vect_el_t x = vect[vect_index];
-        //weiguo
-        //TODO: why abort during build stage??
-        //gcc_assert (tab->comb_vect[comb_vect_index + vect_index]
-		//   == undefined_vect_el_value);
+        gcc_assert (tab->comb_vect[comb_vect_index + vect_index]
+		    == undefined_vect_el_value);
         gcc_assert (x >= 0);
 	tab->comb_vect[comb_vect_index + vect_index] = x;
 	tab->check_vect[comb_vect_index + vect_index] = vect_num;

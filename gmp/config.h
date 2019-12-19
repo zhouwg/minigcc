@@ -37,7 +37,7 @@ see https://www.gnu.org/licenses/.
 
 /* The gmp-mparam.h file (a string) the tune program should suggest updating.
    */
-#define GMP_MPARAM_H_SUGGEST "/android/gcc/gcc-6.4.0/gmp/mpn/generic/gmp-mparam.h"
+#define GMP_MPARAM_H_SUGGEST "../../gcc-6.4.0/gmp/mpn/generic/gmp-mparam.h"
 
 /* Define to 1 if you have the `alarm' function. */
 #define HAVE_ALARM 1
@@ -540,19 +540,19 @@ see https://www.gnu.org/licenses/.
 #define RETSIGTYPE void
 
 /* The size of `mp_limb_t', as computed by sizeof. */
-#define SIZEOF_MP_LIMB_T 8
+#define SIZEOF_MP_LIMB_T 4
 
 /* The size of `unsigned', as computed by sizeof. */
 #define SIZEOF_UNSIGNED 4
 
 /* The size of `unsigned long', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_LONG 8
+#define SIZEOF_UNSIGNED_LONG 4
 
 /* The size of `unsigned short', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_SHORT 2
 
 /* The size of `void *', as computed by sizeof. */
-#define SIZEOF_VOID_P 8
+#define SIZEOF_VOID_P 4
 
 /* Define to 1 if sscanf requires writable inputs */
 /* #undef SSCANF_WRITABLE_INPUT */
