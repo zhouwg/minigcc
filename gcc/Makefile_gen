@@ -1,6 +1,7 @@
 include ../make.def
 
 CFLAGS=$(CCFLAGS) -fPIC -fPIE -O2 -DIN_GCC     -fno-exceptions -fno-rtti -fasynchronous-unwind-tables -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wmissing-format-attribute -Woverloaded-virtual -pedantic -Wno-long-long -Wno-variadic-macros -Wno-overlength-strings   -DHAVE_CONFIG_H -DGENERATOR_FILE -fno-PIE -I. -I./build -I../ -I../include  -I../libcpp/include  
+CXXFLAGS=$(G_CFLAGS) -fPIC -fPIE -O2 -DIN_GCC     -fno-exceptions -fno-rtti -fasynchronous-unwind-tables -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wmissing-format-attribute -Woverloaded-virtual -pedantic -Wno-long-long -Wno-variadic-macros -Wno-overlength-strings   -DHAVE_CONFIG_H -DGENERATOR_FILE -fno-PIE -I. -I./build -I../ -I../include  -I../libcpp/include  
 
 OBJS= genmddeps.o read-md.o errors.o genmodes.o gengtype.o gengtype-lex.o gengtype-parse.o gengtype-state.o genconstants.o genpreds.o gengenrtl.o rtl.o read-rtl.o ggc-none.o vec.o min-insn-modes.o gensupport.o print-rtl.o hash-table.o  genflags.o genconditions.o gencondmd.o genattr.o genattr-common.o gencodes.o genconfig.o gentarget-def.o gencheck.o gcov-iov.o genhooks.o genopinit.o gencfn-macros.o
 
@@ -31,7 +32,7 @@ gentype: build/gengtype.o build/errors.o build/gengtype-lex.o build/gengtype-par
 
 genmddeps: build/genmddeps.o build/read-md.o build/errors.o
 	$(CXX) $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/genmddeps build/genmddeps.o build/read-md.o build/errors.o ../libiberty/libiberty.a
-	build/genmddeps /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-mddeps
+	build/genmddeps common.md config/i386/i386.md > tmp-mddeps
 	/bin/bash ../move-if-change tmp-mddeps mddeps.mk
 	echo timestamp > s-mddeps
 	export LC_ALL=C 
@@ -66,7 +67,7 @@ version.o:
 
 genconstants: build/genconstants.o build/read-md.o build/errors.o
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genconstants build/genconstants.o build/read-md.o build/errors.o ../libiberty/libiberty.a
-	build/genconstants /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-constants.h
+	build/genconstants common.md config/i386/i386.md > tmp-constants.h
 	/bin/bash ../move-if-change tmp-constants.h insn-constants.h
 	echo timestamp > s-constants
 
@@ -93,7 +94,7 @@ genpreds_objs = build/genpreds.o build/rtl.o build/read-rtl.o build/ggc-none.o b
 genpreds: $(genpreds_objs)
 	@echo "generate genpreds"
 	$(CXX) $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genpreds $(genpreds_objs) ../libiberty/libiberty.a
-	build/genpreds -h /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-preds.h
+	build/genpreds -h common.md config/i386/i386.md > tmp-preds.h
 	/bin/bash ../move-if-change tmp-preds.h tm-preds.h
 	echo timestamp > s-preds-h
 
@@ -111,10 +112,10 @@ genconditions:$(genconditions_objs)
 
 gencondmd_objs= build/gencondmd.o
 gencondmd: $(gencondmd_objs)
-	build/genconditions /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-condmd.c
+	build/genconditions common.md config/i386/i386.md > tmp-condmd.c
 	/bin/bash ../move-if-change tmp-condmd.c gencondmd.c
 	echo timestamp > s-conditions
-	build/genpreds -c /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md > tmp-constrs.h
+	build/genpreds -c common.md config/i386/i386.md > tmp-constrs.h
 	/bin/bash ../move-if-change tmp-constrs.h tm-constrs.h
 	echo timestamp > s-constrs-h
 	$(CXX) $(CFLAGS)  -static-libstdc++ -static-libgcc   -o build/gencondmd $(gencondmd_objs) ../libiberty/libiberty.a
@@ -125,7 +126,7 @@ genattr_objs_1= genattr.o rtl.o read-rtl.o ggc-none.o vec.o min-insn-modes.o gen
 genattr_objs= $(addprefix ./build/, $(genattr_objs_1))
 genattr: $(genattr_objs)
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genattr $(genattr_objs) ../libiberty/libiberty.a
-	build/genattr /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-attr.h
+	build/genattr common.md config/i386/i386.md insn-conditions.md > tmp-attr.h
 	/bin/bash ../move-if-change tmp-attr.h insn-attr.h
 	echo timestamp > s-attr
 
@@ -135,7 +136,7 @@ genattr-common_objs_1 = genattr-common.o rtl.o read-rtl.o ggc-none.o vec.o min-i
 genattr-common_objs = $(addprefix ./build/, $(genattr-common_objs_1))
 genattr-common:$(genattr-common_objs)
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genattr-common $(genattr-common_objs) ../libiberty/libiberty.a
-	build/genattr-common /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-attr-common.h
+	build/genattr-common common.md config/i386/i386.md insn-conditions.md > tmp-attr-common.h
 	/bin/bash ../move-if-change tmp-attr-common.h insn-attr-common.h
 	echo timestamp > s-attr-common
 
@@ -144,7 +145,7 @@ gencodes_objs_1= gencodes.o rtl.o read-rtl.o ggc-none.o vec.o min-insn-modes.o g
 gencodes_objs= $(addprefix ./build/, $(gencodes_objs_1))
 gencodes:$(gencodes_objs)
 	$(CXX) $(CFLAGS) -fno-PIE -static-libstdc++ -static-libgcc   -o build/gencodes $(gencodes_objs) ../libiberty/libiberty.a
-	build/gencodes /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-codes.h
+	build/gencodes common.md config/i386/i386.md insn-conditions.md > tmp-codes.h
 	/bin/bash ../move-if-change tmp-codes.h insn-codes.h
 	echo timestamp > s-codes
 
@@ -152,7 +153,7 @@ genconfig_objs_1= genconfig.o rtl.o read-rtl.o ggc-none.o vec.o min-insn-modes.o
 genconfig_objs= $(addprefix ./build/, $(genconfig_objs_1))
 genconfig:$(genconfig_objs)
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genconfig $(genconfig_objs)  ../libiberty/libiberty.a
-	build/genconfig /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-config.h
+	build/genconfig common.md config/i386/i386.md insn-conditions.md > tmp-config.h
 	/bin/bash ../move-if-change tmp-config.h insn-config.h
 	echo timestamp > s-config
 
@@ -162,7 +163,7 @@ gentarget-def_objs_1= gentarget-def.o rtl.o read-rtl.o ggc-none.o vec.o min-insn
 gentarget-def_objs= $(addprefix ./build/, $(gentarget-def_objs_1))
 gentarget-def:$(gentarget-def_objs)
 	$(CXX) $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/gentarget-def $(gentarget-def_objs) ../libiberty/libiberty.a
-	build/gentarget-def /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md > tmp-target-def.h
+	build/gentarget-def common.md config/i386/i386.md insn-conditions.md > tmp-target-def.h
 	/bin/bash ../move-if-change tmp-target-def.h insn-target-def.h
 	echo timestamp > s-target-def
 	#lsf="/android/gcc/gcc-6.4.0/gcc/cp/lang-specs.h /android/gcc/gcc-6.4.0/gcc/lto/lang-specs.h"; for f in $lsf; do \
@@ -206,18 +207,18 @@ genopinit_objs_1 = genopinit.o rtl.o read-rtl.o ggc-none.o vec.o min-insn-modes.
 genopinit_objs = $(addprefix ./build/, $(genopinit_objs_1))
 genopinit:$(genopinit_objs)
 	$(CXX) $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genopinit $(genopinit_objs) ../libiberty/libiberty.a
-	#build/genopinit /android/gcc/gcc-6.4.0/gcc/common.md /android/gcc/gcc-6.4.0/gcc/config/i386/i386.md insn-conditions.md -htmp-opinit.h -ctmp-opinit.c
+	#build/genopinit common.md config/i386/i386.md insn-conditions.md -htmp-opinit.h -ctmp-opinit.c
 	#/bin/bash ../move-if-change tmp-opinit.h insn-opinit.h
 	#/bin/bash ../move-if-change tmp-opinit.c insn-opinit.c
 	echo timestamp > s-opinit
 	build/genhooks "Common Target Hook" > tmp-common-target-hooks-def.h
 	/bin/bash ../move-if-change tmp-common-target-hooks-def.h common/common-target-hooks-def.h
 	echo timestamp > s-common-target-hooks-def-h
-	mawk -f /android/gcc/gcc-6.4.0/gcc/gen-pass-instances.awk /android/gcc/gcc-6.4.0/gcc/passes.def > pass-instances.def
+	mawk -f gen-pass-instances.awk passes.def > pass-instances.def
 	build/genhooks "C Target Hook" > tmp-c-target-hooks-def.h
 	/bin/bash ../move-if-change tmp-c-target-hooks-def.h c-family/c-target-hooks-def.h
 	echo timestamp > s-c-target-hooks-def-h
-	#gcc -E /android/gcc/gcc-6.4.0/gcc/params-list.h | sed 's/^#.*//;/^$/d' > tmp-params.list
+	#gcc -E params-list.h | sed 's/^#.*//;/^$/d' > tmp-params.list
 	#/bin/bash ../move-if-change tmp-params.list params.list
 	echo timestamp > s-params.list
 
@@ -234,4 +235,4 @@ gencfn-macros:$(gencfn-macros_objs)
 
 
 %.o: %.c
-	if [ ! -f ./build/$@ ]; then $(CXX) -c $(CFLAGS) $< -o ./build/$@; fi
+	if [ ! -f ./build/$@ ]; then $(CXX) -c $(CXXFLAGS) $< -o ./build/$@; fi
