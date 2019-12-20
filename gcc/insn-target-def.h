@@ -20,7 +20,7 @@ static bool
 target_have_allocate_stack (void)
 {
   return 
-#line 17691 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 17691 "config/i386/i386.md"
 (ix86_target_stack_probe ());
 }
 
@@ -68,7 +68,7 @@ static bool
 target_have_builtin_setjmp_receiver (void)
 {
   return 
-#line 17763 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 17763 "config/i386/i386.md"
 (!TARGET_64BIT && flag_pic);
 }
 
@@ -378,7 +378,7 @@ static bool
 target_have_prefetch (void)
 {
   return 
-#line 18695 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 18695 "config/i386/i386.md"
 (TARGET_3DNOW || TARGET_PREFETCH_SSE || TARGET_PRFCHW || TARGET_PREFETCHWT1);
 }
 
@@ -468,7 +468,7 @@ static bool
 target_have_return (void)
 {
   return 
-#line 12446 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 12446 "config/i386/i386.md"
 (ix86_can_use_return_insn_p ());
 }
 
@@ -550,7 +550,7 @@ static bool
 target_have_simple_return (void)
 {
   return 
-#line 12466 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 12466 "config/i386/i386.md"
 (!TARGET_SEH && !ix86_static_chain_on_stack);
 }
 
@@ -598,7 +598,7 @@ static bool
 target_have_stack_protect_set (void)
 {
   return 
-#line 18786 "/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md"
+#line 18786 "config/i386/i386.md"
 (TARGET_SSP_TLS_GUARD);
 }
 

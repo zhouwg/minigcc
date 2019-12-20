@@ -5,20 +5,12 @@
 TARGET_PRODUCT		= minigcc
 
 PLATFORM=pclinux
-#PLATFORM=sigma865x
-#PLATFORM=sigma863x
-#PLATFORM=sigma862x
 
 ifndef PLATFORM
 $(error Undefined PLATFORM environment variable.please export PLATFORM=pclinux  or export PLATFORM=sigma865x)
 endif
 
-TOOLCHAIN			= 2.95.3
-#TOOLCHAIN			= 3.4.0
 #TOOLCHAIN			= 3.4.1
-
-SRC_PATH=/android/gcc/gcc-6.4.0/gcc
-
 
 ifeq ($(PLATFORM), pclinux)
 EXPORTDIR			= /opt/broch/sdk/pclinux

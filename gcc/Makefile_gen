@@ -10,17 +10,18 @@ TARGETS = gentype genmddeps genmodes version.o gentype genconstants gengenrtl ge
 all: step1 step2
 	
 
+#GCC_SRC_DIR=$(shell pwd)
+GCC_SRC_DIR=/android/gcc/gcc-6.4.0/gcc
 
 
 clean:
 	rm -f $(OBJS)
 	rm -f $(TARGETS)
 
-	
-
 step1:
 	/bin/mkdir -p build
 	/bin/rm -f build/print-rtl.o
+	@echo $(GCC_SRC_DIR)
 
 step2: $(OBJS) version.o gentype genmddeps genmodes genconstants gengenrtl genpreds genflags genconditions gencondmd genattr genattr-common gencodes genconfig gentarget-def gencheck gcov-iov genhooks  genopinit gencfn-macros
 #step2: genmddeps genmodes 
@@ -36,17 +37,17 @@ genmddeps: build/genmddeps.o build/read-md.o build/errors.o
 	/bin/bash ../move-if-change tmp-mddeps mddeps.mk
 	echo timestamp > s-mddeps
 	export LC_ALL=C 
-	mawk -f /android/gcc/gcc-6.4.0/gcc/opt-gather.awk /android/gcc/gcc-6.4.0/gcc/ada/gcc-interface/lang.opt /android/gcc/gcc-6.4.0/gcc/fortran/lang.opt /android/gcc/gcc-6.4.0/gcc/go/lang.opt /android/gcc/gcc-6.4.0/gcc/java/lang.opt /android/gcc/gcc-6.4.0/gcc/lto/lang.opt /android/gcc/gcc-6.4.0/gcc/c-family/c.opt /android/gcc/gcc-6.4.0/gcc/common.opt /android/gcc/gcc-6.4.0/gcc/config/fused-madd.opt /android/gcc/gcc-6.4.0/gcc/config/i386/i386.opt /android/gcc/gcc-6.4.0/gcc/config/gnu-user.opt /android/gcc/gcc-6.4.0/gcc/config/linux.opt /android/gcc/gcc-6.4.0/gcc/config/linux-android.opt > tmp-optionlist
+	mawk -f opt-gather.awk ada/gcc-interface/lang.opt fortran/lang.opt go/lang.opt java/lang.opt lto/lang.opt c-family/c.opt common.opt config/fused-madd.opt config/i386/i386.opt config/gnu-user.opt config/linux.opt config/linux-android.opt > tmp-optionlist
 	/bin/bash ../move-if-change tmp-optionlist optionlist
 	echo timestamp > s-options
-	mawk -f /android/gcc/gcc-6.4.0/gcc/opt-functions.awk -f /android/gcc/gcc-6.4.0/gcc/opt-read.awk \
-	       -f /android/gcc/gcc-6.4.0/gcc/opth-gen.awk \
+	mawk -f opt-functions.awk -f opt-read.awk \
+	       -f opth-gen.awk \
 	       < optionlist > tmp-options.h
 	/bin/bash ../move-if-change tmp-options.h options.h
 	echo timestamp > s-options-h
 	#/bin/bash ../move-if-change tmp-gi.list gtyp-input.list
 	echo timestamp > s-gtyp-input
-	build/gengtype -S /android/gcc/gcc-6.4.0/gcc -I gtyp-input.list -w tmp-gtype.state
+	build/gengtype -S $(GCC_SRC_DIR) -I gtyp-input.list -w tmp-gtype.state
 	/bin/bash ../move-if-change tmp-gtype.state gtype.state
 	build/gengtype  \
                     -r gtype.state
@@ -166,9 +167,9 @@ gentarget-def:$(gentarget-def_objs)
 	build/gentarget-def common.md config/i386/i386.md insn-conditions.md > tmp-target-def.h
 	/bin/bash ../move-if-change tmp-target-def.h insn-target-def.h
 	echo timestamp > s-target-def
-	#lsf="/android/gcc/gcc-6.4.0/gcc/cp/lang-specs.h /android/gcc/gcc-6.4.0/gcc/lto/lang-specs.h"; for f in $lsf; do \
+	#lsf="cp/lang-specs.h lto/lang-specs.h"; for f in $lsf; do \
 	#    echo "#include \"$f\""; \
-	#done | sed 's|/android/gcc/gcc-6.4.0/gcc/||' > tmp-specs.h
+	#done | sed 's|../gcc/||' > tmp-specs.h
 
 	#/bin/bash ../move-if-change tmp-specs.h specs.h
 	echo timestamp > s-specs
@@ -179,9 +180,9 @@ gencheck: build/gencheck.o
 	echo '#include "tree.def"' > tmp-all-tree.def
 	echo 'END_OF_BASE_TREE_CODES' >> tmp-all-tree.def
 	echo '#include "c-family/c-common.def"' >> tmp-all-tree.def
-	ltf="/android/gcc/gcc-6.4.0/gcc/ada/gcc-interface/ada-tree.def /android/gcc/gcc-6.4.0/gcc/cp/cp-tree.def /android/gcc/gcc-6.4.0/gcc/java/java-tree.def /android/gcc/gcc-6.4.0/gcc/objc/objc-tree.def"; for f in $ltf; do \
+	ltf="ada/gcc-interface/ada-tree.def cp/cp-tree.def java/java-tree.def objc/objc-tree.def"; for f in $ltf; do \
 	  echo "#include \"$f\""; \
-	done | sed 's|/android/gcc/gcc-6.4.0/gcc/||' >> tmp-all-tree.def
+	done | sed 's|../gcc/||' >> tmp-all-tree.def
 	#/bin/bash ../move-if-change tmp-all-tree.def all-tree.def
 	echo timestamp > s-alltree
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/gencheck build/gencheck.o ../libiberty/libiberty.a
