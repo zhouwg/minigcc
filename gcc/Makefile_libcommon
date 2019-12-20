@@ -47,7 +47,9 @@ clean:
 
 step1:
 	/bin/mkdir -p build
-	@echo $(OBJS)
+	@echo "we need rebuilt print-rtl.c"
+	/bin/rm -f build/print-rtl.o
+	echo $(OBJS)
 
 step2_0:$(BACKEND_OBJS)
 	$(AR) libbackend.a  $(REAL_BACKEND_OBJS)
