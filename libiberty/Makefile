@@ -1,9 +1,7 @@
-#GCC=gcc
-#AR=ar
-#RANLIB=ranlib
+#author: Zhou Weiguo, zhouwg2000@gmail.com
 include ../make.def
 
-CFLAGS=$(CCFLAGS) -DHAVE_CONFIG_H -g -O2  -I. -I../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE -fpic 
+CFLAGS=$(CCFLAGS) -DHAVE_CONFIG_H -O2  -I. -I../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE -fpic 
 
 SRCS=`find ./ -name "*.c" -print`
 OBJS= ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o  ./setproctitle.o ./cde_log.o
@@ -12,10 +10,12 @@ TARGET=libiberty.a
 
 all:$(OBJS)
 	$(AR) $(TARGET) $(OBJS)
+	$(RANLIB) $(TARGET)
 
 
 $(OBJS): %.o: %.c
-	$(GCC) -c $(CFLAGS) $< -o $@
+	if [ ! -f $@ ]; then $(GCC) -c $(CFLAGS) $< -o $@; fi
+
 
 clean:
 	rm -f $(OBJS)

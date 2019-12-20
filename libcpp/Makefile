@@ -1,10 +1,8 @@
-#GCC=gcc
-#AR=ar
-#RANLIB=ranlib
+#author: Zhou Weiguo, zhouwg2000@gmail.com
 include ../make.def
 
-CFLAGS=-DHAVE_CONFIG_H -I. -I/android/gcc/gcc-6.4.0/mpc/src -I.. -I/ismp/build/./gmp -I/android/gcc/gcc-6.4.0/mpfr/src -g -O2
-CFLAGS=$(CCFLAGS) -I/android/gcc/gcc-6.4.0/libcpp -I. -I/android/gcc/gcc-6.4.0/libcpp/../include -I/android/gcc/gcc-6.4.0/libcpp/include  -g -O2 -W -Wall -Wno-narrowing -Wwrite-strings -Wmissing-format-attribute -pedantic -Wno-long-long  -fno-exceptions -fno-rtti -I/android/gcc/gcc-6.4.0/libcpp -I. -I/android/gcc/gcc-6.4.0/libcpp/../include -I/android/gcc/gcc-6.4.0/libcpp/include
+CFLAGS=-DHAVE_CONFIG_H -I. -I../mpc/src -I../ -I../gmp -I../mpfr/src -O2
+CFLAGS=$(CCFLAGS) -I./ -I. -I../include -I./include -O2 -W -Wall -Wno-narrowing -Wwrite-strings -Wmissing-format-attribute -pedantic -Wno-long-long  -fno-exceptions -fno-rtti
 
 
 SRCS=`find ./ -name "*.c" -print`
@@ -14,10 +12,11 @@ TARGET=libcpp.a
 
 all:$(OBJS)
 	$(AR) $(TARGET) $(OBJS)
+	$(RANLIB) $(TARGET)
 
 
 $(OBJS): %.o: %.c
-	g++ -c $(CFLAGS) $< -o $@
+	if [ ! -f $@ ]; then $(CXX) -c $(CFLAGS) $< -o $@; fi
 
 clean:
 	rm -f $(OBJS)

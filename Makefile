@@ -1,5 +1,5 @@
 #2017-10-27,zhou.weiguo
-SUBDIRS=mpfr/src mpc/src gmp 
+SUBDIRS=mpfr/src mpc/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc
 
 all: prebuild build
 
