@@ -58,6 +58,7 @@ RM				= /bin/rm -rf
 G_INC			+= -I$(TOOLCHAIN_INC_PATH)  
 G_CFLAGS		+= $(ALLDEFINES)
 
-CXXFLAGS		= $(G_CFLAGS) $(ALLWARNING) -fpermissive 
-CCFLAGS			= $(G_CFLAGS) $(ALLWARNING) -Wmissing-declarations -Wnested-externs -Wmissing-prototypes
+CXXFLAGS		= $(G_CFLAGS) $(ALLWARNING) -fpermissive -Wnested-externs -Wmissing-prototypes
+CCFLAGS			= $(G_CFLAGS) $(ALLWARNING) -Wmissing-declarations 
+
 LDFLAGS			= $(G_LDLAGS)
