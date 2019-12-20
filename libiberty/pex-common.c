@@ -341,7 +341,7 @@ pex_run_in_environment (struct pex_obj *obj, int flags, const char *executable,
 
   /* Run the program.  */
 
-  LOGV("[miniGCC]current exe is :%s\n", executable);
+  //LOGV("[miniGCC]current exe is :%s\n", executable);
   pid = obj->funcs->exec_child (obj, flags, executable, argv, env,
 				in, out, errdes, toclose, &errmsg, err);
   if (pid < 0)

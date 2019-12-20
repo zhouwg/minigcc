@@ -1,5 +1,5 @@
 /* Generated automatically by the program 'build/genpreds'
-   from the machine description file '/android/gcc/gcc-6.4.0/gcc/config/i386/i386.md'.  */
+   from the machine description file './config/i386/i386.md'.  */
 
 #include "config.h"
 #include "system.h"
@@ -29,7 +29,7 @@ int
 any_fp_register_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 23 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 23 "./config/i386/predicates.md"
 (ANY_FP_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -38,7 +38,7 @@ int
 fp_register_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 28 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 28 "./config/i386/predicates.md"
 (STACK_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -47,7 +47,7 @@ int
 register_and_not_any_fp_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (!(
-#line 33 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 33 "./config/i386/predicates.md"
 (ANY_FP_REGNO_P (REGNO (op)))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -56,7 +56,7 @@ int
 general_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 38 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 38 "./config/i386/predicates.md"
 (GENERAL_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -65,7 +65,7 @@ int
 nonimmediate_gr_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == REG) ? ((
-#line 43 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 43 "./config/i386/predicates.md"
 (GENERAL_REGNO_P (REGNO (op)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode))) : (nonimmediate_operand (op, mode));
 }
@@ -74,7 +74,7 @@ int
 register_and_not_fp_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (!(
-#line 49 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 49 "./config/i386/predicates.md"
 (STACK_REGNO_P (REGNO (op)))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -83,7 +83,7 @@ int
 mmx_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 54 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 54 "./config/i386/predicates.md"
 (MMX_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -92,7 +92,7 @@ int
 sse_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 59 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 59 "./config/i386/predicates.md"
 (SSE_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -101,7 +101,7 @@ int
 ext_sse_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 64 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 64 "./config/i386/predicates.md"
 (EXT_REX_SSE_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -110,7 +110,7 @@ int
 mask_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 69 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 69 "./config/i386/predicates.md"
 (MASK_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -119,7 +119,7 @@ int
 any_QIreg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 74 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 74 "./config/i386/predicates.md"
 (ANY_QI_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -128,7 +128,7 @@ int
 QIreg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 79 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 79 "./config/i386/predicates.md"
 (QI_REGNO_P (REGNO (op))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -137,9 +137,9 @@ int
 ext_QIreg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((
-#line 83 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 83 "./config/i386/predicates.md"
 (TARGET_64BIT)) && ((GET_CODE (op) == REG) && (!(
-#line 85 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 85 "./config/i386/predicates.md"
 (QI_REGNO_P (REGNO (op))))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -148,7 +148,7 @@ int
 ax_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 90 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 90 "./config/i386/predicates.md"
 (REGNO (op) == AX_REG))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -157,14 +157,14 @@ int
 flags_reg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == REG) && (
-#line 95 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 95 "./config/i386/predicates.md"
 (REGNO (op) == FLAGS_REG))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
 
 static inline int
 ext_register_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 100 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 100 "./config/i386/predicates.md"
 {
   if ((!TARGET_64BIT || GET_MODE (op) != DImode)
       && GET_MODE (op) != SImode && GET_MODE (op) != HImode)
@@ -188,7 +188,7 @@ int
 nonimmediate_x64nomem_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 114 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 114 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? (register_operand (op, mode)) : (nonimmediate_operand (op, mode));
 }
 
@@ -196,7 +196,7 @@ int
 general_x64nomem_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 120 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 120 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? (nonmemory_operand (op, mode)) : (general_operand (op, mode));
 }
 
@@ -204,7 +204,7 @@ int
 register_mixssei387nonimm_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 126 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 126 "./config/i386/predicates.md"
 (TARGET_MIX_SSE_I387)) ? (nonimmediate_operand (op, mode)) : (register_operand (op, mode));
 }
 
@@ -212,7 +212,7 @@ int
 register_sse4nonimm_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 132 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 132 "./config/i386/predicates.md"
 (TARGET_SSE4_1)) ? (nonimmediate_operand (op, mode)) : (register_operand (op, mode));
 }
 
@@ -225,7 +225,7 @@ symbol_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 x86_64_immediate_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 143 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 143 "./config/i386/predicates.md"
 {
   if (!TARGET_64BIT)
     return immediate_operand (op, mode);
@@ -361,7 +361,7 @@ x86_64_immediate_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 x86_64_zext_immediate_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 261 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 261 "./config/i386/predicates.md"
 {
   switch (GET_CODE (op))
     {
@@ -458,11 +458,11 @@ int
 x86_64_immediate_size_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == SYMBOL_REF) && ((!(
-#line 339 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 339 "./config/i386/predicates.md"
 (TARGET_64BIT))) || ((
-#line 340 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 340 "./config/i386/predicates.md"
 (ix86_cmodel == CM_SMALL)) || (
-#line 341 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 341 "./config/i386/predicates.md"
 (ix86_cmodel == CM_KERNEL))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -471,7 +471,7 @@ int
 x86_64_general_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 345 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 345 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? ((nonimmediate_operand (op, mode)) || (x86_64_immediate_operand (op, mode))) : (general_operand (op, mode));
 }
 
@@ -479,7 +479,7 @@ int
 x86_64_sext_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 354 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 354 "./config/i386/predicates.md"
 (GET_MODE (op) != VOIDmode)) && (x86_64_general_operand (op, mode));
 }
 
@@ -487,7 +487,7 @@ int
 sext_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 361 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 361 "./config/i386/predicates.md"
 (GET_MODE (op) != VOIDmode)) && (general_operand (op, mode));
 }
 
@@ -495,9 +495,9 @@ int
 x86_64_zext_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 368 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 368 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? ((nonimmediate_operand (op, mode)) || ((x86_64_zext_immediate_operand (op, mode)) && (
-#line 371 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 371 "./config/i386/predicates.md"
 (GET_MODE (op) != VOIDmode)))) : (nonimmediate_operand (op, mode));
 }
 
@@ -505,7 +505,7 @@ int
 x86_64_szext_general_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 377 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 377 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? ((nonimmediate_operand (op, mode)) || ((x86_64_immediate_operand (op, mode)) || (x86_64_zext_immediate_operand (op, mode)))) : (general_operand (op, mode));
 }
 
@@ -513,7 +513,7 @@ int
 x86_64_nonmemory_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 385 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 385 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? ((register_operand (op, mode)) || (x86_64_immediate_operand (op, mode))) : (nonmemory_operand (op, mode));
 }
 
@@ -521,13 +521,13 @@ int
 x86_64_szext_nonmemory_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 392 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 392 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? ((register_operand (op, mode)) || ((x86_64_immediate_operand (op, mode)) || (x86_64_zext_immediate_operand (op, mode)))) : (nonmemory_operand (op, mode));
 }
 
 static inline int
 pic_32bit_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 402 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 402 "./config/i386/predicates.md"
 {
   if (!flag_pic)
     return false;
@@ -572,7 +572,7 @@ x86_64_movabs_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 symbolic_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 430 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 430 "./config/i386/predicates.md"
 {
   switch (GET_CODE (op))
     {
@@ -633,7 +633,7 @@ symbolic_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 local_symbolic_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 474 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 474 "./config/i386/predicates.md"
 {
   if (GET_CODE (op) == CONST
       && GET_CODE (XEXP (op, 0)) == PLUS
@@ -688,7 +688,7 @@ int
 gotoff_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (!(
-#line 516 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 516 "./config/i386/predicates.md"
 (TARGET_VXWORKS_RTP))) && (local_symbolic_operand (op, mode));
 }
 
@@ -696,7 +696,7 @@ int
 tls_symbolic_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == SYMBOL_REF) && (
-#line 522 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 522 "./config/i386/predicates.md"
 (SYMBOL_REF_TLS_MODEL (op)));
 }
 
@@ -704,13 +704,13 @@ int
 tls_modbase_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == SYMBOL_REF) && (
-#line 526 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 526 "./config/i386/predicates.md"
 (op == ix86_tls_module_base ()));
 }
 
 static inline int
 constant_call_address_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 531 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 531 "./config/i386/predicates.md"
 {
   if (ix86_cmodel == CM_LARGE || ix86_cmodel == CM_LARGE_PIC)
     return false;
@@ -729,7 +729,7 @@ constant_call_address_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 call_register_no_elim_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 545 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 545 "./config/i386/predicates.md"
 {
   if (SUBREG_P (op))
     op = SUBREG_REG (op);
@@ -749,7 +749,7 @@ call_register_no_elim_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 register_no_elim_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 559 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 559 "./config/i386/predicates.md"
 {
   if (SUBREG_P (op))
     op = SUBREG_REG (op);
@@ -768,7 +768,7 @@ register_no_elim_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 index_register_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 572 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 572 "./config/i386/predicates.md"
 {
   if (SUBREG_P (op))
     op = SUBREG_REG (op);
@@ -801,13 +801,13 @@ int
 indirect_branch_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (register_operand (op, mode)) || ((!(
-#line 596 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 596 "./config/i386/predicates.md"
 (TARGET_X32))) && (memory_operand (op, mode)));
 }
 
 static inline int
 sibcall_memory_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 606 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 606 "./config/i386/predicates.md"
 {
   op = XEXP (op, 0);
   if (CONSTANT_P (op))
@@ -834,7 +834,7 @@ sibcall_memory_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 GOT_memory_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 626 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 626 "./config/i386/predicates.md"
 {
   op = XEXP (op, 0);
   return (GET_CODE (op) == CONST
@@ -853,12 +853,12 @@ int
 call_insn_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 636 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 636 "./config/i386/predicates.md"
 (constant_call_address_operand
 		     (op, mode == VOIDmode ? mode : Pmode))) || ((call_register_no_elim_operand (op, mode)) || (((!(
-#line 639 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 639 "./config/i386/predicates.md"
 (TARGET_X32))) && (memory_operand (op, mode))) || ((
-#line 641 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 641 "./config/i386/predicates.md"
 (TARGET_X32 && Pmode == DImode)) && (GOT_memory_operand (op, mode)))));
 }
 
@@ -866,12 +866,12 @@ int
 sibcall_insn_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 646 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 646 "./config/i386/predicates.md"
 (constant_call_address_operand
 		     (op, mode == VOIDmode ? mode : Pmode))) || ((register_no_elim_operand (op, mode)) || (((!(
-#line 649 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 649 "./config/i386/predicates.md"
 (TARGET_X32))) && (sibcall_memory_operand (op, mode))) || ((
-#line 651 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 651 "./config/i386/predicates.md"
 (TARGET_X32 && Pmode == DImode)) && (GOT_memory_operand (op, mode)))));
 }
 
@@ -879,7 +879,7 @@ int
 GOT32_symbol_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 656 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 656 "./config/i386/predicates.md"
 (GET_CODE (op) == CONST
                && GET_CODE (XEXP (op, 0)) == UNSPEC
                && XINT (XEXP (op, 0), 1) == UNSPEC_GOT)) && (
@@ -888,7 +888,7 @@ GOT32_symbol_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const0_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 663 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 663 "./config/i386/predicates.md"
 {
   if (mode == VOIDmode)
     mode = GET_MODE (op);
@@ -915,7 +915,7 @@ const0_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 constm1_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 672 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 672 "./config/i386/predicates.md"
 {
   if (mode == VOIDmode)
     mode = GET_MODE (op);
@@ -942,7 +942,7 @@ constm1_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const1_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 681 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 681 "./config/i386/predicates.md"
 {
   if (mode == VOIDmode)
     mode = GET_MODE (op);
@@ -971,7 +971,7 @@ int
 const8_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 690 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 690 "./config/i386/predicates.md"
 (INTVAL (op) == 8));
 }
 
@@ -979,7 +979,7 @@ int
 const128_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 695 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 695 "./config/i386/predicates.md"
 (INTVAL (op) == 128));
 }
 
@@ -987,14 +987,14 @@ int
 const_32bit_mask (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 700 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 700 "./config/i386/predicates.md"
 (trunc_int_for_mode (INTVAL (op), DImode)
 		    == (HOST_WIDE_INT) 0xffffffff));
 }
 
 static inline int
 const248_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 706 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 706 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 2 || i == 4 || i == 8;
@@ -1009,7 +1009,7 @@ const248_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const2367_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 714 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 714 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 2 || i == 3 || i == 6 || i == 7;
@@ -1024,7 +1024,7 @@ const2367_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const1248_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 722 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 722 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 1 || i == 2 || i == 4 || i == 8;
@@ -1039,7 +1039,7 @@ const1248_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const359_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 730 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 730 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 3 || i == 5 || i == 9;
@@ -1054,7 +1054,7 @@ const359_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const_4_or_8_to_11_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 738 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 738 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 4 || (i >= 8 && i <= 11);
@@ -1069,7 +1069,7 @@ const_4_or_8_to_11_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 const48_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 746 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 746 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT i = INTVAL (op);
   return i == 4 || i == 8;
@@ -1086,9 +1086,9 @@ int
 const_0_to_1_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && ((
-#line 754 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 754 "./config/i386/predicates.md"
 (op == const0_rtx)) || (
-#line 755 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 755 "./config/i386/predicates.md"
 (op == const1_rtx)));
 }
 
@@ -1096,7 +1096,7 @@ int
 const_0_to_3_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 760 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 760 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 3)));
 }
 
@@ -1104,7 +1104,7 @@ int
 const_0_to_4_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 765 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 765 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 4)));
 }
 
@@ -1112,7 +1112,7 @@ int
 const_0_to_5_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 770 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 770 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 5)));
 }
 
@@ -1120,7 +1120,7 @@ int
 const_0_to_7_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 775 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 775 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 7)));
 }
 
@@ -1128,7 +1128,7 @@ int
 const_0_to_15_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 780 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 780 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 15)));
 }
 
@@ -1136,7 +1136,7 @@ int
 const_0_to_31_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 785 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 785 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 31)));
 }
 
@@ -1144,7 +1144,7 @@ int
 const_0_to_63_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 790 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 790 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 63)));
 }
 
@@ -1152,13 +1152,13 @@ int
 const_0_to_255_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 795 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 795 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 0, 255)));
 }
 
 static inline int
 const_0_to_255_mul_8_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 800 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 800 "./config/i386/predicates.md"
 {
   unsigned HOST_WIDE_INT val = INTVAL (op);
   return val <= 255*8 && val % 8 == 0;
@@ -1175,7 +1175,7 @@ int
 const_1_to_31_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 809 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 809 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 1, 31)));
 }
 
@@ -1183,7 +1183,7 @@ int
 const_1_to_63_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 815 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 815 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 1, 63)));
 }
 
@@ -1191,7 +1191,7 @@ int
 const_2_to_3_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 820 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 820 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 2, 3)));
 }
 
@@ -1199,7 +1199,7 @@ int
 const_4_to_5_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 825 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 825 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 4, 5)));
 }
 
@@ -1207,7 +1207,7 @@ int
 const_4_to_7_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 830 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 830 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 4, 7)));
 }
 
@@ -1215,7 +1215,7 @@ int
 const_6_to_7_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 835 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 835 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 6, 7)));
 }
 
@@ -1223,7 +1223,7 @@ int
 const_8_to_9_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 840 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 840 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 8, 9)));
 }
 
@@ -1231,7 +1231,7 @@ int
 const_8_to_11_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 845 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 845 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 8, 11)));
 }
 
@@ -1239,7 +1239,7 @@ int
 const_8_to_15_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 850 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 850 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 8, 15)));
 }
 
@@ -1247,7 +1247,7 @@ int
 const_10_to_11_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 855 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 855 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 10, 11)));
 }
 
@@ -1255,7 +1255,7 @@ int
 const_12_to_13_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 860 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 860 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 12, 13)));
 }
 
@@ -1263,7 +1263,7 @@ int
 const_12_to_15_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 865 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 865 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 12, 15)));
 }
 
@@ -1271,7 +1271,7 @@ int
 const_14_to_15_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 870 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 870 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 14, 15)));
 }
 
@@ -1279,7 +1279,7 @@ int
 const_16_to_19_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 875 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 875 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 16, 19)));
 }
 
@@ -1287,7 +1287,7 @@ int
 const_16_to_31_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 880 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 880 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 16, 31)));
 }
 
@@ -1295,7 +1295,7 @@ int
 const_20_to_23_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 885 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 885 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 20, 23)));
 }
 
@@ -1303,7 +1303,7 @@ int
 const_24_to_27_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 890 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 890 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 24, 27)));
 }
 
@@ -1311,13 +1311,13 @@ int
 const_28_to_31_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (GET_CODE (op) == CONST_INT) && (
-#line 895 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 895 "./config/i386/predicates.md"
 (IN_RANGE (INTVAL (op), 28, 31)));
 }
 
 static inline int
 incdec_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 900 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 900 "./config/i386/predicates.md"
 {
   /* On Pentium4, the inc and dec operations causes extra dependency on flag
      registers, since carry flag is not set.  */
@@ -1337,9 +1337,9 @@ int
 reg_or_pm1_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (register_operand (op, mode)) || (((GET_CODE (op) == CONST_INT) && ((
-#line 912 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 912 "./config/i386/predicates.md"
 (op == const1_rtx)) || (
-#line 913 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 913 "./config/i386/predicates.md"
 (op == constm1_rtx)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode)));
 }
@@ -1348,7 +1348,7 @@ int
 shiftdi_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 917 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 917 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? (nonimmediate_operand (op, mode)) : (register_operand (op, mode));
 }
 
@@ -1356,13 +1356,13 @@ int
 ashldi_input_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 922 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 922 "./config/i386/predicates.md"
 (TARGET_64BIT)) ? (nonimmediate_operand (op, mode)) : (reg_or_pm1_operand (op, mode));
 }
 
 static inline int
 zero_extended_scalar_load_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 930 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 930 "./config/i386/predicates.md"
 {
   unsigned n_elts;
   op = maybe_get_pool_constant (op);
@@ -1393,9 +1393,9 @@ int
 vector_all_ones_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == CONST_VECTOR) && ((
-#line 951 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 951 "./config/i386/predicates.md"
 (INTEGRAL_MODE_P (GET_MODE (op)))) && (
-#line 952 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 952 "./config/i386/predicates.md"
 (op == CONSTM1_RTX (GET_MODE (op)))))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -1404,9 +1404,9 @@ int
 vector_memory_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (memory_operand (op, mode)) && ((
-#line 958 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 958 "./config/i386/predicates.md"
 (TARGET_AVX)) || (
-#line 959 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 959 "./config/i386/predicates.md"
 (MEM_ALIGN (op) >= GET_MODE_ALIGNMENT (mode))));
 }
 
@@ -1431,7 +1431,7 @@ nonimmediate_or_const_vector_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED
 
 static inline int
 nonimmediate_or_sse_const_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 980 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 980 "./config/i386/predicates.md"
 {
   if (nonimmediate_operand (op, mode))
     return true;
@@ -1471,7 +1471,7 @@ SImode_address_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 address_no_seg_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1002 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1002 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1490,14 +1490,14 @@ int
 address_no_seg_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 1001 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1001 "./config/i386/predicates.md"
 (address_operand (op, VOIDmode))) && (
 (address_no_seg_operand_1 (op, mode)));
 }
 
 static inline int
 vsib_address_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1020 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1020 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1540,7 +1540,7 @@ int
 vsib_address_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((
-#line 1019 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1019 "./config/i386/predicates.md"
 (address_operand (op, VOIDmode))) && (
 (vsib_address_operand_1 (op, mode)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode));
@@ -1548,7 +1548,7 @@ vsib_address_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 address_mpx_no_base_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1061 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1061 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1582,7 +1582,7 @@ int
 address_mpx_no_base_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((
-#line 1060 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1060 "./config/i386/predicates.md"
 (address_operand (op, VOIDmode))) && (
 (address_mpx_no_base_operand_1 (op, mode)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode));
@@ -1590,7 +1590,7 @@ address_mpx_no_base_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 address_mpx_no_index_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1093 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1093 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1622,7 +1622,7 @@ int
 address_mpx_no_index_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((
-#line 1092 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1092 "./config/i386/predicates.md"
 (address_operand (op, VOIDmode))) && (
 (address_mpx_no_index_operand_1 (op, mode)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode));
@@ -1644,7 +1644,7 @@ bnd_mem_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 aligned_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1129 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1129 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1712,7 +1712,7 @@ aligned_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 memory_displacement_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1190 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1190 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1731,7 +1731,7 @@ memory_displacement_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 memory_displacement_only_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1202 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1202 "./config/i386/predicates.md"
 {
   struct ix86_address parts;
   int ok;
@@ -1759,13 +1759,13 @@ int
 long_memory_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (memory_operand (op, mode)) && (
-#line 1222 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1222 "./config/i386/predicates.md"
 (memory_address_length (op, false)));
 }
 
 static inline int
 fcmov_comparison_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1227 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1227 "./config/i386/predicates.md"
 {
   machine_mode inmode = GET_MODE (XEXP (op, 0));
   enum rtx_code code = GET_CODE (op);
@@ -1803,7 +1803,7 @@ int
 sse_comparison_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == EQ || GET_CODE (op) == NE || GET_CODE (op) == LT || GET_CODE (op) == LE || GET_CODE (op) == UNORDERED || GET_CODE (op) == UNGE || GET_CODE (op) == UNGT || GET_CODE (op) == ORDERED) || ((
-#line 1259 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1259 "./config/i386/predicates.md"
 (TARGET_AVX)) && (GET_CODE (op) == GE || GET_CODE (op) == GT || GET_CODE (op) == UNEQ || GET_CODE (op) == UNLE || GET_CODE (op) == UNLT || GET_CODE (op) == LTGT))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -1863,7 +1863,7 @@ bt_comparison_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 ix86_comparison_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1274 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1274 "./config/i386/predicates.md"
 {
   machine_mode inmode = GET_MODE (XEXP (op, 0));
   enum rtx_code code = GET_CODE (op);
@@ -1906,7 +1906,7 @@ ix86_comparison_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 ix86_carry_flag_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1311 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1311 "./config/i386/predicates.md"
 {
   machine_mode inmode = GET_MODE (XEXP (op, 0));
   enum rtx_code code = GET_CODE (op);
@@ -1976,14 +1976,14 @@ int
 ix86_fp_comparison_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (
-#line 1337 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1337 "./config/i386/predicates.md"
 (ix86_fp_comparison_strategy (GET_CODE (op))
                              == IX86_FPCMP_ARITH)) ? (comparison_operator (op, mode)) : (ix86_trivial_fp_comparison_operator (op, mode));
 }
 
 static inline int
 ix86_swapped_fp_comparison_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1345 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1345 "./config/i386/predicates.md"
 {
   enum rtx_code code = GET_CODE (op);
   bool ret;
@@ -2123,7 +2123,7 @@ int
 promotable_binary_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == PLUS || GET_CODE (op) == MINUS || GET_CODE (op) == AND || GET_CODE (op) == IOR || GET_CODE (op) == XOR || GET_CODE (op) == ASHIFT) || ((GET_CODE (op) == MULT) && (
-#line 1395 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1395 "./config/i386/predicates.md"
 (TARGET_TUNE_PROMOTE_HIMODE_IMUL)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
@@ -2154,14 +2154,14 @@ int
 misaligned_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == MEM) && (
-#line 1407 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1407 "./config/i386/predicates.md"
 (MEM_ALIGN (op) < GET_MODE_BITSIZE (mode)))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
 
 static inline int
 emms_operation_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1412 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1412 "./config/i386/predicates.md"
 {
   unsigned i;
 
@@ -2199,7 +2199,7 @@ emms_operation (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 vzeroall_operation_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1442 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1442 "./config/i386/predicates.md"
 {
   unsigned i, nregs = TARGET_64BIT ? 16 : 8;
 
@@ -2232,14 +2232,14 @@ int
 vzeroupper_operation (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return ((GET_CODE (op) == UNSPEC_VOLATILE) && (
-#line 1465 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1465 "./config/i386/predicates.md"
 (XINT (op, 1) == UNSPECV_VZEROUPPER))) && (
 (mode == VOIDmode || GET_MODE (op) == mode));
 }
 
 static inline int
 addsub_vm_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1470 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1470 "./config/i386/predicates.md"
 {
   rtx op0, op1;
   int swapped;
@@ -2282,7 +2282,7 @@ addsub_vm_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 addsub_vs_operator_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1506 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1506 "./config/i386/predicates.md"
 {
   rtx op0, op1;
   bool swapped;
@@ -2320,7 +2320,7 @@ addsub_vs_operator (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 addsub_vs_parallel_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1537 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1537 "./config/i386/predicates.md"
 {
   int nelt = XVECLEN (op, 0);
   int elt, i;
@@ -2359,7 +2359,7 @@ addsub_vs_parallel (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 avx_vbroadcast_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1569 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1569 "./config/i386/predicates.md"
 {
   rtx elt = XVECEXP (op, 0, 0);
   int i, nelt = XVECLEN (op, 0);
@@ -2382,7 +2382,7 @@ avx_vbroadcast_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 palignr_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1585 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1585 "./config/i386/predicates.md"
 {
   int elt = INTVAL (XVECEXP (op, 0, 0));
   int i, nelt = XVECLEN (op, 0);
@@ -2405,7 +2405,7 @@ palignr_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 
 static inline int
 avx2_pblendw_operand_1 (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
-#line 1600 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1600 "./config/i386/predicates.md"
 {
   HOST_WIDE_INT val = INTVAL (op);
   HOST_WIDE_INT low = val & 0xff;
@@ -2430,7 +2430,7 @@ int
 register_or_constm1_operand (rtx op, machine_mode mode ATTRIBUTE_UNUSED)
 {
   return (register_operand (op, mode)) || (((GET_CODE (op) == CONST_INT) && (
-#line 1615 "/android/gcc/gcc-6.4.0/gcc/config/i386/predicates.md"
+#line 1615 "./config/i386/predicates.md"
 (op == constm1_rtx))) && (
 (mode == VOIDmode || GET_MODE (op) == mode || GET_MODE (op) == VOIDmode)));
 }
@@ -2934,38 +2934,38 @@ insn_const_int_ok_for_constraint (HOST_WIDE_INT ival, enum constraint_num c)
     {
     case CONSTRAINT_I:
       return 
-#line 199 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 199 "./config/i386/constraints.md"
 (IN_RANGE (ival, 0, 31));
 
     case CONSTRAINT_J:
       return 
-#line 204 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 204 "./config/i386/constraints.md"
 (IN_RANGE (ival, 0, 63));
 
     case CONSTRAINT_K:
       return 
-#line 209 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 209 "./config/i386/constraints.md"
 (IN_RANGE (ival, -128, 127));
 
     case CONSTRAINT_L:
       return 
-#line 215 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 215 "./config/i386/constraints.md"
 (ival == 0xff || ival == 0xffff
 		    || ival == (HOST_WIDE_INT) 0xffffffff);
 
     case CONSTRAINT_M:
       return 
-#line 221 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 221 "./config/i386/constraints.md"
 (IN_RANGE (ival, 0, 3));
 
     case CONSTRAINT_N:
       return 
-#line 227 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 227 "./config/i386/constraints.md"
 (IN_RANGE (ival, 0, 255));
 
     case CONSTRAINT_O:
       return 
-#line 232 "/android/gcc/gcc-6.4.0/gcc/config/i386/constraints.md"
+#line 232 "./config/i386/constraints.md"
 (IN_RANGE (ival, 0, 127));
 
     default: break;

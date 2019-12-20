@@ -1,9 +1,6 @@
-#GCC=gcc
-#AR=ar
-#RANLIB=ranlib
 include ../make.def
 
-CFLAGS=$(CCFLAGS) -std=gnu99 -DHAVE_CONFIG_H -I. -I../gmp  -D__GMP_WITHIN_GMP   -g -O2 -c 
+CFLAGS=$(CCFLAGS) -std=gnu99 -DHAVE_CONFIG_H -I. -I../gmp  -D__GMP_WITHIN_GMP -O2 -c 
 
 SRCS=`find ./ -name "*.c" -print`
 
@@ -24,17 +21,13 @@ step0:
 	make -C scanf
 	make -C rand
 
-step2:$(OBJS)
+step2: $(OBJS)
 	$(AR) $(TARGET) $(OBJS)
-	ranlib libgmp.a
+	$(RANLIB) libgmp.a
 
 
 step3:
 	rm -rf .libs/libgmp.lax
-#libtool: link: rm -fr .libs/libgmp.lax
-#libtool: link: ( cd ".libs" && rm -f "libgmp.la" && ln -s "../libgmp.la" "libgmp.la" )
-#make[2]: Leaving directory `/android/build/gmp'
-#make[1]: Leaving directory `/android/build/gmp'
 
 
 clean:
@@ -49,8 +42,8 @@ clean:
 	make -C rand clean
 
 step1:
-	echo "copying selected object files to avoid basename conflicts..."
-	mkdir -p .libs/libgmp.lax
+	@echo "copying selected object files to avoid basename conflicts..."
+	/bin/mkdir -p .libs/libgmp.lax
 	ln mpz/abs.o .libs/libgmp.lax/lt1-abs.o || cp mpz/abs.o .libs/libgmp.lax/lt1-abs.o
 	ln mpz/add.o .libs/libgmp.lax/lt2-add.o || cp mpz/add.o .libs/libgmp.lax/lt2-add.o
 	ln mpz/add_ui.o .libs/libgmp.lax/lt3-add_ui.o || cp mpz/add_ui.o .libs/libgmp.lax/lt3-add_ui.o
@@ -159,4 +152,4 @@ step1:
 
 
 %.o: %.c
-	$(GCC) -c $(CFLAGS) $< -o $@
+	if [ ! -f $@ ]; then $(GCC) -c $(CFLAGS) $< -o $@; fi

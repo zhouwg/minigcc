@@ -9,7 +9,7 @@
 									      || V4SImode == V8DFmode
 									      || V4SImode == V8DImode
 									      || V4SImode == V16SImode)) && (TARGET_AVX512VL))")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (ASHIFTRT, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (ASHIFTRT, SImode, operands)")
   (-1 "(TARGET_AVOID_VECTOR_DECODE
    && SSE_FLOAT_MODE_P (SFmode)
    && optimize_insn_for_speed_p ()) && (TARGET_64BIT)")
@@ -46,7 +46,7 @@
   (-1 "SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH")
   (-1 "(!(fixed_regs[AX_REG] || fixed_regs[CX_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == DImode)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && TARGET_CMOVE && !(MEM_P (operands[2]) && MEM_P (operands[3]))")
   (-1 "(TARGET_AVX512BW) && (TARGET_AVX512VL)")
   (-1 "(!TARGET_X32) && (word_mode == DImode)")
@@ -58,7 +58,7 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && TARGET_AVX512VL
    && ix86_binary_operator_ok (IOR, V4DFmode, operands)) && (TARGET_AVX))")
   (-1 "ix86_binary_operator_ok (MINUS, HImode, operands)")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[AX_REG] || fixed_regs[CX_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == DImode)")
   (-1 "TARGET_AVX2
@@ -70,7 +70,7 @@
     && flag_unsafe_math_optimizations)
    || (SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH
        && !flag_trapping_math)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && exact_log2 (INTVAL (operands[2])) >= 0
    && REGNO (operands[0]) == REGNO (operands[1])
    && peep2_regno_dead_p (0, FLAGS_REG)")
@@ -84,13 +84,13 @@
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (SMAX, V16SFmode, operands)
    && 1 && 1) && (TARGET_AVX512F)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (SMIN, V8DImode, operands))")
-  (-1 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVEOPT)")
+  (0 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVEOPT)")
   (-1 "TARGET_FMA || TARGET_AVX512F")
   (-1 "ix86_binary_operator_ok (ROTATERT, SImode, operands)
    && (INTVAL (operands[3]) & (GET_MODE_BITSIZE (SImode)-1))
       == GET_MODE_BITSIZE (SImode)-1")
-  (-1 "TARGET_64BIT && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
-  (-1 "(TARGET_80387 || (SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH)) && (TARGET_64BIT)")
+  (0 "TARGET_64BIT && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
+  (0 "(TARGET_80387 || (SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH)) && (TARGET_64BIT)")
   (-1 "ix86_match_ccmode (insn, CCNOmode)
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
   (-1 "(TARGET_AVX512F
@@ -127,7 +127,7 @@
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2
    && ix86_binary_operator_ok (MINUS, V2DImode, operands))")
   (-1 "TARGET_TBM")
-  (-1 "(TARGET_64BIT && TARGET_SSE) && ( reload_completed)")
+  (0 "(TARGET_64BIT && TARGET_SSE) && ( reload_completed)")
   (-1 "ix86_unary_operator_ok (NEG, HImode, operands)")
   (-1 "X87_FLOAT_MODE_P (GET_MODE (operands[1]))
    && TARGET_FISTTP
@@ -176,7 +176,7 @@
 							      || V2DFmode == V16SImode)) && (TARGET_SSE2)))")
   (-1 "((TARGET_DOUBLE_POP || optimize_insn_for_size_p ())
    && INTVAL (operands[0]) == 2*GET_MODE_SIZE (word_mode)) && (((((((((((word_mode == SImode) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (word_mode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (word_mode == SImode)) && (Pmode == SImode)) && (Pmode == SImode))")
-  (-1 "TARGET_64BIT")
+  (0 "TARGET_64BIT")
   (-1 "TARGET_SSSE3 && 1 && 1")
   (-1 "(TARGET_SSE2
    && 1 && 1) && (TARGET_AVX2)")
@@ -241,12 +241,12 @@
   (-1 "TARGET_SSE2
    && ix86_binary_operator_ok (MULT, V8HImode, operands)
    && 1 && 1")
-  (-1 "(TARGET_64BIT && TARGET_SSE) && (TARGET_SSE2)")
+  (0 "(TARGET_64BIT && TARGET_SSE) && (TARGET_SSE2)")
   (-1 "(ix86_binary_operator_ok (ASHIFT, DImode, operands)) && (TARGET_64BIT)")
-  (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && TARGET_64BIT)")
+  (0 "(TARGET_AVX512F) && (TARGET_AVX512F && TARGET_64BIT)")
   (-1 "TARGET_80387 && TARGET_CMOVE
    && !(MEM_P (operands[2]) && MEM_P (operands[3]))")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && (optimize_function_for_size_p (cfun)
        || !TARGET_PARTIAL_FLAG_REG_STALL
        || (operands[2] == const1_rtx
@@ -323,11 +323,11 @@
   (-1 "TARGET_AVX
    && (GET_MODE_NUNITS (V4DFmode)
        == GET_MODE_NUNITS (V4DFmode))")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (AND, DImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (AND, DImode, operands)")
   (-1 "(TARGET_SSE || TARGET_3DNOW_A) && (Pmode == DImode)")
   (-1 "ix86_unary_operator_ok (NEG, SImode, operands)
    && mode_signbit_p (SImode, operands[2])")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && (optimize_function_for_size_p (cfun)
        || !TARGET_PARTIAL_FLAG_REG_STALL
        || (operands[2] == const1_rtx
@@ -363,7 +363,7 @@
         && MMX_REGNO_P (REGNO (operands[1]))) 
        || (SSE_REGNO_P (REGNO (operands[0]))
            && SSE_REGNO_P (REGNO (operands[1]))))")
-  (-1 "(TARGET_TBM) && (TARGET_64BIT)")
+  (0 "(TARGET_TBM) && (TARGET_64BIT)")
   (-1 "(TARGET_SSSE3 && 1 && 1
    && ix86_binary_operator_ok (MULT, V32HImode, operands)) && (TARGET_AVX512BW)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MINUS, V8SFmode, operands) && (32 == 64 || TARGET_AVX512VL) && (V8SFmode == V16SFmode
@@ -377,7 +377,7 @@
    && ix86_match_ccmode (insn, CCGOCmode)
    && ix86_binary_operator_ok (LSHIFTRT, DImode, operands)) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (ASHIFT, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (ASHIFT, SImode, operands)")
   (-1 "(TARGET_AVX512BW && ix86_binary_operator_ok (PLUS, V16HImode, operands)) && (TARGET_AVX512VL)")
   (-1 "(X87_FLOAT_MODE_P (GET_MODE (operands[1]))
    && !TARGET_FISTTP
@@ -423,7 +423,7 @@
    && ix86_binary_operator_ok (PLUS, V8SImode, operands)) && (TARGET_AVX2))")
   (-1 "(TARGET_AVX512BW && TARGET_AVX512VL) && (TARGET_AVX2)")
   (-1 "TARGET_80387 && X87_ENABLE_FLOAT (DFmode, DImode)")
-  (-1 "(TARGET_LZCNT) && (TARGET_64BIT)")
+  (0 "(TARGET_LZCNT) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (SMIN, V16SImode, operands))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && 1 && (V8DFmode == V16SFmode
 									      || V8DFmode == V8DFmode
@@ -438,7 +438,7 @@
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (IOR, V8SImode, operands)) && (TARGET_AVX)")
   (-1 "TARGET_SSE && reload_completed")
-  (-1 "(DFmode != DFmode || TARGET_64BIT)
+  (0 "(DFmode != DFmode || TARGET_64BIT)
    && TARGET_80387 && TARGET_CMOVE
    && TARGET_AVOID_MEM_OPND_FOR_CMOVE
    && (MEM_P (operands[2]) || MEM_P (operands[3]))
@@ -447,7 +447,7 @@
    && (GET_MODE_NUNITS (V8DImode)
        == GET_MODE_NUNITS (V8DFmode))")
   (-1 "TARGET_3DNOW || TARGET_PREFETCH_SSE || TARGET_PRFCHW || TARGET_PREFETCHWT1")
-  (-1 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVEC)")
+  (0 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVEC)")
   (0 "(TARGET_AVX512F) && (TARGET_SSE
    && 1 && (V4SFmode == V16SFmode
 									      || V4SFmode == V8DFmode
@@ -508,9 +508,9 @@
    && INTVAL (operands[4]) + 4 == INTVAL (operands[8])
    && INTVAL (operands[5]) + 4 == INTVAL (operands[9])")
   (-1 "TARGET_SSE && 1 && 1")
-  (-1 "TARGET_64BIT && TARGET_SSE_MATH")
+  (0 "TARGET_64BIT && TARGET_SSE_MATH")
   (-1 "TARGET_MMX && ix86_binary_operator_ok (IOR, V8QImode, operands)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (IOR, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (IOR, SImode, operands)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE4_1 && ix86_binary_operator_ok (MULT, V8SImode, operands) && (32 == 64 || TARGET_AVX512VL)) && (TARGET_AVX2))")
   (-1 "TARGET_ROUND")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_AVX512F && (V2DImode == V16SFmode
@@ -590,7 +590,7 @@
    && (GET_MODE_NUNITS (V8SImode)
        == GET_MODE_NUNITS (V4DImode))")
   (-1 "(SIBLING_CALL_P (insn)) && (word_mode == SImode)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && ix86_match_ccmode (insn, CCGCmode)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSSE3 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (MULT, V8HImode, operands))")
@@ -600,13 +600,13 @@
   (-1 "TARGET_AVX512F
    && (GET_MODE_NUNITS (V16SImode)
        == GET_MODE_NUNITS (V8DFmode))")
-  (-1 "TARGET_64BIT && ((optimize > 0 && flag_peephole2)
+  (0 "TARGET_64BIT && ((optimize > 0 && flag_peephole2)
 		    ? epilogue_completed : reload_completed)
    && !symbolic_operand (operands[1], DImode)
    && !x86_64_immediate_operand (operands[1], DImode)")
   (-1 "(TARGET_SSE2
    && ix86_binary_operator_ok (MINUS, V4DImode, operands)) && (TARGET_AVX2)")
-  (-1 "(TARGET_XADD) && (TARGET_64BIT)")
+  (0 "(TARGET_XADD) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE && (16 == 64 || TARGET_AVX512VL)
    && ix86_binary_operator_ok (IOR, V4SImode, operands))")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE && ix86_binary_operator_ok (MULT, V4SFmode, operands) && 1 && (V4SFmode == V16SFmode
@@ -620,7 +620,7 @@
    && TARGET_AVOID_FALSE_DEP_FOR_BMI && optimize_function_for_speed_p (cfun)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (AND, V16SFmode, operands)")
   (-1 "(TARGET_AVX512BW && ix86_binary_operator_ok (MINUS, V32QImode, operands)) && (TARGET_AVX512VL)")
-  (-1 "TARGET_64BIT && reload_completed && ix86_lea_for_add_ok (insn, operands)")
+  (0 "TARGET_64BIT && reload_completed && ix86_lea_for_add_ok (insn, operands)")
   (-1 "(((TARGET_USE_BT || optimize_function_for_size_p (cfun))
    && can_create_pseudo_p ()) && (TARGET_64BIT)) && ( 1)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2
@@ -730,7 +730,7 @@
   (-1 "TARGET_AVX2
    && (GET_MODE_NUNITS (V8SFmode)
        == GET_MODE_NUNITS (V16HImode))")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (MINUS, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (MINUS, SImode, operands)")
   (-1 "TARGET_SSE2
    && (GET_MODE_NUNITS (V4SImode)
        == GET_MODE_NUNITS (V4SImode))")
@@ -771,7 +771,7 @@
       == GET_MODE_BITSIZE (DImode)-1
    && can_create_pseudo_p ()) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (PLUS, V8DFmode, operands) && 1 && 1) && (TARGET_AVX512F)")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[AX_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == DImode)")
   (-1 "(!TARGET_PARTIAL_REG_STALL
@@ -815,7 +815,7 @@
   (-1 "TARGET_SSE && !TARGET_64BIT
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MINUS, V16SFmode, operands) && 1 && 1) && (TARGET_AVX512F)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && TARGET_CMOVE && TARGET_AVOID_MEM_OPND_FOR_CMOVE
    && (MEM_P (operands[2]) || MEM_P (operands[3]))
    && optimize_insn_for_speed_p ()")
@@ -826,7 +826,7 @@
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512VL
    && (INTVAL (operands[3]) == (INTVAL (operands[4]) - 1)
        && INTVAL (operands[5]) == (INTVAL (operands[6]) - 1)))")
-  (-1 "(TARGET_BMI) && (TARGET_64BIT)")
+  (0 "(TARGET_BMI) && (TARGET_64BIT)")
   (-1 "TARGET_AVX
    && avx_vperm2f128_parallel (operands[3], V8SImode)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512VL
@@ -868,18 +868,18 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (64 == 64 || TARGET_AVX512VL)) && (TARGET_AVX512F))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (PLUS, V8SFmode, operands) && (32 == 64 || TARGET_AVX512VL) && 1) && (TARGET_AVX))")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512BW && (64 == 64 || TARGET_AVX512VL)) && (TARGET_AVX512BW))")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
   (-1 "(TARGET_SSE4_1) && (TARGET_AVX2)")
   (-1 "(TARGET_SSE2 && 1 && 1
    && ix86_binary_operator_ok (SS_PLUS, V32QImode, operands)) && (TARGET_AVX2)")
-  (-1 "(TARGET_CMPXCHG16B) && (TARGET_64BIT)")
+  (0 "(TARGET_CMPXCHG16B) && (TARGET_64BIT)")
   (-1 "TARGET_USE_8BIT_IDIV
    && TARGET_QIMODE_MATH
    && can_create_pseudo_p ()
    && !optimize_insn_for_size_p ()")
   (-1 "TARGET_SSE2 && ix86_binary_operator_ok (UMAX, V16QImode, operands)")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[AX_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == SImode)")
   (-1 "optimize_insn_for_speed_p ()
@@ -895,7 +895,7 @@
    && ix86_binary_operator_ok (MINUS, V4SImode, operands))")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (AND, V4DImode, operands)) && (TARGET_AVX)")
-  (-1 "TARGET_64BIT && !TARGET_OPT_AGU
+  (0 "TARGET_64BIT && !TARGET_OPT_AGU
    && REGNO (operands[0]) == REGNO (operands[2])
    && peep2_regno_dead_p (0, FLAGS_REG)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MULT, V8DFmode, operands) && 1 && (V8DFmode == V16SFmode
@@ -937,7 +937,7 @@
    && !(TARGET_SSE2 && TARGET_SSE_MATH)
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512DQ) && (TARGET_AVX512VL))")
-  (-1 "(SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH
+  (0 "(SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH
    && !flag_trapping_math) && (TARGET_64BIT)")
   (-1 "(!TARGET_PARTIAL_REG_STALL || optimize_function_for_size_p (cfun))
    && reload_completed")
@@ -965,7 +965,7 @@
    && (GET_MODE_NUNITS (V8DFmode)
        == GET_MODE_NUNITS (V16SImode))")
   (-1 "(TARGET_AVX && 1) && (TARGET_AVX512F)")
-  (-1 "TARGET_64BIT && !TARGET_PARTIAL_REG_STALL")
+  (0 "TARGET_64BIT && !TARGET_PARTIAL_REG_STALL")
   (-1 "TARGET_SSE4_1
    && ((unsigned) exact_log2 (INTVAL (operands[3]))
        < GET_MODE_NUNITS (V4SFmode))")
@@ -991,7 +991,7 @@
 									      || V16SFmode == V16SImode)) && (TARGET_AVX512F))")
   (-1 "TARGET_SSE && 1
    && ix86_binary_operator_ok (AND, V4SFmode, operands)")
-  (-1 "(TARGET_RDRND) && (TARGET_64BIT)")
+  (0 "(TARGET_RDRND) && (TARGET_64BIT)")
   (-1 "TARGET_AVX2 && 1")
   (-1 "(TARGET_AVX512F
    && ix86_binary_operator_ok (MINUS, V2DImode, operands)) && (TARGET_AVX512VL)")
@@ -1026,14 +1026,14 @@
   (-1 "(TARGET_AVX512F) && (TARGET_SSE4_1 && TARGET_AVX512VL)")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (IOR, V8DImode, operands)) && (TARGET_AVX512F)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (ROTATE, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (ROTATE, SImode, operands)")
   (-1 "TARGET_AVX512BW && ix86_binary_operator_ok (MINUS, V32HImode, operands)")
-  (-1 "TARGET_64BIT && reload_completed
+  (0 "TARGET_64BIT && reload_completed
    && true_regnum (operands[0]) != true_regnum (operands[1])")
   (-1 "TARGET_AVX && !(MEM_P (operands[0]) && MEM_P (operands[1]))
   && reload_completed")
   (-1 "(TARGET_AVX512F && ix86_binary_operator_ok (SMAX, V4DImode, operands)) && (TARGET_AVX512VL)")
-  (-1 "TARGET_64BIT && TARGET_MMX")
+  (0 "TARGET_64BIT && TARGET_MMX")
   (-1 "ix86_match_ccmode (insn, CCNOmode)
    && ix86_binary_operator_ok (XOR, HImode, operands)")
   (-1 "(TARGET_MWAITX) && (Pmode == SImode)")
@@ -1057,7 +1057,7 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2
    && ix86_binary_operator_ok (MINUS, V32QImode, operands)) && (TARGET_AVX2))")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MULT, V8SFmode, operands) && 1 && 1) && (TARGET_AVX)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCGOCmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCGOCmode)
    && ix86_binary_operator_ok (MINUS, SImode, operands)")
   (-1 "TARGET_AVX && 1
    && avx_vpermilp_parallel (operands[2], V4SFmode)")
@@ -1070,8 +1070,8 @@
    && ix86_binary_operator_ok (SS_MINUS, V32QImode, operands)) && (TARGET_AVX2))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && (64 == 64 || TARGET_AVX512VL) && 1) && (TARGET_AVX512F))")
   (-1 "(TARGET_SSE && 1) && (TARGET_SSE2)")
-  (-1 "(TARGET_POPCNT) && (TARGET_64BIT)")
-  (-1 "((optimize && flag_peephole2) ? epilogue_completed : reload_completed) && (TARGET_64BIT)")
+  (0 "(TARGET_POPCNT) && (TARGET_64BIT)")
+  (0 "((optimize && flag_peephole2) ? epilogue_completed : reload_completed) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (EQ, V64QImode, operands))")
   (-1 "TARGET_SSE
    && (GET_MODE_NUNITS (V4SImode)
@@ -1089,7 +1089,7 @@
        && INTVAL (operands[3]) == (INTVAL (operands[4]) - 1)
        && INTVAL (operands[4]) == (INTVAL (operands[5]) - 1))")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (IOR, V16HImode, operands)) && (TARGET_AVX)")
-  (-1 "(TARGET_CMOVE && !(MEM_P (operands[2]) && MEM_P (operands[3]))) && (TARGET_64BIT)")
+  (0 "(TARGET_CMOVE && !(MEM_P (operands[2]) && MEM_P (operands[3]))) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX && (64 == 64 || TARGET_AVX512VL)
    && avx_vpermilp_parallel (operands[2], V16SFmode)) && (TARGET_AVX512F))")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512BW && (16 == 64 || TARGET_AVX512VL))")
@@ -1104,7 +1104,7 @@
    && !((SSE_FLOAT_MODE_P (GET_MODE (operands[1]))
 	&& (TARGET_64BIT || HImode != DImode))
 	&& TARGET_SSE_MATH)")
-  (-1 "TARGET_SSE && TARGET_64BIT")
+  (0 "TARGET_SSE && TARGET_64BIT")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MINUS, V16SFmode, operands) && (64 == 64 || TARGET_AVX512VL) && (V16SFmode == V16SFmode
 							      || V16SFmode == V8DFmode
 							      || V16SFmode == V8DImode
@@ -1140,7 +1140,7 @@
 									      || V4SFmode == V8DFmode
 									      || V4SFmode == V8DImode
 									      || V4SFmode == V16SImode)))")
-  (-1 "((unsigned HOST_WIDE_INT) INTVAL (operands[1])
+  (0 "((unsigned HOST_WIDE_INT) INTVAL (operands[1])
    == -(unsigned HOST_WIDE_INT) INTVAL (operands[2])) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE) && ( reload_completed)")
   (-1 "TARGET_SSE && ix86_binary_operator_ok (AND, V16QImode, operands)")
@@ -1164,9 +1164,9 @@
 									      || V4DFmode == V16SImode)) && (TARGET_AVX)))")
   (-1 "(TARGET_AVX512F) && (TARGET_XOP || TARGET_AVX512VL)")
   (-1 "(TARGET_SSE4_1 && ix86_binary_operator_ok (MULT, V8SImode, operands) && 1) && (TARGET_AVX2)")
-  (-1 "(TARGET_BMI2 && INTVAL (operands[4]) == 8 * BITS_PER_UNIT
+  (0 "(TARGET_BMI2 && INTVAL (operands[4]) == 8 * BITS_PER_UNIT
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))) && (TARGET_64BIT)")
-  (-1 "(TARGET_SSE2) && ((TARGET_64BIT) && (TARGET_SSE4_1))")
+  (0 "(TARGET_SSE2) && ((TARGET_64BIT) && (TARGET_SSE4_1))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMAX, V16SFmode, operands)
    && (64 == 64 || TARGET_AVX512VL) && 1) && (TARGET_AVX512F))")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_SSE
@@ -1174,7 +1174,7 @@
 									      || V4DFmode == V8DFmode
 									      || V4DFmode == V8DImode
 									      || V4DFmode == V16SImode)) && (TARGET_AVX)))")
-  (-1 "TARGET_64BIT && TARGET_SSE4_1")
+  (0 "TARGET_64BIT && TARGET_SSE4_1")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_PLUS, V16QImode, operands))")
   (-1 "/* cltd is shorter than sarl $31, %eax */
@@ -1210,12 +1210,12 @@
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (XOR, V4DFmode, operands)) && (TARGET_AVX)")
   (-1 "TARGET_64BIT || TARGET_SSE")
-  (-1 "(TARGET_SSE && !(MEM_P (operands[0]) && MEM_P (operands[1]))) && (TARGET_64BIT)")
+  (0 "(TARGET_SSE && !(MEM_P (operands[0]) && MEM_P (operands[1]))) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE3) && (TARGET_AVX)")
   (-1 "(ix86_binary_operator_ok (ASHIFTRT, DImode, operands)
    && (INTVAL (operands[3]) & (GET_MODE_BITSIZE (DImode)-1))
       == GET_MODE_BITSIZE (DImode)-1) && (TARGET_64BIT)")
-  (-1 "TARGET_64BIT && INTVAL (operands[2]) == 63
+  (0 "TARGET_64BIT && INTVAL (operands[2]) == 63
    && (TARGET_USE_CLTD || optimize_function_for_size_p (cfun))
    && ix86_binary_operator_ok (ASHIFTRT, DImode, operands)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMAX, V2DFmode, operands)
@@ -1279,7 +1279,7 @@
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512DQ && TARGET_AVX512VL)")
   (-1 "TARGET_PARTIAL_REG_STALL")
   (-1 "TARGET_F16C")
-  (-1 "(TARGET_RDSEED) && (TARGET_64BIT)")
+  (0 "(TARGET_RDSEED) && (TARGET_64BIT)")
   (-1 "TARGET_USE_XCHGB || optimize_function_for_size_p (cfun)")
   (-1 "(!(fixed_regs[CX_REG] || fixed_regs[SI_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == SImode)")
@@ -1299,9 +1299,9 @@
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2
    && ix86_binary_operator_ok (PLUS, V8HImode, operands))")
   (-1 "TARGET_LWP")
-  (-1 "TARGET_64BIT && (TARGET_SSE4_2 || TARGET_CRC32)")
+  (0 "TARGET_64BIT && (TARGET_SSE4_2 || TARGET_CRC32)")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_AVX512DQ && (V4SFmode == V8SFmode)) && (TARGET_AVX512VL)))")
-  (-1 "(TARGET_MPX) && (TARGET_64BIT)")
+  (0 "(TARGET_MPX) && (TARGET_64BIT)")
   (-1 "TARGET_SSE2 && ix86_binary_operator_ok (SMIN, V8HImode, operands)")
   (-1 "TARGET_80387
    && !(TARGET_SSE2 && TARGET_SSE_MATH)
@@ -1349,7 +1349,7 @@
 	&& TARGET_SSE_MATH)")
   (-1 "TARGET_SSE4_1 && 1
    && ix86_binary_operator_ok (MULT, V4SImode, operands)")
-  (-1 "(!(MEM_P (operands[1]) && MEM_P (operands[2]))) && (TARGET_64BIT)")
+  (0 "(!(MEM_P (operands[1]) && MEM_P (operands[2]))) && (TARGET_64BIT)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (SMIN, V16SImode, operands)")
   (-1 "TARGET_SSE && ix86_binary_operator_ok (UNKNOWN, V4SFmode, operands)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (IOR, V16SFmode, operands))")
@@ -1427,7 +1427,7 @@
        && ((SImode != DImode) || TARGET_64BIT)
        && !flag_trapping_math && !flag_rounding_math)")
   (-1 "ix86_can_use_return_insn_p ()")
-  (-1 "(TARGET_BMI2 && INTVAL (operands[3]) == 8 * BITS_PER_UNIT) && (TARGET_64BIT)")
+  (0 "(TARGET_BMI2 && INTVAL (operands[3]) == 8 * BITS_PER_UNIT) && (TARGET_64BIT)")
   (-1 "!TARGET_64BIT && TARGET_STV && TARGET_SSE2
    && !(TARGET_ZERO_EXTEND_WITH_AND && optimize_function_for_speed_p (cfun))")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && (64 == 64 || TARGET_AVX512VL) && (V16SFmode == V16SFmode
@@ -1443,7 +1443,7 @@
        && ((SImode != DImode) || TARGET_64BIT)
        && !flag_trapping_math && !flag_rounding_math)")
   (-1 "ix86_binary_operator_ok (ASHIFTRT, QImode, operands)")
-  (-1 "TARGET_64BIT && ix86_cmodel == CM_LARGE_PIC && !TARGET_PECOFF
+  (0 "TARGET_64BIT && ix86_cmodel == CM_LARGE_PIC && !TARGET_PECOFF
    && GET_CODE (operands[2]) == CONST
    && GET_CODE (XEXP (operands[2], 0)) == UNSPEC
    && XINT (XEXP (operands[2], 0), 1) == UNSPEC_PLTOFF")
@@ -1489,7 +1489,7 @@
    && ix86_unary_operator_ok (NOT, HImode, operands)")
   (-1 "TARGET_MMX
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
-  (-1 "(SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH
+  (0 "(SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH
    && !flag_trapping_math) && (TARGET_64BIT)")
   (-1 "TARGET_SSE2 && TARGET_SSE_UNALIGNED_LOAD_OPTIMAL
    && ix86_operands_ok_for_move_multiple (operands, true, DFmode)")
@@ -1579,7 +1579,7 @@
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (EQ, V32HImode, operands)")
   (-1 "ix86_match_ccmode (insn, CCGOCmode)
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
-  (-1 "TARGET_64BIT && !TARGET_USE_BT")
+  (0 "TARGET_64BIT && !TARGET_USE_BT")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (SMAX, V16SImode, operands))")
   (-1 "TARGET_SSE
    && (GET_MODE_NUNITS (V8HImode)
@@ -1694,7 +1694,7 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_SSSE3 && (64 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (MULT, V32HImode, operands)) && (TARGET_AVX512BW))")
   (-1 "(INTVAL (operands[0]) == GET_MODE_SIZE (word_mode)) && ((((((((word_mode == SImode) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (word_mode == SImode)) && (Pmode == SImode)) && (Pmode == SImode))")
-  (-1 "(TARGET_64BIT && TARGET_MMX) && ( reload_completed)")
+  (0 "(TARGET_64BIT && TARGET_MMX) && ( reload_completed)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512VBMI && (16 == 64 || TARGET_AVX512VL)) && (TARGET_AVX512VL))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (64 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_PLUS, V32HImode, operands)) && (TARGET_AVX512BW))")
@@ -1714,14 +1714,14 @@
   (-1 "TARGET_SSE2 && !TARGET_XOP
    && ix86_binary_operator_ok (EQ, V8HImode, operands)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (EQ, V8DImode, operands))")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[SI_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == DImode)")
   (-1 "(TARGET_SSE2
    && (GET_MODE_NUNITS (V2DFmode)
        == GET_MODE_NUNITS (V16QImode))) && (TARGET_SSE2)")
   (-1 "TARGET_AVX2 && ix86_binary_operator_ok (EQ, V16HImode, operands)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
    && ix86_binary_operator_ok (AND, SImode, operands)")
   (-1 "(TARGET_SSE
    && (register_operand (operands[0], V4TImode)
@@ -1809,7 +1809,7 @@
   (-1 "(TARGET_SSE || TARGET_3DNOW)
    && ix86_binary_operator_ok (PLUS, V8QImode, operands)")
   (-1 "TARGET_CMPXCHG")
-  (-1 "TARGET_64BIT && !symbolic_operand (operands[1], DImode)
+  (0 "TARGET_64BIT && !symbolic_operand (operands[1], DImode)
    && !x86_64_immediate_operand (operands[1], DImode) && 1")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMAX, V8SFmode, operands)
    && 1 && (V8SFmode == V16SFmode
@@ -1929,7 +1929,7 @@
   (-1 "TARGET_SSE
    && (!(MEM_P (operands[1]) && MEM_P (operands[2]))
        || (TARGET_SSE3 && rtx_equal_p (operands[1], operands[2])))")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCmode)
    && ix86_binary_operator_ok (MINUS, SImode, operands)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (PLUS, V4DFmode, operands) && 1 && (V4DFmode == V16SFmode
 							      || V4DFmode == V8DFmode
@@ -1947,11 +1947,11 @@
   (-1 "TARGET_AVX && !(MEM_P (operands[0]) && MEM_P (operands[1])) && reload_completed")
   (-1 "TARGET_80387
    && (TARGET_USE_SIMODE_FIOP || optimize_function_for_size_p (cfun))")
-  (-1 "(TARGET_CMPXCHG) && (TARGET_64BIT)")
+  (0 "(TARGET_CMPXCHG) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE2
    && ix86_binary_operator_ok (PLUS, V64QImode, operands)) && (TARGET_AVX512BW)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512DQ && (V8SFmode == V8SFmode))")
-  (-1 "(SSE_FLOAT_MODE_P (SFmode)
+  (0 "(SSE_FLOAT_MODE_P (SFmode)
    && (!TARGET_FISTTP || TARGET_SSE_MATH)) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && TARGET_AVX512VL
    && ix86_binary_operator_ok (XOR, V4DFmode, operands)) && (TARGET_AVX))")
@@ -2017,12 +2017,12 @@
    && SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH")
   (-1 "TARGET_SSE3")
   (-1 "TARGET_AVX512BW && ix86_binary_operator_ok (MINUS, V64QImode, operands)")
-  (-1 "TARGET_64BIT && reload_completed
+  (0 "TARGET_64BIT && reload_completed
    && !SSE_REG_P (operands[1])")
   (-1 "TARGET_SSE4_1 && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
   (-1 "TARGET_USE_FANCY_MATH_387
    && flag_unsafe_math_optimizations")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (AND, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (AND, SImode, operands)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (AND, V32QImode, operands)) && (TARGET_AVX))")
   (-1 "(TARGET_SSE || TARGET_3DNOW_A)
    && ix86_binary_operator_ok (SMIN, V4HImode, operands)")
@@ -2052,7 +2052,7 @@
 	&& (TARGET_SHIFT1
 	    || TARGET_DOUBLE_WITH_ADD)))
    && ix86_match_ccmode (insn, CCGOCmode)) && (TARGET_64BIT)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (ROTATERT, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (ROTATERT, SImode, operands)")
   (-1 "(TARGET_MMX || (TARGET_SSE2 && V8QImode == V1DImode))
    && ix86_binary_operator_ok (PLUS, V8QImode, operands)")
   (-1 "(TARGET_SSE2) && (TARGET_AVX512F)")
@@ -2126,7 +2126,7 @@
   (-1 "(reload_completed) && (TARGET_HIMODE_MATH)")
   (-1 "(TARGET_SSE2 && 1 && 1
    && ix86_binary_operator_ok (SS_MINUS, V32HImode, operands)) && (TARGET_AVX512BW)")
-  (-1 "(TARGET_64BIT && TARGET_SSE2 && TARGET_INTER_UNIT_MOVES_FROM_VEC) && ( reload_completed)")
+  (0 "(TARGET_64BIT && TARGET_SSE2 && TARGET_INTER_UNIT_MOVES_FROM_VEC) && ( reload_completed)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MINUS, V16SFmode, operands) && 1 && (V16SFmode == V16SFmode
 							      || V16SFmode == V8DFmode
 							      || V16SFmode == V8DImode
@@ -2147,7 +2147,7 @@
    && (!EXT_REX_SSE_REG_P (operands[0])
        || TARGET_AVX512VL)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MULT, V8SFmode, operands) && (32 == 64 || TARGET_AVX512VL) && 1) && (TARGET_AVX))")
-  (-1 "(TARGET_BSWAP) && (TARGET_64BIT)")
+  (0 "(TARGET_BSWAP) && (TARGET_64BIT)")
   (-1 "ix86_binary_operator_ok (XOR, QImode, operands)")
   (-1 "TARGET_80387
    && (!(SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH)
@@ -2161,7 +2161,7 @@
    && ix86_binary_operator_ok (XOR, V16SImode, operands)) && (TARGET_AVX512F)")
   (-1 "(TARGET_USE_FANCY_MATH_387
    && can_create_pseudo_p ()) && ( 1)")
-  (-1 "(TARGET_64BIT && TARGET_FSGSBASE) && (TARGET_64BIT)")
+  (0 "(TARGET_64BIT && TARGET_FSGSBASE) && (TARGET_64BIT)")
   (-1 "TARGET_FMA || TARGET_FMA4 || TARGET_AVX512VL")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMAX, V4DFmode, operands)
    && 1 && (V4DFmode == V16SFmode
@@ -2177,7 +2177,7 @@
   (-1 "(ix86_binary_operator_ok (ROTATE, DImode, operands)
    && (INTVAL (operands[3]) & (GET_MODE_BITSIZE (DImode)-1))
       == GET_MODE_BITSIZE (DImode)-1) && (TARGET_64BIT)")
-  (-1 "(!(MEM_P (operands[1]) && MEM_P (operands[2]))
+  (0 "(!(MEM_P (operands[1]) && MEM_P (operands[2]))
    && CONST_INT_P (operands[2])
    && INTVAL (operands[2]) == INTVAL (operands[3])) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
@@ -2245,7 +2245,7 @@
   (-1 "(TARGET_SSE
    && (register_operand (operands[0], V32QImode)
        || register_operand (operands[1], V32QImode))) && (TARGET_AVX)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
    && ix86_binary_operator_ok (IOR, SImode, operands)")
   (-1 "(TARGET_AVX512F) && (TARGET_FMA)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && TARGET_AVX512VL
@@ -2254,7 +2254,7 @@
   (-1 "(TARGET_SSE2
    && ix86_binary_operator_ok (PLUS, V16SImode, operands)) && (TARGET_AVX512F)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (EQ, V16SImode, operands)")
-  (-1 "TARGET_64BIT && TARGET_SSE2 && TARGET_INTER_UNIT_MOVES_FROM_VEC")
+  (0 "TARGET_64BIT && TARGET_SSE2 && TARGET_INTER_UNIT_MOVES_FROM_VEC")
   (-1 "(TARGET_USE_FANCY_MATH_387 && X87_ENABLE_ARITH (SFmode))
    || (SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (PLUS, V8SFmode, operands) && (32 == 64 || TARGET_AVX512VL) && (V8SFmode == V16SFmode
@@ -2273,7 +2273,7 @@
   && (TARGET_USE_XCHGB || optimize_function_for_size_p (cfun))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && TARGET_AVX512VL
    && ix86_binary_operator_ok (AND, V8SFmode, operands)) && (TARGET_AVX))")
-  (-1 "(SSE_FLOAT_MODE_P (DFmode)
+  (0 "(SSE_FLOAT_MODE_P (DFmode)
    && (!TARGET_FISTTP || TARGET_SSE_MATH)) && (TARGET_64BIT)")
   (-1 "(X87_FLOAT_MODE_P (GET_MODE (operands[1]))
    && !TARGET_FISTTP
@@ -2286,7 +2286,7 @@
 							      || V4SFmode == V16SImode)))")
   (-1 "(TARGET_AVX512F && ix86_binary_operator_ok (UMIN, V4DImode, operands)) && (TARGET_AVX512VL)")
   (-1 "TARGET_MMX && ix86_binary_operator_ok (XOR, V8QImode, operands)")
-  (-1 "(TARGET_LWP) && (TARGET_64BIT)")
+  (0 "(TARGET_LWP) && (TARGET_64BIT)")
   (-1 "(TARGET_SSSE3 && 1 && 1) && (TARGET_AVX512BW)")
   (-1 "TARGET_AVX2
    && (GET_MODE_NUNITS (V8SImode)
@@ -2323,7 +2323,7 @@
   (-1 "(ix86_unary_operator_ok (NEG, DImode, operands)) && (!TARGET_64BIT)")
   (-1 "TARGET_80387 && flag_unsafe_math_optimizations")
   (-1 "((optimize && flag_peephole2) ? epilogue_completed : reload_completed) && (!TARGET_64BIT)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && TARGET_SLOW_IMUL_IMM32_MEM && optimize_insn_for_speed_p ()
    && !satisfies_constraint_K (operands[2])")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX2 && (32 == 64 || TARGET_AVX512VL)) && (TARGET_AVX512VL))")
@@ -2349,16 +2349,16 @@
    && (UINTVAL (operands[3]) & (UINTVAL (operands[3]) - 1)) == 0")
   (-1 "TARGET_SSE2 && !TARGET_XOP
    && ix86_binary_operator_ok (EQ, V4SImode, operands)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
   (-1 "(!TARGET_X32) && (Pmode == DImode)")
-  (-1 "(TARGET_CMOVE) && (TARGET_64BIT)")
+  (0 "(TARGET_CMOVE) && (TARGET_64BIT)")
   (-1 "(reload_completed && ix86_avoid_lea_for_add (insn, operands)) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE4_1) && (TARGET_AVX512F)")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MULT, V4DFmode, operands) && 1 && 1) && (TARGET_AVX)")
   (-1 "(TARGET_AVX512VL) && (TARGET_SSE2)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE4_1 && TARGET_AVX512BW && TARGET_AVX512VL)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
    && ix86_binary_operator_ok (XOR, SImode, operands)")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512F && (V2DFmode == V16SFmode
 							      || V2DFmode == V8DFmode
@@ -2372,7 +2372,7 @@
 									      || V8SFmode == V8DFmode
 									      || V8SFmode == V8DImode
 									      || V8SFmode == V16SImode)) && (TARGET_AVX512VL)))")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCZmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCZmode)
    && ix86_binary_operator_ok (PLUS, SImode, operands)")
   (-1 "TARGET_SSE && 1
    && ix86_binary_operator_ok (XOR, V4SFmode, operands)")
@@ -2419,7 +2419,7 @@
       == -(unsigned HOST_WIDE_INT) INTVAL (operands[3])
    && !reg_overlap_mentioned_p (operands[0], operands[1])")
   (-1 "!TARGET_CMOVE")
-  (-1 "TARGET_64BIT && TARGET_FSGSBASE")
+  (0 "TARGET_64BIT && TARGET_FSGSBASE")
   (-1 "REGNO (operands[1]) != REGNO (operands[2])
    && peep2_reg_dead_p (2, operands[1])
    && peep2_reg_dead_p (4, operands[2])
@@ -2436,7 +2436,7 @@
     && (!TARGET_PARTIAL_REG_STALL || optimize_function_for_size_p (cfun))
     && !(INTVAL (operands[2]) & ~(255 << 8))
     && GET_MODE (operands[0]) != QImode")
-  (-1 "(TARGET_64BIT && !TARGET_PARTIAL_REG_STALL) && ( reload_completed)")
+  (0 "(TARGET_64BIT && !TARGET_PARTIAL_REG_STALL) && ( reload_completed)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (PLUS, V2DFmode, operands) && 1 && (V2DFmode == V16SFmode
 							      || V2DFmode == V8DFmode
 							      || V2DFmode == V8DImode
@@ -2467,7 +2467,7 @@
 							      || V4SFmode == V8DFmode
 							      || V4SFmode == V8DImode
 							      || V4SFmode == V16SImode)))")
-  (-1 "TARGET_64BIT && TARGET_FXSR")
+  (0 "TARGET_64BIT && TARGET_FXSR")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512DQ) && (TARGET_SSE2))")
   (-1 "(TARGET_SSE) && (TARGET_SSE2)")
   (-1 "(TARGET_AVX && 1
@@ -2487,14 +2487,14 @@
    && GET_MODE (operands[0]) == GET_MODE (operands[3])) && ( reload_completed)")
   (-1 "(TARGET_BMI2 && reload_completed
   && true_regnum (operands[1]) == DX_REG) && (!TARGET_64BIT)")
-  (-1 "TARGET_64BIT && TARGET_SSE")
+  (0 "TARGET_64BIT && TARGET_SSE")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE && ix86_binary_operator_ok (AND, V8HImode, operands))")
   (-1 "TARGET_MMX && ix86_binary_operator_ok (US_PLUS, V4HImode, operands)")
   (-1 "ix86_match_ccmode (insn, CCNOmode)
    && ix86_binary_operator_ok (IOR, SImode, operands)")
   (-1 "TARGET_AVX512VBMI && 1")
-  (-1 "(TARGET_BMI2 && reload_completed) && (TARGET_64BIT)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (PLUS, SImode, operands)")
+  (0 "(TARGET_BMI2 && reload_completed) && (TARGET_64BIT)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (PLUS, SImode, operands)")
   (-1 "TARGET_MIX_SSE_I387")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_PLUS, V8HImode, operands))")
@@ -2589,12 +2589,12 @@
   (-1 "(TARGET_AVX512F && ix86_binary_operator_ok (UMIN, V4SImode, operands)) && (TARGET_AVX512VL)")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (AND, V8SImode, operands)) && (TARGET_AVX)")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (XOR, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (XOR, SImode, operands)")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (AND, V2DFmode, operands)) && (TARGET_SSE2)")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (XOR, V2DFmode, operands)) && (TARGET_SSE2)")
-  (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F && TARGET_64BIT) && (TARGET_SSE2))")
+  (0 "(TARGET_AVX512F) && ((TARGET_AVX512F && TARGET_64BIT) && (TARGET_SSE2))")
   (-1 "ix86_binary_operator_ok (AND, QImode, operands)")
   (-1 "TARGET_AVX512F
    && (GET_MODE_NUNITS (V8DImode)
@@ -2655,8 +2655,8 @@
 							      || DFmode == V8DFmode
 							      || DFmode == V8DImode
 							      || DFmode == V16SImode))")
-  (-1 "(TARGET_64BIT && TARGET_SSE2) && (TARGET_AVX2)")
-  (-1 "(TARGET_80387 || (SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH)) && (TARGET_64BIT)")
+  (0 "(TARGET_64BIT && TARGET_SSE2) && (TARGET_AVX2)")
+  (0 "(TARGET_80387 || (SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH)) && (TARGET_64BIT)")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512DQ && (V2DFmode == V16SFmode
 									      || V2DFmode == V8DFmode
 									      || V2DFmode == V8DImode
@@ -2672,9 +2672,9 @@
        == GET_MODE_NUNITS (V8HImode))")
   (0 "(TARGET_AVX512F) && ((TARGET_AVX512F && (V2DFmode == V4SFmode)) && (TARGET_SSE2))")
   (-1 "TARGET_AVX2 && ix86_binary_operator_ok (EQ, V32QImode, operands)")
-  (-1 "TARGET_64BIT && TARGET_BMI2 && reload_completed")
+  (0 "TARGET_64BIT && TARGET_BMI2 && reload_completed")
   (-1 "ix86_unary_operator_ok (NOT, HImode, operands)")
-  (-1 "(IN_RANGE (INTVAL (operands[3]), 2, HOST_WIDE_INT_UC (0x80000000))
+  (0 "(IN_RANGE (INTVAL (operands[3]), 2, HOST_WIDE_INT_UC (0x80000000))
    && (UINTVAL (operands[3]) & (UINTVAL (operands[3]) - 1)) == 0) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (64 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_MINUS, V32HImode, operands)) && (TARGET_AVX512BW))")
@@ -2693,12 +2693,12 @@
   (-1 "TARGET_SSE2 && !TARGET_XOP
    && ix86_binary_operator_ok (EQ, V16QImode, operands)")
   (-1 "(ix86_binary_operator_ok (PLUS, TImode, operands)) && (TARGET_64BIT)")
-  (-1 "(SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH) && (TARGET_64BIT)")
+  (0 "(SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH) && (TARGET_64BIT)")
   (-1 "TARGET_3DNOW && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
   (-1 "!TARGET_64BIT && SIBLING_CALL_P (peep2_next_insn (2))
    && !reg_mentioned_p (operands[0],
 			CALL_INSN_FUNCTION_USAGE (peep2_next_insn (2)))")
-  (-1 "TARGET_64BIT && (TARGET_USE_BT || reload_completed)")
+  (0 "TARGET_64BIT && (TARGET_USE_BT || reload_completed)")
   (-1 "(!TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVEC)")
   (-1 "TARGET_SSE4_1 && ix86_binary_operator_ok (MULT, V4SImode, operands) && 1")
   (-1 "TARGET_ZERO_EXTEND_WITH_AND && optimize_function_for_speed_p (cfun)")
@@ -2886,7 +2886,7 @@
   (-1 "TARGET_AVX512F
    && (GET_MODE_NUNITS (V32HImode)
        == GET_MODE_NUNITS (V8DFmode))")
-  (-1 "TARGET_64BIT && INTVAL (operands[2]) == 31
+  (0 "TARGET_64BIT && INTVAL (operands[2]) == 31
    && (TARGET_USE_CLTD || optimize_function_for_size_p (cfun))
    && ix86_binary_operator_ok (ASHIFTRT, SImode, operands)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (SMAX, V16SImode, operands)")
@@ -2967,7 +2967,7 @@
    && ((TARGET_80387 && X87_ENABLE_FLOAT (XFmode, DImode)
 	&& TARGET_SSE2 && TARGET_INTER_UNIT_MOVES_TO_VEC)
        || (SSE_FLOAT_MODE_P (XFmode) && TARGET_SSE_MATH))")
-  (-1 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVES)")
+  (0 "(TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVES)")
   (-1 "TARGET_SSE2
    && (GET_MODE_NUNITS (V4SImode)
        == GET_MODE_NUNITS (V16QImode))")
@@ -2979,7 +2979,7 @@
        && HImode != HImode 
        && ((HImode != DImode) || TARGET_64BIT)
        && !flag_trapping_math && !flag_rounding_math)")
-  (-1 "TARGET_64BIT && ix86_unary_operator_ok (NEG, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_unary_operator_ok (NEG, SImode, operands)")
   (-1 "TARGET_AVX2 && ix86_binary_operator_ok (MULT, V16HImode, operands)")
   (-1 "reload_completed
    && operands[1] == constm1_rtx")
@@ -3001,7 +3001,7 @@
    && (16 == 64 || TARGET_AVX512VL)
    && ix86_binary_operator_ok (UMAX, V8HImode, operands))")
   (-1 "(TARGET_SSE3) && (Pmode == SImode)")
-  (-1 "TARGET_64BIT && !symbolic_operand (operands[1], DImode)
+  (0 "TARGET_64BIT && !symbolic_operand (operands[1], DImode)
    && !x86_64_immediate_operand (operands[1], DImode)")
   (-1 "TARGET_USE_FANCY_MATH_387
    || (SSE_FLOAT_MODE_P (DFmode) && TARGET_SSE_MATH)")
@@ -3066,7 +3066,7 @@
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (XOR, V4DImode, operands)) && (TARGET_AVX)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (XOR, V8DFmode, operands)")
-  (-1 "TARGET_64BIT && TARGET_SSE2")
+  (0 "TARGET_64BIT && TARGET_SSE2")
   (-1 "TARGET_XOP")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F
    && (64 == 64 || TARGET_AVX512VL)
@@ -3077,7 +3077,7 @@
   (-1 "(TARGET_SSE2 && 1 && 1
    && ix86_binary_operator_ok (US_PLUS, V64QImode, operands)) && (TARGET_AVX512BW)")
   (-1 "TARGET_AVX512DQ && (INTVAL (operands[2]) == INTVAL (operands[3]) - 1)")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && ix86_match_ccmode
 	(insn,
 	 /* If we are going to emit andl instead of andq, and the operands[2]
@@ -3092,7 +3092,7 @@
    && ix86_binary_operator_ok (AND, DImode, operands)")
   (-1 "ix86_binary_operator_ok (IOR, SImode, operands)")
   (-1 "(TARGET_SSSE3 && 1 && 1) && (TARGET_AVX2)")
-  (-1 "(TARGET_SSE2) && (TARGET_64BIT)")
+  (0 "(TARGET_SSE2) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MULT, V16SFmode, operands) && 1 && 1) && (TARGET_AVX512F)")
   (-1 "TARGET_AES")
   (-1 "TARGET_AVX
@@ -3121,7 +3121,7 @@
        || GET_MODE (operands[3]) == VOIDmode)) && ( reload_completed)")
   (-1 "TARGET_QIMODE_MATH
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[CX_REG] || fixed_regs[SI_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == SImode)")
   (-1 "TARGET_MPX")
@@ -3145,7 +3145,7 @@
    && 1 && 1) && (TARGET_AVX)")
   (-1 "TARGET_SSSE3 && ix86_binary_operator_ok (MULT, V4HImode, operands)")
   (-1 "TARGET_80387 || (SSE_FLOAT_MODE_P (XFmode) && TARGET_SSE_MATH)")
-  (-1 "TARGET_SSE2 && TARGET_64BIT")
+  (0 "TARGET_SSE2 && TARGET_64BIT")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_MINUS, V16QImode, operands))")
   (-1 "reload_completed
@@ -3239,7 +3239,7 @@
    && (16 == 64 || TARGET_AVX512VL)
    && ix86_binary_operator_ok (SMAX, V4SImode, operands))")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MINUS, V2DFmode, operands) && 1 && 1) && (TARGET_SSE2)")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[CX_REG] || fixed_regs[SI_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == DImode)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE4_1
@@ -3344,7 +3344,7 @@
   (-1 "TARGET_AVX
    && (GET_MODE_NUNITS (V8SImode)
        == GET_MODE_NUNITS (V8SFmode))")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && (optimize_function_for_size_p (cfun)
        || !TARGET_PARTIAL_FLAG_REG_STALL
        || (operands[2] == const1_rtx
@@ -3388,7 +3388,7 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MINUS, V2DFmode, operands) && (16 == 64 || TARGET_AVX512VL) && 1) && (TARGET_SSE2))")
   (-1 "(! TARGET_PARTIAL_REG_STALL || optimize_function_for_size_p (cfun))
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCGOCmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCGOCmode)
    && ix86_binary_operator_ok (PLUS, SImode, operands)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2
    && ix86_binary_operator_ok (MINUS, V32HImode, operands)) && (TARGET_AVX512BW))")
@@ -3530,7 +3530,7 @@
   (-1 "(TARGET_BMI2 && reload_completed
   && true_regnum (operands[1]) == DX_REG) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE2) && (TARGET_AVX)")
-  (-1 "((TARGET_64BIT) && (Pmode == DImode)) && ( 1)")
+  (0 "((TARGET_64BIT) && (Pmode == DImode)) && ( 1)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && TARGET_AVX512VL) && (TARGET_AVX))")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F) && (TARGET_AVX512ER))")
   (-1 "TARGET_CMOVE && !TARGET_PARTIAL_REG_STALL")
@@ -3602,7 +3602,7 @@
    && !satisfies_constraint_K (operands[2])) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F && ix86_binary_operator_ok (EQ, V2DImode, operands)) && (TARGET_AVX512VL))")
   (-1 "TARGET_CMOVE")
-  (-1 "TARGET_64BIT && ix86_binary_operator_ok (LSHIFTRT, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_binary_operator_ok (LSHIFTRT, SImode, operands)")
   (-1 "!TARGET_64BIT && reload_completed
    && !(MMX_REG_P (operands[0]) || SSE_REG_P (operands[0]))
    && true_regnum (operands[0]) == true_regnum (operands[1])")
@@ -3622,7 +3622,7 @@
    && INTVAL (operands[0]) == 2*GET_MODE_SIZE (word_mode)) && (((((((((((word_mode == DImode) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (word_mode == DImode)) && (Pmode == SImode)) && (Pmode == SImode)) && (word_mode == DImode)) && (Pmode == SImode)) && (Pmode == SImode))")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F && ix86_binary_operator_ok (UMIN, V4DImode, operands)) && (TARGET_AVX512VL))")
   (-1 "reload_completed")
-  (-1 "(TARGET_AVX512F && TARGET_64BIT) && (TARGET_SSE2)")
+  (0 "(TARGET_AVX512F && TARGET_64BIT) && (TARGET_SSE2)")
   (-1 "(TARGET_SSE
    && (GET_MODE_NUNITS (V4SImode)
        == GET_MODE_NUNITS (V2DFmode))) && (TARGET_SSE2)")
@@ -3640,7 +3640,7 @@
    && ix86_binary_operator_ok (PLUS, V16SImode, operands)")
   (-1 "(TARGET_SSE3) && (Pmode == DImode)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && (32 == 64 || TARGET_AVX512VL) && 1) && (TARGET_AVX))")
-  (-1 "TARGET_64BIT && !TARGET_OPT_AGU
+  (0 "TARGET_64BIT && !TARGET_OPT_AGU
    && REGNO (operands[0]) == REGNO (operands[1])
    && peep2_regno_dead_p (0, FLAGS_REG)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && ix86_binary_operator_ok (UMAX, V16SImode, operands))")
@@ -3687,7 +3687,7 @@
   (-1 "TARGET_80387 && X87_ENABLE_ARITH (DFmode)
    && COMMUTATIVE_ARITH_P (operands[3])
    && !(MEM_P (operands[1]) && MEM_P (operands[2]))")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[AX_REG] || fixed_regs[CX_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == SImode)")
   (-1 "TARGET_80387 || SSE_FLOAT_MODE_P (DFmode)")
@@ -3745,14 +3745,14 @@
 									      || V4SFmode == V8DFmode
 									      || V4SFmode == V8DImode
 									      || V4SFmode == V16SImode)))")
-  (-1 "((IN_RANGE (INTVAL (operands[3]), 2, HOST_WIDE_INT_UC (0x80000000))
+  (0 "((IN_RANGE (INTVAL (operands[3]), 2, HOST_WIDE_INT_UC (0x80000000))
    && (UINTVAL (operands[3]) & (UINTVAL (operands[3]) - 1)) == 0) && (TARGET_64BIT)) && ( 1)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE && (16 == 64 || TARGET_AVX512VL) && 1)")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F && (V16SFmode == V16SFmode
 							      || V16SFmode == V8DFmode
 							      || V16SFmode == V8DImode
 							      || V16SFmode == V16SImode))")
-  (-1 "(SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH) && (TARGET_64BIT)")
+  (0 "(SSE_FLOAT_MODE_P (SFmode) && TARGET_SSE_MATH) && (TARGET_64BIT)")
   (-1 "TARGET_MMX || (TARGET_SSE2 && V8QImode == V1DImode)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMIN, V2DFmode, operands)
    && 1 && (V2DFmode == V16SFmode
@@ -3774,7 +3774,7 @@
 	&& TARGET_SHIFT1))
    && ix86_match_ccmode (insn, CCGOCmode)
    && ix86_binary_operator_ok (ASHIFTRT, QImode, operands)")
-  (-1 "!TARGET_64BIT")
+  (1 "!TARGET_64BIT")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && (64 == 64 || TARGET_AVX512VL)
    && ix86_binary_operator_ok (AND, V8DImode, operands)) && (TARGET_AVX512F))")
   (-1 "(!TARGET_64BIT && TARGET_STV && TARGET_SSE2
@@ -3786,7 +3786,7 @@
    && (!(SSE_FLOAT_MODE_P (XFmode) && TARGET_SSE_MATH)
        || TARGET_MIX_SSE_I387)")
   (-1 "TARGET_MMX && ix86_binary_operator_ok (US_MINUS, V4HImode, operands)")
-  (-1 "TARGET_AVX512F && TARGET_64BIT")
+  (0 "TARGET_AVX512F && TARGET_64BIT")
   (-1 "(TARGET_SSE4A) && (TARGET_SSE2)")
   (-1 "TARGET_AVX512F && ix86_binary_operator_ok (AND, V8DFmode, operands)")
   (-1 "TARGET_AVX || (TARGET_AVX512VL && TARGET_AVX512F)")
@@ -3858,7 +3858,7 @@
    && (GET_MODE_NUNITS (V2DImode)
        == GET_MODE_NUNITS (V4SFmode))")
   (-1 "TARGET_CLWB")
-  (-1 "(TARGET_64BIT
+  (0 "(TARGET_64BIT
    && !(fixed_regs[SI_REG] || fixed_regs[DI_REG])
    && ix86_check_no_addr_space (insn)) && (Pmode == SImode)")
   (-1 "(TARGET_POPCNT
@@ -3878,7 +3878,7 @@
    && ix86_binary_operator_ok (PLUS, V2SImode, operands)")
   (-1 "(ix86_binary_operator_ok (PLUS, DImode, operands)) && (!TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL))")
-  (-1 "TARGET_64BIT
+  (0 "TARGET_64BIT
    && reload_completed && ix86_avoid_lea_for_add (insn, operands)")
   (-1 "(X87_FLOAT_MODE_P (GET_MODE (operands[1]))
    && TARGET_FISTTP
@@ -3903,7 +3903,7 @@
   (-1 "(TARGET_SSE2 && 1 && 1) && (TARGET_AVX2)")
   (-1 "ix86_match_ccmode (insn, CCmode)
    && ix86_binary_operator_ok (MINUS, QImode, operands)")
-  (-1 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
+  (0 "TARGET_64BIT && ix86_match_ccmode (insn, CCNOmode)
    && ix86_unary_operator_ok (NOT, SImode, operands)")
   (-1 "ix86_match_ccmode (insn, CCGOCmode)")
   (-1 "(ix86_match_ccmode (insn, CCGOCmode)
@@ -4022,7 +4022,7 @@
    && !(SSE_FLOAT_MODE_P (XFmode) && (!TARGET_FISTTP || TARGET_SSE_MATH))")
   (-1 "(TARGET_SSE && 1) && (TARGET_AVX512F)")
   (-1 "(TARGET_SSE && reload_completed) && (Pmode == SImode)")
-  (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && TARGET_64BIT)")
+  (0 "(TARGET_AVX512F) && (TARGET_SSE2 && TARGET_64BIT)")
   (-1 "(TARGET_SSE2 && 1 && 1
    && ix86_binary_operator_ok (PLUS, V32QImode, operands)) && (TARGET_AVX2)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE) && (TARGET_SSE2))")
@@ -4031,7 +4031,7 @@
 							      || V16SFmode == V8DImode
 							      || V16SFmode == V16SImode)) && (TARGET_AVX512F)))")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (MULT, V8DFmode, operands) && 1 && 1) && (TARGET_AVX512F)")
-  (-1 "(TARGET_BMI2) && (TARGET_64BIT)")
+  (0 "(TARGET_BMI2) && (TARGET_64BIT)")
   (-1 "REGNO (operands[1]) == REGNO (operands[3])
    && ! reg_overlap_mentioned_p (operands[3], operands[0])")
   (-1 "word_mode == SImode")
@@ -4100,7 +4100,7 @@
   (-1 "TARGET_AVOID_VECTOR_DECODE
    && SSE_FLOAT_MODE_P (SFmode)
    && optimize_insn_for_speed_p ()")
-  (-1 "(TARGET_MOVBE
+  (0 "(TARGET_MOVBE
    && !(MEM_P (operands[0]) && MEM_P (operands[1]))) && (TARGET_64BIT)")
   (-1 "(TARGET_SSE2
    && (GET_MODE_NUNITS (V2DFmode)
@@ -4173,14 +4173,14 @@
 									      || V2DFmode == V8DImode
 									      || V2DFmode == V16SImode)) && (TARGET_SSE2))")
   (-1 "TARGET_AVX512F && 1 && 1")
-  (-1 "((TARGET_64BIT) && (Pmode == SImode)) && ( 1)")
+  (0 "((TARGET_64BIT) && (Pmode == SImode)) && ( 1)")
   (-1 "TARGET_80387
    && (TARGET_USE_SIMODE_FIOP
        || optimize_function_for_size_p (cfun))")
   (-1 "((optimize_insn_for_size_p () || TARGET_MOVE_M1_VIA_OR)
    && GENERAL_REGNO_P (REGNO (operands[0]))
    && peep2_regno_dead_p (0, FLAGS_REG)) && (TARGET_64BIT)")
-  (-1 "TARGET_64BIT && ix86_cmodel == CM_LARGE_PIC && !TARGET_PECOFF
+  (0 "TARGET_64BIT && ix86_cmodel == CM_LARGE_PIC && !TARGET_PECOFF
    && GET_CODE (operands[3]) == CONST
    && GET_CODE (XEXP (operands[3], 0)) == UNSPEC
    && XINT (XEXP (operands[3], 0), 1) == UNSPEC_PLTOFF")
@@ -4294,7 +4294,7 @@
   (-1 "REGNO (operands[0]) != REGNO (operands[1])")
   (-1 "ix86_binary_operator_ok (LSHIFTRT, QImode, operands)")
   (-1 "ix86_unary_operator_ok (NEG, QImode, operands)")
-  (-1 "TARGET_64BIT && ix86_unary_operator_ok (NOT, SImode, operands)")
+  (0 "TARGET_64BIT && ix86_unary_operator_ok (NOT, SImode, operands)")
   (-1 "TARGET_SSE || TARGET_3DNOW_A")
   (-1 "(TARGET_SSE
    && (register_operand (operands[0], V8SFmode)
@@ -4326,7 +4326,7 @@
   (-1 "TARGET_AVX
    && (GET_MODE_NUNITS (V4DFmode)
        == GET_MODE_NUNITS (V8SFmode))")
-  (-1 "(reload_completed) && (TARGET_64BIT)")
+  (0 "(reload_completed) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2
    && ix86_binary_operator_ok (PLUS, V2DImode, operands))")
   (-1 "(TARGET_AVX512F) && (TARGET_AVX512F
@@ -4351,7 +4351,7 @@
    && COMMUTATIVE_ARITH_P (operands[3])")
   (-1 "TARGET_AVX512F
    && ix86_binary_operator_ok (MINUS, V16SImode, operands)")
-  (-1 "(TARGET_CMPXCHG) && (TARGET_64BIT && TARGET_CMPXCHG16B)")
+  (0 "(TARGET_CMPXCHG) && (TARGET_64BIT && TARGET_CMPXCHG16B)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (64 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (SS_PLUS, V64QImode, operands)) && (TARGET_AVX512BW))")
   (-1 "((TARGET_READ_MODIFY_WRITE || optimize_insn_for_size_p ())
@@ -4367,11 +4367,11 @@
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (IOR, V64QImode, operands)) && (TARGET_AVX512F)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (32 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (US_PLUS, V32QImode, operands)) && (TARGET_AVX2))")
-  (-1 "(TARGET_64BIT || TARGET_KEEPS_VECTOR_ALIGNED_STACK)
+  (0 "(TARGET_64BIT || TARGET_KEEPS_VECTOR_ALIGNED_STACK)
    && TARGET_SSE2 && TARGET_SSE_MATH")
-  (-1 "TARGET_64BIT && TARGET_GNU2_TLS")
+  (0 "TARGET_64BIT && TARGET_GNU2_TLS")
   (-1 "(TARGET_XOP) && (TARGET_SSE2)")
-  (-1 "(TARGET_SSE) && (TARGET_SSE2 && TARGET_64BIT)")
+  (0 "(TARGET_SSE) && (TARGET_SSE2 && TARGET_64BIT)")
   (-1 "TARGET_SAHF")
   (-1 "TARGET_SSE
    && (GET_MODE_NUNITS (V16QImode)
@@ -4379,7 +4379,7 @@
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512F && ix86_binary_operator_ok (SMIN, V4SImode, operands)) && (TARGET_AVX512VL))")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (IOR, V4DImode, operands)) && (TARGET_AVX)")
-  (-1 "(TARGET_64BIT && TARGET_SSE) && (TARGET_AVX)")
+  (0 "(TARGET_64BIT && TARGET_SSE) && (TARGET_AVX)")
   (-1 "(TARGET_AVX512F
    && (GET_MODE_NUNITS (V64QImode)
        == GET_MODE_NUNITS (V64QImode))) && (TARGET_AVX512BW)")
@@ -4388,7 +4388,7 @@
        || register_operand (operands[1], V4DImode))) && (TARGET_AVX)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (32 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
    && ix86_binary_operator_ok (US_MINUS, V32QImode, operands)) && (TARGET_AVX2))")
-  (-1 "TARGET_64BIT && TARGET_XSAVE")
+  (0 "TARGET_64BIT && TARGET_XSAVE")
   (-1 "!TARGET_SEH && !ix86_static_chain_on_stack")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX512DQ && (32 == 64 || TARGET_AVX512VL)) && (TARGET_AVX))")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && (16 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW
@@ -4410,17 +4410,17 @@
   (-1 "(!TARGET_64BIT && TARGET_XSAVE) && (TARGET_XSAVES)")
   (-1 "(TARGET_SSE2 && 1 && 1
    && ix86_binary_operator_ok (US_MINUS, V32QImode, operands)) && (TARGET_AVX2)")
-  (-1 "(TARGET_BMI && !TARGET_AVOID_FALSE_DEP_FOR_BMI) && (TARGET_64BIT)")
+  (0 "(TARGET_BMI && !TARGET_AVOID_FALSE_DEP_FOR_BMI) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_AVX && (32 == 64 || TARGET_AVX512VL)) && (TARGET_AVX))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE2 && (64 == 64 || TARGET_AVX512VL) && TARGET_AVX512BW) && (TARGET_AVX512BW))")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (MINUS, V8DFmode, operands) && 1 && (V8DFmode == V16SFmode
 							      || V8DFmode == V8DFmode
 							      || V8DFmode == V8DImode
 							      || V8DFmode == V16SImode)) && (TARGET_AVX512F))")
-  (-1 "(TARGET_AVX512F) && (TARGET_SSE && TARGET_64BIT)")
+  (0 "(TARGET_AVX512F) && (TARGET_SSE && TARGET_64BIT)")
   (-1 "(TARGET_SSE && ix86_binary_operator_ok (SMIN, V2DFmode, operands)
    && 1 && 1) && (TARGET_SSE2)")
-  (-1 "(TARGET_64BIT) && (Pmode == DImode)")
+  (0 "(TARGET_64BIT) && (Pmode == DImode)")
   (-1 "TARGET_RDSEED")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && (32 == 64 || TARGET_AVX512VL)
    && ix86_binary_operator_ok (IOR, V4DImode, operands)) && (TARGET_AVX))")
@@ -4469,14 +4469,14 @@
    && ix86_binary_operator_ok (PLUS, V4DImode, operands)) && (TARGET_AVX512VL)")
   (-1 "(TARGET_SSE && 1
    && ix86_binary_operator_ok (AND, V4DFmode, operands)) && (TARGET_AVX)")
-  (-1 "(TARGET_64BIT) && (Pmode == SImode)")
+  (0 "(TARGET_64BIT) && (Pmode == SImode)")
   (-1 "(TARGET_MMX || (TARGET_SSE2 && V1DImode == V1DImode))
    && ix86_binary_operator_ok (PLUS, V1DImode, operands)")
   (-1 "TARGET_SSE2 && ix86_vec_interleave_v2df_operator_ok (operands, 0)")
   (-1 "(TARGET_SSE2) && (Pmode == SImode)")
   (-1 "(TARGET_AVX512F) && (TARGET_SSE2 && TARGET_AVX512VL && TARGET_AVX512BW)")
   (-1 "TARGET_SSE2 && 1 && 1")
-  (-1 "(reload_completed
+  (0 "(reload_completed
    && operands[1] == constm1_rtx) && (TARGET_64BIT)")
   (-1 "(TARGET_AVX512F) && ((TARGET_SSE && ix86_binary_operator_ok (SMIN, V16SFmode, operands)
    && 1 && (V16SFmode == V16SFmode
@@ -4529,7 +4529,7 @@
 									      || V2DFmode == V8DImode
 									      || V2DFmode == V16SImode)) && (TARGET_AVX512VL))")
   (-1 "ix86_unary_operator_ok (NEG, SImode, operands)")
-  (-1 "TARGET_64BIT && TARGET_BMI2")
+  (0 "TARGET_64BIT && TARGET_BMI2")
   (-1 "TARGET_AVX512F && reload_completed")
   (-1 "TARGET_SSE || TARGET_3DNOW")
   (-1 "(TARGET_SSE

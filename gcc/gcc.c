@@ -3080,8 +3080,8 @@ execute (void)
 
     /* Run each piped subprocess.  */
 
-    LOGV("progname:%s", progname);
-    LOGV("temp_filename:%s", temp_filename);
+    //LOGV("progname:%s", progname);
+    //LOGV("temp_filename:%s", temp_filename);
     pex = pex_init (PEX_USE_PIPES | ((report_times || report_times_to_file)
                                      ? PEX_RECORD_TIMES : 0),
                     progname, temp_filename);
@@ -3095,7 +3095,7 @@ execute (void)
         const char *string = commands[i].argv[0];
 
 
-        LOGV("string:%s", string);
+        //LOGV("string:%s", string);
         errmsg = pex_run (pex,
                           ((i + 1 == n_commands ? PEX_LAST : 0)
                            | (string == commands[i].prog ? PEX_SEARCH : 0)),

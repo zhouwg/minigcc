@@ -29,7 +29,7 @@ gimple_power_of_two_cand (tree t, tree *res_ops, tree (*valueize)(tree))
 			    case INTEGER_CST:
 			      {
 				{
-/* #line 323 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 323 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 				  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:323, %s:%d\n", __FILE__, __LINE__);
 				  res_ops[0] = captures[0];
@@ -50,7 +50,7 @@ gimple_power_of_two_cand (tree t, tree *res_ops, tree (*valueize)(tree))
     case INTEGER_CST:
       {
 	{
-/* #line 321 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 321 "match.pd" */
 	  tree captures[1] ATTRIBUTE_UNUSED = { t };
 	  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:321, %s:%d\n", __FILE__, __LINE__);
 	  res_ops[0] = captures[0];
@@ -82,9 +82,9 @@ gimple_negate_expr_p (tree t, tree (*valueize)(tree))
 		  if ((op0 = do_valueize (valueize, op0)))
 		    {
 		      {
-/* #line 704 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 704 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 704 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 704 "match.pd" */
 			if (!TYPE_OVERFLOW_SANITIZED (type))
 			  {
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:703, %s:%d\n", __FILE__, __LINE__);
@@ -101,8 +101,8 @@ gimple_negate_expr_p (tree t, tree (*valueize)(tree))
     case INTEGER_CST:
       {
 	{
-/* #line 696 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
-/* #line 696 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 696 "match.pd" */
+/* #line 696 "match.pd" */
 	  if ((INTEGRAL_TYPE_P (type) && TYPE_OVERFLOW_WRAPS (type)) || (!TYPE_OVERFLOW_SANITIZED (type) && may_negate_without_overflow_p (t)))
 	    {
 	      if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:695, %s:%d\n", __FILE__, __LINE__);
@@ -114,7 +114,7 @@ gimple_negate_expr_p (tree t, tree (*valueize)(tree))
     case FIXED_CST:
       {
 	{
-/* #line 701 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 701 "match.pd" */
 	  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:701, %s:%d\n", __FILE__, __LINE__);
 	  return true;
 	}
@@ -123,8 +123,8 @@ gimple_negate_expr_p (tree t, tree (*valueize)(tree))
     case REAL_CST:
       {
 	{
-/* #line 707 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
-/* #line 707 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 707 "match.pd" */
+/* #line 707 "match.pd" */
 	  if (REAL_VALUE_NEGATIVE (TREE_REAL_CST (t)))
 	    {
 	      if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:706, %s:%d\n", __FILE__, __LINE__);
@@ -136,8 +136,8 @@ gimple_negate_expr_p (tree t, tree (*valueize)(tree))
     case VECTOR_CST:
       {
 	{
-/* #line 712 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
-/* #line 712 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 712 "match.pd" */
+/* #line 712 "match.pd" */
 	  if (FLOAT_TYPE_P (TREE_TYPE (type)) || TYPE_OVERFLOW_WRAPS (type))
 	    {
 	      if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:711, %s:%d\n", __FILE__, __LINE__);
@@ -156,9 +156,9 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 {
   tree type = TREE_TYPE (t);
   {
-/* #line 798 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 798 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { t };
-/* #line 798 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 798 "match.pd" */
     if (INTEGRAL_TYPE_P (type) && TYPE_PRECISION (type) == 1)
       {
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:797, %s:%d\n", __FILE__, __LINE__);
@@ -183,7 +183,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -201,7 +201,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -221,7 +221,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -241,7 +241,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -259,7 +259,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -277,7 +277,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -297,7 +297,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -317,7 +317,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -335,7 +335,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -353,7 +353,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -371,7 +371,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -389,7 +389,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -409,7 +409,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -429,7 +429,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -449,7 +449,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -467,7 +467,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -487,7 +487,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -505,7 +505,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -525,7 +525,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 			  if (tree_swap_operands_p (op0, op1, false))
 			    std::swap (op0, op1);
 			  {
-/* #line 801 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 801 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:801, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -540,7 +540,7 @@ gimple_truth_valued_p (tree t, tree (*valueize)(tree))
 		  if ((op0 = do_valueize (valueize, op0)))
 		    {
 		      {
-/* #line 803 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 803 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:803, %s:%d\n", __FILE__, __LINE__);
 			return true;
@@ -576,7 +576,7 @@ gimple_logical_inverted_value (tree t, tree *res_ops, tree (*valueize)(tree))
 		  if ((op0 = do_valueize (valueize, op0)))
 		    {
 		      {
-/* #line 805 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 805 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:805, %s:%d\n", __FILE__, __LINE__);
 			res_ops[0] = captures[0];
@@ -593,7 +593,7 @@ gimple_logical_inverted_value (tree t, tree *res_ops, tree (*valueize)(tree))
 		      if (gimple_truth_valued_p (op0, valueize))
 			{
 			  {
-/* #line 807 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 807 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:807, %s:%d\n", __FILE__, __LINE__);
 			    res_ops[0] = captures[0];
@@ -616,7 +616,7 @@ gimple_logical_inverted_value (tree t, tree *res_ops, tree (*valueize)(tree))
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 809 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 809 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:809, %s:%d\n", __FILE__, __LINE__);
 				res_ops[0] = captures[0];
@@ -642,7 +642,7 @@ gimple_logical_inverted_value (tree t, tree *res_ops, tree (*valueize)(tree))
 			      if (integer_truep (op1))
 				{
 				  {
-/* #line 811 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 811 "match.pd" */
 				    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:811, %s:%d\n", __FILE__, __LINE__);
 				    res_ops[0] = captures[0];
@@ -669,7 +669,7 @@ gimple_logical_inverted_value (tree t, tree *res_ops, tree (*valueize)(tree))
 			      if (integer_truep (op1))
 				{
 				  {
-/* #line 813 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 813 "match.pd" */
 				    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:813, %s:%d\n", __FILE__, __LINE__);
 				    res_ops[0] = captures[0];
@@ -726,7 +726,7 @@ gimple_compositional_complex (tree t, tree (*valueize)(tree))
 					  if ((o21 = do_valueize (valueize, o21)))
 					    {
 					      {
-/* #line 1620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1620 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 						if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1620, %s:%d\n", __FILE__, __LINE__);
 						return true;
@@ -753,7 +753,7 @@ gimple_compositional_complex (tree t, tree (*valueize)(tree))
 		      if ((op1 = do_valueize (valueize, op1)))
 		        {
 			  {
-/* #line 1620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1620 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1620, %s:%d\n", __FILE__, __LINE__);
 			    return true;
@@ -776,9 +776,9 @@ gimple_double_value_p (tree t, tree (*valueize)(tree))
 {
   tree type = TREE_TYPE (t);
   {
-/* #line 2785 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2785 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { t };
-/* #line 2785 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2785 "match.pd" */
     if (TYPE_MAIN_VARIANT (TREE_TYPE (captures[0])) == double_type_node)
       {
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2784, %s:%d\n", __FILE__, __LINE__);
@@ -793,9 +793,9 @@ gimple_float_value_p (tree t, tree (*valueize)(tree))
 {
   tree type = TREE_TYPE (t);
   {
-/* #line 2806 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2806 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { t };
-/* #line 2806 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2806 "match.pd" */
     if (TYPE_MAIN_VARIANT (TREE_TYPE (captures[0])) == float_type_node)
       {
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2805, %s:%d\n", __FILE__, __LINE__);
@@ -826,9 +826,9 @@ gimple_simplify_2 (code_helper *res_code, tree *res_ops,
 , combined_fn ARG_UNUSED (pows), combined_fn ARG_UNUSED (copysigns))
 {
   {
-/* #line 400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 400 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 401 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 401 "match.pd" */
       if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 	{
 	  gimple_seq *lseq = seq;
@@ -849,7 +849,7 @@ gimple_simplify_3 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 94 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 94 "match.pd" */
   if (fold_real_zero_addition_p (type, captures[1], 0))
     {
       gimple_seq *lseq = seq;
@@ -883,7 +883,7 @@ gimple_simplify_5 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -961,7 +961,7 @@ gimple_simplify_8 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (scmp))
 {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
   if (integer_zerop (captures[2]))
     {
       gimple_seq *lseq = seq;
@@ -974,10 +974,10 @@ gimple_simplify_8 (code_helper *res_code, tree *res_ops,
     }
   else
     {
-/* #line 1843 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1843 "match.pd" */
       if (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[1])) && single_use (captures[0]))
 	{
-/* #line 1847 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1847 "match.pd" */
 	  if (tree_int_cst_sgn (captures[2]) < 0)
 	    {
 	      gimple_seq *lseq = seq;
@@ -1009,16 +1009,16 @@ gimple_simplify_9 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2216 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2216 "match.pd" */
   if (SSA_NAME_IS_DEFAULT_DEF (captures[1]) && TREE_CODE (SSA_NAME_VAR (captures[1])) == PARM_DECL)
     {
       {
-/* #line 2218 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2218 "match.pd" */
  tree base = get_base_address (TREE_OPERAND (captures[0], 0));
-/* #line 2219 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2219 "match.pd" */
 	  if (TREE_CODE (base) == VAR_DECL && auto_var_in_fn_p (base, current_function_decl))
 	    {
-/* #line 2221 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2221 "match.pd" */
 	      if (cmp == NE_EXPR)
 		{
 		  gimple_seq *lseq = seq;
@@ -1073,7 +1073,7 @@ gimple_simplify_11 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
   if (single_use (captures[0]) && single_use (captures[2]))
     {
       gimple_seq *lseq = seq;
@@ -1093,7 +1093,7 @@ gimple_simplify_12 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2232 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])) && wi::bit_and_not (captures[2], captures[3]) != 0)
     {
       gimple_seq *lseq = seq;
@@ -1111,14 +1111,14 @@ gimple_simplify_13 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op))
 {
-/* #line 2998 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2998 "match.pd" */
   if (INTEGRAL_TYPE_P (type) && INTEGRAL_TYPE_P (TREE_TYPE (captures[2])) && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && (TYPE_PRECISION (TREE_TYPE (captures[2])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[2])))) && (TYPE_PRECISION (TREE_TYPE (captures[4])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[4])))) && TYPE_PRECISION (type) == GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_PRECISION (TREE_TYPE (captures[1])) > TYPE_PRECISION (TREE_TYPE (captures[2])) && types_match (captures[2], captures[4]) && (tree_int_cst_min_precision (captures[5], TYPE_SIGN (TREE_TYPE (captures[2]))) <= TYPE_PRECISION (TREE_TYPE (captures[2]))) && (wi::bit_and (captures[5], wi::mask (TYPE_PRECISION (TREE_TYPE (captures[2])), true, TYPE_PRECISION (type))) == 0))
     {
-/* #line 3018 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3018 "match.pd" */
       if (TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[2])))
 	{
 	  {
-/* #line 3019 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3019 "match.pd" */
  tree ntype = TREE_TYPE (captures[2]);
 	      gimple_seq *lseq = seq;
 	      if (lseq
@@ -1169,7 +1169,7 @@ gimple_simplify_13 (code_helper *res_code, tree *res_ops,
       else
 	{
 	  {
-/* #line 3021 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3021 "match.pd" */
  tree utype = unsigned_type_for (TREE_TYPE (captures[2]));
 	      gimple_seq *lseq = seq;
 	      if (lseq
@@ -1257,17 +1257,17 @@ gimple_simplify_14 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
   if (FLOAT_TYPE_P (TREE_TYPE (captures[1])) && (DECIMAL_FLOAT_TYPE_P (TREE_TYPE (captures[0])) == DECIMAL_FLOAT_TYPE_P (TREE_TYPE (captures[1]))) && (DECIMAL_FLOAT_TYPE_P (TREE_TYPE (captures[0])) == DECIMAL_FLOAT_TYPE_P (TREE_TYPE (captures[2]))))
     {
       {
-/* #line 1902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1902 "match.pd" */
  tree type1 = TREE_TYPE (captures[2]);
  if (TREE_CODE (captures[2]) == REAL_CST && !DECIMAL_FLOAT_TYPE_P (type1)) { REAL_VALUE_TYPE orig = TREE_REAL_CST (captures[2]);
  if (TYPE_PRECISION (type1) > TYPE_PRECISION (float_type_node) && exact_real_truncate (TYPE_MODE (float_type_node), &orig)) type1 = float_type_node;
  if (TYPE_PRECISION (type1) > TYPE_PRECISION (double_type_node) && exact_real_truncate (TYPE_MODE (double_type_node), &orig)) type1 = double_type_node;
  } tree newtype = (TYPE_PRECISION (TREE_TYPE (captures[1])) > TYPE_PRECISION (type1) ? TREE_TYPE (captures[1]) : type1);
-/* #line 1919 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1919 "match.pd" */
 	  if (TYPE_PRECISION (TREE_TYPE (captures[0])) > TYPE_PRECISION (newtype))
 	    {
 	      gimple_seq *lseq = seq;
@@ -1319,11 +1319,11 @@ gimple_simplify_15 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (ncmp))
 {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && (TYPE_PRECISION (TREE_TYPE (captures[1])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[1])))) && element_precision (captures[0]) >= element_precision (captures[1]) && wi::only_sign_bit_p (captures[2], element_precision (captures[1])))
     {
       {
-/* #line 2277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2277 "match.pd" */
  tree stype = signed_type_for (TREE_TYPE (captures[1]));
 	  gimple_seq *lseq = seq;
 	  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2278, %s:%d\n", __FILE__, __LINE__);
@@ -1372,7 +1372,7 @@ gimple_simplify_17 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 661 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -1416,7 +1416,7 @@ gimple_simplify_18 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (mod))
 {
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
   if ((TYPE_UNSIGNED (type) || tree_expr_nonnegative_p (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && integer_pow2p (captures[3]) && tree_int_cst_sgn (captures[3]) > 0)
     {
       gimple_seq *lseq = seq;
@@ -1477,7 +1477,7 @@ gimple_simplify_20 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -1536,7 +1536,7 @@ gimple_simplify_21 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (floors), combined_fn ARG_UNUSED (truncs))
 {
-/* #line 2775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2775 "match.pd" */
   if (canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -1570,7 +1570,7 @@ gimple_simplify_23 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (froms), combined_fn ARG_UNUSED (tos))
 {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
   if (optimize && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -1612,7 +1612,7 @@ gimple_simplify_25 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 845 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -1640,20 +1640,20 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
   if ((INTEGRAL_TYPE_P (TREE_TYPE (captures[2])) || POINTER_TYPE_P (TREE_TYPE (captures[2]))) && tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])))
     {
       {
-/* #line 2359 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2359 "match.pd" */
  tree arg1_type = TREE_TYPE (captures[2]);
  unsigned int prec = TYPE_PRECISION (arg1_type);
  wide_int max = wi::max_value (arg1_type);
  wide_int signed_max = wi::max_value (prec, SIGNED);
  wide_int min = wi::min_value (arg1_type);
-/* #line 2368 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2368 "match.pd" */
 	  if (wi::eq_p (captures[2], max))
 	    {
-/* #line 2370 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2370 "match.pd" */
 	      if (cmp == GT_EXPR)
 		{
 		  gimple_seq *lseq = seq;
@@ -1664,7 +1664,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2372 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2372 "match.pd" */
 		  if (cmp == GE_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -1677,7 +1677,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2374 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2374 "match.pd" */
 		      if (cmp == LE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -1688,7 +1688,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2376 "match.pd" */
 			  if (cmp == LT_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -1705,10 +1705,10 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2378 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2378 "match.pd" */
 	      if (wi::eq_p (captures[2], min))
 		{
-/* #line 2380 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2380 "match.pd" */
 		  if (cmp == LT_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -1719,7 +1719,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2382 "match.pd" */
 		      if (cmp == LE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -1732,7 +1732,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2384 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2384 "match.pd" */
 			  if (cmp == GE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -1743,7 +1743,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2386 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2386 "match.pd" */
 			      if (cmp == GT_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -1760,10 +1760,10 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2388 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2388 "match.pd" */
 		  if (wi::eq_p (captures[2], max - 1))
 		    {
-/* #line 2390 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2390 "match.pd" */
 		      if (cmp == GT_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -1776,7 +1776,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2392 "match.pd" */
 			  if (cmp == LE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -1791,10 +1791,10 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2394 "match.pd" */
 		      if (wi::eq_p (captures[2], min + 1))
 			{
-/* #line 2396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2396 "match.pd" */
 			  if (cmp == GE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -1807,7 +1807,7 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2398 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2398 "match.pd" */
 			      if (cmp == LT_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -1822,16 +1822,16 @@ gimple_simplify_26 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2400 "match.pd" */
 			  if (wi::eq_p (captures[2], signed_max) && TYPE_UNSIGNED (arg1_type) && prec == GET_MODE_PRECISION (TYPE_MODE (arg1_type)) && INTEGRAL_TYPE_P (arg1_type))
 			    {
-/* #line 2411 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2411 "match.pd" */
 			      if (cmp == LE_EXPR || cmp == GT_EXPR)
 				{
 				  {
-/* #line 2412 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2412 "match.pd" */
  tree st = signed_type_for (arg1_type);
-/* #line 2413 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2413 "match.pd" */
 				      if (cmp == LE_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -1968,7 +1968,7 @@ gimple_simplify_30 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (logs), combined_fn ARG_UNUSED (pows))
 {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
   if (flag_unsafe_math_optimizations)
     {
       gimple_seq *lseq = seq;
@@ -1997,7 +1997,7 @@ gimple_simplify_31 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op), enum tree_code ARG_UNUSED (ext))
 {
-/* #line 3031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3031 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -2031,7 +2031,7 @@ gimple_simplify_32 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 654 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 654 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -2081,11 +2081,11 @@ gimple_simplify_33 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])) && TYPE_PRECISION (type) <= HOST_BITS_PER_WIDE_INT && tree_fits_uhwi_p (captures[4]) && tree_to_uhwi (captures[4]) > 0 && tree_to_uhwi (captures[4]) < TYPE_PRECISION (type))
     {
       {
-/* #line 1323 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1323 "match.pd" */
  unsigned int shiftc = tree_to_uhwi (captures[4]);
  unsigned HOST_WIDE_INT mask = TREE_INT_CST_LOW (captures[5]);
  unsigned HOST_WIDE_INT newmask, zerobits = 0;
@@ -2102,7 +2102,7 @@ gimple_simplify_33 (code_helper *res_code, tree *res_ops,
  zerobits <<= prec - shiftc;
  } if (!TYPE_UNSIGNED (TREE_TYPE (captures[2])) && prec == TYPE_PRECISION (TREE_TYPE (captures[2]))) { if ((mask & zerobits) == 0) shift_type = unsigned_type_for (TREE_TYPE (captures[2]));
  else zerobits = 0;
- } }/* #line 1379 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ } }/* #line 1379 "match.pd" */
 	  if ((mask & zerobits) == mask)
 	    {
 	      gimple_seq *lseq = seq;
@@ -2118,26 +2118,26 @@ gimple_simplify_33 (code_helper *res_code, tree *res_ops,
 	  else
 	    {
 	      {
-/* #line 1381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1381 "match.pd" */
  newmask = mask | zerobits;
-/* #line 1382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1382 "match.pd" */
 		  if (newmask != mask && (newmask & (newmask + 1)) == 0)
 		    {
 		      {
-/* #line 1383 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1383 "match.pd" */
  for (prec = BITS_PER_UNIT;
  prec < HOST_BITS_PER_WIDE_INT;
  prec <<= 1) if (newmask == (((unsigned HOST_WIDE_INT) 1) << prec) - 1) break;
-/* #line 1392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1392 "match.pd" */
 			  if (prec < HOST_BITS_PER_WIDE_INT || newmask == ~(unsigned HOST_WIDE_INT) 0)
 			    {
 			      {
-/* #line 1394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1394 "match.pd" */
  tree newmaskt = build_int_cst_type (TREE_TYPE (captures[5]), newmask);
-/* #line 1396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1396 "match.pd" */
 				  if (!tree_int_cst_equal (newmaskt, captures[5]))
 				    {
-/* #line 1397 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1397 "match.pd" */
 				      if (shift_type != TREE_TYPE (captures[2]))
 					{
 					  gimple_seq *lseq = seq;
@@ -2224,7 +2224,7 @@ gimple_simplify_34 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op), enum tree_code ARG_UNUSED (rop))
 {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -2283,7 +2283,7 @@ gimple_simplify_35 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
   if (REAL_VALUE_ISNAN (TREE_REAL_CST (captures[1])) && (cmp != LTGT_EXPR || ! flag_trapping_math))
     {
       gimple_seq *lseq = seq;
@@ -2301,13 +2301,13 @@ gimple_simplify_36 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
-/* #line 1078 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1078 "match.pd" */
 	  if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -2343,7 +2343,7 @@ gimple_simplify_37 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op))
 {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && tree_nop_conversion_p (type, TREE_TYPE (captures[4])) && wi::bit_and (captures[2], captures[5]) == 0)
     {
       gimple_seq *lseq = seq;
@@ -2422,7 +2422,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (cmp))
 {
   {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
  HOST_WIDE_INT off0, off1;
  tree base0 = get_addr_base_and_unit_offset (TREE_OPERAND (captures[1], 0), &off0);
  tree base1 = get_addr_base_and_unit_offset (TREE_OPERAND (captures[2], 0), &off1);
@@ -2430,18 +2430,18 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
  base0 = TREE_OPERAND (base0, 0);
  } if (base1 && TREE_CODE (base1) == MEM_REF) { off1 += mem_ref_offset (base1).to_short_addr ();
  base1 = TREE_OPERAND (base1, 0);
- }/* #line 2303 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ }/* #line 2303 "match.pd" */
       if (base0 && base1)
 	{
 	  {
-/* #line 2304 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2304 "match.pd" */
  int equal = 2;
  if (decl_in_symtab_p (base0) && decl_in_symtab_p (base1)) equal = symtab_node::get_create (base0) ->equal_address_to (symtab_node::get_create (base1));
  else if ((DECL_P (base0) || TREE_CODE (base0) == SSA_NAME || TREE_CODE (base0) == STRING_CST) && (DECL_P (base1) || TREE_CODE (base1) == SSA_NAME || TREE_CODE (base1) == STRING_CST)) equal = (base0 == base1);
-/* #line 2319 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2319 "match.pd" */
 	      if (equal == 1 && (cmp == EQ_EXPR || cmp == NE_EXPR || off0 == off1 || POINTER_TYPE_OVERFLOW_UNDEFINED || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && (DECL_P (base0) || TREE_CODE (base0) == STRING_CST))))
 		{
-/* #line 2328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2328 "match.pd" */
 		  if (cmp == EQ_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -2452,7 +2452,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2330 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2330 "match.pd" */
 		      if (cmp == NE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -2463,7 +2463,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2332 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2332 "match.pd" */
 			  if (cmp == LT_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -2474,7 +2474,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2334 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2334 "match.pd" */
 			      if (cmp == LE_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -2485,7 +2485,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2336 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2336 "match.pd" */
 				  if (cmp == GE_EXPR)
 				    {
 				      gimple_seq *lseq = seq;
@@ -2496,7 +2496,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 				    }
 				  else
 				    {
-/* #line 2338 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2338 "match.pd" */
 				      if (cmp == GT_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -2513,10 +2513,10 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2340 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2340 "match.pd" */
 		  if (equal == 0 && DECL_P (base0) && DECL_P (base1) && (!INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || off0 == off1))
 		    {
-/* #line 2346 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2346 "match.pd" */
 		      if (cmp == EQ_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -2527,7 +2527,7 @@ gimple_simplify_40 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2348 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2348 "match.pd" */
 			  if (cmp == NE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -2551,10 +2551,10 @@ gimple_simplify_41 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
 	  gimple_seq *lseq = seq;
@@ -2601,7 +2601,7 @@ gimple_simplify_44 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 503 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 503 "match.pd" */
   if (TYPE_UNSIGNED (TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -2619,7 +2619,7 @@ gimple_simplify_45 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2250 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2250 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -2664,7 +2664,7 @@ gimple_simplify_46 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 724 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 724 "match.pd" */
   if (!HONOR_SIGN_DEPENDENT_ROUNDING (element_mode (type)) && !HONOR_SIGNED_ZEROS (element_mode (type)))
     {
       gimple_seq *lseq = seq;
@@ -2693,10 +2693,10 @@ gimple_simplify_47 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op))
 {
-/* #line 2968 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2968 "match.pd" */
   if (INTEGRAL_TYPE_P (type) && INTEGRAL_TYPE_P (TREE_TYPE (captures[2])) && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && (TYPE_PRECISION (TREE_TYPE (captures[2])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[2])))) && (TYPE_PRECISION (TREE_TYPE (captures[4])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[4])))) && TYPE_PRECISION (type) == GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_PRECISION (TREE_TYPE (captures[1])) > TYPE_PRECISION (TREE_TYPE (captures[2])) && types_match (captures[2], captures[4]) && types_match (captures[2], type))
     {
-/* #line 2985 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2985 "match.pd" */
       if (TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[2])))
 	{
 	  gimple_seq *lseq = seq;
@@ -2722,7 +2722,7 @@ gimple_simplify_47 (code_helper *res_code, tree *res_ops,
       else
 	{
 	  {
-/* #line 2987 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2987 "match.pd" */
  tree utype = unsigned_type_for (TREE_TYPE (captures[2]));
 	      gimple_seq *lseq = seq;
 	      if (lseq
@@ -2785,10 +2785,10 @@ gimple_simplify_48 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (POW))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
-/* #line 2706 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2706 "match.pd" */
       if (!TREE_OVERFLOW (captures[2]))
 	{
 	  gimple_seq *lseq = seq;
@@ -2822,7 +2822,7 @@ gimple_simplify_49 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 296 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 296 "match.pd" */
   if (INTEGRAL_TYPE_P (type) && !TYPE_UNSIGNED (type) && !TYPE_OVERFLOW_TRAPS (type) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && (expr_not_equal_to (captures[0], TYPE_MIN_VALUE (type)) || expr_not_equal_to (captures[1], wi::minus_one (TYPE_PRECISION (TREE_TYPE (captures[1]))))))
     {
       gimple_seq *lseq = seq;
@@ -2871,11 +2871,11 @@ gimple_simplify_51 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])) && TYPE_PRECISION (type) <= HOST_BITS_PER_WIDE_INT && tree_fits_uhwi_p (captures[4]) && tree_to_uhwi (captures[4]) > 0 && tree_to_uhwi (captures[4]) < TYPE_PRECISION (type))
     {
       {
-/* #line 1323 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1323 "match.pd" */
  unsigned int shiftc = tree_to_uhwi (captures[4]);
  unsigned HOST_WIDE_INT mask = TREE_INT_CST_LOW (captures[5]);
  unsigned HOST_WIDE_INT newmask, zerobits = 0;
@@ -2892,7 +2892,7 @@ gimple_simplify_51 (code_helper *res_code, tree *res_ops,
  zerobits <<= prec - shiftc;
  } if (!TYPE_UNSIGNED (TREE_TYPE (captures[2])) && prec == TYPE_PRECISION (TREE_TYPE (captures[2]))) { if ((mask & zerobits) == 0) shift_type = unsigned_type_for (TREE_TYPE (captures[2]));
  else zerobits = 0;
- } }/* #line 1379 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ } }/* #line 1379 "match.pd" */
 	  if ((mask & zerobits) == mask)
 	    {
 	      gimple_seq *lseq = seq;
@@ -2908,26 +2908,26 @@ gimple_simplify_51 (code_helper *res_code, tree *res_ops,
 	  else
 	    {
 	      {
-/* #line 1381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1381 "match.pd" */
  newmask = mask | zerobits;
-/* #line 1382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1382 "match.pd" */
 		  if (newmask != mask && (newmask & (newmask + 1)) == 0)
 		    {
 		      {
-/* #line 1383 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1383 "match.pd" */
  for (prec = BITS_PER_UNIT;
  prec < HOST_BITS_PER_WIDE_INT;
  prec <<= 1) if (newmask == (((unsigned HOST_WIDE_INT) 1) << prec) - 1) break;
-/* #line 1392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1392 "match.pd" */
 			  if (prec < HOST_BITS_PER_WIDE_INT || newmask == ~(unsigned HOST_WIDE_INT) 0)
 			    {
 			      {
-/* #line 1394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1394 "match.pd" */
  tree newmaskt = build_int_cst_type (TREE_TYPE (captures[5]), newmask);
-/* #line 1396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1396 "match.pd" */
 				  if (!tree_int_cst_equal (newmaskt, captures[5]))
 				    {
-/* #line 1397 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1397 "match.pd" */
 				      if (shift_type != TREE_TYPE (captures[2]))
 					{
 					  gimple_seq *lseq = seq;
@@ -3014,13 +3014,13 @@ gimple_simplify_52 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
-/* #line 1084 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1084 "match.pd" */
 	  if (!TYPE_OVERFLOW_TRAPS (type) && tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -3056,7 +3056,7 @@ gimple_simplify_53 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (mod))
 {
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
   if ((TYPE_UNSIGNED (type) || tree_expr_nonnegative_p (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && integer_pow2p (captures[3]) && tree_int_cst_sgn (captures[3]) > 0)
     {
       gimple_seq *lseq = seq;
@@ -3101,7 +3101,7 @@ gimple_simplify_54 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op), enum tree_code ARG_UNUSED (rop))
 {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -3176,7 +3176,7 @@ gimple_simplify_55 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (div))
 {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
   if (ANY_INTEGRAL_TYPE_P (type) && TYPE_OVERFLOW_UNDEFINED (type))
     {
       gimple_seq *lseq = seq;
@@ -3194,16 +3194,16 @@ gimple_simplify_56 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (inner_op), enum tree_code ARG_UNUSED (outer_op))
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
 	  {
-/* #line 1056 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1056 "match.pd" */
  tree cst = const_binop (outer_op == inner_op ? PLUS_EXPR : MINUS_EXPR, type, captures[1], captures[2]);
-/* #line 1058 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1058 "match.pd" */
 	      if (cst && !TREE_OVERFLOW (cst))
 		{
 		  gimple_seq *lseq = seq;
@@ -3226,13 +3226,13 @@ gimple_simplify_57 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (icmp), enum tree_code ARG_UNUSED (ncmp))
 {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
   if (VECTOR_TYPE_P (type) || (INTEGRAL_TYPE_P (type) && TYPE_PRECISION (type) == 1))
     {
       {
-/* #line 1806 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1806 "match.pd" */
  enum tree_code ic = invert_tree_comparison (cmp, HONOR_NANS (captures[0]));
-/* #line 1808 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1808 "match.pd" */
 	  if (ic == icmp)
 	    {
 	      gimple_seq *lseq = seq;
@@ -3245,7 +3245,7 @@ gimple_simplify_57 (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 1810 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1810 "match.pd" */
 	      if (ic == ncmp)
 		{
 		  gimple_seq *lseq = seq;
@@ -3268,7 +3268,7 @@ gimple_simplify_58 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (bitop))
 {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
   if (((TREE_CODE (captures[1]) == INTEGER_CST && INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && int_fits_type_p (captures[1], TREE_TYPE (captures[0]))) || types_match (captures[0], captures[1])) && (bitop != BIT_AND_EXPR ||1) && ( TYPE_PRECISION (TREE_TYPE (captures[0])) < TYPE_PRECISION (type) || GET_MODE_CLASS (TYPE_MODE (type)) != MODE_INT || TYPE_PRECISION (type) != GET_MODE_PRECISION (TYPE_MODE (type))))
     {
       gimple_seq *lseq = seq;
@@ -3312,16 +3312,16 @@ gimple_simplify_59 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (outer_op))
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
 	  {
-/* #line 1065 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1065 "match.pd" */
  tree cst = const_binop (outer_op, type, captures[0], captures[2]);
-/* #line 1066 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1066 "match.pd" */
 	      if (cst && !TREE_OVERFLOW (cst))
 		{
 		  gimple_seq *lseq = seq;
@@ -3344,11 +3344,11 @@ gimple_simplify_60 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (ncmp))
 {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && (TYPE_PRECISION (TREE_TYPE (captures[1])) == GET_MODE_PRECISION (TYPE_MODE (TREE_TYPE (captures[1])))) && element_precision (captures[0]) >= element_precision (captures[1]) && wi::only_sign_bit_p (captures[2], element_precision (captures[1])))
     {
       {
-/* #line 2277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2277 "match.pd" */
  tree stype = signed_type_for (TREE_TYPE (captures[1]));
 	  gimple_seq *lseq = seq;
 	  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2278, %s:%d\n", __FILE__, __LINE__);
@@ -3383,10 +3383,10 @@ gimple_simplify_61 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
 	  gimple_seq *lseq = seq;
@@ -3405,11 +3405,11 @@ gimple_simplify_62 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])) && TYPE_PRECISION (type) <= HOST_BITS_PER_WIDE_INT && tree_fits_uhwi_p (captures[4]) && tree_to_uhwi (captures[4]) > 0 && tree_to_uhwi (captures[4]) < TYPE_PRECISION (type))
     {
       {
-/* #line 1323 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1323 "match.pd" */
  unsigned int shiftc = tree_to_uhwi (captures[4]);
  unsigned HOST_WIDE_INT mask = TREE_INT_CST_LOW (captures[5]);
  unsigned HOST_WIDE_INT newmask, zerobits = 0;
@@ -3426,7 +3426,7 @@ gimple_simplify_62 (code_helper *res_code, tree *res_ops,
  zerobits <<= prec - shiftc;
  } if (!TYPE_UNSIGNED (TREE_TYPE (captures[2])) && prec == TYPE_PRECISION (TREE_TYPE (captures[2]))) { if ((mask & zerobits) == 0) shift_type = unsigned_type_for (TREE_TYPE (captures[2]));
  else zerobits = 0;
- } }/* #line 1379 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ } }/* #line 1379 "match.pd" */
 	  if ((mask & zerobits) == mask)
 	    {
 	      gimple_seq *lseq = seq;
@@ -3442,26 +3442,26 @@ gimple_simplify_62 (code_helper *res_code, tree *res_ops,
 	  else
 	    {
 	      {
-/* #line 1381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1381 "match.pd" */
  newmask = mask | zerobits;
-/* #line 1382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1382 "match.pd" */
 		  if (newmask != mask && (newmask & (newmask + 1)) == 0)
 		    {
 		      {
-/* #line 1383 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1383 "match.pd" */
  for (prec = BITS_PER_UNIT;
  prec < HOST_BITS_PER_WIDE_INT;
  prec <<= 1) if (newmask == (((unsigned HOST_WIDE_INT) 1) << prec) - 1) break;
-/* #line 1392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1392 "match.pd" */
 			  if (prec < HOST_BITS_PER_WIDE_INT || newmask == ~(unsigned HOST_WIDE_INT) 0)
 			    {
 			      {
-/* #line 1394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1394 "match.pd" */
  tree newmaskt = build_int_cst_type (TREE_TYPE (captures[5]), newmask);
-/* #line 1396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1396 "match.pd" */
 				  if (!tree_int_cst_equal (newmaskt, captures[5]))
 				    {
-/* #line 1397 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1397 "match.pd" */
 				      if (shift_type != TREE_TYPE (captures[2]))
 					{
 					  gimple_seq *lseq = seq;
@@ -3548,7 +3548,7 @@ gimple_simplify_63 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 839 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 839 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -3577,7 +3577,7 @@ gimple_simplify_64 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 855 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 855 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -3615,7 +3615,7 @@ gimple_simplify_65 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (SIN), combined_fn ARG_UNUSED (COS), combined_fn ARG_UNUSED (TAN))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -3638,7 +3638,7 @@ gimple_simplify_66 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 193 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 193 "match.pd" */
   if (FLOAT_TYPE_P (type) && ! HONOR_NANS (type) && ! HONOR_INFINITIES (type))
     {
       gimple_seq *lseq = seq;
@@ -3656,10 +3656,10 @@ gimple_simplify_67 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (SQRT))
 {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
   if (flag_unsafe_math_optimizations)
     {
-/* #line 2469 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2469 "match.pd" */
       if (!HONOR_SNANS (type))
 	{
 	  gimple_seq *lseq = seq;
@@ -3678,7 +3678,7 @@ gimple_simplify_68 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (div))
 {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
   if (integer_pow2p (captures[2]) && tree_int_cst_sgn (captures[2]) > 0 && wi::add (captures[2], captures[1]) == 0 && tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -3713,7 +3713,7 @@ gimple_simplify_69 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1864 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1864 "match.pd" */
   if (cmp != NE_EXPR || ! FLOAT_TYPE_P (TREE_TYPE (captures[0])) || ! HONOR_NANS (captures[0]))
     {
       gimple_seq *lseq = seq;
@@ -3776,9 +3776,9 @@ gimple_simplify_73 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (cmp))
 {
   {
-/* #line 1302 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1302 "match.pd" */
  int cand = wi::ctz (captures[2]) - wi::ctz (captures[0]);
-/* #line 1303 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1303 "match.pd" */
       if (cand < 0 || (!integer_zerop (captures[2]) && wi::ne_p (wi::lshift (captures[0], cand), captures[2])))
 	{
 	  gimple_seq *lseq = seq;
@@ -3789,7 +3789,7 @@ gimple_simplify_73 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 1307 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1307 "match.pd" */
 	  if (!integer_zerop (captures[2]) && wi::eq_p (wi::lshift (captures[0], cand), captures[2]))
 	    {
 	      gimple_seq *lseq = seq;
@@ -3827,11 +3827,11 @@ gimple_simplify_75 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])) && TYPE_PRECISION (type) <= HOST_BITS_PER_WIDE_INT && tree_fits_uhwi_p (captures[4]) && tree_to_uhwi (captures[4]) > 0 && tree_to_uhwi (captures[4]) < TYPE_PRECISION (type))
     {
       {
-/* #line 1323 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1323 "match.pd" */
  unsigned int shiftc = tree_to_uhwi (captures[4]);
  unsigned HOST_WIDE_INT mask = TREE_INT_CST_LOW (captures[5]);
  unsigned HOST_WIDE_INT newmask, zerobits = 0;
@@ -3848,7 +3848,7 @@ gimple_simplify_75 (code_helper *res_code, tree *res_ops,
  zerobits <<= prec - shiftc;
  } if (!TYPE_UNSIGNED (TREE_TYPE (captures[2])) && prec == TYPE_PRECISION (TREE_TYPE (captures[2]))) { if ((mask & zerobits) == 0) shift_type = unsigned_type_for (TREE_TYPE (captures[2]));
  else zerobits = 0;
- } }/* #line 1379 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ } }/* #line 1379 "match.pd" */
 	  if ((mask & zerobits) == mask)
 	    {
 	      gimple_seq *lseq = seq;
@@ -3864,26 +3864,26 @@ gimple_simplify_75 (code_helper *res_code, tree *res_ops,
 	  else
 	    {
 	      {
-/* #line 1381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1381 "match.pd" */
  newmask = mask | zerobits;
-/* #line 1382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1382 "match.pd" */
 		  if (newmask != mask && (newmask & (newmask + 1)) == 0)
 		    {
 		      {
-/* #line 1383 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1383 "match.pd" */
  for (prec = BITS_PER_UNIT;
  prec < HOST_BITS_PER_WIDE_INT;
  prec <<= 1) if (newmask == (((unsigned HOST_WIDE_INT) 1) << prec) - 1) break;
-/* #line 1392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1392 "match.pd" */
 			  if (prec < HOST_BITS_PER_WIDE_INT || newmask == ~(unsigned HOST_WIDE_INT) 0)
 			    {
 			      {
-/* #line 1394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1394 "match.pd" */
  tree newmaskt = build_int_cst_type (TREE_TYPE (captures[5]), newmask);
-/* #line 1396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1396 "match.pd" */
 				  if (!tree_int_cst_equal (newmaskt, captures[5]))
 				    {
-/* #line 1397 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1397 "match.pd" */
 				      if (shift_type != TREE_TYPE (captures[2]))
 					{
 					  gimple_seq *lseq = seq;
@@ -3970,7 +3970,7 @@ gimple_simplify_76 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
   if (operand_equal_p (captures[1], captures[0], 0) && (INTEGRAL_TYPE_P (type) || VECTOR_INTEGER_TYPE_P (type)))
     {
       gimple_seq *lseq = seq;
@@ -4024,10 +4024,10 @@ gimple_simplify_78 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1017 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1017 "match.pd" */
       if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && !TYPE_OVERFLOW_SANITIZED (type))
 	{
 	  gimple_seq *lseq = seq;
@@ -4047,10 +4047,10 @@ gimple_simplify_79 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
 	  gimple_seq *lseq = seq;
@@ -4098,7 +4098,7 @@ gimple_simplify_82 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (minmax))
 {
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
   if (real_isnan (TREE_REAL_CST_PTR (captures[1])) && (!HONOR_SNANS (captures[1]) || !TREE_REAL_CST (captures[1]).signalling))
     {
       gimple_seq *lseq = seq;
@@ -4116,7 +4116,7 @@ gimple_simplify_83 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (div))
 {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
   if (!TYPE_UNSIGNED (type))
     {
       gimple_seq *lseq = seq;
@@ -4135,14 +4135,14 @@ gimple_simplify_84 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1004 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1004 "match.pd" */
       if (tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && !TYPE_OVERFLOW_SANITIZED (type))
 	{
 	  {
-/* #line 1006 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1006 "match.pd" */
  tree t1 = type;
  if (INTEGRAL_TYPE_P (type) && TYPE_OVERFLOW_WRAPS (type) != TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[1]))) t1 = TYPE_OVERFLOW_WRAPS (type) ? type : TREE_TYPE (captures[1]);
 	      gimple_seq *lseq = seq;
@@ -4234,10 +4234,10 @@ gimple_simplify_86 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (div))
 {
   {
-/* #line 170 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 170 "match.pd" */
  bool overflow_p;
  wide_int mul = wi::mul (captures[1], captures[2], TYPE_SIGN (type), &overflow_p);
-/* #line 174 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 174 "match.pd" */
       if (!overflow_p)
 	{
 	  gimple_seq *lseq = seq;
@@ -4250,7 +4250,7 @@ gimple_simplify_86 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 176 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 176 "match.pd" */
 	  if (TYPE_UNSIGNED (type) || mul != wi::min_value (TYPE_PRECISION (type), SIGNED))
 	    {
 	      gimple_seq *lseq = seq;
@@ -4270,7 +4270,7 @@ gimple_simplify_87 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (FMIN))
 {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
   if (flag_finite_math_only)
     {
       gimple_seq *lseq = seq;
@@ -4290,7 +4290,7 @@ gimple_simplify_88 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (FMAX))
 {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
   if (flag_finite_math_only)
     {
       gimple_seq *lseq = seq;
@@ -4326,10 +4326,10 @@ gimple_simplify_90 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (SIN), combined_fn ARG_UNUSED (TAN), combined_fn ARG_UNUSED (COS))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
-/* #line 2682 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2682 "match.pd" */
       if (! HONOR_NANS (captures[1]) && ! HONOR_INFINITIES (captures[1]))
 	{
 	  gimple_seq *lseq = seq;
@@ -4383,13 +4383,13 @@ gimple_simplify_92 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
       if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	{
-/* #line 1072 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1072 "match.pd" */
 	  if (!TYPE_OVERFLOW_TRAPS (type))
 	    {
 	      gimple_seq *lseq = seq;
@@ -4410,9 +4410,9 @@ gimple_simplify_93 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (shiftrotate))
 {
   {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
  tree tem = uniform_vector_p (captures[1]);
-/* #line 1256 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1256 "match.pd" */
       if (tem)
 	{
 	  gimple_seq *lseq = seq;
@@ -4464,18 +4464,18 @@ gimple_simplify_96 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (op))
 {
   {
-/* #line 1271 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1271 "match.pd" */
  unsigned int prec = element_precision (type);
-/* #line 1272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1272 "match.pd" */
       if (wi::ge_p (captures[1], 0, TYPE_SIGN (TREE_TYPE (captures[1]))) && wi::lt_p (captures[1], prec, TYPE_SIGN (TREE_TYPE (captures[1]))) && wi::ge_p (captures[2], 0, TYPE_SIGN (TREE_TYPE (captures[2]))) && wi::lt_p (captures[2], prec, TYPE_SIGN (TREE_TYPE (captures[2]))))
 	{
 	  {
-/* #line 1276 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1276 "match.pd" */
  unsigned int low = wi::add (captures[1], captures[2]).to_uhwi ();
-/* #line 1279 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1279 "match.pd" */
 	      if (low >= prec)
 		{
-/* #line 1280 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1280 "match.pd" */
 		  if (op == LROTATE_EXPR || op == RROTATE_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -4488,7 +4488,7 @@ gimple_simplify_96 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 1282 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1282 "match.pd" */
 		      if (TYPE_UNSIGNED (type) || op == LSHIFT_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -4531,7 +4531,7 @@ gimple_simplify_97 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (TAN), combined_fn ARG_UNUSED (COS), combined_fn ARG_UNUSED (SIN))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -4554,14 +4554,14 @@ gimple_simplify_98 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
   if (!TYPE_SATURATING (type))
     {
-/* #line 991 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 991 "match.pd" */
       if (tree_nop_conversion_p (type, TREE_TYPE (captures[1])) && !TYPE_OVERFLOW_SANITIZED (type))
 	{
 	  {
-/* #line 993 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 993 "match.pd" */
  tree t1 = type;
  if (INTEGRAL_TYPE_P (type) && TYPE_OVERFLOW_WRAPS (type) != TYPE_OVERFLOW_WRAPS (TREE_TYPE (captures[1]))) t1 = TYPE_OVERFLOW_WRAPS (type) ? type : TREE_TYPE (captures[1]);
 	      gimple_seq *lseq = seq;
@@ -4623,9 +4623,9 @@ gimple_simplify_99 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (shiftrotate))
 {
   {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
  tree tem = uniform_vector_p (captures[1]);
-/* #line 1256 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1256 "match.pd" */
       if (tem)
 	{
 	  gimple_seq *lseq = seq;
@@ -4646,7 +4646,7 @@ gimple_simplify_100 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 498 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 498 "match.pd" */
   if (TYPE_UNSIGNED (TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -4680,7 +4680,7 @@ gimple_simplify_102 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (COS), combined_fn ARG_UNUSED (SIN), combined_fn ARG_UNUSED (TAN))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -4713,11 +4713,11 @@ gimple_simplify_103 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (bit_op), enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[2])))
     {
       {
-/* #line 1408 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1408 "match.pd" */
  tree mask = int_const_binop (shift, fold_convert (type, captures[3]), captures[4]);
 	  gimple_seq *lseq = seq;
 	  if (lseq
@@ -4781,7 +4781,7 @@ gimple_simplify_105 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[3])))
     {
       gimple_seq *lseq = seq;
@@ -4823,7 +4823,7 @@ gimple_simplify_106 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (froms), combined_fn ARG_UNUSED (tos))
 {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
   if (optimize && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -4842,7 +4842,7 @@ gimple_simplify_107 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (test1), enum tree_code ARG_UNUSED (test2))
 {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || VECTOR_INTEGER_TYPE_P (TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -4860,7 +4860,7 @@ gimple_simplify_108 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (acmp))
 {
-/* #line 1782 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1782 "match.pd" */
   if (tree_int_cst_sgn (captures[1]) == 1)
     {
       gimple_seq *lseq = seq;
@@ -4910,13 +4910,13 @@ gimple_simplify_111 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && !(targetm.have_canonicalize_funcptr_for_compare () && TREE_CODE (TREE_TYPE (captures[1])) == POINTER_TYPE && TREE_CODE (TREE_TYPE (TREE_TYPE (captures[1]))) == FUNCTION_TYPE) && single_use (captures[0]))
     {
-/* #line 2164 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2164 "match.pd" */
       if (TYPE_PRECISION (TREE_TYPE (captures[1])) == TYPE_PRECISION (TREE_TYPE (captures[0])) && (TREE_CODE (captures[3]) == INTEGER_CST || (captures[2] != captures[3] && types_match (TREE_TYPE (captures[3]), TREE_TYPE (captures[1])))) && (TYPE_UNSIGNED (TREE_TYPE (captures[1])) == TYPE_UNSIGNED (TREE_TYPE (captures[0])) || cmp == NE_EXPR || cmp == EQ_EXPR) && (POINTER_TYPE_P (TREE_TYPE (captures[1])) == POINTER_TYPE_P (TREE_TYPE (captures[0]))))
 	{
-/* #line 2174 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2174 "match.pd" */
 	  if (TREE_CODE (captures[2]) == INTEGER_CST)
 	    {
 	      gimple_seq *lseq = seq;
@@ -4955,10 +4955,10 @@ gimple_simplify_111 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 2179 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2179 "match.pd" */
 	  if (TYPE_PRECISION (TREE_TYPE (captures[0])) > TYPE_PRECISION (TREE_TYPE (captures[1])))
 	    {
-/* #line 2181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2181 "match.pd" */
 	      if ((cmp == EQ_EXPR || cmp == NE_EXPR || TYPE_UNSIGNED (TREE_TYPE (captures[0])) == TYPE_UNSIGNED (TREE_TYPE (captures[1]))) && (types_match (TREE_TYPE (captures[3]), TREE_TYPE (captures[1])) || ((TYPE_PRECISION (TREE_TYPE (captures[1])) >= TYPE_PRECISION (TREE_TYPE (captures[3]))) && (TYPE_UNSIGNED (TREE_TYPE (captures[1])) == TYPE_UNSIGNED (TREE_TYPE (captures[3])))) || (TREE_CODE (captures[3]) == INTEGER_CST && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && int_fits_type_p (captures[3], TREE_TYPE (captures[1])))))
 		{
 		  gimple_seq *lseq = seq;
@@ -4986,19 +4986,19 @@ gimple_simplify_111 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2192 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2192 "match.pd" */
 		  if (TREE_CODE (captures[3]) == INTEGER_CST && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && !int_fits_type_p (captures[3], TREE_TYPE (captures[1])))
 		    {
 		      {
-/* #line 2195 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2195 "match.pd" */
  tree min = lower_bound_in_type (TREE_TYPE (captures[3]), TREE_TYPE (captures[1]));
  tree max = upper_bound_in_type (TREE_TYPE (captures[3]), TREE_TYPE (captures[1]));
  bool above = integer_nonzerop (const_binop (LT_EXPR, type, max, captures[3]));
  bool below = integer_nonzerop (const_binop (LT_EXPR, type, captures[3], min));
-/* #line 2202 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2202 "match.pd" */
 			  if (above || below)
 			    {
-/* #line 2203 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2203 "match.pd" */
 			      if (cmp == EQ_EXPR || cmp == NE_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -5009,7 +5009,7 @@ gimple_simplify_111 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2205 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2205 "match.pd" */
 				  if (cmp == LT_EXPR || cmp == LE_EXPR)
 				    {
 				      gimple_seq *lseq = seq;
@@ -5020,7 +5020,7 @@ gimple_simplify_111 (code_helper *res_code, tree *res_ops,
 				    }
 				  else
 				    {
-/* #line 2207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2207 "match.pd" */
 				      if (cmp == GT_EXPR || cmp == GE_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -5085,7 +5085,7 @@ gimple_simplify_113 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1829 "match.pd" */
   if (single_use (captures[0]))
     {
       gimple_seq *lseq = seq;
@@ -5133,7 +5133,7 @@ gimple_simplify_115 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (POW))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -5267,7 +5267,7 @@ gimple_simplify_122 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (mod))
 {
-/* #line 259 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 259 "match.pd" */
   if (!integer_zerop (captures[1]))
     {
       gimple_seq *lseq = seq;
@@ -5300,13 +5300,13 @@ gimple_simplify_124 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (scmp))
 {
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
   if (FLOAT_TYPE_P (TREE_TYPE (captures[0])) || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))))
     {
       {
-/* #line 2143 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2143 "match.pd" */
  tree tem = const_unop (NEGATE_EXPR, TREE_TYPE (captures[0]), captures[1]);
-/* #line 2144 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2144 "match.pd" */
 	  if (tem && !TREE_OVERFLOW (tem))
 	    {
 	      gimple_seq *lseq = seq;
@@ -5328,7 +5328,7 @@ gimple_simplify_125 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 1655 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1655 "match.pd" */
   if (tree_nop_conversion_p (TREE_TYPE (captures[0]), type))
     {
       gimple_seq *lseq = seq;
@@ -5362,7 +5362,7 @@ gimple_simplify_127 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (scmp))
 {
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
   if (single_use (captures[0]) && (TREE_CODE (captures[2]) == INTEGER_CST || TREE_CODE (captures[2]) == VECTOR_CST))
     {
       gimple_seq *lseq = seq;
@@ -5391,20 +5391,20 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
   if ((INTEGRAL_TYPE_P (TREE_TYPE (captures[2])) || POINTER_TYPE_P (TREE_TYPE (captures[2]))) && tree_nop_conversion_p (TREE_TYPE (captures[0]), TREE_TYPE (captures[1])))
     {
       {
-/* #line 2359 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2359 "match.pd" */
  tree arg1_type = TREE_TYPE (captures[2]);
  unsigned int prec = TYPE_PRECISION (arg1_type);
  wide_int max = wi::max_value (arg1_type);
  wide_int signed_max = wi::max_value (prec, SIGNED);
  wide_int min = wi::min_value (arg1_type);
-/* #line 2368 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2368 "match.pd" */
 	  if (wi::eq_p (captures[2], max))
 	    {
-/* #line 2370 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2370 "match.pd" */
 	      if (cmp == GT_EXPR)
 		{
 		  gimple_seq *lseq = seq;
@@ -5415,7 +5415,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2372 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2372 "match.pd" */
 		  if (cmp == GE_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -5428,7 +5428,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2374 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2374 "match.pd" */
 		      if (cmp == LE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -5439,7 +5439,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2376 "match.pd" */
 			  if (cmp == LT_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -5456,10 +5456,10 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2378 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2378 "match.pd" */
 	      if (wi::eq_p (captures[2], min))
 		{
-/* #line 2380 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2380 "match.pd" */
 		  if (cmp == LT_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -5470,7 +5470,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2382 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2382 "match.pd" */
 		      if (cmp == LE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -5483,7 +5483,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2384 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2384 "match.pd" */
 			  if (cmp == GE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -5494,7 +5494,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2386 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2386 "match.pd" */
 			      if (cmp == GT_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -5511,10 +5511,10 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2388 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2388 "match.pd" */
 		  if (wi::eq_p (captures[2], max - 1))
 		    {
-/* #line 2390 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2390 "match.pd" */
 		      if (cmp == GT_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -5527,7 +5527,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2392 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2392 "match.pd" */
 			  if (cmp == LE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -5542,10 +5542,10 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2394 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2394 "match.pd" */
 		      if (wi::eq_p (captures[2], min + 1))
 			{
-/* #line 2396 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2396 "match.pd" */
 			  if (cmp == GE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -5558,7 +5558,7 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2398 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2398 "match.pd" */
 			      if (cmp == LT_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -5573,16 +5573,16 @@ gimple_simplify_128 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2400 "match.pd" */
 			  if (wi::eq_p (captures[2], signed_max) && TYPE_UNSIGNED (arg1_type) && prec == GET_MODE_PRECISION (TYPE_MODE (arg1_type)) && INTEGRAL_TYPE_P (arg1_type))
 			    {
-/* #line 2411 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2411 "match.pd" */
 			      if (cmp == LE_EXPR || cmp == GT_EXPR)
 				{
 				  {
-/* #line 2412 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2412 "match.pd" */
  tree st = signed_type_for (arg1_type);
-/* #line 2413 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2413 "match.pd" */
 				      if (cmp == LE_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -5651,7 +5651,7 @@ gimple_simplify_129 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (POW))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -5716,11 +5716,11 @@ gimple_simplify_132 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (bit_op), enum tree_code ARG_UNUSED (shift))
 {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[2])))
     {
       {
-/* #line 1408 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1408 "match.pd" */
  tree mask = int_const_binop (shift, fold_convert (type, captures[3]), captures[4]);
 	  gimple_seq *lseq = seq;
 	  if (lseq
@@ -5769,7 +5769,7 @@ gimple_simplify_133 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 1751 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1751 "match.pd" */
   if (VECTOR_TYPE_P (type) && TYPE_VECTOR_SUBPARTS (type) == TYPE_VECTOR_SUBPARTS (TREE_TYPE (captures[3])) && (TYPE_MODE (TREE_TYPE (type)) == TYPE_MODE (TREE_TYPE (TREE_TYPE (captures[3])))))
     {
       gimple_seq *lseq = seq;
@@ -5822,7 +5822,7 @@ gimple_simplify_134 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 849 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 849 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -5880,7 +5880,7 @@ gimple_simplify_137 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (scmp))
 {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
   if (FLOAT_TYPE_P (TREE_TYPE (captures[0])) || (ANY_INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))))
     {
       gimple_seq *lseq = seq;
@@ -5900,7 +5900,7 @@ gimple_simplify_138 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 443 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 443 "match.pd" */
   if (! FLOAT_TYPE_P (type) && tree_nop_conversion_p (type, TREE_TYPE (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -5920,7 +5920,7 @@ gimple_simplify_139 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (froms), combined_fn ARG_UNUSED (tos))
 {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
   if (optimize && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -5981,7 +5981,7 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
   if (REAL_VALUE_MINUS_ZERO (TREE_REAL_CST (captures[1])))
     {
       gimple_seq *lseq = seq;
@@ -5994,7 +5994,7 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
     }
   else
     {
-/* #line 1930 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1930 "match.pd" */
       if (REAL_VALUE_ISNAN (TREE_REAL_CST (captures[1])) && ! HONOR_SNANS (captures[1]))
 	{
 	  gimple_seq *lseq = seq;
@@ -6005,16 +6005,16 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 1934 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1934 "match.pd" */
 	  if (REAL_VALUE_ISINF (TREE_REAL_CST (captures[1])) && MODE_HAS_INFINITIES (TYPE_MODE (TREE_TYPE (captures[1]))))
 	    {
 	      {
-/* #line 1936 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1936 "match.pd" */
  REAL_VALUE_TYPE max;
  enum tree_code code = cmp;
  bool neg = REAL_VALUE_NEGATIVE (TREE_REAL_CST (captures[1]));
  if (neg) code = swap_tree_comparison (code);
-/* #line 1946 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1946 "match.pd" */
 		  if (code == GT_EXPR && ! HONOR_SNANS (captures[0]))
 		    {
 		      gimple_seq *lseq = seq;
@@ -6025,10 +6025,10 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 1949 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1949 "match.pd" */
 		      if (code == LE_EXPR)
 			{
-/* #line 1951 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1951 "match.pd" */
 			  if (! HONOR_NANS (captures[0]))
 			    {
 			      gimple_seq *lseq = seq;
@@ -6050,13 +6050,13 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 1956 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1956 "match.pd" */
 			  if (code == EQ_EXPR || code == GE_EXPR)
 			    {
 			      {
-/* #line 1957 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1957 "match.pd" */
  real_maxval (&max, neg, TYPE_MODE (TREE_TYPE (captures[0])));
-/* #line 1958 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1958 "match.pd" */
 				  if (neg)
 				    {
 				      gimple_seq *lseq = seq;
@@ -6081,13 +6081,13 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 1962 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1962 "match.pd" */
 			      if (code == LT_EXPR)
 				{
 				  {
-/* #line 1963 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1963 "match.pd" */
  real_maxval (&max, neg, TYPE_MODE (TREE_TYPE (captures[0])));
-/* #line 1964 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1964 "match.pd" */
 				      if (neg)
 					{
 					  gimple_seq *lseq = seq;
@@ -6112,16 +6112,16 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 1968 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1968 "match.pd" */
 				  if (code == NE_EXPR)
 				    {
 				      {
-/* #line 1969 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1969 "match.pd" */
  real_maxval (&max, neg, TYPE_MODE (TREE_TYPE (captures[0])));
-/* #line 1970 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1970 "match.pd" */
 					  if (! HONOR_NANS (captures[0]))
 					    {
-/* #line 1971 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1971 "match.pd" */
 					      if (neg)
 						{
 						  gimple_seq *lseq = seq;
@@ -6145,7 +6145,7 @@ gimple_simplify_143 (code_helper *res_code, tree *res_ops,
 					    }
 					  else
 					    {
-/* #line 1974 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1974 "match.pd" */
 					      if (neg)
 						{
 						  gimple_seq *lseq = seq;
@@ -6206,7 +6206,7 @@ gimple_simplify_144 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (tans), combined_fn ARG_UNUSED (atans))
 {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
   if (flag_unsafe_math_optimizations)
     {
       gimple_seq *lseq = seq;
@@ -6224,7 +6224,7 @@ gimple_simplify_145 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (mod))
 {
-/* #line 268 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 268 "match.pd" */
   if (!TYPE_UNSIGNED (type))
     {
       gimple_seq *lseq = seq;
@@ -6256,7 +6256,7 @@ gimple_simplify_147 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 1760 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1760 "match.pd" */
   if (VECTOR_TYPE_P (type) && TYPE_VECTOR_SUBPARTS (type) == TYPE_VECTOR_SUBPARTS (TREE_TYPE (captures[3])) && (TYPE_MODE (TREE_TYPE (type)) == TYPE_MODE (TREE_TYPE (TREE_TYPE (captures[3])))))
     {
       gimple_seq *lseq = seq;
@@ -6309,7 +6309,7 @@ gimple_simplify_148 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (acmp))
 {
-/* #line 1776 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1776 "match.pd" */
   if (tree_int_cst_sgn (captures[1]) == -1)
     {
       gimple_seq *lseq = seq;
@@ -6329,10 +6329,10 @@ gimple_simplify_149 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (POW))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
-/* #line 2666 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2666 "match.pd" */
       if (!TREE_OVERFLOW (captures[2]))
 	{
 	  gimple_seq *lseq = seq;
@@ -6367,9 +6367,9 @@ gimple_simplify_150 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (cmp), enum tree_code ARG_UNUSED (icmp), enum tree_code ARG_UNUSED (ncmp))
 {
   {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
  enum tree_code ic = invert_tree_comparison (cmp, HONOR_NANS (captures[0]));
-/* #line 1816 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1816 "match.pd" */
       if (ic == icmp)
 	{
 	  gimple_seq *lseq = seq;
@@ -6382,7 +6382,7 @@ gimple_simplify_150 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 1818 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1818 "match.pd" */
 	  if (ic == ncmp)
 	    {
 	      gimple_seq *lseq = seq;
@@ -6429,7 +6429,7 @@ gimple_simplify_152 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (froms), combined_fn ARG_UNUSED (tos))
 {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
   if (optimize && canonicalize_math_p () && targetm.libc_has_function (function_c99_misc))
     {
       gimple_seq *lseq = seq;
@@ -6471,7 +6471,7 @@ gimple_simplify_154 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1856 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1856 "match.pd" */
   if (! FLOAT_TYPE_P (TREE_TYPE (captures[0])) || ! HONOR_NANS (captures[0]))
     {
       gimple_seq *lseq = seq;
@@ -6482,7 +6482,7 @@ gimple_simplify_154 (code_helper *res_code, tree *res_ops,
     }
   else
     {
-/* #line 1859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1859 "match.pd" */
       if (cmp != EQ_EXPR)
 	{
 	  gimple_seq *lseq = seq;
@@ -6519,7 +6519,7 @@ gimple_simplify_156 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 859 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -6549,7 +6549,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (cmp))
 {
   {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
  HOST_WIDE_INT off0, off1;
  tree base0 = get_addr_base_and_unit_offset (TREE_OPERAND (captures[1], 0), &off0);
  tree base1 = get_addr_base_and_unit_offset (TREE_OPERAND (captures[2], 0), &off1);
@@ -6557,18 +6557,18 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
  base0 = TREE_OPERAND (base0, 0);
  } if (base1 && TREE_CODE (base1) == MEM_REF) { off1 += mem_ref_offset (base1).to_short_addr ();
  base1 = TREE_OPERAND (base1, 0);
- }/* #line 2303 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ }/* #line 2303 "match.pd" */
       if (base0 && base1)
 	{
 	  {
-/* #line 2304 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2304 "match.pd" */
  int equal = 2;
  if (decl_in_symtab_p (base0) && decl_in_symtab_p (base1)) equal = symtab_node::get_create (base0) ->equal_address_to (symtab_node::get_create (base1));
  else if ((DECL_P (base0) || TREE_CODE (base0) == SSA_NAME || TREE_CODE (base0) == STRING_CST) && (DECL_P (base1) || TREE_CODE (base1) == SSA_NAME || TREE_CODE (base1) == STRING_CST)) equal = (base0 == base1);
-/* #line 2319 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2319 "match.pd" */
 	      if (equal == 1 && (cmp == EQ_EXPR || cmp == NE_EXPR || off0 == off1 || POINTER_TYPE_OVERFLOW_UNDEFINED || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && (DECL_P (base0) || TREE_CODE (base0) == STRING_CST))))
 		{
-/* #line 2328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2328 "match.pd" */
 		  if (cmp == EQ_EXPR)
 		    {
 		      gimple_seq *lseq = seq;
@@ -6579,7 +6579,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2330 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2330 "match.pd" */
 		      if (cmp == NE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -6590,7 +6590,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2332 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2332 "match.pd" */
 			  if (cmp == LT_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -6601,7 +6601,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2334 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2334 "match.pd" */
 			      if (cmp == LE_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -6612,7 +6612,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2336 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2336 "match.pd" */
 				  if (cmp == GE_EXPR)
 				    {
 				      gimple_seq *lseq = seq;
@@ -6623,7 +6623,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 				    }
 				  else
 				    {
-/* #line 2338 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2338 "match.pd" */
 				      if (cmp == GT_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -6640,10 +6640,10 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2340 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2340 "match.pd" */
 		  if (equal == 0 && DECL_P (base0) && DECL_P (base1) && (!INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || off0 == off1))
 		    {
-/* #line 2346 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2346 "match.pd" */
 		      if (cmp == EQ_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -6654,7 +6654,7 @@ gimple_simplify_157 (code_helper *res_code, tree *res_ops,
 			}
 		      else
 			{
-/* #line 2348 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2348 "match.pd" */
 			  if (cmp == NE_EXPR)
 			    {
 			      gimple_seq *lseq = seq;
@@ -6693,7 +6693,7 @@ gimple_simplify_159 (code_helper *res_code, tree *res_ops,
 , enum tree_code ARG_UNUSED (inner_op), enum tree_code ARG_UNUSED (outer_op))
 {
   {
-/* #line 891 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 891 "match.pd" */
  bool fail = false;
  wide_int zero_mask_not;
  wide_int C0;
@@ -6704,7 +6704,7 @@ gimple_simplify_159 (code_helper *res_code, tree *res_ops,
  cst_emit = wi::bit_or (C0, captures[3]);
  } else { C0 = captures[2];
  cst_emit = wi::bit_xor (captures[2], captures[3]);
- }/* #line 914 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+ }/* #line 914 "match.pd" */
       if (!fail && wi::bit_and (C0, zero_mask_not) == 0)
 	{
 	  gimple_seq *lseq = seq;
@@ -6720,7 +6720,7 @@ gimple_simplify_159 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 916 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 916 "match.pd" */
 	  if (!fail && wi::bit_and (captures[3], zero_mask_not) == 0)
 	    {
 	      gimple_seq *lseq = seq;
@@ -6745,7 +6745,7 @@ gimple_simplify_160 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2255 "match.pd" */
   if (tree_single_nonzero_warnv_p (captures[0], NULL))
     {
       gimple_seq *lseq = seq;
@@ -6793,7 +6793,7 @@ gimple_simplify_163 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (test1), enum tree_code ARG_UNUSED (test2))
 {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || VECTOR_INTEGER_TYPE_P (TREE_TYPE (captures[0])))
     {
       gimple_seq *lseq = seq;
@@ -6811,7 +6811,7 @@ gimple_simplify_164 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (POW))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
       gimple_seq *lseq = seq;
@@ -6845,7 +6845,7 @@ gimple_simplify_165 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (mod))
 {
-/* #line 277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 277 "match.pd" */
   if (ANY_INTEGRAL_TYPE_P (type) && TYPE_OVERFLOW_UNDEFINED (type) && wi::multiple_of_p (captures[1], captures[2], TYPE_SIGN (type)))
     {
       gimple_seq *lseq = seq;
@@ -6863,15 +6863,15 @@ gimple_simplify_166 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 971 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 971 "match.pd" */
   if (POINTER_TYPE_P (TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
     {
       {
-/* #line 973 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 973 "match.pd" */
  unsigned int align;
  unsigned HOST_WIDE_INT bitpos;
  get_pointer_alignment_1 (captures[0], &align, &bitpos);
-/* #line 979 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 979 "match.pd" */
 	  if (wi::ltu_p (captures[1], align / BITS_PER_UNIT))
 	    {
 	      gimple_seq *lseq = seq;
@@ -6891,13 +6891,13 @@ gimple_simplify_167 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (op), enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
   if (flag_unsafe_math_optimizations)
     {
       {
-/* #line 1988 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1988 "match.pd" */
  tree tem = const_binop (op == PLUS_EXPR ? MINUS_EXPR : PLUS_EXPR, TREE_TYPE (captures[1]), captures[2], captures[1]);
-/* #line 1993 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1993 "match.pd" */
 	  if (tem && !TREE_OVERFLOW (tem))
 	    {
 	      gimple_seq *lseq = seq;
@@ -6919,7 +6919,7 @@ gimple_simplify_168 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 )
 {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
   if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])) && tree_nop_conversion_p (type, TREE_TYPE (captures[3])))
     {
       gimple_seq *lseq = seq;
@@ -6961,13 +6961,13 @@ gimple_simplify_169 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
   if (flag_associative_math)
     {
       {
-/* #line 2003 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2003 "match.pd" */
  tree tem = const_binop (MINUS_EXPR, TREE_TYPE (captures[1]), captures[0], captures[2]);
-/* #line 2004 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2004 "match.pd" */
 	  if (tem && !TREE_OVERFLOW (tem))
 	    {
 	      gimple_seq *lseq = seq;
@@ -6989,13 +6989,13 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (sq), enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
   if (flag_unsafe_math_optimizations && ! flag_errno_math)
     {
-/* #line 2014 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2014 "match.pd" */
       if (REAL_VALUE_NEGATIVE (TREE_REAL_CST (captures[1])))
 	{
-/* #line 2017 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2017 "match.pd" */
 	  if (cmp == EQ_EXPR || cmp == LT_EXPR || cmp == LE_EXPR)
 	    {
 	      gimple_seq *lseq = seq;
@@ -7006,7 +7006,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2021 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2021 "match.pd" */
 	      if (cmp == NE_EXPR || !HONOR_NANS (captures[0]))
 		{
 		  gimple_seq *lseq = seq;
@@ -7029,10 +7029,10 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 2025 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2025 "match.pd" */
 	  if (real_equal (TREE_REAL_CST_PTR (captures[1]), &dconst0))
 	    {
-/* #line 2028 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2028 "match.pd" */
 	      if (cmp == LT_EXPR)
 		{
 		  gimple_seq *lseq = seq;
@@ -7043,7 +7043,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2031 "match.pd" */
 		  if (cmp == GE_EXPR && !HONOR_NANS (captures[0]))
 		    {
 		      gimple_seq *lseq = seq;
@@ -7054,7 +7054,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 		    }
 		  else
 		    {
-/* #line 2034 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2034 "match.pd" */
 		      if (cmp == LE_EXPR)
 			{
 			  gimple_seq *lseq = seq;
@@ -7080,18 +7080,18 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2044 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2044 "match.pd" */
 	      if (cmp == GT_EXPR || cmp == GE_EXPR)
 		{
 		  {
-/* #line 2045 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2045 "match.pd" */
  REAL_VALUE_TYPE c2;
  real_arithmetic (&c2, MULT_EXPR, &TREE_REAL_CST (captures[1]), &TREE_REAL_CST (captures[1]));
  real_convert (&c2, TYPE_MODE (TREE_TYPE (captures[0])), &c2);
-/* #line 2052 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2052 "match.pd" */
 		      if (REAL_VALUE_ISINF (c2))
 			{
-/* #line 2054 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2054 "match.pd" */
 			  if (HONOR_INFINITIES (captures[0]))
 			    {
 			      gimple_seq *lseq = seq;
@@ -7125,18 +7125,18 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2059 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2059 "match.pd" */
 		  if (cmp == LT_EXPR || cmp == LE_EXPR)
 		    {
 		      {
-/* #line 2060 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2060 "match.pd" */
  REAL_VALUE_TYPE c2;
  real_arithmetic (&c2, MULT_EXPR, &TREE_REAL_CST (captures[1]), &TREE_REAL_CST (captures[1]));
  real_convert (&c2, TYPE_MODE (TREE_TYPE (captures[0])), &c2);
-/* #line 2067 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2067 "match.pd" */
 			  if (REAL_VALUE_ISINF (c2))
 			    {
-/* #line 2071 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2071 "match.pd" */
 			      if (! HONOR_NANS (captures[0]) && ! HONOR_INFINITIES (captures[0]))
 				{
 				  gimple_seq *lseq = seq;
@@ -7147,7 +7147,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2075 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2075 "match.pd" */
 				  if (! HONOR_NANS (captures[0]))
 				    {
 				      gimple_seq *lseq = seq;
@@ -7160,7 +7160,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 				    }
 				  else
 				    {
-/* #line 2079 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2079 "match.pd" */
 				      if (! HONOR_INFINITIES (captures[0]))
 					{
 					  gimple_seq *lseq = seq;
@@ -7173,7 +7173,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 					}
 				      else
 					{
-/* #line 2082 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2082 "match.pd" */
 					  if (0)
 					    {
 					      gimple_seq *lseq = seq;
@@ -7210,7 +7210,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 			    }
 			  else
 			    {
-/* #line 2087 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2087 "match.pd" */
 			      if (! HONOR_NANS (captures[0]))
 				{
 				  gimple_seq *lseq = seq;
@@ -7223,7 +7223,7 @@ gimple_simplify_170 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2090 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2090 "match.pd" */
 				  if (0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -7271,10 +7271,10 @@ gimple_simplify_171 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , combined_fn ARG_UNUSED (TAN), combined_fn ARG_UNUSED (SIN), combined_fn ARG_UNUSED (COS))
 {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
   if (flag_unsafe_math_optimizations && canonicalize_math_p ())
     {
-/* #line 2689 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2689 "match.pd" */
       if (! HONOR_NANS (captures[1]) && ! HONOR_INFINITIES (captures[1]))
 	{
 	  gimple_seq *lseq = seq;
@@ -7308,13 +7308,13 @@ gimple_simplify_172 (code_helper *res_code, tree *res_ops,
                  tree ARG_UNUSED (type), tree *ARG_UNUSED (captures)
 , enum tree_code ARG_UNUSED (cmp))
 {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
   if (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && !(targetm.have_canonicalize_funcptr_for_compare () && TREE_CODE (TREE_TYPE (captures[1])) == POINTER_TYPE && TREE_CODE (TREE_TYPE (TREE_TYPE (captures[1]))) == FUNCTION_TYPE) && single_use (captures[0]))
     {
-/* #line 2164 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2164 "match.pd" */
       if (TYPE_PRECISION (TREE_TYPE (captures[1])) == TYPE_PRECISION (TREE_TYPE (captures[0])) && (TREE_CODE (captures[3]) == INTEGER_CST || (captures[2] != captures[3] && types_match (TREE_TYPE (captures[3]), TREE_TYPE (captures[1])))) && (TYPE_UNSIGNED (TREE_TYPE (captures[1])) == TYPE_UNSIGNED (TREE_TYPE (captures[0])) || cmp == NE_EXPR || cmp == EQ_EXPR) && (POINTER_TYPE_P (TREE_TYPE (captures[1])) == POINTER_TYPE_P (TREE_TYPE (captures[0]))))
 	{
-/* #line 2174 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2174 "match.pd" */
 	  if (TREE_CODE (captures[2]) == INTEGER_CST)
 	    {
 	      gimple_seq *lseq = seq;
@@ -7353,10 +7353,10 @@ gimple_simplify_172 (code_helper *res_code, tree *res_ops,
 	}
       else
 	{
-/* #line 2179 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2179 "match.pd" */
 	  if (TYPE_PRECISION (TREE_TYPE (captures[0])) > TYPE_PRECISION (TREE_TYPE (captures[1])))
 	    {
-/* #line 2181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2181 "match.pd" */
 	      if ((cmp == EQ_EXPR || cmp == NE_EXPR || TYPE_UNSIGNED (TREE_TYPE (captures[0])) == TYPE_UNSIGNED (TREE_TYPE (captures[1]))) && (types_match (TREE_TYPE (captures[3]), TREE_TYPE (captures[1])) || ((TYPE_PRECISION (TREE_TYPE (captures[1])) >= TYPE_PRECISION (TREE_TYPE (captures[3]))) && (TYPE_UNSIGNED (TREE_TYPE (captures[1])) == TYPE_UNSIGNED (TREE_TYPE (captures[3])))) || (TREE_CODE (captures[3]) == INTEGER_CST && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && int_fits_type_p (captures[3], TREE_TYPE (captures[1])))))
 		{
 		  gimple_seq *lseq = seq;
@@ -7384,19 +7384,19 @@ gimple_simplify_172 (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2192 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2192 "match.pd" */
 		  if (TREE_CODE (captures[3]) == INTEGER_CST && INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) && !int_fits_type_p (captures[3], TREE_TYPE (captures[1])))
 		    {
 		      {
-/* #line 2195 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2195 "match.pd" */
  tree min = lower_bound_in_type (TREE_TYPE (captures[3]), TREE_TYPE (captures[1]));
  tree max = upper_bound_in_type (TREE_TYPE (captures[3]), TREE_TYPE (captures[1]));
  bool above = integer_nonzerop (const_binop (LT_EXPR, type, max, captures[3]));
  bool below = integer_nonzerop (const_binop (LT_EXPR, type, captures[3], min));
-/* #line 2202 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2202 "match.pd" */
 			  if (above || below)
 			    {
-/* #line 2203 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2203 "match.pd" */
 			      if (cmp == EQ_EXPR || cmp == NE_EXPR)
 				{
 				  gimple_seq *lseq = seq;
@@ -7407,7 +7407,7 @@ gimple_simplify_172 (code_helper *res_code, tree *res_ops,
 				}
 			      else
 				{
-/* #line 2205 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2205 "match.pd" */
 				  if (cmp == LT_EXPR || cmp == LE_EXPR)
 				    {
 				      gimple_seq *lseq = seq;
@@ -7418,7 +7418,7 @@ gimple_simplify_172 (code_helper *res_code, tree *res_ops,
 				    }
 				  else
 				    {
-/* #line 2207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2207 "match.pd" */
 				      if (cmp == GT_EXPR || cmp == GE_EXPR)
 					{
 					  gimple_seq *lseq = seq;
@@ -7476,7 +7476,7 @@ gimple_simplify_CFN_BUILT_IN_COSF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7494,7 +7494,7 @@ gimple_simplify_CFN_BUILT_IN_COSF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7520,7 +7520,7 @@ gimple_simplify_CFN_BUILT_IN_COSF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7563,7 +7563,7 @@ gimple_simplify_CFN_BUILT_IN_COS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7581,7 +7581,7 @@ gimple_simplify_CFN_BUILT_IN_COS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7607,7 +7607,7 @@ gimple_simplify_CFN_BUILT_IN_COS (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7650,7 +7650,7 @@ gimple_simplify_CFN_BUILT_IN_COSL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7668,7 +7668,7 @@ gimple_simplify_CFN_BUILT_IN_COSL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7694,7 +7694,7 @@ gimple_simplify_CFN_BUILT_IN_COSL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7737,7 +7737,7 @@ gimple_simplify_CFN_COS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7755,7 +7755,7 @@ gimple_simplify_CFN_COS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7781,7 +7781,7 @@ gimple_simplify_CFN_COS (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7824,7 +7824,7 @@ gimple_simplify_CFN_BUILT_IN_COSHF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7842,7 +7842,7 @@ gimple_simplify_CFN_BUILT_IN_COSHF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7868,7 +7868,7 @@ gimple_simplify_CFN_BUILT_IN_COSHF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7911,7 +7911,7 @@ gimple_simplify_CFN_BUILT_IN_COSH (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7929,7 +7929,7 @@ gimple_simplify_CFN_BUILT_IN_COSH (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -7955,7 +7955,7 @@ gimple_simplify_CFN_BUILT_IN_COSH (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -7998,7 +7998,7 @@ gimple_simplify_CFN_BUILT_IN_COSHL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -8016,7 +8016,7 @@ gimple_simplify_CFN_BUILT_IN_COSHL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 361 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 361 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:361, %s:%d\n", __FILE__, __LINE__);
@@ -8042,7 +8042,7 @@ gimple_simplify_CFN_BUILT_IN_COSHL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 393 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 393 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:393, %s:%d\n", __FILE__, __LINE__);
@@ -8085,7 +8085,7 @@ gimple_simplify_CFN_BUILT_IN_CCOSF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8127,7 +8127,7 @@ gimple_simplify_CFN_BUILT_IN_CCOS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8169,7 +8169,7 @@ gimple_simplify_CFN_BUILT_IN_CCOSL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8211,7 +8211,7 @@ gimple_simplify_CFN_BUILT_IN_CCOSHF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8253,7 +8253,7 @@ gimple_simplify_CFN_BUILT_IN_CCOSH (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8295,7 +8295,7 @@ gimple_simplify_CFN_BUILT_IN_CCOSHL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 431 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:431, %s:%d\n", __FILE__, __LINE__);
@@ -8337,7 +8337,7 @@ gimple_simplify_CFN_BUILT_IN_CABSF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8355,7 +8355,7 @@ gimple_simplify_CFN_BUILT_IN_CABSF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8378,7 +8378,7 @@ gimple_simplify_CFN_BUILT_IN_CABSF (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o21))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8391,7 +8391,7 @@ gimple_simplify_CFN_BUILT_IN_CABSF (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o20))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8404,9 +8404,9 @@ gimple_simplify_CFN_BUILT_IN_CABSF (code_helper *res_code, tree *res_ops,
 			  if (o21 == o20 || operand_equal_p (o21, o20, 0))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -8462,7 +8462,7 @@ gimple_simplify_CFN_BUILT_IN_CABS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8480,7 +8480,7 @@ gimple_simplify_CFN_BUILT_IN_CABS (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8503,7 +8503,7 @@ gimple_simplify_CFN_BUILT_IN_CABS (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o21))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8516,7 +8516,7 @@ gimple_simplify_CFN_BUILT_IN_CABS (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o20))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8529,9 +8529,9 @@ gimple_simplify_CFN_BUILT_IN_CABS (code_helper *res_code, tree *res_ops,
 			  if (o21 == o20 || operand_equal_p (o21, o20, 0))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -8587,7 +8587,7 @@ gimple_simplify_CFN_BUILT_IN_CABSL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8605,7 +8605,7 @@ gimple_simplify_CFN_BUILT_IN_CABSL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 438 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 438 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:438, %s:%d\n", __FILE__, __LINE__);
@@ -8628,7 +8628,7 @@ gimple_simplify_CFN_BUILT_IN_CABSL (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o21))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8641,7 +8641,7 @@ gimple_simplify_CFN_BUILT_IN_CABSL (code_helper *res_code, tree *res_ops,
 			  if (real_zerop (o20))
 			    {
 			      {
-/* #line 2601 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2601 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				gimple_seq *lseq = seq;
 				if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2601, %s:%d\n", __FILE__, __LINE__);
@@ -8654,9 +8654,9 @@ gimple_simplify_CFN_BUILT_IN_CABSL (code_helper *res_code, tree *res_ops,
 			  if (o21 == o20 || operand_equal_p (o21, o20, 0))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -8712,7 +8712,7 @@ gimple_simplify_ABS_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 685 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 685 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:685, %s:%d\n", __FILE__, __LINE__);
@@ -8729,7 +8729,7 @@ gimple_simplify_ABS_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 688 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 688 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:688, %s:%d\n", __FILE__, __LINE__);
@@ -8750,7 +8750,7 @@ gimple_simplify_ABS_EXPR (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 691 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 691 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:691, %s:%d\n", __FILE__, __LINE__);
@@ -8790,7 +8790,7 @@ gimple_simplify_NEGATE_EXPR (code_helper *res_code, tree *res_ops,
 			  if (gimple_negate_expr_p (o21, valueize))
 			    {
 			      {
-/* #line 724 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 724 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_46 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -8799,7 +8799,7 @@ gimple_simplify_NEGATE_EXPR (code_helper *res_code, tree *res_ops,
 			  if (gimple_negate_expr_p (o20, valueize))
 			    {
 			      {
-/* #line 724 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 724 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_46 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -8829,7 +8829,7 @@ gimple_simplify_NEGATE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_78 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -8852,7 +8852,7 @@ gimple_simplify_NEGATE_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_78 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -8890,7 +8890,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 834 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 834 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:834, %s:%d\n", __FILE__, __LINE__);
@@ -8921,7 +8921,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 839 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 839 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_63 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -8940,7 +8940,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 					      if (integer_each_onep (o31))
 						{
 						  {
-/* #line 845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 845 "match.pd" */
 						    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 						    if (gimple_simplify_25 (res_code, res_ops, seq, valueize, type, captures))
 						      return true;
@@ -8963,7 +8963,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 					      if (integer_all_onesp (o31))
 						{
 						  {
-/* #line 849 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 849 "match.pd" */
 						    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 						    if (gimple_simplify_134 (res_code, res_ops, seq, valueize, type, captures))
 						      return true;
@@ -8988,7 +8988,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 						case INTEGER_CST:
 						  {
 						    {
-/* #line 855 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 855 "match.pd" */
 						      tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
 						      if (gimple_simplify_64 (res_code, res_ops, seq, valueize, type, captures))
 						        return true;
@@ -9012,7 +9012,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 							      if ((o40 = do_valueize (valueize, o40)))
 							        {
 								  {
-/* #line 859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 859 "match.pd" */
 								    tree captures[2] ATTRIBUTE_UNUSED = { o40, o31 };
 								    if (gimple_simplify_156 (res_code, res_ops, seq, valueize, type, captures))
 								      return true;
@@ -9041,7 +9041,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 							      if ((o50 = do_valueize (valueize, o50)))
 							        {
 								  {
-/* #line 859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 859 "match.pd" */
 								    tree captures[2] ATTRIBUTE_UNUSED = { o50, o30 };
 								    if (gimple_simplify_156 (res_code, res_ops, seq, valueize, type, captures))
 								      return true;
@@ -9074,7 +9074,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 839 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 839 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_63 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -9093,7 +9093,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_each_onep (o21))
 			    {
 			      {
-/* #line 845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 845 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 				if (gimple_simplify_25 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -9116,7 +9116,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_all_onesp (o21))
 			    {
 			      {
-/* #line 849 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 849 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 				if (gimple_simplify_134 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -9141,7 +9141,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			    case INTEGER_CST:
 			      {
 				{
-/* #line 855 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 855 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				  if (gimple_simplify_64 (res_code, res_ops, seq, valueize, type, captures))
 				    return true;
@@ -9165,7 +9165,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 859 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_156 (res_code, res_ops, seq, valueize, type, captures))
 						  return true;
@@ -9194,7 +9194,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 859 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 859 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_156 (res_code, res_ops, seq, valueize, type, captures))
 						  return true;
@@ -9221,7 +9221,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR, UNGE_EXPR))
 			      return true;
@@ -9239,7 +9239,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR, UNGT_EXPR))
 			      return true;
@@ -9259,7 +9259,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, NE_EXPR, NE_EXPR))
 			      return true;
@@ -9279,7 +9279,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR, EQ_EXPR))
 			      return true;
@@ -9297,7 +9297,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LT_EXPR, UNLT_EXPR))
 			      return true;
@@ -9315,7 +9315,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LE_EXPR, UNLE_EXPR))
 			      return true;
@@ -9335,7 +9335,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNORDERED_EXPR, ORDERED_EXPR, ORDERED_EXPR))
 			      return true;
@@ -9355,7 +9355,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, ORDERED_EXPR, UNORDERED_EXPR, UNORDERED_EXPR))
 			      return true;
@@ -9373,7 +9373,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNLT_EXPR, GE_EXPR, GE_EXPR))
 			      return true;
@@ -9391,7 +9391,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR, GT_EXPR, GT_EXPR))
 			      return true;
@@ -9409,7 +9409,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNGT_EXPR, LE_EXPR, LE_EXPR))
 			      return true;
@@ -9427,7 +9427,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR, LT_EXPR, LT_EXPR))
 			      return true;
@@ -9447,7 +9447,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR, LTGT_EXPR, LTGT_EXPR))
 			      return true;
@@ -9467,7 +9467,7 @@ gimple_simplify_BIT_NOT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1800 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1800 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_57 (res_code, res_ops, seq, valueize, type, captures, LTGT_EXPR, UNEQ_EXPR, UNEQ_EXPR))
 			      return true;
@@ -9492,9 +9492,9 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     if ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[0]))) || (0 && type == TREE_TYPE (captures[0])))
       {
 	gimple_seq *lseq = seq;
@@ -9519,10 +9519,10 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -9543,7 +9543,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -9555,7 +9555,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -9567,7 +9567,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -9579,7 +9579,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -9591,7 +9591,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -9613,7 +9613,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -9639,10 +9639,10 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -9663,7 +9663,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -9675,7 +9675,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -9687,7 +9687,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -9699,7 +9699,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -9711,7 +9711,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -9733,7 +9733,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -9768,9 +9768,9 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 			    case INTEGER_CST:
 			      {
 				{
-/* #line 1570 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1570 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 1570 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1570 "match.pd" */
 				  if (INTEGRAL_TYPE_P (type) && INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_PRECISION (type) <= TYPE_PRECISION (TREE_TYPE (captures[0])) && operand_equal_p (captures[1], build_low_bits_mask (TREE_TYPE (captures[1]), TYPE_PRECISION (type)), 0))
 				    {
 				      gimple_seq *lseq = seq;
@@ -9828,7 +9828,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 							      if ((o50 = do_valueize (valueize, o50)))
 							        {
 								  {
-/* #line 2968 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2968 "match.pd" */
 								    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o21, o50 };
 								    if (gimple_simplify_47 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 								      return true;
@@ -9892,7 +9892,7 @@ gimple_simplify_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 							      if ((o50 = do_valueize (valueize, o50)))
 							        {
 								  {
-/* #line 2968 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2968 "match.pd" */
 								    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o21, o50 };
 								    if (gimple_simplify_47 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR))
 								      return true;
@@ -9935,9 +9935,9 @@ gimple_simplify_VIEW_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     if ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[0]))) || (0 && type == TREE_TYPE (captures[0])))
       {
 	gimple_seq *lseq = seq;
@@ -9964,7 +9964,7 @@ gimple_simplify_VIEW_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 		      && (o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1425 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1425 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1425, %s:%d\n", __FILE__, __LINE__);
@@ -9983,9 +9983,9 @@ gimple_simplify_VIEW_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1431 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1431 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1431 "match.pd" */
     if ((INTEGRAL_TYPE_P (type) || POINTER_TYPE_P (type)) && (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || POINTER_TYPE_P (TREE_TYPE (captures[0]))) && TYPE_PRECISION (type) == TYPE_PRECISION (TREE_TYPE (captures[0])))
       {
 	gimple_seq *lseq = seq;
@@ -10011,9 +10011,9 @@ gimple_simplify_VIEW_CONVERT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1439 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1439 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
-/* #line 1439 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1439 "match.pd" */
 			if ((INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) || POINTER_TYPE_P (TREE_TYPE (captures[0]))) && (INTEGRAL_TYPE_P (TREE_TYPE (captures[1])) || POINTER_TYPE_P (TREE_TYPE (captures[1]))) && (TYPE_PRECISION (TREE_TYPE (captures[0])) == TYPE_PRECISION (TREE_TYPE (captures[1]))) && (TYPE_SIZE (TREE_TYPE (captures[0])) == TYPE_SIZE (TREE_TYPE (captures[1]))))
 			  {
 			    gimple_seq *lseq = seq;
@@ -10043,9 +10043,9 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     if ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[0]))) || (0 && type == TREE_TYPE (captures[0])))
       {
 	gimple_seq *lseq = seq;
@@ -10070,10 +10070,10 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -10094,7 +10094,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -10106,7 +10106,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -10118,7 +10118,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -10130,7 +10130,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -10142,7 +10142,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -10164,7 +10164,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -10190,10 +10190,10 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -10214,7 +10214,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -10226,7 +10226,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -10238,7 +10238,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -10250,7 +10250,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -10262,7 +10262,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -10284,7 +10284,7 @@ gimple_simplify_FLOAT_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -10320,9 +10320,9 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1418 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1418 "match.pd" */
     if ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[0]))) || (0 && type == TREE_TYPE (captures[0])))
       {
 	gimple_seq *lseq = seq;
@@ -10347,10 +10347,10 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -10371,7 +10371,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -10383,7 +10383,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -10395,7 +10395,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -10407,7 +10407,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -10419,7 +10419,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -10441,7 +10441,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -10467,10 +10467,10 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			{
-/* #line 1459 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1459 "match.pd" */
  tree inside_type = TREE_TYPE (captures[1]);
  tree inter_type = TREE_TYPE (captures[0]);
  int inside_int = INTEGRAL_TYPE_P (inside_type);
@@ -10491,7 +10491,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
  int final_vec = VECTOR_TYPE_P (type);
  unsigned int final_prec = TYPE_PRECISION (type);
  int final_unsignedp = TYPE_UNSIGNED (type);
-/* #line 1487 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1487 "match.pd" */
 			    if (((1 && useless_type_conversion_p (type, inside_type)) || (0 && TYPE_MAIN_VARIANT (type) == TYPE_MAIN_VARIANT (inside_type))) && (((inter_int || inter_ptr) && final_int) || (inter_float && final_float)) && inter_prec >= final_prec)
 			      {
 				gimple_seq *lseq = seq;
@@ -10503,7 +10503,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 			      }
 			    else
 			      {
-/* #line 1501 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1501 "match.pd" */
 				if (((inter_int && inside_int) || (inter_float && inside_float)) && (final_int || final_float) && inter_prec >= inside_prec && (inter_float || inter_unsignedp == inside_unsignedp) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 				  {
 				    gimple_seq *lseq = seq;
@@ -10515,7 +10515,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 				else
 				  {
-/* #line 1513 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1513 "match.pd" */
 				    if (inside_int && inter_int && final_int && ((inside_prec < inter_prec && inter_prec < final_prec && inside_unsignedp && !inter_unsignedp) || final_prec == inter_prec))
 				      {
 					gimple_seq *lseq = seq;
@@ -10527,7 +10527,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 				      }
 				    else
 				      {
-/* #line 1530 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1530 "match.pd" */
 					if (! inside_float && ! inter_float && ! final_float && ! inside_vec && ! inter_vec && ! final_vec && (inter_prec >= inside_prec || inter_prec >= final_prec) && ! (inside_int && inter_int && inter_unsignedp != inside_unsignedp && inter_prec < final_prec) && ((inter_unsignedp && inter_prec > inside_prec) == (final_unsignedp && final_prec > inter_prec)) && ! (inside_ptr && inter_prec != final_prec) && ! (final_ptr && inside_prec != inter_prec) && ! (final_prec != GET_MODE_PRECISION (TYPE_MODE (type)) && TYPE_MODE (type) == TYPE_MODE (inter_type)))
 					  {
 					    gimple_seq *lseq = seq;
@@ -10539,7 +10539,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 					  }
 					else
 					  {
-/* #line 1546 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1546 "match.pd" */
 					    if (1 && final_int && inter_int && inside_int && final_prec == inside_prec && final_prec > inter_prec && inter_unsignedp)
 					      {
 						gimple_seq *lseq = seq;
@@ -10561,7 +10561,7 @@ gimple_simplify_FIX_TRUNC_EXPR (code_helper *res_code, tree *res_ops,
 					      }
 					    else
 					      {
-/* #line 1559 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1559 "match.pd" */
 						if (1 && inside_int && inter_float && final_int && (unsigned) significand_size (TYPE_MODE (inter_type)) >= inside_prec - !inside_unsignedp)
 						  {
 						    gimple_seq *lseq = seq;
@@ -10611,7 +10611,7 @@ gimple_simplify_PAREN_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1452 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1452 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1452, %s:%d\n", __FILE__, __LINE__);
@@ -10631,7 +10631,7 @@ gimple_simplify_PAREN_EXPR (code_helper *res_code, tree *res_ops,
 if (CONSTANT_CLASS_P (op0))
   {
     {
-/* #line 1449 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1449 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1449, %s:%d\n", __FILE__, __LINE__);
@@ -10667,7 +10667,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1628 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1628, %s:%d\n", __FILE__, __LINE__);
@@ -10699,7 +10699,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1636 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1636 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -10735,7 +10735,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 					      if (tree_swap_operands_p (o30, o31, false))
 					        std::swap (o30, o31);
 					      {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 						tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o30, o31 };
 						enum tree_code op = PLUS_EXPR;
 						gimple_seq *lseq = seq;
@@ -10790,7 +10790,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o31 = do_valueize (valueize, o31)))
 					    {
 					      {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 						tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o30, o31 };
 						enum tree_code op = MINUS_EXPR;
 						gimple_seq *lseq = seq;
@@ -10847,7 +10847,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -10878,7 +10878,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -10909,7 +10909,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -10949,7 +10949,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1636 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1636 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -10985,7 +10985,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op0, o20, o21 };
 			    enum tree_code op = PLUS_EXPR;
 			    gimple_seq *lseq = seq;
@@ -11040,7 +11040,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op0, o20, o21 };
 			    enum tree_code op = MINUS_EXPR;
 			    gimple_seq *lseq = seq;
@@ -11097,7 +11097,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11128,7 +11128,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11159,7 +11159,7 @@ gimple_simplify_REALPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1647 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1647 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11217,7 +11217,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1631 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1631 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1631, %s:%d\n", __FILE__, __LINE__);
@@ -11249,7 +11249,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1639 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1639 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -11294,7 +11294,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 					      if (tree_swap_operands_p (o30, o31, false))
 					        std::swap (o30, o31);
 					      {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 						tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o30, o31 };
 						enum tree_code op = PLUS_EXPR;
 						gimple_seq *lseq = seq;
@@ -11349,7 +11349,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o31 = do_valueize (valueize, o31)))
 					    {
 					      {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 						tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o30, o31 };
 						enum tree_code op = MINUS_EXPR;
 						gimple_seq *lseq = seq;
@@ -11406,7 +11406,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -11437,7 +11437,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -11468,7 +11468,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o30 };
 					    gimple_seq *lseq = seq;
 					    if (lseq
@@ -11508,7 +11508,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1639 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1639 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11553,7 +11553,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 			  if (tree_swap_operands_p (o20, o21, false))
 			    std::swap (o20, o21);
 			  {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op0, o20, o21 };
 			    enum tree_code op = PLUS_EXPR;
 			    gimple_seq *lseq = seq;
@@ -11608,7 +11608,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1644 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1644 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op0, o20, o21 };
 			    enum tree_code op = MINUS_EXPR;
 			    gimple_seq *lseq = seq;
@@ -11665,7 +11665,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11696,7 +11696,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11727,7 +11727,7 @@ gimple_simplify_IMAGPART_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1650 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1650 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o20 };
 			gimple_seq *lseq = seq;
 			if (lseq
@@ -11796,7 +11796,7 @@ gimple_simplify_CONJ_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1655 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1655 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_125 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -11813,10 +11813,10 @@ gimple_simplify_CONJ_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o31 = do_valueize (valueize, o31)))
 					    {
 					      {
-/* #line 1661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1661 "match.pd" */
 						tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o30, o31 };
 						{
-/* #line 1661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1661 "match.pd" */
  tree itype = TREE_TYPE (type);
 						    gimple_seq *lseq = seq;
 						    if (lseq
@@ -11889,7 +11889,7 @@ gimple_simplify_CONJ_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1655 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1655 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_125 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -11906,10 +11906,10 @@ gimple_simplify_CONJ_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 1661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1661 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op0, o20, o21 };
 			    {
-/* #line 1661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1661 "match.pd" */
  tree itype = TREE_TYPE (type);
 				gimple_seq *lseq = seq;
 				if (lseq
@@ -12011,7 +12011,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1671 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1671 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_123 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP16))
 					      return true;
@@ -12053,7 +12053,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12082,7 +12082,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12125,7 +12125,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12154,7 +12154,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12197,7 +12197,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12226,7 +12226,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP16))
 						  return true;
@@ -12255,7 +12255,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP16 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1668 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1668 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_50 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP16))
 			  return true;
@@ -12307,7 +12307,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1671 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1671 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_123 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP32))
 					      return true;
@@ -12349,7 +12349,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12378,7 +12378,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12421,7 +12421,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12450,7 +12450,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12493,7 +12493,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12522,7 +12522,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP32))
 						  return true;
@@ -12551,7 +12551,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP32 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1668 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1668 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_50 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP32))
 			  return true;
@@ -12603,7 +12603,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 1671 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1671 "match.pd" */
 					    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 					    if (gimple_simplify_123 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP64))
 					      return true;
@@ -12645,7 +12645,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12674,7 +12674,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12717,7 +12717,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12746,7 +12746,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12789,7 +12789,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o30 = do_valueize (valueize, o30)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12818,7 +12818,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 					  if ((o40 = do_valueize (valueize, o40)))
 					    {
 					      {
-/* #line 1675 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1675 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						if (gimple_simplify_77 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, CFN_BUILT_IN_BSWAP64))
 						  return true;
@@ -12847,7 +12847,7 @@ gimple_simplify_CFN_BUILT_IN_BSWAP64 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 1668 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1668 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_50 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_BSWAP64))
 			  return true;
@@ -12885,9 +12885,9 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -12906,16 +12906,16 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -12955,16 +12955,16 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13004,16 +13004,16 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13053,16 +13053,16 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13098,16 +13098,16 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13146,7 +13146,7 @@ gimple_simplify_CFN_BUILT_IN_LOGF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOGF, CFN_BUILT_IN_POWF))
 			      return true;
@@ -13185,9 +13185,9 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -13206,16 +13206,16 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13255,16 +13255,16 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13304,16 +13304,16 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13353,16 +13353,16 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13398,16 +13398,16 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13446,7 +13446,7 @@ gimple_simplify_CFN_BUILT_IN_LOG (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG, CFN_BUILT_IN_POW))
 			      return true;
@@ -13485,9 +13485,9 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -13506,16 +13506,16 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13555,16 +13555,16 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13604,16 +13604,16 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13653,16 +13653,16 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13698,16 +13698,16 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13746,7 +13746,7 @@ gimple_simplify_CFN_BUILT_IN_LOGL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOGL, CFN_BUILT_IN_POWL))
 			      return true;
@@ -13785,9 +13785,9 @@ gimple_simplify_CFN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -13806,16 +13806,16 @@ gimple_simplify_CFN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP2) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13855,16 +13855,16 @@ gimple_simplify_CFN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -13904,16 +13904,16 @@ gimple_simplify_CFN_LOG (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -13952,7 +13952,7 @@ gimple_simplify_CFN_LOG (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_LOG, CFN_POW))
 			      return true;
@@ -13991,9 +13991,9 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -14012,16 +14012,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXPF) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14061,16 +14061,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14110,16 +14110,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14159,16 +14159,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14204,16 +14204,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14252,7 +14252,7 @@ gimple_simplify_CFN_BUILT_IN_LOG2F (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG2F, CFN_BUILT_IN_POWF))
 			      return true;
@@ -14291,9 +14291,9 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -14312,16 +14312,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14361,16 +14361,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14410,16 +14410,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14459,16 +14459,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14504,16 +14504,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14552,7 +14552,7 @@ gimple_simplify_CFN_BUILT_IN_LOG2 (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG2, CFN_BUILT_IN_POW))
 			      return true;
@@ -14591,9 +14591,9 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -14612,16 +14612,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXPL) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14661,16 +14661,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP10L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14710,16 +14710,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_POW10L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14759,16 +14759,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14804,16 +14804,16 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -14852,7 +14852,7 @@ gimple_simplify_CFN_BUILT_IN_LOG2L (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG2L, CFN_BUILT_IN_POWL))
 			      return true;
@@ -14891,9 +14891,9 @@ gimple_simplify_CFN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -14912,16 +14912,16 @@ gimple_simplify_CFN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -14961,16 +14961,16 @@ gimple_simplify_CFN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP10) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15010,16 +15010,16 @@ gimple_simplify_CFN_LOG2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15058,7 +15058,7 @@ gimple_simplify_CFN_LOG2 (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_LOG2, CFN_POW))
 			      return true;
@@ -15097,9 +15097,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15118,9 +15118,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15139,16 +15139,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXPF) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15188,16 +15188,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2F) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15237,16 +15237,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15282,16 +15282,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTF) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15330,7 +15330,7 @@ gimple_simplify_CFN_BUILT_IN_LOG10F (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG10F, CFN_BUILT_IN_POWF))
 			      return true;
@@ -15369,9 +15369,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15390,9 +15390,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15411,16 +15411,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15460,16 +15460,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15509,16 +15509,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15554,16 +15554,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15602,7 +15602,7 @@ gimple_simplify_CFN_BUILT_IN_LOG10 (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG10, CFN_BUILT_IN_POW))
 			      return true;
@@ -15641,9 +15641,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15662,9 +15662,9 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15683,16 +15683,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXPL) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15732,16 +15732,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_EXP2L) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15781,16 +15781,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_SQRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15826,16 +15826,16 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_BUILT_IN_CBRTL) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -15874,7 +15874,7 @@ gimple_simplify_CFN_BUILT_IN_LOG10L (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LOG10L, CFN_BUILT_IN_POWL))
 			      return true;
@@ -15913,9 +15913,9 @@ gimple_simplify_CFN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -15934,16 +15934,16 @@ gimple_simplify_CFN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -15983,16 +15983,16 @@ gimple_simplify_CFN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2514 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2515 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2515 "match.pd" */
  tree x;
  switch (CFN_EXP2) { CASE_CFN_EXP: x = build_real_truncate (type, dconst_e ());
  break;
@@ -16032,16 +16032,16 @@ gimple_simplify_CFN_LOG10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
-/* #line 2548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2548 "match.pd" */
 			    if (SCALAR_FLOAT_TYPE_P (type))
 			      {
 				{
-/* #line 2549 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2549 "match.pd" */
  tree x;
  switch (CFN_SQRT) { CASE_CFN_SQRT: x = build_real (type, dconsthalf);
  break;
@@ -16080,7 +16080,7 @@ gimple_simplify_CFN_LOG10 (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 			    if (gimple_simplify_30 (res_code, res_ops, seq, valueize, type, captures, CFN_LOG10, CFN_POW))
 			      return true;
@@ -16119,9 +16119,9 @@ gimple_simplify_CFN_BUILT_IN_EXPF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16164,9 +16164,9 @@ gimple_simplify_CFN_BUILT_IN_EXP (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16209,9 +16209,9 @@ gimple_simplify_CFN_BUILT_IN_EXPL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16254,9 +16254,9 @@ gimple_simplify_CFN_EXP (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16299,9 +16299,9 @@ gimple_simplify_CFN_BUILT_IN_EXP2F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16344,9 +16344,9 @@ gimple_simplify_CFN_BUILT_IN_EXP2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16389,9 +16389,9 @@ gimple_simplify_CFN_BUILT_IN_EXP2L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16434,9 +16434,9 @@ gimple_simplify_CFN_EXP2 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16479,9 +16479,9 @@ gimple_simplify_CFN_BUILT_IN_EXP10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16524,9 +16524,9 @@ gimple_simplify_CFN_BUILT_IN_EXP10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16569,9 +16569,9 @@ gimple_simplify_CFN_BUILT_IN_EXP10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16614,9 +16614,9 @@ gimple_simplify_CFN_EXP10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16659,9 +16659,9 @@ gimple_simplify_CFN_BUILT_IN_POW10F (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16704,9 +16704,9 @@ gimple_simplify_CFN_BUILT_IN_POW10 (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16749,9 +16749,9 @@ gimple_simplify_CFN_BUILT_IN_POW10L (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16794,9 +16794,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16826,9 +16826,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16858,9 +16858,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16890,9 +16890,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -16922,9 +16922,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -16945,9 +16945,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -16971,9 +16971,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -17038,9 +17038,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17070,9 +17070,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17102,9 +17102,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17134,9 +17134,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17166,9 +17166,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17189,9 +17189,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17215,9 +17215,9 @@ gimple_simplify_CFN_BUILT_IN_SQRT (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -17282,9 +17282,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17314,9 +17314,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17346,9 +17346,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17378,9 +17378,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17410,9 +17410,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17433,9 +17433,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17459,9 +17459,9 @@ gimple_simplify_CFN_BUILT_IN_SQRTL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -17526,9 +17526,9 @@ gimple_simplify_CFN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17558,9 +17558,9 @@ gimple_simplify_CFN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17590,9 +17590,9 @@ gimple_simplify_CFN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17622,9 +17622,9 @@ gimple_simplify_CFN_SQRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17648,9 +17648,9 @@ gimple_simplify_CFN_SQRT (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -17715,9 +17715,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17747,9 +17747,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17779,9 +17779,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17811,9 +17811,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17843,9 +17843,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -17868,9 +17868,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -17897,9 +17897,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTF (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -17956,9 +17956,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -17988,9 +17988,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18020,9 +18020,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18052,9 +18052,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18084,9 +18084,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -18109,9 +18109,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -18138,9 +18138,9 @@ gimple_simplify_CFN_BUILT_IN_CBRT (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -18197,9 +18197,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18229,9 +18229,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18261,9 +18261,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18293,9 +18293,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -18325,9 +18325,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -18350,9 +18350,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -18379,9 +18379,9 @@ gimple_simplify_CFN_BUILT_IN_CBRTL (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -18438,7 +18438,7 @@ gimple_simplify_CFN_BUILT_IN_TANF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_144 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANF, CFN_BUILT_IN_ATANF))
 			  return true;
@@ -18476,7 +18476,7 @@ gimple_simplify_CFN_BUILT_IN_TAN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_144 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TAN, CFN_BUILT_IN_ATAN))
 			  return true;
@@ -18514,7 +18514,7 @@ gimple_simplify_CFN_BUILT_IN_TANL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_144 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANL, CFN_BUILT_IN_ATANL))
 			  return true;
@@ -18552,7 +18552,7 @@ gimple_simplify_CFN_TAN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_144 (res_code, res_ops, seq, valueize, type, captures, CFN_TAN, CFN_ATAN))
 			  return true;
@@ -18590,7 +18590,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCF))
 			  return true;
@@ -18607,7 +18607,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCF))
         return true;
@@ -18639,7 +18639,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNC (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNC, CFN_BUILT_IN_TRUNCF))
 			      return true;
@@ -18659,7 +18659,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNC (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNC))
 			  return true;
@@ -18676,7 +18676,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNC (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNC))
         return true;
@@ -18708,7 +18708,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCL, CFN_BUILT_IN_TRUNC))
 			      return true;
@@ -18717,7 +18717,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCL, CFN_BUILT_IN_TRUNCF))
 			      return true;
@@ -18737,7 +18737,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCL))
 			  return true;
@@ -18754,7 +18754,7 @@ gimple_simplify_CFN_BUILT_IN_TRUNCL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TRUNCL))
         return true;
@@ -18784,7 +18784,7 @@ gimple_simplify_CFN_TRUNC (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_TRUNC))
 			  return true;
@@ -18801,7 +18801,7 @@ gimple_simplify_CFN_TRUNC (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_TRUNC))
         return true;
@@ -18831,7 +18831,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORF))
 			  return true;
@@ -18848,7 +18848,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORF))
         return true;
@@ -18857,7 +18857,7 @@ if (integer_valued_real_p (op0))
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2775 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_21 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORF, CFN_BUILT_IN_TRUNCF))
         return true;
@@ -18889,7 +18889,7 @@ gimple_simplify_CFN_BUILT_IN_FLOOR (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOOR, CFN_BUILT_IN_FLOORF))
 			      return true;
@@ -18909,7 +18909,7 @@ gimple_simplify_CFN_BUILT_IN_FLOOR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOOR))
 			  return true;
@@ -18926,7 +18926,7 @@ gimple_simplify_CFN_BUILT_IN_FLOOR (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOOR))
         return true;
@@ -18935,7 +18935,7 @@ if (integer_valued_real_p (op0))
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2775 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_21 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOOR, CFN_BUILT_IN_TRUNC))
         return true;
@@ -18967,7 +18967,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORL, CFN_BUILT_IN_FLOOR))
 			      return true;
@@ -18976,7 +18976,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORL, CFN_BUILT_IN_FLOORF))
 			      return true;
@@ -18996,7 +18996,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORL))
 			  return true;
@@ -19013,7 +19013,7 @@ gimple_simplify_CFN_BUILT_IN_FLOORL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORL))
         return true;
@@ -19022,7 +19022,7 @@ if (integer_valued_real_p (op0))
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2775 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_21 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FLOORL, CFN_BUILT_IN_TRUNCL))
         return true;
@@ -19052,7 +19052,7 @@ gimple_simplify_CFN_FLOOR (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_FLOOR))
 			  return true;
@@ -19069,7 +19069,7 @@ gimple_simplify_CFN_FLOOR (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_FLOOR))
         return true;
@@ -19078,7 +19078,7 @@ if (integer_valued_real_p (op0))
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2775 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_21 (res_code, res_ops, seq, valueize, type, captures, CFN_FLOOR, CFN_TRUNC))
         return true;
@@ -19108,7 +19108,7 @@ gimple_simplify_CFN_BUILT_IN_CEILF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILF))
 			  return true;
@@ -19125,7 +19125,7 @@ gimple_simplify_CFN_BUILT_IN_CEILF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILF))
         return true;
@@ -19157,7 +19157,7 @@ gimple_simplify_CFN_BUILT_IN_CEIL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEIL, CFN_BUILT_IN_CEILF))
 			      return true;
@@ -19177,7 +19177,7 @@ gimple_simplify_CFN_BUILT_IN_CEIL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEIL))
 			  return true;
@@ -19194,7 +19194,7 @@ gimple_simplify_CFN_BUILT_IN_CEIL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEIL))
         return true;
@@ -19226,7 +19226,7 @@ gimple_simplify_CFN_BUILT_IN_CEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILL, CFN_BUILT_IN_CEIL))
 			      return true;
@@ -19235,7 +19235,7 @@ gimple_simplify_CFN_BUILT_IN_CEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILL, CFN_BUILT_IN_CEILF))
 			      return true;
@@ -19255,7 +19255,7 @@ gimple_simplify_CFN_BUILT_IN_CEILL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILL))
 			  return true;
@@ -19272,7 +19272,7 @@ gimple_simplify_CFN_BUILT_IN_CEILL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_CEILL))
         return true;
@@ -19302,7 +19302,7 @@ gimple_simplify_CFN_CEIL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_CEIL))
 			  return true;
@@ -19319,7 +19319,7 @@ gimple_simplify_CFN_CEIL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_CEIL))
         return true;
@@ -19349,7 +19349,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDF))
 			  return true;
@@ -19366,7 +19366,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDF))
         return true;
@@ -19398,7 +19398,7 @@ gimple_simplify_CFN_BUILT_IN_ROUND (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUND, CFN_BUILT_IN_ROUNDF))
 			      return true;
@@ -19418,7 +19418,7 @@ gimple_simplify_CFN_BUILT_IN_ROUND (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUND))
 			  return true;
@@ -19435,7 +19435,7 @@ gimple_simplify_CFN_BUILT_IN_ROUND (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUND))
         return true;
@@ -19467,7 +19467,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDL, CFN_BUILT_IN_ROUND))
 			      return true;
@@ -19476,7 +19476,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDL, CFN_BUILT_IN_ROUNDF))
 			      return true;
@@ -19496,7 +19496,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDL))
 			  return true;
@@ -19513,7 +19513,7 @@ gimple_simplify_CFN_BUILT_IN_ROUNDL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ROUNDL))
         return true;
@@ -19543,7 +19543,7 @@ gimple_simplify_CFN_ROUND (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_ROUND))
 			  return true;
@@ -19560,7 +19560,7 @@ gimple_simplify_CFN_ROUND (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_ROUND))
         return true;
@@ -19590,7 +19590,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTF))
 			  return true;
@@ -19607,7 +19607,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTF))
         return true;
@@ -19639,7 +19639,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINT (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINT, CFN_BUILT_IN_NEARBYINTF))
 			      return true;
@@ -19659,7 +19659,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINT))
 			  return true;
@@ -19676,7 +19676,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINT))
         return true;
@@ -19708,7 +19708,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTL, CFN_BUILT_IN_NEARBYINT))
 			      return true;
@@ -19717,7 +19717,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTL, CFN_BUILT_IN_NEARBYINTF))
 			      return true;
@@ -19737,7 +19737,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTL))
 			  return true;
@@ -19754,7 +19754,7 @@ gimple_simplify_CFN_BUILT_IN_NEARBYINTL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_NEARBYINTL))
         return true;
@@ -19784,7 +19784,7 @@ gimple_simplify_CFN_NEARBYINT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_NEARBYINT))
 			  return true;
@@ -19801,7 +19801,7 @@ gimple_simplify_CFN_NEARBYINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_NEARBYINT))
         return true;
@@ -19831,7 +19831,7 @@ gimple_simplify_CFN_BUILT_IN_RINTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTF))
 			  return true;
@@ -19848,7 +19848,7 @@ gimple_simplify_CFN_BUILT_IN_RINTF (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTF))
         return true;
@@ -19880,7 +19880,7 @@ gimple_simplify_CFN_BUILT_IN_RINT (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINT, CFN_BUILT_IN_RINTF))
 			      return true;
@@ -19900,7 +19900,7 @@ gimple_simplify_CFN_BUILT_IN_RINT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINT))
 			  return true;
@@ -19917,7 +19917,7 @@ gimple_simplify_CFN_BUILT_IN_RINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINT))
         return true;
@@ -19949,7 +19949,7 @@ gimple_simplify_CFN_BUILT_IN_RINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2799 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2799 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_23 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTL, CFN_BUILT_IN_RINT))
 			      return true;
@@ -19958,7 +19958,7 @@ gimple_simplify_CFN_BUILT_IN_RINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2821 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2821 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_152 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTL, CFN_BUILT_IN_RINTF))
 			      return true;
@@ -19978,7 +19978,7 @@ gimple_simplify_CFN_BUILT_IN_RINTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTL))
 			  return true;
@@ -19995,7 +19995,7 @@ gimple_simplify_CFN_BUILT_IN_RINTL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_RINTL))
         return true;
@@ -20025,7 +20025,7 @@ gimple_simplify_CFN_RINT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2607 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2607 "match.pd" */
 			tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			if (gimple_simplify_126 (res_code, res_ops, seq, valueize, type, captures, CFN_RINT))
 			  return true;
@@ -20042,7 +20042,7 @@ gimple_simplify_CFN_RINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2612 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2612 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
       if (gimple_simplify_119 (res_code, res_ops, seq, valueize, type, captures, CFN_RINT))
         return true;
@@ -20060,12 +20060,12 @@ gimple_simplify_CFN_BUILT_IN_CEXPF (code_helper *res_code, tree *res_ops,
   if (gimple_compositional_complex (op0, valueize))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[3] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
-/* #line 2770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2770 "match.pd" */
 	    if (targetm.libc_has_function (function_c99_math_complex))
 	      {
 		gimple_seq *lseq = seq;
@@ -20167,12 +20167,12 @@ gimple_simplify_CFN_BUILT_IN_CEXP (code_helper *res_code, tree *res_ops,
   if (gimple_compositional_complex (op0, valueize))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[3] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
-/* #line 2770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2770 "match.pd" */
 	    if (targetm.libc_has_function (function_c99_math_complex))
 	      {
 		gimple_seq *lseq = seq;
@@ -20274,12 +20274,12 @@ gimple_simplify_CFN_BUILT_IN_CEXPL (code_helper *res_code, tree *res_ops,
   if (gimple_compositional_complex (op0, valueize))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[3] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
-/* #line 2770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2770 "match.pd" */
 	    if (targetm.libc_has_function (function_c99_math_complex))
 	      {
 		gimple_seq *lseq = seq;
@@ -20395,7 +20395,7 @@ gimple_simplify_CFN_BUILT_IN_IFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IFLOORL, CFN_BUILT_IN_IFLOOR))
 			      return true;
@@ -20404,7 +20404,7 @@ gimple_simplify_CFN_BUILT_IN_IFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IFLOORL, CFN_BUILT_IN_IFLOORF))
 			      return true;
@@ -20422,9 +20422,9 @@ gimple_simplify_CFN_BUILT_IN_IFLOORL (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20439,9 +20439,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20454,12 +20454,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -20497,7 +20497,7 @@ gimple_simplify_CFN_BUILT_IN_LFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LFLOORL, CFN_BUILT_IN_LFLOOR))
 			      return true;
@@ -20506,7 +20506,7 @@ gimple_simplify_CFN_BUILT_IN_LFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LFLOORL, CFN_BUILT_IN_LFLOORF))
 			      return true;
@@ -20524,9 +20524,9 @@ gimple_simplify_CFN_BUILT_IN_LFLOORL (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20541,9 +20541,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20581,7 +20581,7 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLFLOORL, CFN_BUILT_IN_LLFLOOR))
 			      return true;
@@ -20590,7 +20590,7 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLFLOORL, CFN_BUILT_IN_LLFLOORF))
 			      return true;
@@ -20608,9 +20608,9 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORL (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20625,9 +20625,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20640,12 +20640,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -20683,7 +20683,7 @@ gimple_simplify_CFN_BUILT_IN_ICEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ICEILL, CFN_BUILT_IN_ICEIL))
 			      return true;
@@ -20692,7 +20692,7 @@ gimple_simplify_CFN_BUILT_IN_ICEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ICEILL, CFN_BUILT_IN_ICEILF))
 			      return true;
@@ -20710,9 +20710,9 @@ gimple_simplify_CFN_BUILT_IN_ICEILL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20725,12 +20725,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -20768,7 +20768,7 @@ gimple_simplify_CFN_BUILT_IN_LCEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LCEILL, CFN_BUILT_IN_LCEIL))
 			      return true;
@@ -20777,7 +20777,7 @@ gimple_simplify_CFN_BUILT_IN_LCEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LCEILL, CFN_BUILT_IN_LCEILF))
 			      return true;
@@ -20795,9 +20795,9 @@ gimple_simplify_CFN_BUILT_IN_LCEILL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20835,7 +20835,7 @@ gimple_simplify_CFN_BUILT_IN_LLCEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLCEILL, CFN_BUILT_IN_LLCEIL))
 			      return true;
@@ -20844,7 +20844,7 @@ gimple_simplify_CFN_BUILT_IN_LLCEILL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLCEILL, CFN_BUILT_IN_LLCEILF))
 			      return true;
@@ -20862,9 +20862,9 @@ gimple_simplify_CFN_BUILT_IN_LLCEILL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20877,12 +20877,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -20920,7 +20920,7 @@ gimple_simplify_CFN_BUILT_IN_IROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IROUNDL, CFN_BUILT_IN_IROUND))
 			      return true;
@@ -20929,7 +20929,7 @@ gimple_simplify_CFN_BUILT_IN_IROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IROUNDL, CFN_BUILT_IN_IROUNDF))
 			      return true;
@@ -20947,9 +20947,9 @@ gimple_simplify_CFN_BUILT_IN_IROUNDL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -20962,12 +20962,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21005,7 +21005,7 @@ gimple_simplify_CFN_BUILT_IN_LROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LROUNDL, CFN_BUILT_IN_LROUND))
 			      return true;
@@ -21014,7 +21014,7 @@ gimple_simplify_CFN_BUILT_IN_LROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LROUNDL, CFN_BUILT_IN_LROUNDF))
 			      return true;
@@ -21032,9 +21032,9 @@ gimple_simplify_CFN_BUILT_IN_LROUNDL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21072,7 +21072,7 @@ gimple_simplify_CFN_BUILT_IN_LLROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLROUNDL, CFN_BUILT_IN_LLROUND))
 			      return true;
@@ -21081,7 +21081,7 @@ gimple_simplify_CFN_BUILT_IN_LLROUNDL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLROUNDL, CFN_BUILT_IN_LLROUNDF))
 			      return true;
@@ -21099,9 +21099,9 @@ gimple_simplify_CFN_BUILT_IN_LLROUNDL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21114,12 +21114,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21157,7 +21157,7 @@ gimple_simplify_CFN_BUILT_IN_IRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IRINTL, CFN_BUILT_IN_IRINT))
 			      return true;
@@ -21166,7 +21166,7 @@ gimple_simplify_CFN_BUILT_IN_IRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IRINTL, CFN_BUILT_IN_IRINTF))
 			      return true;
@@ -21184,12 +21184,12 @@ gimple_simplify_CFN_BUILT_IN_IRINTL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -21203,12 +21203,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21246,7 +21246,7 @@ gimple_simplify_CFN_BUILT_IN_LRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LRINTL, CFN_BUILT_IN_LRINT))
 			      return true;
@@ -21255,7 +21255,7 @@ gimple_simplify_CFN_BUILT_IN_LRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LRINTL, CFN_BUILT_IN_LRINTF))
 			      return true;
@@ -21273,12 +21273,12 @@ gimple_simplify_CFN_BUILT_IN_LRINTL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -21317,7 +21317,7 @@ gimple_simplify_CFN_BUILT_IN_LLRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_double_value_p (o20, valueize))
 			{
 			  {
-/* #line 2830 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2830 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_106 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLRINTL, CFN_BUILT_IN_LLRINT))
 			      return true;
@@ -21326,7 +21326,7 @@ gimple_simplify_CFN_BUILT_IN_LLRINTL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLRINTL, CFN_BUILT_IN_LLRINTF))
 			      return true;
@@ -21344,12 +21344,12 @@ gimple_simplify_CFN_BUILT_IN_LLRINTL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -21363,12 +21363,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21406,7 +21406,7 @@ gimple_simplify_CFN_BUILT_IN_IFLOOR (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IFLOOR, CFN_BUILT_IN_IFLOORF))
 			      return true;
@@ -21424,9 +21424,9 @@ gimple_simplify_CFN_BUILT_IN_IFLOOR (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21441,9 +21441,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21456,12 +21456,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21499,7 +21499,7 @@ gimple_simplify_CFN_BUILT_IN_LFLOOR (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LFLOOR, CFN_BUILT_IN_LFLOORF))
 			      return true;
@@ -21517,9 +21517,9 @@ gimple_simplify_CFN_BUILT_IN_LFLOOR (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21534,9 +21534,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21574,7 +21574,7 @@ gimple_simplify_CFN_BUILT_IN_LLFLOOR (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLFLOOR, CFN_BUILT_IN_LLFLOORF))
 			      return true;
@@ -21592,9 +21592,9 @@ gimple_simplify_CFN_BUILT_IN_LLFLOOR (code_helper *res_code, tree *res_ops,
 if (tree_expr_nonnegative_p (op0))
   {
     {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21609,9 +21609,9 @@ if (tree_expr_nonnegative_p (op0))
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21624,12 +21624,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21667,7 +21667,7 @@ gimple_simplify_CFN_BUILT_IN_ICEIL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_ICEIL, CFN_BUILT_IN_ICEILF))
 			      return true;
@@ -21685,9 +21685,9 @@ gimple_simplify_CFN_BUILT_IN_ICEIL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21700,12 +21700,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21743,7 +21743,7 @@ gimple_simplify_CFN_BUILT_IN_LCEIL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LCEIL, CFN_BUILT_IN_LCEILF))
 			      return true;
@@ -21761,9 +21761,9 @@ gimple_simplify_CFN_BUILT_IN_LCEIL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21801,7 +21801,7 @@ gimple_simplify_CFN_BUILT_IN_LLCEIL (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLCEIL, CFN_BUILT_IN_LLCEILF))
 			      return true;
@@ -21819,9 +21819,9 @@ gimple_simplify_CFN_BUILT_IN_LLCEIL (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21834,12 +21834,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21877,7 +21877,7 @@ gimple_simplify_CFN_BUILT_IN_IROUND (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IROUND, CFN_BUILT_IN_IROUNDF))
 			      return true;
@@ -21895,9 +21895,9 @@ gimple_simplify_CFN_BUILT_IN_IROUND (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -21910,12 +21910,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -21953,7 +21953,7 @@ gimple_simplify_CFN_BUILT_IN_LROUND (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LROUND, CFN_BUILT_IN_LROUNDF))
 			      return true;
@@ -21971,9 +21971,9 @@ gimple_simplify_CFN_BUILT_IN_LROUND (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -22011,7 +22011,7 @@ gimple_simplify_CFN_BUILT_IN_LLROUND (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLROUND, CFN_BUILT_IN_LLROUNDF))
 			      return true;
@@ -22029,9 +22029,9 @@ gimple_simplify_CFN_BUILT_IN_LLROUND (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
 	  gimple_seq *lseq = seq;
@@ -22044,12 +22044,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22087,7 +22087,7 @@ gimple_simplify_CFN_BUILT_IN_IRINT (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_IRINT, CFN_BUILT_IN_IRINTF))
 			      return true;
@@ -22105,12 +22105,12 @@ gimple_simplify_CFN_BUILT_IN_IRINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -22124,12 +22124,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22167,7 +22167,7 @@ gimple_simplify_CFN_BUILT_IN_LRINT (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LRINT, CFN_BUILT_IN_LRINTF))
 			      return true;
@@ -22185,12 +22185,12 @@ gimple_simplify_CFN_BUILT_IN_LRINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -22229,7 +22229,7 @@ gimple_simplify_CFN_BUILT_IN_LLRINT (code_helper *res_code, tree *res_ops,
 		      if (gimple_float_value_p (o20, valueize))
 			{
 			  {
-/* #line 2840 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2840 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_139 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_LLRINT, CFN_BUILT_IN_LLRINTF))
 			      return true;
@@ -22247,12 +22247,12 @@ gimple_simplify_CFN_BUILT_IN_LLRINT (code_helper *res_code, tree *res_ops,
 if (integer_valued_real_p (op0))
   {
     {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
       if (canonicalize_math_p ())
 	{
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	  if (!flag_errno_math)
 	    {
 	      gimple_seq *lseq = seq;
@@ -22266,12 +22266,12 @@ if (integer_valued_real_p (op0))
     }
   }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22295,9 +22295,9 @@ gimple_simplify_CFN_BUILT_IN_IFLOORF (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22312,9 +22312,9 @@ gimple_simplify_CFN_BUILT_IN_IFLOORF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22327,12 +22327,12 @@ gimple_simplify_CFN_BUILT_IN_IFLOORF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22356,9 +22356,9 @@ gimple_simplify_CFN_BUILT_IN_LFLOORF (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22373,9 +22373,9 @@ gimple_simplify_CFN_BUILT_IN_LFLOORF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22399,9 +22399,9 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORF (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2845 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2845 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22416,9 +22416,9 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22431,12 +22431,12 @@ gimple_simplify_CFN_BUILT_IN_LLFLOORF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22460,9 +22460,9 @@ gimple_simplify_CFN_BUILT_IN_ICEILF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22475,12 +22475,12 @@ gimple_simplify_CFN_BUILT_IN_ICEILF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22504,9 +22504,9 @@ gimple_simplify_CFN_BUILT_IN_LCEILF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22530,9 +22530,9 @@ gimple_simplify_CFN_BUILT_IN_LLCEILF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22545,12 +22545,12 @@ gimple_simplify_CFN_BUILT_IN_LLCEILF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22574,9 +22574,9 @@ gimple_simplify_CFN_BUILT_IN_IROUNDF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22589,12 +22589,12 @@ gimple_simplify_CFN_BUILT_IN_IROUNDF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22618,9 +22618,9 @@ gimple_simplify_CFN_BUILT_IN_LROUNDF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22644,9 +22644,9 @@ gimple_simplify_CFN_BUILT_IN_LLROUNDF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -22659,12 +22659,12 @@ gimple_simplify_CFN_BUILT_IN_LLROUNDF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22688,12 +22688,12 @@ gimple_simplify_CFN_BUILT_IN_IRINTF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	    if (!flag_errno_math)
 	      {
 		gimple_seq *lseq = seq;
@@ -22707,12 +22707,12 @@ gimple_simplify_CFN_BUILT_IN_IRINTF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2873 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2873 "match.pd" */
 	if (TYPE_PRECISION (integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22736,12 +22736,12 @@ gimple_simplify_CFN_BUILT_IN_LRINTF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	    if (!flag_errno_math)
 	      {
 		gimple_seq *lseq = seq;
@@ -22766,12 +22766,12 @@ gimple_simplify_CFN_BUILT_IN_LLRINTF (code_helper *res_code, tree *res_ops,
   if (integer_valued_real_p (op0))
     {
       {
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2852 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2852 "match.pd" */
 	if (canonicalize_math_p ())
 	  {
-/* #line 2860 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2860 "match.pd" */
 	    if (!flag_errno_math)
 	      {
 		gimple_seq *lseq = seq;
@@ -22785,12 +22785,12 @@ gimple_simplify_CFN_BUILT_IN_LLRINTF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2867 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2867 "match.pd" */
     if (canonicalize_math_p ())
       {
-/* #line 2880 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2880 "match.pd" */
 	if (TYPE_PRECISION (long_long_integer_type_node) == TYPE_PRECISION (long_integer_type_node))
 	  {
 	    gimple_seq *lseq = seq;
@@ -22812,9 +22812,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJF (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     if (!HONOR_INFINITIES (type))
       {
 	gimple_seq *lseq = seq;
@@ -22848,9 +22848,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJF (code_helper *res_code, tree *res_ops,
 				if (tree_expr_nonnegative_p (o21))
 				  {
 				    {
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      if (real_isinf (TREE_REAL_CST_PTR (captures[0])))
 					{
 					  gimple_seq *lseq = seq;
@@ -22870,9 +22870,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJF (code_helper *res_code, tree *res_ops,
 			    case REAL_CST:
 			      {
 				{
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  if (real_isinf (TREE_REAL_CST_PTR (captures[1])))
 				    {
 				      gimple_seq *lseq = seq;
@@ -22906,9 +22906,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJ (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     if (!HONOR_INFINITIES (type))
       {
 	gimple_seq *lseq = seq;
@@ -22942,9 +22942,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJ (code_helper *res_code, tree *res_ops,
 				if (tree_expr_nonnegative_p (o21))
 				  {
 				    {
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      if (real_isinf (TREE_REAL_CST_PTR (captures[0])))
 					{
 					  gimple_seq *lseq = seq;
@@ -22964,9 +22964,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJ (code_helper *res_code, tree *res_ops,
 			    case REAL_CST:
 			      {
 				{
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  if (real_isinf (TREE_REAL_CST_PTR (captures[1])))
 				    {
 				      gimple_seq *lseq = seq;
@@ -23000,9 +23000,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJL (code_helper *res_code, tree *res_ops,
 , tree op0)
 {
   {
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2889 "match.pd" */
     if (!HONOR_INFINITIES (type))
       {
 	gimple_seq *lseq = seq;
@@ -23036,9 +23036,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJL (code_helper *res_code, tree *res_ops,
 				if (tree_expr_nonnegative_p (o21))
 				  {
 				    {
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2896 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2896 "match.pd" */
 				      if (real_isinf (TREE_REAL_CST_PTR (captures[0])))
 					{
 					  gimple_seq *lseq = seq;
@@ -23058,9 +23058,9 @@ gimple_simplify_CFN_BUILT_IN_CPROJL (code_helper *res_code, tree *res_ops,
 			    case REAL_CST:
 			      {
 				{
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 2902 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2902 "match.pd" */
 				  if (real_isinf (TREE_REAL_CST_PTR (captures[1])))
 				    {
 				      gimple_seq *lseq = seq;
@@ -23096,7 +23096,7 @@ gimple_simplify_CFN_BUILT_IN_SIGNBITF (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 3037 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3037 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:3037, %s:%d\n", __FILE__, __LINE__);
@@ -23106,9 +23106,9 @@ gimple_simplify_CFN_BUILT_IN_SIGNBITF (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     if (!HONOR_SIGNED_ZEROS (captures[0]))
       {
 	gimple_seq *lseq = seq;
@@ -23141,7 +23141,7 @@ gimple_simplify_CFN_BUILT_IN_SIGNBIT (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 3037 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3037 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:3037, %s:%d\n", __FILE__, __LINE__);
@@ -23151,9 +23151,9 @@ gimple_simplify_CFN_BUILT_IN_SIGNBIT (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     if (!HONOR_SIGNED_ZEROS (captures[0]))
       {
 	gimple_seq *lseq = seq;
@@ -23186,7 +23186,7 @@ gimple_simplify_CFN_BUILT_IN_SIGNBITL (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op0))
     {
       {
-/* #line 3037 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3037 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:3037, %s:%d\n", __FILE__, __LINE__);
@@ -23196,9 +23196,9 @@ gimple_simplify_CFN_BUILT_IN_SIGNBITL (code_helper *res_code, tree *res_ops,
       }
     }
   {
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 3042 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3042 "match.pd" */
     if (!HONOR_SIGNED_ZEROS (captures[0]))
       {
 	gimple_seq *lseq = seq;
@@ -23517,7 +23517,7 @@ gimple_simplify_PLUS_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 83 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 83 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:83, %s:%d\n", __FILE__, __LINE__);
@@ -23529,7 +23529,7 @@ gimple_simplify_PLUS_EXPR (code_helper *res_code, tree *res_ops,
   if (real_zerop (op1))
     {
       {
-/* #line 94 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 94 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_3 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -23580,7 +23580,7 @@ gimple_simplify_PLUS_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 								      return true;
@@ -23635,7 +23635,7 @@ gimple_simplify_PLUS_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o30 || operand_equal_p (o50, o30, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 								      return true;
@@ -23671,7 +23671,7 @@ gimple_simplify_PLUS_EXPR (code_helper *res_code, tree *res_ops,
 if (real_zerop (op0))
   {
     {
-/* #line 94 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 94 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
       if (gimple_simplify_3 (res_code, res_ops, seq, valueize, type, captures))
         return true;
@@ -23694,7 +23694,7 @@ if (real_zerop (op0))
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 			      return true;
@@ -23726,7 +23726,7 @@ if (real_zerop (op0))
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 			      return true;
@@ -23765,7 +23765,7 @@ if (real_zerop (op0))
 			      if (integer_onep (o31))
 				{
 				  {
-/* #line 548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 548 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o31 };
 				    if (gimple_simplify_112 (res_code, res_ops, seq, valueize, type, captures))
 				      return true;
@@ -23806,7 +23806,7 @@ if (real_zerop (op0))
 			      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 				{
 				  {
-/* #line 548 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 548 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, op0, o21 };
 				    if (gimple_simplify_112 (res_code, res_ops, seq, valueize, type, captures))
 				      return true;
@@ -23837,7 +23837,7 @@ if (real_zerop (op0))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 							      return true;
@@ -23863,7 +23863,7 @@ if (real_zerop (op0))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 586 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 586 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_101 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -23922,7 +23922,7 @@ if (real_zerop (op0))
 									      case INTEGER_CST:
 									        {
 										  {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 										    tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o21, o50, o60, o61 };
 										    if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 										      return true;
@@ -23959,7 +23959,7 @@ if (real_zerop (op0))
 							  case INTEGER_CST:
 							    {
 							      {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 								tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50, o51 };
 								if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 								  return true;
@@ -24020,7 +24020,7 @@ if (real_zerop (op0))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 							      return true;
@@ -24075,7 +24075,7 @@ if (real_zerop (op0))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 586 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 586 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_101 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -24162,7 +24162,7 @@ if (real_zerop (op0))
 												  case INTEGER_CST:
 												    {
 												      {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 													tree captures[6] ATTRIBUTE_UNUSED = { o20, o30, o31, o60, o70, o71 };
 													if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 													  return true;
@@ -24199,7 +24199,7 @@ if (real_zerop (op0))
 									      case INTEGER_CST:
 									        {
 										  {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 										    tree captures[6] ATTRIBUTE_UNUSED = { o20, o30, o31, op1, o60, o61 };
 										    if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 										      return true;
@@ -24270,7 +24270,7 @@ if (real_zerop (op0))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { op0, o40 };
 					    if (gimple_simplify_98 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -24322,7 +24322,7 @@ if (real_zerop (op0))
 				      if ((o30 = do_valueize (valueize, o30)))
 				        {
 					  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { op1, o30 };
 					    if (gimple_simplify_98 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -24360,7 +24360,7 @@ if (real_zerop (op0))
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			if (gimple_simplify_98 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -24389,7 +24389,7 @@ if (real_zerop (op0))
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op1, o20 };
 			if (gimple_simplify_98 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -24408,7 +24408,7 @@ if (real_zerop (op0))
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_61 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -24444,7 +24444,7 @@ if (real_zerop (op0))
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o30, op0 };
 				if (gimple_simplify_61 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -24484,7 +24484,7 @@ if (real_zerop (op0))
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_56 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, PLUS_EXPR))
 				      return true;
@@ -24508,7 +24508,7 @@ if (real_zerop (op0))
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_56 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, PLUS_EXPR))
 				      return true;
@@ -24520,7 +24520,7 @@ if (real_zerop (op0))
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_59 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 				      return true;
@@ -24539,7 +24539,7 @@ if (real_zerop (op0))
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_92 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -24571,7 +24571,7 @@ if (real_zerop (op0))
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_92 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -24617,7 +24617,7 @@ if (real_zerop (op0))
 					  if (integer_each_onep (op1))
 					    {
 					      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 						tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 						if (gimple_simplify_36 (res_code, res_ops, seq, valueize, type, captures))
 						  return true;
@@ -24643,7 +24643,7 @@ if (real_zerop (op0))
 		      if (integer_each_onep (op1))
 			{
 			  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_36 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -24663,15 +24663,15 @@ if (real_zerop (op0))
     case REAL_CST:
       {
 	{
-/* #line 1589 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1589 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 1589 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1589 "match.pd" */
 	  if (REAL_VALUE_NEGATIVE (TREE_REAL_CST (captures[1])))
 	    {
 	      {
-/* #line 1590 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1590 "match.pd" */
  tree tem = const_unop (NEGATE_EXPR, type, captures[1]);
-/* #line 1591 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1591 "match.pd" */
 		  if (!TREE_OVERFLOW (tem) || !flag_trapping_math)
 		    {
 		      gimple_seq *lseq = seq;
@@ -24692,9 +24692,9 @@ if (real_zerop (op0))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1597 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1597 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1597 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1597 "match.pd" */
 	if (SCALAR_FLOAT_TYPE_P (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -24748,7 +24748,7 @@ if (real_zerop (op0))
 						      if (integer_zerop (o42))
 							{
 							  {
-/* #line 1751 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1751 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o30, o40, o41, o42 };
 							    if (gimple_simplify_133 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -24816,7 +24816,7 @@ if (real_zerop (op0))
 						      if (integer_zerop (o32))
 							{
 							  {
-/* #line 1751 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1751 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op1, o20, o30, o31, o32 };
 							    if (gimple_simplify_133 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -24868,7 +24868,7 @@ if (real_zerop (op0))
 				  if (integer_zerop (o32))
 				    {
 				      {
-/* #line 1751 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1751 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o31, o32 };
 					if (gimple_simplify_133 (res_code, res_ops, seq, valueize, type, captures))
 					  return true;
@@ -24911,7 +24911,7 @@ if (real_zerop (op0))
 				  if (integer_zerop (o22))
 				    {
 				      {
-/* #line 1751 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1751 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op1, op0, o20, o21, o22 };
 					if (gimple_simplify_133 (res_code, res_ops, seq, valueize, type, captures))
 					  return true;
@@ -24941,7 +24941,7 @@ gimple_simplify_POINTER_PLUS_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 83 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 83 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:83, %s:%d\n", __FILE__, __LINE__);
@@ -24968,7 +24968,7 @@ gimple_simplify_POINTER_PLUS_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 922 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 922 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 			    gimple_seq *lseq = seq;
 			    if (lseq
@@ -25004,7 +25004,7 @@ gimple_simplify_POINTER_PLUS_EXPR (code_helper *res_code, tree *res_ops,
 if (integer_zerop (op0))
   {
     {
-/* #line 88 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 88 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op1 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:88, %s:%d\n", __FILE__, __LINE__);
@@ -25076,9 +25076,9 @@ if (integer_zerop (op0))
 										      if (o70 == op0 || operand_equal_p (o70, op0, 0))
 											{
 											  {
-/* #line 935 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 935 "match.pd" */
 											    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o50 };
-/* #line 935 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 935 "match.pd" */
 											    if (TYPE_PRECISION (TREE_TYPE (captures[1])) == TYPE_PRECISION (TREE_TYPE (captures[2])) && ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[3]))) || (0 && type == TREE_TYPE (captures[3]))))
 											      {
 												gimple_seq *lseq = seq;
@@ -25159,9 +25159,9 @@ if (integer_zerop (op0))
 								  if (o60 == op0 || operand_equal_p (o60, op0, 0))
 								    {
 								      {
-/* #line 935 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 935 "match.pd" */
 									tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, op1, o40 };
-/* #line 935 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 935 "match.pd" */
 									if (TYPE_PRECISION (TREE_TYPE (captures[1])) == TYPE_PRECISION (TREE_TYPE (captures[2])) && ((1 && useless_type_conversion_p (type, TREE_TYPE (captures[3]))) || (0 && type == TREE_TYPE (captures[3]))))
 									  {
 									    gimple_seq *lseq = seq;
@@ -25239,10 +25239,10 @@ if (integer_zerop (op0))
 									case INTEGER_CST:
 									  {
 									    {
-/* #line 949 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 949 "match.pd" */
 									      tree captures[2] ATTRIBUTE_UNUSED = { op0, o41 };
 									      {
-/* #line 949 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 949 "match.pd" */
  tree algn = wide_int_to_tree (TREE_TYPE (captures[0]), wi::bit_not (captures[1]));
 										  gimple_seq *lseq = seq;
 										  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:950, %s:%d\n", __FILE__, __LINE__);
@@ -25298,7 +25298,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 83 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 83 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:83, %s:%d\n", __FILE__, __LINE__);
@@ -25310,9 +25310,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
   if (real_zerop (op1))
     {
       {
-/* #line 100 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 100 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 100 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 100 "match.pd" */
 	if (fold_real_zero_addition_p (type, captures[1], 1))
 	  {
 	    gimple_seq *lseq = seq;
@@ -25326,9 +25326,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 110 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 110 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 110 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 110 "match.pd" */
 	if (!FLOAT_TYPE_P (type) || !HONOR_NANS (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -25406,7 +25406,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o51 == o61 || operand_equal_p (o51, o61, 0))
 											    {
 											      {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o20, o60, o61 };
 												if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 												  return true;
@@ -25442,7 +25442,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o71 == o50 || operand_equal_p (o71, o50, 0))
 											    {
 											      {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o20, o70, o50 };
 												if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 												  return true;
@@ -25501,7 +25501,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o41 == o51 || operand_equal_p (o41, o51, 0))
 									{
 									  {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 									    tree captures[3] ATTRIBUTE_UNUSED = { o20, o50, o51 };
 									    if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -25537,7 +25537,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o61 == o40 || operand_equal_p (o61, o40, 0))
 									{
 									  {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 									    tree captures[3] ATTRIBUTE_UNUSED = { o20, o60, o40 };
 									    if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -25625,7 +25625,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o41 == o51 || operand_equal_p (o41, o51, 0))
 									{
 									  {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 									    tree captures[3] ATTRIBUTE_UNUSED = { op0, o50, o51 };
 									    if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -25661,7 +25661,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o61 == o40 || operand_equal_p (o61, o40, 0))
 									{
 									  {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 									    tree captures[3] ATTRIBUTE_UNUSED = { op0, o60, o40 };
 									    if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -25720,7 +25720,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o31 == o41 || operand_equal_p (o31, o41, 0))
 						    {
 						      {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o40, o41 };
 							if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 							  return true;
@@ -25756,7 +25756,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o30 || operand_equal_p (o51, o30, 0))
 						    {
 						      {
-/* #line 313 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 313 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o50, o30 };
 							if (gimple_simplify_76 (res_code, res_ops, seq, valueize, type, captures))
 							  return true;
@@ -25839,7 +25839,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o40 || operand_equal_p (o61, o40, 0))
 									    {
 									      {
-/* #line 474 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 474 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o40, op1 };
 										if (gimple_simplify_85 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -25851,7 +25851,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o20 || operand_equal_p (o61, o20, 0))
 									    {
 									      {
-/* #line 474 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 474 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o40, op1 };
 										if (gimple_simplify_85 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -25915,7 +25915,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o30 || operand_equal_p (o61, o30, 0))
 									    {
 									      {
-/* #line 474 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 474 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o21, o30, op1 };
 										if (gimple_simplify_85 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -25927,7 +25927,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o21 || operand_equal_p (o61, o21, 0))
 									    {
 									      {
-/* #line 474 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 474 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o21, o30, op1 };
 										if (gimple_simplify_85 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -25983,9 +25983,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 							      case INTEGER_CST:
 							        {
 								  {
-/* #line 477 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 477 "match.pd" */
 								    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
-/* #line 477 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 477 "match.pd" */
 								    if (wi::bit_not (captures[2]) == captures[4])
 								      {
 									gimple_seq *lseq = seq;
@@ -26068,7 +26068,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o70 == o21 || operand_equal_p (o70, o21, 0))
 									    {
 									      {
-/* #line 483 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 483 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 										if (gimple_simplify_91 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -26103,7 +26103,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 									    {
 									      {
-/* #line 483 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 483 "match.pd" */
 										tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 										if (gimple_simplify_91 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -26167,9 +26167,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 591 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 591 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 591 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 591 "match.pd" */
 							    if (!TYPE_OVERFLOW_SANITIZED (type) && !TYPE_OVERFLOW_TRAPS (type) && !TYPE_SATURATING (type))
 							      {
 								gimple_seq *lseq = seq;
@@ -26202,9 +26202,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 598 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 598 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 598 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 598 "match.pd" */
 							    if (!TYPE_OVERFLOW_SANITIZED (type) && !TYPE_OVERFLOW_TRAPS (type) && !TYPE_SATURATING (type))
 							      {
 								gimple_seq *lseq = seq;
@@ -26266,7 +26266,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 605 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 605 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    gimple_seq *lseq = seq;
 							    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:605, %s:%d\n", __FILE__, __LINE__);
@@ -26297,7 +26297,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 610 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 610 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    gimple_seq *lseq = seq;
 							    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:610, %s:%d\n", __FILE__, __LINE__);
@@ -26332,9 +26332,9 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
   if (gimple_negate_expr_p (op1, valueize))
     {
       {
-/* #line 731 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 731 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 731 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 731 "match.pd" */
 	if (!FIXED_POINT_TYPE_P (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -26406,7 +26406,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								    {
 								      {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
 									tree captures[4] ATTRIBUTE_UNUSED = { o20, op1, o40, o51 };
 									if (gimple_simplify_168 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -26415,7 +26415,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 								    {
 								      {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
 									tree captures[4] ATTRIBUTE_UNUSED = { o20, op1, o40, o50 };
 									if (gimple_simplify_168 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -26471,7 +26471,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
 				tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, op1, o31 };
 				if (gimple_simplify_105 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26480,7 +26480,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 870 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 870 "match.pd" */
 				tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, op1, o30 };
 				if (gimple_simplify_105 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26529,15 +26529,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 					    if ((o40 = do_valueize (valueize, o40)))
 					      {
 						{
-/* #line 955 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 955 "match.pd" */
 						  tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
-/* #line 955 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 955 "match.pd" */
 						  if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
 						    {
 						      {
-/* #line 956 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 956 "match.pd" */
  HOST_WIDE_INT diff;
-/* #line 957 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 957 "match.pd" */
 							  if (ptr_difference_const (captures[0], captures[1], &diff))
 							    {
 							      gimple_seq *lseq = seq;
@@ -26581,15 +26581,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 					    case ADDR_EXPR:
 					      {
 						{
-/* #line 961 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 961 "match.pd" */
 						  tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
-/* #line 961 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 961 "match.pd" */
 						  if (tree_nop_conversion_p (type, TREE_TYPE (captures[0])))
 						    {
 						      {
-/* #line 962 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 962 "match.pd" */
  HOST_WIDE_INT diff;
-/* #line 963 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 963 "match.pd" */
 							  if (ptr_difference_const (captures[0], captures[1], &diff))
 							    {
 							      gimple_seq *lseq = seq;
@@ -26652,7 +26652,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { op0, o40 };
 					    if (gimple_simplify_84 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -26675,7 +26675,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			if (gimple_simplify_84 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -26711,7 +26711,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_41 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26720,7 +26720,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_41 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26741,12 +26741,12 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				if (!TYPE_SATURATING (type))
 				  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 				    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 				      {
 					gimple_seq *lseq = seq;
@@ -26791,7 +26791,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_79 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26800,7 +26800,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_79 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -26821,12 +26821,12 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				if (!TYPE_SATURATING (type))
 				  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 				    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 				      {
 					gimple_seq *lseq = seq;
@@ -26872,7 +26872,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_56 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, MINUS_EXPR))
 				      return true;
@@ -26896,7 +26896,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_56 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, MINUS_EXPR))
 				      return true;
@@ -26908,7 +26908,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_59 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR))
 				      return true;
@@ -26941,7 +26941,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 					  if (integer_each_onep (op1))
 					    {
 					      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 						tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 						if (gimple_simplify_52 (res_code, res_ops, seq, valueize, type, captures))
 						  return true;
@@ -26977,15 +26977,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o60 == o30 || operand_equal_p (o60, o30, 0))
 								    {
 								      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									if (!TYPE_SATURATING (type))
 									  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 									    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 									      {
-/* #line 1098 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1098 "match.pd" */
 										if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0))
 										  {
 										    gimple_seq *lseq = seq;
@@ -27037,15 +27037,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o60 == o30 || operand_equal_p (o60, o30, 0))
 								    {
 								      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									if (!TYPE_SATURATING (type))
 									  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 									    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 									      {
-/* #line 1098 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1098 "match.pd" */
 										if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0))
 										  {
 										    gimple_seq *lseq = seq;
@@ -27114,15 +27114,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								    {
 								      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o20, o51 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									if (!TYPE_SATURATING (type))
 									  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 									    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 									      {
-/* #line 1122 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1122 "match.pd" */
 										if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0))
 										  {
 										    gimple_seq *lseq = seq;
@@ -27166,15 +27166,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								    {
 								      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o20, o51 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 									if (!TYPE_SATURATING (type))
 									  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 									    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 									      {
-/* #line 1122 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1122 "match.pd" */
 										if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0))
 										  {
 										    gimple_seq *lseq = seq;
@@ -27277,15 +27277,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o30 || operand_equal_p (o70, o30, 0))
 											    {
 											      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, o71 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 												if (!TYPE_SATURATING (type))
 												  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 												    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 												      {
-/* #line 1146 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1146 "match.pd" */
 													if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0 && TREE_CODE (captures[2]) == INTEGER_CST && tree_int_cst_sign_bit (captures[2]) == 0))
 													  {
 													    gimple_seq *lseq = seq;
@@ -27395,15 +27395,15 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o30 || operand_equal_p (o70, o30, 0))
 											    {
 											      {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, o71 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 												if (!TYPE_SATURATING (type))
 												  {
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 												    if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 												      {
-/* #line 1146 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1146 "match.pd" */
 													if (element_precision (type) <= element_precision (TREE_TYPE (captures[1])) || (INTEGRAL_TYPE_P (TREE_TYPE (captures[0])) && TYPE_OVERFLOW_UNDEFINED (TREE_TYPE (captures[0]))) || (POINTER_TYPE_P (TREE_TYPE (captures[0])) && TREE_CODE (captures[1]) == INTEGER_CST && tree_int_cst_sign_bit (captures[1]) == 0 && TREE_CODE (captures[2]) == INTEGER_CST && tree_int_cst_sign_bit (captures[2]) == 0))
 													  {
 													    gimple_seq *lseq = seq;
@@ -27488,7 +27488,7 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 		      if (integer_each_onep (op1))
 			{
 			  {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_52 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -27506,12 +27506,12 @@ gimple_simplify_MINUS_EXPR (code_helper *res_code, tree *res_ops,
 if (integer_all_onesp (op0))
   {
     {
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op1 };
-/* #line 984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 984 "match.pd" */
       if (!TYPE_SATURATING (type))
 	{
-/* #line 1023 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1023 "match.pd" */
 	  if ((!FLOAT_TYPE_P (type) || flag_associative_math) && !FIXED_POINT_TYPE_P (type))
 	    {
 	      gimple_seq *lseq = seq;
@@ -27527,7 +27527,7 @@ if (integer_all_onesp (op0))
 if (integer_zerop (op0))
   {
     {
-/* #line 1602 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1602 "match.pd" */
       tree captures[1] ATTRIBUTE_UNUSED = { op1 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1602, %s:%d\n", __FILE__, __LINE__);
@@ -27540,9 +27540,9 @@ if (integer_zerop (op0))
 if (real_zerop (op0))
   {
     {
-/* #line 1609 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1609 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 1609 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1609 "match.pd" */
       if (fold_real_zero_addition_p (type, captures[0], 0))
 	{
 	  gimple_seq *lseq = seq;
@@ -27595,7 +27595,7 @@ if (real_zerop (op0))
 						      if (integer_zerop (o42))
 							{
 							  {
-/* #line 1760 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1760 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o30, o40, o41, o42 };
 							    if (gimple_simplify_147 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -27632,7 +27632,7 @@ if (real_zerop (op0))
 				  if (integer_zerop (o32))
 				    {
 				      {
-/* #line 1760 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1760 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o31, o32 };
 					if (gimple_simplify_147 (res_code, res_ops, seq, valueize, type, captures))
 					  return true;
@@ -27662,7 +27662,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 83 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 83 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:83, %s:%d\n", __FILE__, __LINE__);
@@ -27742,7 +27742,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											      if (o61 == o40 || operand_equal_p (o61, o40, 0))
 												{
 												  {
-/* #line 488 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 488 "match.pd" */
 												    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 												    if (gimple_simplify_94 (res_code, res_ops, seq, valueize, type, captures))
 												      return true;
@@ -27777,7 +27777,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											      if (o80 == o20 || operand_equal_p (o80, o20, 0))
 												{
 												  {
-/* #line 488 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 488 "match.pd" */
 												    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 												    if (gimple_simplify_94 (res_code, res_ops, seq, valueize, type, captures))
 												      return true;
@@ -27864,7 +27864,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											      if (o61 == o30 || operand_equal_p (o61, o30, 0))
 												{
 												  {
-/* #line 488 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 488 "match.pd" */
 												    tree captures[2] ATTRIBUTE_UNUSED = { o21, o30 };
 												    if (gimple_simplify_94 (res_code, res_ops, seq, valueize, type, captures))
 												      return true;
@@ -27899,7 +27899,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											      if (o80 == o21 || operand_equal_p (o80, o21, 0))
 												{
 												  {
-/* #line 488 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 488 "match.pd" */
 												    tree captures[2] ATTRIBUTE_UNUSED = { o21, o30 };
 												    if (gimple_simplify_94 (res_code, res_ops, seq, valueize, type, captures))
 												      return true;
@@ -27978,9 +27978,9 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 										  case INTEGER_CST:
 										    {
 										      {
-/* #line 491 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 491 "match.pd" */
 											tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o51 };
-/* #line 491 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 491 "match.pd" */
 											if (wi::bit_not (captures[1]) == captures[2])
 											  {
 											    gimple_seq *lseq = seq;
@@ -28064,9 +28064,9 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 										  case INTEGER_CST:
 										    {
 										      {
-/* #line 491 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 491 "match.pd" */
 											tree captures[3] ATTRIBUTE_UNUSED = { o30, o61, o21 };
-/* #line 491 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 491 "match.pd" */
 											if (wi::bit_not (captures[1]) == captures[2])
 											  {
 											    gimple_seq *lseq = seq;
@@ -28119,7 +28119,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_all_onesp (op1))
     {
       {
-/* #line 509 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 509 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:509, %s:%d\n", __FILE__, __LINE__);
@@ -28173,7 +28173,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 								      return true;
@@ -28228,7 +28228,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o30 || operand_equal_p (o50, o30, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 								      return true;
@@ -28278,7 +28278,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 			      return true;
@@ -28310,7 +28310,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 			      return true;
@@ -28328,7 +28328,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 543 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 543 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_110 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 	  return true;
@@ -28370,7 +28370,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o41 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 						      return true;
@@ -28379,7 +28379,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o41 == op0 || operand_equal_p (o41, op0, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o40 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 						      return true;
@@ -28440,7 +28440,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o30 || operand_equal_p (op1, o30, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o30, o20, o31 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 						      return true;
@@ -28449,7 +28449,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o31 || operand_equal_p (op1, o31, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o31, o20, o30 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 						      return true;
@@ -28487,7 +28487,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == o20 || operand_equal_p (o40, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o41, op0 };
 						    if (gimple_simplify_116 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -28496,7 +28496,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o41 == o20 || operand_equal_p (o41, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o40, op0 };
 						    if (gimple_simplify_116 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -28526,7 +28526,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
 								if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 								  return true;
@@ -28549,7 +28549,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 					      return true;
@@ -28593,7 +28593,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 						    if (gimple_simplify_89 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -28602,7 +28602,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == o21 || operand_equal_p (o50, o21, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, op1 };
 						    if (gimple_simplify_89 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -28626,7 +28626,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 							      return true;
@@ -28650,7 +28650,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o51 };
 							if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 							  return true;
@@ -28659,7 +28659,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o50 == o21 || operand_equal_p (o50, o21, 0))
 						    {
 						      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, o51 };
 							if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 							  return true;
@@ -28678,7 +28678,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 				  return true;
@@ -28687,7 +28687,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 				  return true;
@@ -28731,7 +28731,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 							      return true;
@@ -28800,7 +28800,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 									      if ((o60 = do_valueize (valueize, o60)))
 									        {
 										  {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 										    tree captures[2] ATTRIBUTE_UNUSED = { o30, o60 };
 										    if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 										      return true;
@@ -28823,7 +28823,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o30, o50 };
 								if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 								  return true;
@@ -28886,7 +28886,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o30 || operand_equal_p (o70, o30, 0))
 											    {
 											      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, o71 };
 												if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 												  return true;
@@ -28895,7 +28895,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o31 || operand_equal_p (o70, o31, 0))
 											    {
 											      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o31, o30, o71 };
 												if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 												  return true;
@@ -28945,7 +28945,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 					      return true;
@@ -28960,7 +28960,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 			  return true;
@@ -28996,7 +28996,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 				  return true;
@@ -29005,7 +29005,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 				  return true;
@@ -29057,7 +29057,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o30 || operand_equal_p (op1, o30, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -29089,7 +29089,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o40 || operand_equal_p (op1, o40, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -29150,7 +29150,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -29182,7 +29182,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == op0 || operand_equal_p (o50, op0, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_AND_EXPR))
 						      return true;
@@ -29248,7 +29248,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 							  return true;
@@ -29257,7 +29257,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 							  return true;
@@ -29309,7 +29309,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o61 == o40 || operand_equal_p (o61, o40, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o40, op1, o60 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29318,7 +29318,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o60 == o40 || operand_equal_p (o60, o40, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o40, op1, o61 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29379,7 +29379,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o61 == o30 || operand_equal_p (o61, o30, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op0, o21, o30, op1, o60 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29388,7 +29388,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o60 == o30 || operand_equal_p (o60, o30, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op0, o21, o30, op1, o61 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29449,7 +29449,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o70 == o21 || operand_equal_p (o70, o21, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op1, o50, o21, op0, o20 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29458,7 +29458,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o70 == o20 || operand_equal_p (o70, o20, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op1, o50, o20, op0, o21 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29490,7 +29490,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o60 == o21 || operand_equal_p (o60, o21, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op1, o51, o21, op0, o20 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29499,7 +29499,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 								      if (o60 == o20 || operand_equal_p (o60, o20, 0))
 									{
 									  {
-/* #line 865 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 865 "match.pd" */
 									    tree captures[5] ATTRIBUTE_UNUSED = { op1, o51, o20, op0, o21 };
 									    if (gimple_simplify_29 (res_code, res_ops, seq, valueize, type, captures))
 									      return true;
@@ -29543,7 +29543,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 792 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 792 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_10 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 				      return true;
@@ -29573,7 +29573,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 891 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 891 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_159 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, BIT_IOR_EXPR))
 					  return true;
@@ -29624,9 +29624,9 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o50 || operand_equal_p (o51, o50, 0))
 							{
 							  {
-/* #line 2098 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2098 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
-/* #line 2098 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2098 "match.pd" */
 							    if (types_match (captures[0], captures[1]))
 							      {
 								gimple_seq *lseq = seq;
@@ -29642,7 +29642,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 							{
 							  {
-/* #line 2106 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2106 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, o51 };
 							    if (gimple_simplify_27 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -29651,7 +29651,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o20 || operand_equal_p (o51, o20, 0))
 							{
 							  {
-/* #line 2106 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2106 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, o50 };
 							    if (gimple_simplify_27 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -29692,7 +29692,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o20 || operand_equal_p (o51, o20, 0))
 							{
 							  {
-/* #line 2106 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2106 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op0, o21 };
 							    if (gimple_simplify_39 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -29704,7 +29704,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2106 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2106 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o21, op0, o20 };
 							    if (gimple_simplify_39 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -29755,7 +29755,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR))
 							      return true;
@@ -29806,7 +29806,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR))
 							      return true;
@@ -29830,7 +29830,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 							      return true;
@@ -29856,7 +29856,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, NE_EXPR))
 							      return true;
@@ -29911,7 +29911,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 							      return true;
@@ -29935,7 +29935,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, NE_EXPR))
 							      return true;
@@ -29959,7 +29959,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, NE_EXPR))
 							      return true;
@@ -30012,7 +30012,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, NE_EXPR))
 							      return true;
@@ -30036,7 +30036,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR))
 							      return true;
@@ -30060,7 +30060,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 							      return true;
@@ -30111,7 +30111,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR))
 							      return true;
@@ -30166,7 +30166,7 @@ gimple_simplify_BIT_IOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2117 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2117 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_107 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 							      return true;
@@ -30202,7 +30202,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 	if (gimple_truth_valued_p (op1, valueize))
 	  {
 	    {
-/* #line 824 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 824 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 	      if (gimple_simplify_81 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 	        return true;
@@ -30219,7 +30219,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	if (o30 == op0 || operand_equal_p (o30, op0, 0))
 	  {
 	    {
-/* #line 824 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 824 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	      if (gimple_simplify_81 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR))
 	        return true;
@@ -30239,7 +30239,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 83 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 83 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:83, %s:%d\n", __FILE__, __LINE__);
@@ -30293,7 +30293,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 								      return true;
@@ -30348,7 +30348,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o30 || operand_equal_p (o50, o30, 0))
 								{
 								  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 								    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 								      return true;
@@ -30398,7 +30398,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 			      return true;
@@ -30430,7 +30430,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 522 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 522 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_104 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 			      return true;
@@ -30448,7 +30448,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 527 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 527 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:527, %s:%d\n", __FILE__, __LINE__);
@@ -30460,7 +30460,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_all_onesp (op1))
     {
       {
-/* #line 532 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 532 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:532, %s:%d\n", __FILE__, __LINE__);
@@ -30513,7 +30513,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 568 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 568 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_117 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -30539,7 +30539,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 							      return true;
@@ -30598,7 +30598,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 									      case INTEGER_CST:
 									        {
 										  {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 										    tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o21, o50, o60, o61 };
 										    if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 										      return true;
@@ -30635,7 +30635,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 							  case INTEGER_CST:
 							    {
 							      {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 								tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50, o51 };
 								if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 								  return true;
@@ -30696,7 +30696,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 568 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 568 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_117 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -30722,7 +30722,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 573 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 573 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_118 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -30742,7 +30742,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -30751,7 +30751,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -30795,7 +30795,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 573 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 573 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_118 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -30821,7 +30821,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 581 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 581 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_120 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 							      return true;
@@ -30908,7 +30908,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 												  case INTEGER_CST:
 												    {
 												      {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 													tree captures[6] ATTRIBUTE_UNUSED = { o20, o30, o31, o60, o70, o71 };
 													if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 													  return true;
@@ -30945,7 +30945,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 									      case INTEGER_CST:
 									        {
 										  {
-/* #line 640 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 640 "match.pd" */
 										    tree captures[6] ATTRIBUTE_UNUSED = { o20, o30, o31, op1, o60, o61 };
 										    if (gimple_simplify_37 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 										      return true;
@@ -30999,7 +30999,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o60 == o30 || operand_equal_p (o60, o30, 0))
 								    {
 								      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
 									if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -31008,7 +31008,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o60 == o31 || operand_equal_p (o60, o31, 0))
 								    {
 								      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o31, o30 };
 									if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -31069,7 +31069,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								    {
 								      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o20, o51 };
 									if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -31078,7 +31078,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 								  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 								    {
 								      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 									tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
 									if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 									  return true;
@@ -31134,7 +31134,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31143,7 +31143,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 648 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 648 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_5 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31216,7 +31216,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 									      if ((o60 = do_valueize (valueize, o60)))
 									        {
 										  {
-/* #line 654 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 654 "match.pd" */
 										    tree captures[2] ATTRIBUTE_UNUSED = { o30, o60 };
 										    if (gimple_simplify_32 (res_code, res_ops, seq, valueize, type, captures))
 										      return true;
@@ -31239,7 +31239,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 654 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 654 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o30, o50 };
 								if (gimple_simplify_32 (res_code, res_ops, seq, valueize, type, captures))
 								  return true;
@@ -31254,7 +31254,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 					    case INTEGER_CST:
 					      {
 						{
-/* #line 661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 661 "match.pd" */
 						  tree captures[2] ATTRIBUTE_UNUSED = { o30, op1 };
 						  if (gimple_simplify_17 (res_code, res_ops, seq, valueize, type, captures))
 						    return true;
@@ -31309,7 +31309,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 654 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 654 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
 								if (gimple_simplify_32 (res_code, res_ops, seq, valueize, type, captures))
 								  return true;
@@ -31332,7 +31332,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 654 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 654 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_32 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -31347,7 +31347,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 661 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 661 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_17 (res_code, res_ops, seq, valueize, type, captures))
 			        return true;
@@ -31372,7 +31372,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 667 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 667 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_151 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31381,7 +31381,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 667 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 667 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_151 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31419,7 +31419,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 667 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 667 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o30, op0 };
 				if (gimple_simplify_151 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31428,7 +31428,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 667 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 667 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o31, op0 };
 				if (gimple_simplify_151 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -31473,7 +31473,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 					      return true;
@@ -31488,7 +31488,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 			  return true;
@@ -31528,7 +31528,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 							  return true;
@@ -31537,7 +31537,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 							  return true;
@@ -31572,7 +31572,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 792 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 792 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_10 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 				      return true;
@@ -31602,7 +31602,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 891 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 891 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_159 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, BIT_XOR_EXPR))
 					  return true;
@@ -31630,7 +31630,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR, UNGE_EXPR))
 				  return true;
@@ -31651,7 +31651,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR, UNGT_EXPR))
 				  return true;
@@ -31674,7 +31674,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, NE_EXPR, NE_EXPR))
 				  return true;
@@ -31697,7 +31697,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR, EQ_EXPR))
 				  return true;
@@ -31718,7 +31718,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LT_EXPR, UNLT_EXPR))
 				  return true;
@@ -31739,7 +31739,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LE_EXPR, UNLE_EXPR))
 				  return true;
@@ -31762,7 +31762,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNORDERED_EXPR, ORDERED_EXPR, ORDERED_EXPR))
 				  return true;
@@ -31785,7 +31785,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, ORDERED_EXPR, UNORDERED_EXPR, UNORDERED_EXPR))
 				  return true;
@@ -31806,7 +31806,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNLT_EXPR, GE_EXPR, GE_EXPR))
 				  return true;
@@ -31827,7 +31827,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR, GT_EXPR, GT_EXPR))
 				  return true;
@@ -31848,7 +31848,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNGT_EXPR, LE_EXPR, LE_EXPR))
 				  return true;
@@ -31869,7 +31869,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR, LT_EXPR, LT_EXPR))
 				  return true;
@@ -31892,7 +31892,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR, LTGT_EXPR, LTGT_EXPR))
 				  return true;
@@ -31915,7 +31915,7 @@ gimple_simplify_BIT_XOR_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_truep (op1))
 			    {
 			      {
-/* #line 1814 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1814 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_150 (res_code, res_ops, seq, valueize, type, captures, LTGT_EXPR, UNEQ_EXPR, UNEQ_EXPR))
 				  return true;
@@ -31940,7 +31940,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 	if (gimple_truth_valued_p (op1, valueize))
 	  {
 	    {
-/* #line 824 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 824 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 	      if (gimple_simplify_81 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 	        return true;
@@ -31957,7 +31957,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	if (o30 == op0 || operand_equal_p (o30, op0, 0))
 	  {
 	    {
-/* #line 824 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 824 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	      if (gimple_simplify_81 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR))
 	        return true;
@@ -31977,7 +31977,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 115 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 115 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:115, %s:%d\n", __FILE__, __LINE__);
@@ -31989,9 +31989,9 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
   if (real_zerop (op1))
     {
       {
-/* #line 123 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 123 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 123 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 123 "match.pd" */
 	if (!HONOR_NANS (type) && !HONOR_SIGNED_ZEROS (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -32005,9 +32005,9 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
   if (real_onep (op1))
     {
       {
-/* #line 130 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 130 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 130 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 130 "match.pd" */
 	if (!HONOR_SNANS (type) && (!HONOR_SIGNED_ZEROS (type) || !COMPLEX_FLOAT_TYPE_P (type)))
 	  {
 	    gimple_seq *lseq = seq;
@@ -32021,9 +32021,9 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
   if (real_minus_onep (op1))
     {
       {
-/* #line 138 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 138 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 138 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 138 "match.pd" */
 	if (!HONOR_SNANS (type) && (!HONOR_SIGNED_ZEROS (type) || !COMPLEX_FLOAT_TYPE_P (type)))
 	  {
 	    gimple_seq *lseq = seq;
@@ -32038,7 +32038,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, MULT_EXPR))
 	  return true;
@@ -32066,9 +32066,9 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			      if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				{
 				  {
-/* #line 345 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 345 "match.pd" */
 				    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 345 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 345 "match.pd" */
 				    if (TYPE_UNSIGNED (TREE_TYPE (captures[0])))
 				      {
 					gimple_seq *lseq = seq;
@@ -32103,7 +32103,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 		      if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			{
 			  {
-/* #line 386 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 386 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:386, %s:%d\n", __FILE__, __LINE__);
@@ -32133,7 +32133,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			    {
 			      {
-/* #line 425 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 425 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_74 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNF))
 				  return true;
@@ -32154,7 +32154,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			    {
 			      {
-/* #line 425 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 425 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_74 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGN))
 				  return true;
@@ -32175,7 +32175,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			    {
 			      {
-/* #line 425 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 425 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_74 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNL))
 				  return true;
@@ -32196,7 +32196,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			    {
 			      {
-/* #line 425 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 425 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_74 (res_code, res_ops, seq, valueize, type, captures, CFN_COPYSIGN))
 				  return true;
@@ -32246,7 +32246,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					      if (integer_onep (o40))
 						{
 						  {
-/* #line 443 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 443 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op0, o40, o41 };
 						    if (gimple_simplify_138 (res_code, res_ops, seq, valueize, type, captures))
 						      return true;
@@ -32305,7 +32305,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					      if (integer_onep (o30))
 						{
 						  {
-/* #line 443 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 443 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op1, o30, o31 };
 						    if (gimple_simplify_138 (res_code, res_ops, seq, valueize, type, captures))
 						      return true;
@@ -32350,7 +32350,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_onep (o30))
 			    {
 			      {
-/* #line 443 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 443 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o31 };
 				if (gimple_simplify_138 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -32386,7 +32386,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_onep (o20))
 			    {
 			      {
-/* #line 443 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 443 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op1, o20, o21 };
 				if (gimple_simplify_138 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -32413,15 +32413,15 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 450 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 450 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
-/* #line 450 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 450 "match.pd" */
 					if (flag_associative_math && single_use (captures[0]))
 					  {
 					    {
-/* #line 452 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 452 "match.pd" */
  tree tem = const_binop (MULT_EXPR, type, captures[1], captures[3]);
-/* #line 454 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 454 "match.pd" */
 						if (tem)
 						  {
 						    gimple_seq *lseq = seq;
@@ -32483,7 +32483,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 							      if (gimple_negate_expr_p (o50, valueize))
 								{
 								  {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 								    tree captures[2] ATTRIBUTE_UNUSED = { o30, o50 };
 								    if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 								      return true;
@@ -32501,7 +32501,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					if (gimple_negate_expr_p (op1, valueize))
 					  {
 					    {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 					      tree captures[2] ATTRIBUTE_UNUSED = { o30, op1 };
 					      if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 					        return true;
@@ -32521,7 +32521,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o31 || operand_equal_p (op1, o31, 0))
 						{
 						  {
-/* #line 1582 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1582 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
 						    if (gimple_simplify_22 (res_code, res_ops, seq, valueize, type, captures))
 						      return true;
@@ -32568,7 +32568,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 							    if ((o50 = do_valueize (valueize, o50)))
 							      {
 								{
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 								  tree captures[2] ATTRIBUTE_UNUSED = { o50, o20 };
 								  if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 								    return true;
@@ -32591,7 +32591,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					if ((o40 = do_valueize (valueize, o40)))
 					  {
 					    {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 					      tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 					      if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 					        return true;
@@ -32631,7 +32631,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 					  if (gimple_negate_expr_p (o40, valueize))
 					    {
 					      {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 						tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 						if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 						  return true;
@@ -32649,7 +32649,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (gimple_negate_expr_p (op1, valueize))
 		      {
 			{
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 			    return true;
@@ -32669,7 +32669,7 @@ gimple_simplify_MULT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 1582 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1582 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_22 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -32716,7 +32716,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					if ((o40 = do_valueize (valueize, o40)))
 					  {
 					    {
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 					      tree captures[2] ATTRIBUTE_UNUSED = { o40, op0 };
 					      if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 					        return true;
@@ -32739,7 +32739,7 @@ if (gimple_negate_expr_p (op0, valueize))
 		    if ((o30 = do_valueize (valueize, o30)))
 		      {
 			{
-/* #line 717 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 717 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o30, op0 };
 			  if (gimple_simplify_20 (res_code, res_ops, seq, valueize, type, captures))
 			    return true;
@@ -32757,7 +32757,7 @@ if (gimple_negate_expr_p (op0, valueize))
   if (integer_minus_onep (op1))
     {
       {
-/* #line 1615 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1615 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1615, %s:%d\n", __FILE__, __LINE__);
@@ -32784,7 +32784,7 @@ if (gimple_negate_expr_p (op0, valueize))
 		      if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			{
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			    if (gimple_simplify_67 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF))
 			      return true;
@@ -32805,9 +32805,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -32852,7 +32852,7 @@ if (gimple_negate_expr_p (op0, valueize))
 		      if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			{
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			    if (gimple_simplify_67 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT))
 			      return true;
@@ -32873,9 +32873,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -32920,7 +32920,7 @@ if (gimple_negate_expr_p (op0, valueize))
 		      if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			{
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			    if (gimple_simplify_67 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL))
 			      return true;
@@ -32941,9 +32941,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -32988,7 +32988,7 @@ if (gimple_negate_expr_p (op0, valueize))
 		      if (op1 == op0 || operand_equal_p (op1, op0, 0))
 			{
 			  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { op0, o20 };
 			    if (gimple_simplify_67 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT))
 			      return true;
@@ -33009,9 +33009,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33068,9 +33068,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33127,9 +33127,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33186,9 +33186,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33245,9 +33245,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33304,9 +33304,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33363,9 +33363,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33422,9 +33422,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33481,9 +33481,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33540,9 +33540,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33599,9 +33599,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33658,9 +33658,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33717,9 +33717,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33776,9 +33776,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33835,9 +33835,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33894,9 +33894,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -33953,9 +33953,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -34012,9 +34012,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -34071,9 +34071,9 @@ if (gimple_negate_expr_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 					    if (flag_unsafe_math_optimizations)
 					      {
 						gimple_seq *lseq = seq;
@@ -34132,7 +34132,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANF, CFN_BUILT_IN_COSF, CFN_BUILT_IN_SINF))
 						  return true;
@@ -34172,7 +34172,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TAN, CFN_BUILT_IN_COS, CFN_BUILT_IN_SIN))
 						  return true;
@@ -34212,7 +34212,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANL, CFN_BUILT_IN_COSL, CFN_BUILT_IN_SINL))
 						  return true;
@@ -34252,7 +34252,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_TAN, CFN_COS, CFN_SIN))
 						  return true;
@@ -34292,7 +34292,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op1, o20, op0 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANF, CFN_BUILT_IN_COSF, CFN_BUILT_IN_SINF))
 						  return true;
@@ -34332,7 +34332,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op1, o20, op0 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TAN, CFN_BUILT_IN_COS, CFN_BUILT_IN_SIN))
 						  return true;
@@ -34372,7 +34372,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op1, o20, op0 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANL, CFN_BUILT_IN_COSL, CFN_BUILT_IN_SINL))
 						  return true;
@@ -34412,7 +34412,7 @@ if (gimple_negate_expr_p (op0, valueize))
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op1, o20, op0 };
 						if (gimple_simplify_97 (res_code, res_ops, seq, valueize, type, captures, CFN_TAN, CFN_COS, CFN_SIN))
 						  return true;
@@ -34460,7 +34460,7 @@ if (gimple_negate_expr_p (op0, valueize))
 				case REAL_CST:
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o31 };
 				      if (gimple_simplify_149 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
 				        return true;
@@ -34489,7 +34489,7 @@ if (gimple_negate_expr_p (op0, valueize))
 				case REAL_CST:
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o31 };
 				      if (gimple_simplify_149 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
 				        return true;
@@ -34518,7 +34518,7 @@ if (gimple_negate_expr_p (op0, valueize))
 				case REAL_CST:
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o31 };
 				      if (gimple_simplify_149 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
 				        return true;
@@ -34547,7 +34547,7 @@ if (gimple_negate_expr_p (op0, valueize))
 				case REAL_CST:
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o31 };
 				      if (gimple_simplify_149 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
 				        return true;
@@ -34604,7 +34604,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_129 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
 							  return true;
@@ -34613,7 +34613,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50 };
 							if (gimple_simplify_164 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
 							  return true;
@@ -34661,7 +34661,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_129 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
 							  return true;
@@ -34670,7 +34670,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50 };
 							if (gimple_simplify_164 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
 							  return true;
@@ -34718,7 +34718,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_129 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
 							  return true;
@@ -34727,7 +34727,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50 };
 							if (gimple_simplify_164 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
 							  return true;
@@ -34775,7 +34775,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_129 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
 							  return true;
@@ -34784,7 +34784,7 @@ if (gimple_negate_expr_p (op0, valueize))
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o50 };
 							if (gimple_simplify_164 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
 							  return true;
@@ -34822,7 +34822,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 	  return true;
@@ -34831,7 +34831,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_83 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 	  return true;
@@ -34863,7 +34863,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 170 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 170 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_86 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 					  return true;
@@ -34913,7 +34913,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, op1 };
 							    if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 							      return true;
@@ -34958,7 +34958,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 					  return true;
@@ -34990,9 +34990,9 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			      if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				{
 				  {
-/* #line 337 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 337 "match.pd" */
 				    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 337 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 337 "match.pd" */
 				    if (TYPE_UNSIGNED (TREE_TYPE (captures[0])))
 				      {
 					gimple_seq *lseq = seq;
@@ -35009,7 +35009,7 @@ gimple_simplify_TRUNC_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_55 (res_code, res_ops, seq, valueize, type, captures, TRUNC_DIV_EXPR))
 				  return true;
@@ -35037,7 +35037,7 @@ gimple_simplify_CEIL_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, CEIL_DIV_EXPR))
 	  return true;
@@ -35046,7 +35046,7 @@ gimple_simplify_CEIL_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_83 (res_code, res_ops, seq, valueize, type, captures, CEIL_DIV_EXPR))
 	  return true;
@@ -35094,7 +35094,7 @@ gimple_simplify_CEIL_DIV_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, op1 };
 							    if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, CEIL_DIV_EXPR))
 							      return true;
@@ -35139,7 +35139,7 @@ gimple_simplify_CEIL_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, CEIL_DIV_EXPR))
 					  return true;
@@ -35169,7 +35169,7 @@ gimple_simplify_CEIL_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_55 (res_code, res_ops, seq, valueize, type, captures, CEIL_DIV_EXPR))
 				  return true;
@@ -35197,7 +35197,7 @@ gimple_simplify_FLOOR_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, FLOOR_DIV_EXPR))
 	  return true;
@@ -35206,16 +35206,16 @@ gimple_simplify_FLOOR_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_83 (res_code, res_ops, seq, valueize, type, captures, FLOOR_DIV_EXPR))
 	  return true;
       }
     }
   {
-/* #line 161 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 161 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 161 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 161 "match.pd" */
     if ((INTEGRAL_TYPE_P (type) || VECTOR_INTEGER_TYPE_P (type)) && TYPE_UNSIGNED (type))
       {
 	gimple_seq *lseq = seq;
@@ -35269,7 +35269,7 @@ gimple_simplify_FLOOR_DIV_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, op1 };
 							    if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, FLOOR_DIV_EXPR))
 							      return true;
@@ -35314,7 +35314,7 @@ gimple_simplify_FLOOR_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, FLOOR_DIV_EXPR))
 					  return true;
@@ -35344,7 +35344,7 @@ gimple_simplify_FLOOR_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_55 (res_code, res_ops, seq, valueize, type, captures, FLOOR_DIV_EXPR))
 				  return true;
@@ -35372,7 +35372,7 @@ gimple_simplify_ROUND_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, ROUND_DIV_EXPR))
 	  return true;
@@ -35381,7 +35381,7 @@ gimple_simplify_ROUND_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_83 (res_code, res_ops, seq, valueize, type, captures, ROUND_DIV_EXPR))
 	  return true;
@@ -35429,7 +35429,7 @@ gimple_simplify_ROUND_DIV_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, op1 };
 							    if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, ROUND_DIV_EXPR))
 							      return true;
@@ -35474,7 +35474,7 @@ gimple_simplify_ROUND_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, ROUND_DIV_EXPR))
 					  return true;
@@ -35504,7 +35504,7 @@ gimple_simplify_ROUND_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_55 (res_code, res_ops, seq, valueize, type, captures, ROUND_DIV_EXPR))
 				  return true;
@@ -35532,7 +35532,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 148 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 148 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_1 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 	  return true;
@@ -35541,7 +35541,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 154 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 154 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_83 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 	  return true;
@@ -35573,7 +35573,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 170 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 170 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_86 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 					  return true;
@@ -35623,7 +35623,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, op1 };
 							    if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 							      return true;
@@ -35668,7 +35668,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 225 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_68 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 					  return true;
@@ -35698,7 +35698,7 @@ gimple_simplify_EXACT_DIV_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 352 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 352 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_55 (res_code, res_ops, seq, valueize, type, captures, EXACT_DIV_EXPR))
 				  return true;
@@ -35726,9 +35726,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 184 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 184 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 184 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 184 "match.pd" */
 	if (FLOAT_TYPE_P (type) && ! HONOR_NANS (type) && ! HONOR_INFINITIES (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -35756,7 +35756,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 193 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 193 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_66 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -35788,7 +35788,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 193 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 193 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_66 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -35806,9 +35806,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
   if (real_onep (op1))
     {
       {
-/* #line 201 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 201 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 201 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 201 "match.pd" */
 	if (!HONOR_SNANS (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -35822,9 +35822,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
   if (real_minus_onep (op1))
     {
       {
-/* #line 207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 207 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 207 "match.pd" */
 	if (!HONOR_SNANS (type))
 	  {
 	    gimple_seq *lseq = seq;
@@ -35854,9 +35854,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 210 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 210 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
-/* #line 210 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 210 "match.pd" */
 			    if (flag_reciprocal_math)
 			      {
 				gimple_seq *lseq = seq;
@@ -35909,9 +35909,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 210 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 210 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o31 };
-/* #line 210 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 210 "match.pd" */
 			    if (flag_reciprocal_math)
 			      {
 				gimple_seq *lseq = seq;
@@ -35947,18 +35947,18 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  if (optimize)
 	    {
-/* #line 241 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 241 "match.pd" */
 	      if (flag_reciprocal_math && !real_zerop (captures[1]))
 		{
 		  {
-/* #line 243 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 243 "match.pd" */
  tree tem = const_binop (RDIV_EXPR, type, build_one_cst (type), captures[1]);
-/* #line 245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 245 "match.pd" */
 		      if (tem)
 			{
 			  gimple_seq *lseq = seq;
@@ -35973,13 +35973,13 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 247 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 247 "match.pd" */
 		  if (REAL_CST != COMPLEX_CST)
 		    {
 		      {
-/* #line 248 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 248 "match.pd" */
  tree inverse = exact_inverse (type, captures[1]);
-/* #line 249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 249 "match.pd" */
 			  if (inverse)
 			    {
 			      gimple_seq *lseq = seq;
@@ -36000,18 +36000,18 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
     case COMPLEX_CST:
       {
 	{
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  if (optimize)
 	    {
-/* #line 241 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 241 "match.pd" */
 	      if (flag_reciprocal_math && !real_zerop (captures[1]))
 		{
 		  {
-/* #line 243 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 243 "match.pd" */
  tree tem = const_binop (RDIV_EXPR, type, build_one_cst (type), captures[1]);
-/* #line 245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 245 "match.pd" */
 		      if (tem)
 			{
 			  gimple_seq *lseq = seq;
@@ -36026,13 +36026,13 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 247 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 247 "match.pd" */
 		  if (COMPLEX_CST != COMPLEX_CST)
 		    {
 		      {
-/* #line 248 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 248 "match.pd" */
  tree inverse = exact_inverse (type, captures[1]);
-/* #line 249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 249 "match.pd" */
 			  if (inverse)
 			    {
 			      gimple_seq *lseq = seq;
@@ -36053,18 +36053,18 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
     case VECTOR_CST:
       {
 	{
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 240 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 240 "match.pd" */
 	  if (optimize)
 	    {
-/* #line 241 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 241 "match.pd" */
 	      if (flag_reciprocal_math && !real_zerop (captures[1]))
 		{
 		  {
-/* #line 243 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 243 "match.pd" */
  tree tem = const_binop (RDIV_EXPR, type, build_one_cst (type), captures[1]);
-/* #line 245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 245 "match.pd" */
 		      if (tem)
 			{
 			  gimple_seq *lseq = seq;
@@ -36079,13 +36079,13 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 247 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 247 "match.pd" */
 		  if (VECTOR_CST != COMPLEX_CST)
 		    {
 		      {
-/* #line 248 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 248 "match.pd" */
  tree inverse = exact_inverse (type, captures[1]);
-/* #line 249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 249 "match.pd" */
 			  if (inverse)
 			    {
 			      gimple_seq *lseq = seq;
@@ -36133,15 +36133,15 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 460 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 460 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o31 };
-/* #line 460 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 460 "match.pd" */
 					if (flag_reciprocal_math)
 					  {
 					    {
-/* #line 461 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 461 "match.pd" */
  tree tem = const_binop (RDIV_EXPR, type, captures[0], captures[2]);
-/* #line 463 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 463 "match.pd" */
 						if (tem)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36205,9 +36205,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36278,9 +36278,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36351,9 +36351,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36424,9 +36424,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36497,9 +36497,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36570,9 +36570,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36643,9 +36643,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if ((o41 = do_valueize (valueize, o41)))
 					    {
 					      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o30, o40, o41 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 						if (flag_unsafe_math_optimizations)
 						  {
 						    gimple_seq *lseq = seq;
@@ -36699,9 +36699,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36743,9 +36743,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36787,9 +36787,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36831,9 +36831,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36875,9 +36875,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36919,9 +36919,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -36963,9 +36963,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37007,9 +37007,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37051,9 +37051,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37095,9 +37095,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37139,9 +37139,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37183,9 +37183,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37227,9 +37227,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37271,9 +37271,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37315,9 +37315,9 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, o30 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -37390,7 +37390,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_65 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SINF, CFN_BUILT_IN_COSF, CFN_BUILT_IN_TANF))
 						  return true;
@@ -37407,7 +37407,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_90 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SINF, CFN_BUILT_IN_TANF, CFN_BUILT_IN_COSF))
 						  return true;
@@ -37447,7 +37447,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_65 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SIN, CFN_BUILT_IN_COS, CFN_BUILT_IN_TAN))
 						  return true;
@@ -37464,7 +37464,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_90 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SIN, CFN_BUILT_IN_TAN, CFN_BUILT_IN_COS))
 						  return true;
@@ -37504,7 +37504,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_65 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SINL, CFN_BUILT_IN_COSL, CFN_BUILT_IN_TANL))
 						  return true;
@@ -37521,7 +37521,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_90 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SINL, CFN_BUILT_IN_TANL, CFN_BUILT_IN_COSL))
 						  return true;
@@ -37561,7 +37561,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_65 (res_code, res_ops, seq, valueize, type, captures, CFN_SIN, CFN_COS, CFN_TAN))
 						  return true;
@@ -37578,7 +37578,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_90 (res_code, res_ops, seq, valueize, type, captures, CFN_SIN, CFN_TAN, CFN_COS))
 						  return true;
@@ -37618,7 +37618,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_102 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COSF, CFN_BUILT_IN_SINF, CFN_BUILT_IN_TANF))
 						  return true;
@@ -37658,7 +37658,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_102 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COS, CFN_BUILT_IN_SIN, CFN_BUILT_IN_TAN))
 						  return true;
@@ -37698,7 +37698,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_102 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COSL, CFN_BUILT_IN_SINL, CFN_BUILT_IN_TANL))
 						  return true;
@@ -37738,7 +37738,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_102 (res_code, res_ops, seq, valueize, type, captures, CFN_COS, CFN_SIN, CFN_TAN))
 						  return true;
@@ -37778,7 +37778,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_171 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANF, CFN_BUILT_IN_SINF, CFN_BUILT_IN_COSF))
 						  return true;
@@ -37818,7 +37818,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_171 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TAN, CFN_BUILT_IN_SIN, CFN_BUILT_IN_COS))
 						  return true;
@@ -37858,7 +37858,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_171 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_TANL, CFN_BUILT_IN_SINL, CFN_BUILT_IN_COSL))
 						  return true;
@@ -37898,7 +37898,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 						tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 						if (gimple_simplify_171 (res_code, res_ops, seq, valueize, type, captures, CFN_TAN, CFN_SIN, CFN_COS))
 						  return true;
@@ -37931,7 +37931,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o20 || operand_equal_p (op1, o20, 0))
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				      if (gimple_simplify_48 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
 				        return true;
@@ -37960,7 +37960,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o20 || operand_equal_p (op1, o20, 0))
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				      if (gimple_simplify_48 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
 				        return true;
@@ -37989,7 +37989,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o20 || operand_equal_p (op1, o20, 0))
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				      if (gimple_simplify_48 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
 				        return true;
@@ -38018,7 +38018,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o20 || operand_equal_p (op1, o20, 0))
 				  {
 				    {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				      if (gimple_simplify_48 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
 				        return true;
@@ -38056,7 +38056,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o31 };
 			    if (gimple_simplify_115 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
 			      return true;
@@ -38074,7 +38074,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o31 };
 			    if (gimple_simplify_115 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
 			      return true;
@@ -38092,7 +38092,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o31 };
 			    if (gimple_simplify_115 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
 			      return true;
@@ -38110,7 +38110,7 @@ gimple_simplify_RDIV_EXPR (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o31 };
 			    if (gimple_simplify_115 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
 			      return true;
@@ -38137,7 +38137,7 @@ gimple_simplify_CEIL_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 259 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 259 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_122 (res_code, res_ops, seq, valueize, type, captures, CEIL_MOD_EXPR))
 	  return true;
@@ -38146,7 +38146,7 @@ gimple_simplify_CEIL_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 264 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_146 (res_code, res_ops, seq, valueize, type, captures, CEIL_MOD_EXPR))
 	  return true;
@@ -38155,7 +38155,7 @@ gimple_simplify_CEIL_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 268 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 268 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_145 (res_code, res_ops, seq, valueize, type, captures, CEIL_MOD_EXPR))
 	  return true;
@@ -38181,7 +38181,7 @@ gimple_simplify_CEIL_MOD_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 273 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 273 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_72 (res_code, res_ops, seq, valueize, type, captures, CEIL_MOD_EXPR))
 				  return true;
@@ -38210,7 +38210,7 @@ gimple_simplify_CEIL_MOD_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 277 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_165 (res_code, res_ops, seq, valueize, type, captures, CEIL_MOD_EXPR))
 					  return true;
@@ -38245,7 +38245,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 259 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 259 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_122 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 	  return true;
@@ -38254,7 +38254,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 264 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_146 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 	  return true;
@@ -38263,7 +38263,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 268 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 268 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_145 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 	  return true;
@@ -38289,7 +38289,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 273 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 273 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_72 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 				  return true;
@@ -38318,7 +38318,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 277 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_165 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 					  return true;
@@ -38360,7 +38360,7 @@ gimple_simplify_FLOOR_MOD_EXPR (code_helper *res_code, tree *res_ops,
 		        {
 			  tree o40 = o30_pops[0];
 			  {
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
 			    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o40 };
 			    if (gimple_simplify_18 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
 			      return true;
@@ -38380,7 +38380,7 @@ if (gimple_power_of_two_cand (op1, op1_pops, valueize))
   {
     tree o30 = op1_pops[0];
     {
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
       tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, op1, o30 };
       if (gimple_simplify_53 (res_code, res_ops, seq, valueize, type, captures, FLOOR_MOD_EXPR))
         return true;
@@ -38398,7 +38398,7 @@ gimple_simplify_ROUND_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 259 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 259 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_122 (res_code, res_ops, seq, valueize, type, captures, ROUND_MOD_EXPR))
 	  return true;
@@ -38407,7 +38407,7 @@ gimple_simplify_ROUND_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 264 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_146 (res_code, res_ops, seq, valueize, type, captures, ROUND_MOD_EXPR))
 	  return true;
@@ -38416,7 +38416,7 @@ gimple_simplify_ROUND_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 268 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 268 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_145 (res_code, res_ops, seq, valueize, type, captures, ROUND_MOD_EXPR))
 	  return true;
@@ -38442,7 +38442,7 @@ gimple_simplify_ROUND_MOD_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 273 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 273 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_72 (res_code, res_ops, seq, valueize, type, captures, ROUND_MOD_EXPR))
 				  return true;
@@ -38471,7 +38471,7 @@ gimple_simplify_ROUND_MOD_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 277 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_165 (res_code, res_ops, seq, valueize, type, captures, ROUND_MOD_EXPR))
 					  return true;
@@ -38506,7 +38506,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 259 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 259 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_122 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 	  return true;
@@ -38515,7 +38515,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_onep (op1))
     {
       {
-/* #line 264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 264 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_146 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 	  return true;
@@ -38524,7 +38524,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_minus_onep (op1))
     {
       {
-/* #line 268 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 268 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_145 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 	  return true;
@@ -38550,7 +38550,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 273 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 273 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_72 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 				  return true;
@@ -38579,7 +38579,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 277 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 277 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_165 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 					  return true;
@@ -38631,7 +38631,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 296 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 296 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { op0, o40 };
 					    if (gimple_simplify_49 (res_code, res_ops, seq, valueize, type, captures))
 					      return true;
@@ -38650,7 +38650,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
 		      {
 			tree o40 = o30_pops[0];
 			{
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
 			  tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o30, o40 };
 			  if (gimple_simplify_18 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
 			    return true;
@@ -38665,7 +38665,7 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 296 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 296 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			if (gimple_simplify_49 (res_code, res_ops, seq, valueize, type, captures))
 			  return true;
@@ -38680,9 +38680,9 @@ gimple_simplify_TRUNC_MOD_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 285 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 285 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 285 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 285 "match.pd" */
 	  if (TYPE_SIGN (type) == SIGNED && !TREE_OVERFLOW (captures[1]) && wi::neg_p (captures[1]) && !TYPE_OVERFLOW_TRAPS (type) && !sign_bit_p (captures[1], captures[1]))
 	    {
 	      gimple_seq *lseq = seq;
@@ -38712,7 +38712,7 @@ if (gimple_power_of_two_cand (op1, op1_pops, valueize))
   {
     tree o30 = op1_pops[0];
     {
-/* #line 328 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 328 "match.pd" */
       tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, op1, o30 };
       if (gimple_simplify_53 (res_code, res_ops, seq, valueize, type, captures, TRUNC_MOD_EXPR))
         return true;
@@ -38746,13 +38746,13 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POWF;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -38782,13 +38782,13 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POWF;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -38828,7 +38828,7 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 				case REAL_CST:
 				  {
 				    {
-/* #line 400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 400 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				      if (gimple_simplify_2 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF, CFN_BUILT_IN_COPYSIGNF))
 				        return true;
@@ -38848,9 +38848,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -38880,9 +38880,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -38912,9 +38912,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -38944,9 +38944,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -38976,9 +38976,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -39011,9 +39011,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -39050,9 +39050,9 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -39088,7 +39088,7 @@ gimple_simplify_CFN_BUILT_IN_POWF (code_helper *res_code, tree *res_ops,
 if (real_onep (op0))
   {
     {
-/* #line 2622 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2622 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       if (gimple_simplify_162 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWF))
         return true;
@@ -39099,13 +39099,13 @@ if (real_onep (op0))
     case REAL_CST:
       {
 	{
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  {
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
  const REAL_VALUE_TYPE *value = TREE_REAL_CST_PTR (captures[1]);
  REAL_VALUE_TYPE tmp;
-/* #line 2916 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2916 "match.pd" */
 	      if (real_equal (value, &dconst0))
 		{
 		  gimple_seq *lseq = seq;
@@ -39116,7 +39116,7 @@ if (real_onep (op0))
 		}
 	      else
 		{
-/* #line 2919 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2919 "match.pd" */
 		  if (real_equal (value, &dconst1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -39127,7 +39127,7 @@ if (real_onep (op0))
 		    }
 		  else
 		    {
-/* #line 2922 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2922 "match.pd" */
 		      if (real_equal (value, &dconstm1))
 			{
 			  gimple_seq *lseq = seq;
@@ -39140,7 +39140,7 @@ if (real_onep (op0))
 			}
 		      else
 			{
-/* #line 2925 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2925 "match.pd" */
 			  if (flag_unsafe_math_optimizations && canonicalize_math_p () && real_equal (value, &dconsthalf))
 			    {
 			      gimple_seq *lseq = seq;
@@ -39152,7 +39152,7 @@ if (real_onep (op0))
 			    }
 			  else
 			    {
-/* #line 2930 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2930 "match.pd" */
 			      if (flag_unsafe_math_optimizations && canonicalize_math_p () && (tmp = real_value_truncate (TYPE_MODE (type), dconst_third ()), real_equal (value, &tmp)))
 				{
 				  gimple_seq *lseq = seq;
@@ -39200,13 +39200,13 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POW;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -39236,13 +39236,13 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POW;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -39282,7 +39282,7 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 				case REAL_CST:
 				  {
 				    {
-/* #line 400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 400 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				      if (gimple_simplify_2 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW, CFN_BUILT_IN_COPYSIGN))
 				        return true;
@@ -39302,9 +39302,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39334,9 +39334,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39366,9 +39366,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39398,9 +39398,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39430,9 +39430,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -39465,9 +39465,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -39504,9 +39504,9 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -39542,7 +39542,7 @@ gimple_simplify_CFN_BUILT_IN_POW (code_helper *res_code, tree *res_ops,
 if (real_onep (op0))
   {
     {
-/* #line 2622 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2622 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       if (gimple_simplify_162 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POW))
         return true;
@@ -39553,13 +39553,13 @@ if (real_onep (op0))
     case REAL_CST:
       {
 	{
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  {
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
  const REAL_VALUE_TYPE *value = TREE_REAL_CST_PTR (captures[1]);
  REAL_VALUE_TYPE tmp;
-/* #line 2916 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2916 "match.pd" */
 	      if (real_equal (value, &dconst0))
 		{
 		  gimple_seq *lseq = seq;
@@ -39570,7 +39570,7 @@ if (real_onep (op0))
 		}
 	      else
 		{
-/* #line 2919 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2919 "match.pd" */
 		  if (real_equal (value, &dconst1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -39581,7 +39581,7 @@ if (real_onep (op0))
 		    }
 		  else
 		    {
-/* #line 2922 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2922 "match.pd" */
 		      if (real_equal (value, &dconstm1))
 			{
 			  gimple_seq *lseq = seq;
@@ -39594,7 +39594,7 @@ if (real_onep (op0))
 			}
 		      else
 			{
-/* #line 2925 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2925 "match.pd" */
 			  if (flag_unsafe_math_optimizations && canonicalize_math_p () && real_equal (value, &dconsthalf))
 			    {
 			      gimple_seq *lseq = seq;
@@ -39606,7 +39606,7 @@ if (real_onep (op0))
 			    }
 			  else
 			    {
-/* #line 2930 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2930 "match.pd" */
 			      if (flag_unsafe_math_optimizations && canonicalize_math_p () && (tmp = real_value_truncate (TYPE_MODE (type), dconst_third ()), real_equal (value, &tmp)))
 				{
 				  gimple_seq *lseq = seq;
@@ -39654,13 +39654,13 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POWL;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -39690,13 +39690,13 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_BUILT_IN_POWL;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -39736,7 +39736,7 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 				case REAL_CST:
 				  {
 				    {
-/* #line 400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 400 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				      if (gimple_simplify_2 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL, CFN_BUILT_IN_COPYSIGNL))
 				        return true;
@@ -39756,9 +39756,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39788,9 +39788,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39820,9 +39820,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39852,9 +39852,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -39884,9 +39884,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -39919,9 +39919,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 		      if (tree_expr_nonnegative_p (o20))
 			{
 			  {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			    if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			      {
 				gimple_seq *lseq = seq;
@@ -39958,9 +39958,9 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -39996,7 +39996,7 @@ gimple_simplify_CFN_BUILT_IN_POWL (code_helper *res_code, tree *res_ops,
 if (real_onep (op0))
   {
     {
-/* #line 2622 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2622 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       if (gimple_simplify_162 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_POWL))
         return true;
@@ -40007,13 +40007,13 @@ if (real_onep (op0))
     case REAL_CST:
       {
 	{
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  {
-/* #line 2910 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2910 "match.pd" */
  const REAL_VALUE_TYPE *value = TREE_REAL_CST_PTR (captures[1]);
  REAL_VALUE_TYPE tmp;
-/* #line 2916 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2916 "match.pd" */
 	      if (real_equal (value, &dconst0))
 		{
 		  gimple_seq *lseq = seq;
@@ -40024,7 +40024,7 @@ if (real_onep (op0))
 		}
 	      else
 		{
-/* #line 2919 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2919 "match.pd" */
 		  if (real_equal (value, &dconst1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -40035,7 +40035,7 @@ if (real_onep (op0))
 		    }
 		  else
 		    {
-/* #line 2922 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2922 "match.pd" */
 		      if (real_equal (value, &dconstm1))
 			{
 			  gimple_seq *lseq = seq;
@@ -40048,7 +40048,7 @@ if (real_onep (op0))
 			}
 		      else
 			{
-/* #line 2925 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2925 "match.pd" */
 			  if (flag_unsafe_math_optimizations && canonicalize_math_p () && real_equal (value, &dconsthalf))
 			    {
 			      gimple_seq *lseq = seq;
@@ -40060,7 +40060,7 @@ if (real_onep (op0))
 			    }
 			  else
 			    {
-/* #line 2930 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2930 "match.pd" */
 			      if (flag_unsafe_math_optimizations && canonicalize_math_p () && (tmp = real_value_truncate (TYPE_MODE (type), dconst_third ()), real_equal (value, &tmp)))
 				{
 				  gimple_seq *lseq = seq;
@@ -40108,13 +40108,13 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_POW;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -40144,13 +40144,13 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      combined_fn pows = CFN_POW;
 			      {
-/* #line 366 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 366 "match.pd" */
  HOST_WIDE_INT n;
-/* #line 367 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 367 "match.pd" */
 				  if (real_isinteger (&TREE_REAL_CST (captures[1]), &n) && (n & 1) == 0)
 				    {
 				      gimple_seq *lseq = seq;
@@ -40190,7 +40190,7 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 				case REAL_CST:
 				  {
 				    {
-/* #line 400 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 400 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				      if (gimple_simplify_2 (res_code, res_ops, seq, valueize, type, captures, CFN_POW, CFN_COPYSIGN))
 				        return true;
@@ -40210,9 +40210,9 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -40242,9 +40242,9 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -40274,9 +40274,9 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2465 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2465 "match.pd" */
 			if (flag_unsafe_math_optimizations)
 			  {
 			    gimple_seq *lseq = seq;
@@ -40306,9 +40306,9 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 			if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 			  {
 			    gimple_seq *lseq = seq;
@@ -40344,9 +40344,9 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 			  if (tree_expr_nonnegative_p (o20))
 			    {
 			      {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 				if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 				  {
 				    gimple_seq *lseq = seq;
@@ -40382,7 +40382,7 @@ gimple_simplify_CFN_POW (code_helper *res_code, tree *res_ops,
 if (real_onep (op0))
   {
     {
-/* #line 2622 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2622 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       if (gimple_simplify_162 (res_code, res_ops, seq, valueize, type, captures, CFN_POW))
         return true;
@@ -40412,7 +40412,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40431,7 +40431,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40465,7 +40465,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -40484,7 +40484,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -40521,7 +40521,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 409 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 409 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:409, %s:%d\n", __FILE__, __LINE__);
@@ -40559,7 +40559,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 413 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 413 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o31 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:413, %s:%d\n", __FILE__, __LINE__);
@@ -40582,7 +40582,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTF (code_helper *res_code, tree *res_ops,
 if (real_zerop (op1))
   {
     {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -40595,7 +40595,7 @@ if (real_zerop (op1))
   if (real_zerop (op0))
     {
       {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -40608,9 +40608,9 @@ if (real_zerop (op1))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -40656,7 +40656,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40675,7 +40675,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40709,7 +40709,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -40728,7 +40728,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -40765,7 +40765,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 409 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 409 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:409, %s:%d\n", __FILE__, __LINE__);
@@ -40803,7 +40803,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 413 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 413 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o31 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:413, %s:%d\n", __FILE__, __LINE__);
@@ -40826,7 +40826,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOT (code_helper *res_code, tree *res_ops,
 if (real_zerop (op1))
   {
     {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -40839,7 +40839,7 @@ if (real_zerop (op1))
   if (real_zerop (op0))
     {
       {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -40852,9 +40852,9 @@ if (real_zerop (op1))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -40900,7 +40900,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40919,7 +40919,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 373 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 373 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:373, %s:%d\n", __FILE__, __LINE__);
@@ -40953,7 +40953,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -40972,7 +40972,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		  if ((o30 = do_valueize (valueize, o30)))
 		    {
 		      {
-/* #line 376 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 376 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 			gimple_seq *lseq = seq;
 			if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:376, %s:%d\n", __FILE__, __LINE__);
@@ -41009,7 +41009,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 409 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 409 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:409, %s:%d\n", __FILE__, __LINE__);
@@ -41047,7 +41047,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 		      if ((o31 = do_valueize (valueize, o31)))
 		        {
 			  {
-/* #line 413 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 413 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o31 };
 			    gimple_seq *lseq = seq;
 			    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:413, %s:%d\n", __FILE__, __LINE__);
@@ -41070,7 +41070,7 @@ gimple_simplify_CFN_BUILT_IN_HYPOTL (code_helper *res_code, tree *res_ops,
 if (real_zerop (op1))
   {
     {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
       gimple_seq *lseq = seq;
       if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -41083,7 +41083,7 @@ if (real_zerop (op1))
   if (real_zerop (op0))
     {
       {
-/* #line 2617 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2617 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:2617, %s:%d\n", __FILE__, __LINE__);
@@ -41096,9 +41096,9 @@ if (real_zerop (op1))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2657 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2657 "match.pd" */
 	if (flag_unsafe_math_optimizations && canonicalize_math_p ())
 	  {
 	    gimple_seq *lseq = seq;
@@ -41144,7 +41144,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF;
 			gimple_seq *lseq = seq;
@@ -41164,7 +41164,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGNF;
 			gimple_seq *lseq = seq;
@@ -41192,7 +41192,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 419 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 419 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    if (gimple_simplify_71 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNF))
 			      return true;
@@ -41210,7 +41210,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2627 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2627 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_95 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNF))
 	  return true;
@@ -41219,7 +41219,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNF (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op1))
     {
       {
-/* #line 2632 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2632 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_130 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNF))
 	  return true;
@@ -41249,7 +41249,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGN;
 			gimple_seq *lseq = seq;
@@ -41269,7 +41269,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGN;
 			gimple_seq *lseq = seq;
@@ -41297,7 +41297,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 419 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 419 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    if (gimple_simplify_71 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGN))
 			      return true;
@@ -41315,7 +41315,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGN (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2627 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2627 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_95 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGN))
 	  return true;
@@ -41324,7 +41324,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGN (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op1))
     {
       {
-/* #line 2632 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2632 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_130 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGN))
 	  return true;
@@ -41354,7 +41354,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGNL;
 			gimple_seq *lseq = seq;
@@ -41374,7 +41374,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNL (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_BUILT_IN_COPYSIGNL;
 			gimple_seq *lseq = seq;
@@ -41402,7 +41402,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNL (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 419 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 419 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    if (gimple_simplify_71 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNL))
 			      return true;
@@ -41420,7 +41420,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNL (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2627 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2627 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_95 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNL))
 	  return true;
@@ -41429,7 +41429,7 @@ gimple_simplify_CFN_BUILT_IN_COPYSIGNL (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op1))
     {
       {
-/* #line 2632 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2632 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_130 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_COPYSIGNL))
 	  return true;
@@ -41459,7 +41459,7 @@ gimple_simplify_CFN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_COPYSIGN;
 			gimple_seq *lseq = seq;
@@ -41479,7 +41479,7 @@ gimple_simplify_CFN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		  if ((o20 = do_valueize (valueize, o20)))
 		    {
 		      {
-/* #line 381 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 381 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			combined_fn copysigns = CFN_COPYSIGN;
 			gimple_seq *lseq = seq;
@@ -41507,7 +41507,7 @@ gimple_simplify_CFN_COPYSIGN (code_helper *res_code, tree *res_ops,
 		      if ((o21 = do_valueize (valueize, o21)))
 		        {
 			  {
-/* #line 419 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 419 "match.pd" */
 			    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 			    if (gimple_simplify_71 (res_code, res_ops, seq, valueize, type, captures, CFN_COPYSIGN))
 			      return true;
@@ -41525,7 +41525,7 @@ gimple_simplify_CFN_COPYSIGN (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 2627 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2627 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_95 (res_code, res_ops, seq, valueize, type, captures, CFN_COPYSIGN))
 	  return true;
@@ -41534,7 +41534,7 @@ gimple_simplify_CFN_COPYSIGN (code_helper *res_code, tree *res_ops,
   if (tree_expr_nonnegative_p (op1))
     {
       {
-/* #line 2632 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2632 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_130 (res_code, res_ops, seq, valueize, type, captures, CFN_COPYSIGN))
 	  return true;
@@ -41594,7 +41594,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 								{
 								  {
-/* #line 469 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 469 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 								    if (gimple_simplify_7 (res_code, res_ops, seq, valueize, type, captures))
 								      return true;
@@ -41649,7 +41649,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 							      if (o50 == o30 || operand_equal_p (o50, o30, 0))
 								{
 								  {
-/* #line 469 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 469 "match.pd" */
 								    tree captures[1] ATTRIBUTE_UNUSED = { o30 };
 								    if (gimple_simplify_7 (res_code, res_ops, seq, valueize, type, captures))
 								      return true;
@@ -41699,7 +41699,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 		      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			{
 			  {
-/* #line 469 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 469 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 			    if (gimple_simplify_7 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -41731,7 +41731,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 		      if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			{
 			  {
-/* #line 469 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 469 "match.pd" */
 			    tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 			    if (gimple_simplify_7 (res_code, res_ops, seq, valueize, type, captures))
 			      return true;
@@ -41749,7 +41749,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 514 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 514 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:514, %s:%d\n", __FILE__, __LINE__);
@@ -41761,7 +41761,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_all_onesp (op1))
     {
       {
-/* #line 537 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 537 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:537, %s:%d\n", __FILE__, __LINE__);
@@ -41773,7 +41773,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 543 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 543 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_110 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 	  return true;
@@ -41815,7 +41815,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o41 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 						      return true;
@@ -41824,7 +41824,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o41 == op0 || operand_equal_p (o41, op0, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { op0, o30, o40 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 						      return true;
@@ -41885,7 +41885,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o30 || operand_equal_p (op1, o30, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o30, o20, o31 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 						      return true;
@@ -41894,7 +41894,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o31 || operand_equal_p (op1, o31, 0))
 						{
 						  {
-/* #line 555 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 555 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o31, o20, o30 };
 						    if (gimple_simplify_114 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 						      return true;
@@ -41932,7 +41932,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == o20 || operand_equal_p (o40, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o41, op0 };
 						    if (gimple_simplify_116 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -41941,7 +41941,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o41 == o20 || operand_equal_p (o41, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o40, op0 };
 						    if (gimple_simplify_116 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -42000,7 +42000,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o31 || operand_equal_p (o61, o31, 0))
 									    {
 									      {
-/* #line 615 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 615 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o30, o31 };
 										if (gimple_simplify_131 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42056,7 +42056,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
 								if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 								  return true;
@@ -42079,7 +42079,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 					      return true;
@@ -42123,7 +42123,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 						    if (gimple_simplify_89 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -42132,7 +42132,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == o21 || operand_equal_p (o50, o21, 0))
 						{
 						  {
-/* #line 563 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 563 "match.pd" */
 						    tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, op1 };
 						    if (gimple_simplify_89 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -42162,7 +42162,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o21 || operand_equal_p (o61, o21, 0))
 									    {
 									      {
-/* #line 615 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 615 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 										if (gimple_simplify_131 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42211,7 +42211,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o70 == o20 || operand_equal_p (o70, o20, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42246,7 +42246,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42258,7 +42258,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42293,7 +42293,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o70 == o21 || operand_equal_p (o70, o21, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42326,7 +42326,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o51 };
 							if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 							  return true;
@@ -42335,7 +42335,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o50 == o21 || operand_equal_p (o50, o21, 0))
 						    {
 						      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, o51 };
 							if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 							  return true;
@@ -42354,7 +42354,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 				  return true;
@@ -42363,7 +42363,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 				  return true;
@@ -42421,7 +42421,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o20 || operand_equal_p (o61, o20, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42485,7 +42485,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o21 || operand_equal_p (o61, o21, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42549,7 +42549,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o40 || operand_equal_p (o61, o40, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42613,7 +42613,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									  if (o61 == o30 || operand_equal_p (o61, o30, 0))
 									    {
 									      {
-/* #line 620 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 620 "match.pd" */
 										tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 										if (gimple_simplify_135 (res_code, res_ops, seq, valueize, type, captures))
 										  return true;
@@ -42691,7 +42691,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 									      if ((o60 = do_valueize (valueize, o60)))
 									        {
 										  {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 										    tree captures[2] ATTRIBUTE_UNUSED = { o30, o60 };
 										    if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 										      return true;
@@ -42714,7 +42714,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 							  if ((o50 = do_valueize (valueize, o50)))
 							    {
 							      {
-/* #line 628 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 628 "match.pd" */
 								tree captures[2] ATTRIBUTE_UNUSED = { o30, o50 };
 								if (gimple_simplify_34 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 								  return true;
@@ -42777,7 +42777,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o30 || operand_equal_p (o70, o30, 0))
 											    {
 											      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o30, o31, o71 };
 												if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 												  return true;
@@ -42786,7 +42786,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 											  if (o70 == o31 || operand_equal_p (o70, o31, 0))
 											    {
 											      {
-/* #line 679 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 679 "match.pd" */
 												tree captures[3] ATTRIBUTE_UNUSED = { o31, o30, o71 };
 												if (gimple_simplify_54 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 												  return true;
@@ -42836,7 +42836,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 					      return true;
@@ -42851,7 +42851,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 743 "match.pd" */
 			tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			if (gimple_simplify_58 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 			  return true;
@@ -42887,7 +42887,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 				  return true;
@@ -42896,7 +42896,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 770 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 770 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_136 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 				  return true;
@@ -42948,7 +42948,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o30 || operand_equal_p (op1, o30, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { o30, o21 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -42980,7 +42980,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (op1 == o40 || operand_equal_p (op1, o40, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { o40, o20 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -43041,7 +43041,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -43073,7 +43073,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 					      if (o50 == op0 || operand_equal_p (o50, op0, 0))
 						{
 						  {
-/* #line 775 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 775 "match.pd" */
 						    tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 						    if (gimple_simplify_4 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, BIT_IOR_EXPR))
 						      return true;
@@ -43139,7 +43139,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o21 || operand_equal_p (o51, o21, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 							  return true;
@@ -43148,7 +43148,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 						  if (o51 == o20 || operand_equal_p (o51, o20, 0))
 						    {
 						      {
-/* #line 781 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 781 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o21, o20, o50 };
 							if (gimple_simplify_6 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 							  return true;
@@ -43169,7 +43169,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 792 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 792 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    if (gimple_simplify_10 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR))
 				      return true;
@@ -43195,7 +43195,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (CONSTANT_CLASS_P (op1))
 				{
 				  {
-/* #line 786 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 786 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 				    gimple_seq *lseq = seq;
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:786, %s:%d\n", __FILE__, __LINE__);
@@ -43244,7 +43244,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
       if (o30 == op0 || operand_equal_p (o30, op0, 0))
 	{
 	  {
-/* #line 819 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 819 "match.pd" */
 	    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	    if (gimple_simplify_153 (res_code, res_ops, seq, valueize, type, captures))
 	      return true;
@@ -43270,7 +43270,7 @@ gimple_simplify_BIT_AND_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 971 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 971 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_166 (res_code, res_ops, seq, valueize, type, captures))
 			        return true;
@@ -43295,7 +43295,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
     if (op1 == o20 || operand_equal_p (op1, o20, 0))
       {
 	{
-/* #line 819 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 819 "match.pd" */
 	  tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 	  if (gimple_simplify_153 (res_code, res_ops, seq, valueize, type, captures))
 	    return true;
@@ -43307,7 +43307,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
     case INTEGER_CST:
       {
 	{
-/* #line 971 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 971 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_166 (res_code, res_ops, seq, valueize, type, captures))
 	    return true;
@@ -43370,7 +43370,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 									  case INTEGER_CST:
 									    {
 									      {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 										tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o40, o31, op1 };
 										if (gimple_simplify_75 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 										  return true;
@@ -43401,7 +43401,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 							    tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o30, o31, op1 };
 							    if (gimple_simplify_51 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 							      return true;
@@ -43449,7 +43449,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 									  case INTEGER_CST:
 									    {
 									      {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 										tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o40, o31, op1 };
 										if (gimple_simplify_75 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 										  return true;
@@ -43480,7 +43480,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 							    tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o30, o31, op1 };
 							    if (gimple_simplify_51 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 							      return true;
@@ -43537,7 +43537,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 							    tree captures[6] ATTRIBUTE_UNUSED = { op0, op0, o20, o30, o21, op1 };
 							    if (gimple_simplify_33 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 							      return true;
@@ -43568,7 +43568,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 					tree captures[6] ATTRIBUTE_UNUSED = { op0, op0, o20, o20, o21, op1 };
 					if (gimple_simplify_62 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 					  return true;
@@ -43616,7 +43616,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 							    tree captures[6] ATTRIBUTE_UNUSED = { op0, op0, o20, o30, o21, op1 };
 							    if (gimple_simplify_33 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 							      return true;
@@ -43647,7 +43647,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1318 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1318 "match.pd" */
 					tree captures[6] ATTRIBUTE_UNUSED = { op0, op0, o20, o20, o21, op1 };
 					if (gimple_simplify_62 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 					  return true;
@@ -43698,9 +43698,9 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o50 || operand_equal_p (o51, o50, 0))
 							{
 							  {
-/* #line 2102 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2102 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o50 };
-/* #line 2102 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2102 "match.pd" */
 							    if (types_match (captures[0], captures[1]))
 							      {
 								gimple_seq *lseq = seq;
@@ -43716,7 +43716,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o50 == o20 || operand_equal_p (o50, o20, 0))
 							{
 							  {
-/* #line 2109 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2109 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, o51 };
 							    if (gimple_simplify_80 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -43725,7 +43725,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o20 || operand_equal_p (o51, o20, 0))
 							{
 							  {
-/* #line 2109 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2109 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, o50 };
 							    if (gimple_simplify_80 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -43766,7 +43766,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o20 || operand_equal_p (o51, o20, 0))
 							{
 							  {
-/* #line 2109 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2109 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o20, op0, o21 };
 							    if (gimple_simplify_158 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -43778,7 +43778,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2109 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2109 "match.pd" */
 							    tree captures[3] ATTRIBUTE_UNUSED = { o21, op0, o20 };
 							    if (gimple_simplify_158 (res_code, res_ops, seq, valueize, type, captures))
 							      return true;
@@ -43829,7 +43829,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR))
 							      return true;
@@ -43853,7 +43853,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 							      return true;
@@ -43879,7 +43879,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, EQ_EXPR))
 							      return true;
@@ -43901,7 +43901,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 3031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3031 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_31 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, MIN_EXPR))
 							  return true;
@@ -43951,7 +43951,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR))
 							      return true;
@@ -43973,7 +43973,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 3031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3031 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_31 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, MIN_EXPR))
 							  return true;
@@ -44027,7 +44027,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 							      return true;
@@ -44080,7 +44080,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, GT_EXPR))
 							      return true;
@@ -44104,7 +44104,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, EQ_EXPR))
 							      return true;
@@ -44130,7 +44130,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 							      return true;
@@ -44181,7 +44181,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GE_EXPR))
 							      return true;
@@ -44203,7 +44203,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 3031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3031 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_31 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, MAX_EXPR))
 							  return true;
@@ -44253,7 +44253,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 							      return true;
@@ -44277,7 +44277,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GT_EXPR))
 							      return true;
@@ -44303,7 +44303,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						      if (o51 == o21 || operand_equal_p (o51, o21, 0))
 							{
 							  {
-/* #line 2125 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2125 "match.pd" */
 							    tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 							    if (gimple_simplify_163 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, GT_EXPR))
 							      return true;
@@ -44325,7 +44325,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 						  if (o50 == o20 || operand_equal_p (o50, o20, 0))
 						    {
 						      {
-/* #line 3031 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 3031 "match.pd" */
 							tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o21, op1, o51 };
 							if (gimple_simplify_31 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, MAX_EXPR))
 							  return true;
@@ -44386,7 +44386,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 								    case INTEGER_CST:
 								      {
 									{
-/* #line 2998 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2998 "match.pd" */
 									  tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o21, o50, op1 };
 									  if (gimple_simplify_13 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR))
 									    return true;
@@ -44460,7 +44460,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 								    case INTEGER_CST:
 								      {
 									{
-/* #line 2998 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2998 "match.pd" */
 									  tree captures[6] ATTRIBUTE_UNUSED = { op0, o20, o30, o21, o50, op1 };
 									  if (gimple_simplify_13 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR))
 									    return true;
@@ -44526,7 +44526,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 498 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 498 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_100 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 				  return true;
@@ -44547,7 +44547,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1782 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1782 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_108 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, LE_EXPR))
 	    return true;
@@ -44582,7 +44582,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 				        return true;
@@ -44605,7 +44605,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1864 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1864 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_69 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 	  return true;
@@ -44640,7 +44640,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 					      return true;
@@ -44657,7 +44657,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 			    return true;
@@ -44686,7 +44686,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 					      return true;
@@ -44701,7 +44701,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 			  return true;
@@ -44720,7 +44720,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 	    return true;
@@ -44757,7 +44757,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, LT_EXPR))
 					  return true;
@@ -44791,7 +44791,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, LT_EXPR))
 					  return true;
@@ -44813,7 +44813,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 					  return true;
@@ -44850,7 +44850,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 					      return true;
@@ -44867,7 +44867,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR, GT_EXPR))
 			    return true;
@@ -44896,7 +44896,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 					      return true;
@@ -44911,7 +44911,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 			  return true;
@@ -44939,7 +44939,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 							  return true;
@@ -44958,7 +44958,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 				      return true;
@@ -44976,7 +44976,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 			      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			      if (gimple_simplify_128 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 			        return true;
@@ -45003,7 +45003,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, LT_EXPR))
 			        return true;
@@ -45025,7 +45025,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, LT_EXPR))
 			        return true;
@@ -45047,7 +45047,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, LT_EXPR))
 			        return true;
@@ -45069,7 +45069,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, LT_EXPR))
 			        return true;
@@ -45106,7 +45106,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 				      return true;
@@ -45125,7 +45125,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 		  return true;
@@ -45143,7 +45143,7 @@ gimple_simplify_LT_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 	  if (gimple_simplify_26 (res_code, res_ops, seq, valueize, type, captures, LT_EXPR))
 	    return true;
@@ -45181,7 +45181,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 498 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 498 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_100 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 				  return true;
@@ -45202,7 +45202,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1782 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1782 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_108 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, GT_EXPR))
 	    return true;
@@ -45237,7 +45237,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LE_EXPR))
 				        return true;
@@ -45260,7 +45260,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1856 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1856 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_154 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 	  return true;
@@ -45295,7 +45295,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 					      return true;
@@ -45312,7 +45312,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LE_EXPR))
 			    return true;
@@ -45341,7 +45341,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 					      return true;
@@ -45356,7 +45356,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 			  return true;
@@ -45375,7 +45375,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 	    return true;
@@ -45412,7 +45412,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, GE_EXPR))
 					  return true;
@@ -45446,7 +45446,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, GE_EXPR))
 					  return true;
@@ -45468,7 +45468,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 					  return true;
@@ -45505,7 +45505,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LE_EXPR))
 					      return true;
@@ -45522,7 +45522,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR, LE_EXPR))
 			    return true;
@@ -45551,7 +45551,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 					      return true;
@@ -45566,7 +45566,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 			  return true;
@@ -45594,7 +45594,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 							  return true;
@@ -45613,7 +45613,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 				      return true;
@@ -45631,7 +45631,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 			      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			      if (gimple_simplify_128 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 			        return true;
@@ -45658,7 +45658,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, GE_EXPR))
 			        return true;
@@ -45680,7 +45680,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, GE_EXPR))
 			        return true;
@@ -45702,7 +45702,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, GE_EXPR))
 			        return true;
@@ -45724,7 +45724,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, GE_EXPR))
 			        return true;
@@ -45761,7 +45761,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 				      return true;
@@ -45780,7 +45780,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 		  return true;
@@ -45798,7 +45798,7 @@ gimple_simplify_GE_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 	  if (gimple_simplify_26 (res_code, res_ops, seq, valueize, type, captures, GE_EXPR))
 	    return true;
@@ -45836,7 +45836,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 503 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 503 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_44 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 				  return true;
@@ -45853,7 +45853,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1776 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1776 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_148 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, GE_EXPR))
 	    return true;
@@ -45888,7 +45888,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LT_EXPR))
 				        return true;
@@ -45911,7 +45911,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1864 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1864 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_69 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 	  return true;
@@ -45946,7 +45946,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 					      return true;
@@ -45963,7 +45963,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LT_EXPR))
 			    return true;
@@ -45992,7 +45992,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 					      return true;
@@ -46007,7 +46007,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 			  return true;
@@ -46026,7 +46026,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 	    return true;
@@ -46063,7 +46063,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, GT_EXPR))
 					  return true;
@@ -46097,7 +46097,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, GT_EXPR))
 					  return true;
@@ -46119,7 +46119,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 					  return true;
@@ -46156,7 +46156,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LT_EXPR))
 					      return true;
@@ -46173,7 +46173,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR, LT_EXPR))
 			    return true;
@@ -46202,7 +46202,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 					      return true;
@@ -46217,7 +46217,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 			  return true;
@@ -46245,7 +46245,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 							  return true;
@@ -46264,7 +46264,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 				      return true;
@@ -46282,7 +46282,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 			      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			      if (gimple_simplify_128 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 			        return true;
@@ -46309,7 +46309,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, GT_EXPR))
 			        return true;
@@ -46331,7 +46331,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, GT_EXPR))
 			        return true;
@@ -46353,7 +46353,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, GT_EXPR))
 			        return true;
@@ -46375,7 +46375,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, GT_EXPR))
 			        return true;
@@ -46412,7 +46412,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 				      return true;
@@ -46431,7 +46431,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 		  return true;
@@ -46449,7 +46449,7 @@ gimple_simplify_GT_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 	  if (gimple_simplify_26 (res_code, res_ops, seq, valueize, type, captures, GT_EXPR))
 	    return true;
@@ -46487,7 +46487,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 503 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 503 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_44 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 				  return true;
@@ -46504,7 +46504,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1776 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1776 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_148 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, LT_EXPR))
 	    return true;
@@ -46539,7 +46539,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 				        return true;
@@ -46562,7 +46562,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1856 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1856 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_154 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 	  return true;
@@ -46597,7 +46597,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 					      return true;
@@ -46614,7 +46614,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 			    return true;
@@ -46643,7 +46643,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 					      return true;
@@ -46658,7 +46658,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 			  return true;
@@ -46677,7 +46677,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 	    return true;
@@ -46714,7 +46714,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, LE_EXPR))
 					  return true;
@@ -46748,7 +46748,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, LE_EXPR))
 					  return true;
@@ -46770,7 +46770,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 					  return true;
@@ -46807,7 +46807,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 					      return true;
@@ -46824,7 +46824,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR, GE_EXPR))
 			    return true;
@@ -46853,7 +46853,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 					      return true;
@@ -46868,7 +46868,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 			  return true;
@@ -46896,7 +46896,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 							  return true;
@@ -46915,7 +46915,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 				      return true;
@@ -46933,7 +46933,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			case INTEGER_CST:
 			  {
 			    {
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 			      tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			      if (gimple_simplify_128 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 			        return true;
@@ -46960,7 +46960,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, LE_EXPR))
 			        return true;
@@ -46982,7 +46982,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, LE_EXPR))
 			        return true;
@@ -47004,7 +47004,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, LE_EXPR))
 			        return true;
@@ -47026,7 +47026,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, LE_EXPR))
 			        return true;
@@ -47063,7 +47063,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 				      return true;
@@ -47082,7 +47082,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 		  return true;
@@ -47100,7 +47100,7 @@ gimple_simplify_LE_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2357 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2357 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 	  if (gimple_simplify_26 (res_code, res_ops, seq, valueize, type, captures, LE_EXPR))
 	    return true;
@@ -47161,7 +47161,7 @@ gimple_simplify_EQ_EXPR (code_helper *res_code, tree *res_ops,
 							  if (integer_zerop (op1))
 							    {
 							      {
-/* #line 1294 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1294 "match.pd" */
 								tree captures[1] ATTRIBUTE_UNUSED = { o31 };
 								if (gimple_simplify_155 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, NE_EXPR))
 								  return true;
@@ -47200,7 +47200,7 @@ gimple_simplify_EQ_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1302 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1302 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_73 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					  return true;
@@ -47228,7 +47228,7 @@ gimple_simplify_EQ_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 1829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1829 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_113 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47255,7 +47255,7 @@ gimple_simplify_EQ_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, EQ_EXPR))
 				        return true;
@@ -47284,7 +47284,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 	if (gimple_truth_valued_p (op1, valueize))
 	  {
 	    {
-/* #line 829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 829 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 	      if (gimple_simplify_24 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 	        return true;
@@ -47301,7 +47301,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	if (o30 == op0 || operand_equal_p (o30, op0, 0))
 	  {
 	    {
-/* #line 829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 829 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	      if (gimple_simplify_24 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 	        return true;
@@ -47312,7 +47312,7 @@ if (gimple_truth_valued_p (op0, valueize))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1856 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1856 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_154 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 	  return true;
@@ -47347,7 +47347,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					      return true;
@@ -47364,7 +47364,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, EQ_EXPR))
 			    return true;
@@ -47393,7 +47393,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					      return true;
@@ -47408,7 +47408,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 			  return true;
@@ -47427,7 +47427,7 @@ if (gimple_truth_valued_p (op0, valueize))
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 	    return true;
@@ -47464,7 +47464,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, EQ_EXPR))
 					  return true;
@@ -47498,7 +47498,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, EQ_EXPR))
 					  return true;
@@ -47520,7 +47520,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					  return true;
@@ -47557,7 +47557,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, EQ_EXPR))
 					      return true;
@@ -47574,7 +47574,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, EQ_EXPR))
 			    return true;
@@ -47591,7 +47591,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		      if (zerop (op1))
 			{
 			  {
-/* #line 2151 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2151 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			    if (gimple_simplify_109 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 			      return true;
@@ -47620,7 +47620,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					      return true;
@@ -47635,7 +47635,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 			  return true;
@@ -47668,7 +47668,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 2232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2232 "match.pd" */
 							    tree captures[4] ATTRIBUTE_UNUSED = { op0, o30, o31, op1 };
 							    if (gimple_simplify_12 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 							      return true;
@@ -47713,7 +47713,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 2232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2232 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_12 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					  return true;
@@ -47743,7 +47743,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 2239 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2239 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_161 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47752,7 +47752,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47761,7 +47761,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47786,7 +47786,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, EQ_EXPR))
 			        return true;
@@ -47808,7 +47808,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, EQ_EXPR))
 			        return true;
@@ -47830,7 +47830,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, EQ_EXPR))
 			        return true;
@@ -47852,7 +47852,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, EQ_EXPR))
 			        return true;
@@ -47875,7 +47875,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	  case SSA_NAME:
 	    {
 	      {
-/* #line 2216 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2216 "match.pd" */
 		tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		if (gimple_simplify_9 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 		  return true;
@@ -47910,7 +47910,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47919,7 +47919,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -47977,7 +47977,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 2250 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2250 "match.pd" */
 							    tree captures[4] ATTRIBUTE_UNUSED = { op0, o30, o31, op1 };
 							    if (gimple_simplify_45 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 							      return true;
@@ -48019,7 +48019,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 							  return true;
@@ -48038,7 +48038,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				      return true;
@@ -48050,7 +48050,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 2255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2255 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 				if (gimple_simplify_160 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				  return true;
@@ -48082,7 +48082,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 2250 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2250 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_45 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 					  return true;
@@ -48114,7 +48114,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				{
 				  {
-/* #line 2264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2264 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				    if (gimple_simplify_173 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, NE_EXPR))
 				      return true;
@@ -48140,7 +48140,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						  if (integer_zerop (op1))
 						    {
 						      {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o30, o21 };
 							if (gimple_simplify_15 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, GE_EXPR))
 							  return true;
@@ -48161,7 +48161,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      if (integer_zerop (op1))
 				{
 				  {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o20, o21 };
 				    if (gimple_simplify_60 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR, GE_EXPR))
 				      return true;
@@ -48197,7 +48197,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 				      return true;
@@ -48216,7 +48216,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 		  return true;
@@ -48228,7 +48228,7 @@ if (gimple_truth_valued_p (op0, valueize))
       if (integer_zerop (op1))
 	{
 	  {
-/* #line 2255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2255 "match.pd" */
 	    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	    if (gimple_simplify_160 (res_code, res_ops, seq, valueize, type, captures, EQ_EXPR))
 	      return true;
@@ -48241,9 +48241,9 @@ if (gimple_truth_valued_p (op0, valueize))
   if (integer_onep (op1))
     {
       {
-/* #line 2435 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2435 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2435 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2435 "match.pd" */
 	if (TREE_CODE (TREE_TYPE (captures[0])) == BOOLEAN_TYPE && types_match (type, TREE_TYPE (captures[0])))
 	  {
 	    gimple_seq *lseq = seq;
@@ -48306,7 +48306,7 @@ gimple_simplify_NE_EXPR (code_helper *res_code, tree *res_ops,
 							  if (integer_zerop (op1))
 							    {
 							      {
-/* #line 1294 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1294 "match.pd" */
 								tree captures[1] ATTRIBUTE_UNUSED = { o31 };
 								if (gimple_simplify_155 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 								  return true;
@@ -48345,7 +48345,7 @@ gimple_simplify_NE_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1302 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1302 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_73 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					  return true;
@@ -48373,7 +48373,7 @@ gimple_simplify_NE_EXPR (code_helper *res_code, tree *res_ops,
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 1829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1829 "match.pd" */
 				tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				if (gimple_simplify_113 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -48400,7 +48400,7 @@ gimple_simplify_NE_EXPR (code_helper *res_code, tree *res_ops,
 				if (integer_zerop (op1))
 				  {
 				    {
-/* #line 1841 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1841 "match.pd" */
 				      tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 				      if (gimple_simplify_8 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, NE_EXPR))
 				        return true;
@@ -48429,7 +48429,7 @@ if (gimple_logical_inverted_value (op0, op0_pops, valueize))
 	if (gimple_truth_valued_p (op1, valueize))
 	  {
 	    {
-/* #line 829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 829 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 	      if (gimple_simplify_24 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 	        return true;
@@ -48446,7 +48446,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	if (o30 == op0 || operand_equal_p (o30, op0, 0))
 	  {
 	    {
-/* #line 829 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 829 "match.pd" */
 	      tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	      if (gimple_simplify_24 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 	        return true;
@@ -48457,7 +48457,7 @@ if (gimple_truth_valued_p (op0, valueize))
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1864 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1864 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_69 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 	  return true;
@@ -48492,7 +48492,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1881 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1881 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_11 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					      return true;
@@ -48509,7 +48509,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 1889 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1889 "match.pd" */
 			  tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			  if (gimple_simplify_127 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, NE_EXPR))
 			    return true;
@@ -48538,7 +48538,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 					    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 					    if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					      return true;
@@ -48553,7 +48553,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		        default:;
 		        }
 		      {
-/* #line 1897 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1897 "match.pd" */
 			tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 			if (gimple_simplify_14 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 			  return true;
@@ -48572,7 +48572,7 @@ if (gimple_truth_valued_p (op0, valueize))
     case REAL_CST:
       {
 	{
-/* #line 1927 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1927 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_143 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 	    return true;
@@ -48609,7 +48609,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, PLUS_EXPR, NE_EXPR))
 					  return true;
@@ -48643,7 +48643,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 1984 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1984 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_167 (res_code, res_ops, seq, valueize, type, captures, MINUS_EXPR, NE_EXPR))
 					  return true;
@@ -48665,7 +48665,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case REAL_CST:
 				    {
 				      {
-/* #line 2000 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2000 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_169 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					  return true;
@@ -48702,7 +48702,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, NE_EXPR))
 					      return true;
@@ -48719,7 +48719,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, NE_EXPR))
 			    return true;
@@ -48736,7 +48736,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		      if (zerop (op1))
 			{
 			  {
-/* #line 2151 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2151 "match.pd" */
 			    tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			    if (gimple_simplify_109 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 			      return true;
@@ -48765,7 +48765,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 					    tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, o40 };
 					    if (gimple_simplify_111 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					      return true;
@@ -48780,7 +48780,7 @@ if (gimple_truth_valued_p (op0, valueize))
 		        default:;
 		        }
 		      {
-/* #line 2157 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2157 "match.pd" */
 			tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, op1, op1 };
 			if (gimple_simplify_172 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 			  return true;
@@ -48813,7 +48813,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 2232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2232 "match.pd" */
 							    tree captures[4] ATTRIBUTE_UNUSED = { op0, o30, o31, op1 };
 							    if (gimple_simplify_12 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 							      return true;
@@ -48858,7 +48858,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 2232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2232 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_12 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					  return true;
@@ -48888,7 +48888,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 2239 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2239 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_161 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -48897,7 +48897,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -48906,7 +48906,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -48931,7 +48931,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTF, NE_EXPR))
 			        return true;
@@ -48953,7 +48953,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRT, NE_EXPR))
 			        return true;
@@ -48975,7 +48975,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_SQRTL, NE_EXPR))
 			        return true;
@@ -48997,7 +48997,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			case REAL_CST:
 			  {
 			    {
-/* #line 2008 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2008 "match.pd" */
 			      tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			      if (gimple_simplify_170 (res_code, res_ops, seq, valueize, type, captures, CFN_SQRT, NE_EXPR))
 			        return true;
@@ -49020,7 +49020,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	  case SSA_NAME:
 	    {
 	      {
-/* #line 2216 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2216 "match.pd" */
 		tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		if (gimple_simplify_9 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 		  return true;
@@ -49055,7 +49055,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o31 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -49064,7 +49064,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 2245 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2245 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { op0, o30 };
 				if (gimple_simplify_19 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -49122,7 +49122,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 2250 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2250 "match.pd" */
 							    tree captures[4] ATTRIBUTE_UNUSED = { op0, o30, o31, op1 };
 							    if (gimple_simplify_45 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 							      return true;
@@ -49164,7 +49164,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						  case ADDR_EXPR:
 						    {
 						      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o40 };
 							if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 							  return true;
@@ -49183,7 +49183,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, op1 };
 				    if (gimple_simplify_157 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				      return true;
@@ -49195,7 +49195,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			  if (integer_zerop (op1))
 			    {
 			      {
-/* #line 2255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2255 "match.pd" */
 				tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 				if (gimple_simplify_160 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				  return true;
@@ -49227,7 +49227,7 @@ if (gimple_truth_valued_p (op0, valueize))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 2250 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2250 "match.pd" */
 					tree captures[4] ATTRIBUTE_UNUSED = { op0, o20, o21, op1 };
 					if (gimple_simplify_45 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 					  return true;
@@ -49259,7 +49259,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				{
 				  {
-/* #line 2264 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2264 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, o20, o21 };
 				    if (gimple_simplify_173 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, EQ_EXPR))
 				      return true;
@@ -49285,7 +49285,7 @@ if (gimple_truth_valued_p (op0, valueize))
 						  if (integer_zerop (op1))
 						    {
 						      {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
 							tree captures[3] ATTRIBUTE_UNUSED = { o20, o30, o21 };
 							if (gimple_simplify_15 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, LT_EXPR))
 							  return true;
@@ -49306,7 +49306,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      if (integer_zerop (op1))
 				{
 				  {
-/* #line 2272 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2272 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { o20, o20, o21 };
 				    if (gimple_simplify_60 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR, LT_EXPR))
 				      return true;
@@ -49342,7 +49342,7 @@ if (gimple_truth_valued_p (op0, valueize))
 			      case ADDR_EXPR:
 			        {
 				  {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 				    tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, o30 };
 				    if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 				      return true;
@@ -49361,7 +49361,7 @@ if (gimple_truth_valued_p (op0, valueize))
 	  case ADDR_EXPR:
 	    {
 	      {
-/* #line 2287 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2287 "match.pd" */
 		tree captures[3] ATTRIBUTE_UNUSED = { op0, op0, op1 };
 		if (gimple_simplify_40 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 		  return true;
@@ -49373,7 +49373,7 @@ if (gimple_truth_valued_p (op0, valueize))
       if (integer_zerop (op1))
 	{
 	  {
-/* #line 2255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2255 "match.pd" */
 	    tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	    if (gimple_simplify_160 (res_code, res_ops, seq, valueize, type, captures, NE_EXPR))
 	      return true;
@@ -49386,9 +49386,9 @@ if (gimple_truth_valued_p (op0, valueize))
   if (integer_zerop (op1))
     {
       {
-/* #line 2429 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2429 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 2429 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2429 "match.pd" */
 	if (TREE_CODE (TREE_TYPE (captures[0])) == BOOLEAN_TYPE && types_match (type, TREE_TYPE (captures[0])))
 	  {
 	    gimple_seq *lseq = seq;
@@ -49411,7 +49411,7 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49439,7 +49439,7 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 1177 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1177 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_140 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49448,7 +49448,7 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 1177 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1177 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_140 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49486,7 +49486,7 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 1177 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1177 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o30, op0 };
 				if (gimple_simplify_140 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49495,7 +49495,7 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 1177 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1177 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o31, op0 };
 				if (gimple_simplify_140 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49512,9 +49512,9 @@ gimple_simplify_MIN_EXPR (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1184 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1184 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 1184 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1184 "match.pd" */
     if (INTEGRAL_TYPE_P (type) && TYPE_MIN_VALUE (type) && operand_equal_p (captures[1], TYPE_MIN_VALUE (type), OEP_ONLY_CONST))
       {
 	gimple_seq *lseq = seq;
@@ -49536,7 +49536,7 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49564,7 +49564,7 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o21 || operand_equal_p (op1, o21, 0))
 			    {
 			      {
-/* #line 1181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1181 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
 				if (gimple_simplify_43 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49573,7 +49573,7 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
 			  if (op1 == o20 || operand_equal_p (op1, o20, 0))
 			    {
 			      {
-/* #line 1181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1181 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o21, o20 };
 				if (gimple_simplify_43 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49611,7 +49611,7 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o31 == op0 || operand_equal_p (o31, op0, 0))
 			    {
 			      {
-/* #line 1181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1181 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o30, op0 };
 				if (gimple_simplify_43 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49620,7 +49620,7 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
 			  if (o30 == op0 || operand_equal_p (o30, op0, 0))
 			    {
 			      {
-/* #line 1181 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1181 "match.pd" */
 				tree captures[2] ATTRIBUTE_UNUSED = { o31, op0 };
 				if (gimple_simplify_43 (res_code, res_ops, seq, valueize, type, captures))
 				  return true;
@@ -49637,9 +49637,9 @@ gimple_simplify_MAX_EXPR (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1190 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1190 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 1190 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1190 "match.pd" */
     if (INTEGRAL_TYPE_P (type) && TYPE_MAX_VALUE (type) && operand_equal_p (captures[1], TYPE_MAX_VALUE (type), OEP_ONLY_CONST))
       {
 	gimple_seq *lseq = seq;
@@ -49661,7 +49661,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49672,7 +49672,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINF))
 	    return true;
@@ -49686,7 +49686,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINF))
 	    return true;
@@ -49696,7 +49696,7 @@ gimple_simplify_CFN_BUILT_IN_FMINF (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_87 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINF))
       return true;
@@ -49713,7 +49713,7 @@ gimple_simplify_CFN_BUILT_IN_FMIN (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49724,7 +49724,7 @@ gimple_simplify_CFN_BUILT_IN_FMIN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMIN))
 	    return true;
@@ -49738,7 +49738,7 @@ gimple_simplify_CFN_BUILT_IN_FMIN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMIN))
 	    return true;
@@ -49748,7 +49748,7 @@ gimple_simplify_CFN_BUILT_IN_FMIN (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_87 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMIN))
       return true;
@@ -49765,7 +49765,7 @@ gimple_simplify_CFN_BUILT_IN_FMINL (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49776,7 +49776,7 @@ gimple_simplify_CFN_BUILT_IN_FMINL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINL))
 	    return true;
@@ -49790,7 +49790,7 @@ gimple_simplify_CFN_BUILT_IN_FMINL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINL))
 	    return true;
@@ -49800,7 +49800,7 @@ gimple_simplify_CFN_BUILT_IN_FMINL (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_87 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMINL))
       return true;
@@ -49817,7 +49817,7 @@ gimple_simplify_CFN_FMIN (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49828,7 +49828,7 @@ gimple_simplify_CFN_FMIN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_FMIN))
 	    return true;
@@ -49842,7 +49842,7 @@ gimple_simplify_CFN_FMIN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_FMIN))
 	    return true;
@@ -49852,7 +49852,7 @@ gimple_simplify_CFN_FMIN (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_87 (res_code, res_ops, seq, valueize, type, captures, CFN_FMIN))
       return true;
@@ -49869,7 +49869,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49880,7 +49880,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF))
 	    return true;
@@ -49894,7 +49894,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF))
 	    return true;
@@ -49904,7 +49904,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXF (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_88 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXF))
       return true;
@@ -49921,7 +49921,7 @@ gimple_simplify_CFN_BUILT_IN_FMAX (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49932,7 +49932,7 @@ gimple_simplify_CFN_BUILT_IN_FMAX (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAX))
 	    return true;
@@ -49946,7 +49946,7 @@ gimple_simplify_CFN_BUILT_IN_FMAX (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAX))
 	    return true;
@@ -49956,7 +49956,7 @@ gimple_simplify_CFN_BUILT_IN_FMAX (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_88 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAX))
       return true;
@@ -49973,7 +49973,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXL (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -49984,7 +49984,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXL))
 	    return true;
@@ -49998,7 +49998,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXL))
 	    return true;
@@ -50008,7 +50008,7 @@ gimple_simplify_CFN_BUILT_IN_FMAXL (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_88 (res_code, res_ops, seq, valueize, type, captures, CFN_BUILT_IN_FMAXL))
       return true;
@@ -50025,7 +50025,7 @@ gimple_simplify_CFN_FMAX (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1173 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1173 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_42 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -50036,7 +50036,7 @@ gimple_simplify_CFN_FMAX (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_FMAX))
 	    return true;
@@ -50050,7 +50050,7 @@ gimple_simplify_CFN_FMAX (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 1199 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1199 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op1, op0 };
 	  if (gimple_simplify_82 (res_code, res_ops, seq, valueize, type, captures, CFN_FMAX))
 	    return true;
@@ -50060,7 +50060,7 @@ gimple_simplify_CFN_FMAX (code_helper *res_code, tree *res_ops,
     default:;
     }
   {
-/* #line 1207 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1207 "match.pd" */
     tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
     if (gimple_simplify_88 (res_code, res_ops, seq, valueize, type, captures, CFN_FMAX))
       return true;
@@ -50077,7 +50077,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_all_onesp (op0))
     {
       {
-/* #line 1220 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1220 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_28 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 	  return true;
@@ -50086,7 +50086,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 1246 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1246 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_142 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 	  return true;
@@ -50095,7 +50095,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 1249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1249 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_16 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 	  return true;
@@ -50113,7 +50113,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
 	      case CONSTRUCTOR:
 	        {
 		  {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 		    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		    if (gimple_simplify_93 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 		      return true;
@@ -50127,7 +50127,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
     case VECTOR_CST:
       {
 	{
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_99 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 	    return true;
@@ -50137,7 +50137,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1263 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1263 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  gimple_seq *lseq = seq;
 	  if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1263, %s:%d\n", __FILE__, __LINE__);
@@ -50177,7 +50177,7 @@ gimple_simplify_LROTATE_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1271 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1271 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_96 (res_code, res_ops, seq, valueize, type, captures, LROTATE_EXPR))
 					  return true;
@@ -50212,7 +50212,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_all_onesp (op0))
     {
       {
-/* #line 1220 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1220 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_28 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
@@ -50221,7 +50221,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 1246 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1246 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_142 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
@@ -50230,7 +50230,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 1249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1249 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_16 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 	  return true;
@@ -50248,7 +50248,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
 	      case CONSTRUCTOR:
 	        {
 		  {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 		    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		    if (gimple_simplify_93 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 		      return true;
@@ -50262,7 +50262,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
     case VECTOR_CST:
       {
 	{
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_99 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 	    return true;
@@ -50297,7 +50297,7 @@ gimple_simplify_RROTATE_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1271 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1271 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_96 (res_code, res_ops, seq, valueize, type, captures, RROTATE_EXPR))
 					  return true;
@@ -50353,9 +50353,9 @@ gimple_simplify_RSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				  {
 				    {
-/* #line 1239 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1239 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 1239 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1239 "match.pd" */
 				      if (TYPE_UNSIGNED (type) && (wi::ltu_p (captures[1], element_precision (type))))
 					{
 					  gimple_seq *lseq = seq;
@@ -50395,9 +50395,9 @@ gimple_simplify_RSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 if (integer_all_onesp (op0))
   {
     {
-/* #line 1225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1225 "match.pd" */
       tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 1225 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1225 "match.pd" */
       if (!TYPE_UNSIGNED (type) && tree_expr_nonnegative_p (captures[1]))
 	{
 	  gimple_seq *lseq = seq;
@@ -50411,7 +50411,7 @@ if (integer_all_onesp (op0))
   if (integer_zerop (op1))
     {
       {
-/* #line 1246 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1246 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_142 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 	  return true;
@@ -50420,7 +50420,7 @@ if (integer_all_onesp (op0))
   if (integer_zerop (op0))
     {
       {
-/* #line 1249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1249 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_16 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 	  return true;
@@ -50438,7 +50438,7 @@ if (integer_all_onesp (op0))
 	      case CONSTRUCTOR:
 	        {
 		  {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 		    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		    if (gimple_simplify_93 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 		      return true;
@@ -50452,7 +50452,7 @@ if (integer_all_onesp (op0))
     case VECTOR_CST:
       {
 	{
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_99 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 	    return true;
@@ -50487,7 +50487,7 @@ if (integer_all_onesp (op0))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1271 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1271 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_96 (res_code, res_ops, seq, valueize, type, captures, RSHIFT_EXPR))
 					  return true;
@@ -50537,7 +50537,7 @@ if (integer_all_onesp (op0))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, RSHIFT_EXPR))
 							      return true;
@@ -50573,7 +50573,7 @@ if (integer_all_onesp (op0))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, RSHIFT_EXPR))
 							      return true;
@@ -50609,7 +50609,7 @@ if (integer_all_onesp (op0))
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, RSHIFT_EXPR))
 							      return true;
@@ -50654,7 +50654,7 @@ if (integer_all_onesp (op0))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, RSHIFT_EXPR))
 					  return true;
@@ -50690,7 +50690,7 @@ if (integer_all_onesp (op0))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, RSHIFT_EXPR))
 					  return true;
@@ -50726,7 +50726,7 @@ if (integer_all_onesp (op0))
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, RSHIFT_EXPR))
 					  return true;
@@ -50782,9 +50782,9 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				if (op1 == o21 || operand_equal_p (op1, o21, 0))
 				  {
 				    {
-/* #line 1232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1232 "match.pd" */
 				      tree captures[2] ATTRIBUTE_UNUSED = { o20, o21 };
-/* #line 1232 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1232 "match.pd" */
 				      if (wi::ltu_p (captures[1], element_precision (type)))
 					{
 					  gimple_seq *lseq = seq;
@@ -50824,7 +50824,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 1246 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1246 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_142 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 	  return true;
@@ -50833,7 +50833,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op0))
     {
       {
-/* #line 1249 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1249 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_16 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 	  return true;
@@ -50851,7 +50851,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 	      case CONSTRUCTOR:
 	        {
 		  {
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 		    tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 		    if (gimple_simplify_93 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 		      return true;
@@ -50865,7 +50865,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
     case VECTOR_CST:
       {
 	{
-/* #line 1255 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1255 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_99 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 	    return true;
@@ -50900,7 +50900,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1271 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1271 "match.pd" */
 					tree captures[3] ATTRIBUTE_UNUSED = { o20, o21, op1 };
 					if (gimple_simplify_96 (res_code, res_ops, seq, valueize, type, captures, LSHIFT_EXPR))
 					  return true;
@@ -50950,7 +50950,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, LSHIFT_EXPR))
 							      return true;
@@ -50986,7 +50986,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, LSHIFT_EXPR))
 							      return true;
@@ -51022,7 +51022,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 						      case INTEGER_CST:
 						        {
 							  {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 							    tree captures[5] ATTRIBUTE_UNUSED = { op0, o20, o30, o31, op1 };
 							    if (gimple_simplify_103 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, LSHIFT_EXPR))
 							      return true;
@@ -51067,7 +51067,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_AND_EXPR, LSHIFT_EXPR))
 					  return true;
@@ -51103,7 +51103,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_XOR_EXPR, LSHIFT_EXPR))
 					  return true;
@@ -51139,7 +51139,7 @@ gimple_simplify_LSHIFT_EXPR (code_helper *res_code, tree *res_ops,
 				  case INTEGER_CST:
 				    {
 				      {
-/* #line 1407 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1407 "match.pd" */
 					tree captures[5] ATTRIBUTE_UNUSED = { op0, op0, o20, o21, op1 };
 					if (gimple_simplify_132 (res_code, res_ops, seq, valueize, type, captures, BIT_IOR_EXPR, LSHIFT_EXPR))
 					  return true;
@@ -51206,7 +51206,7 @@ gimple_simplify_COMPLEX_EXPR (code_helper *res_code, tree *res_ops,
 					  if (o40 == o20 || operand_equal_p (o40, o20, 0))
 					    {
 					      {
-/* #line 1625 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1625 "match.pd" */
 						tree captures[1] ATTRIBUTE_UNUSED = { o20 };
 						gimple_seq *lseq = seq;
 						if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1625, %s:%d\n", __FILE__, __LINE__);
@@ -51245,7 +51245,7 @@ gimple_simplify_UNLE_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1871 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1871 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_141 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR))
 	  return true;
@@ -51280,7 +51280,7 @@ gimple_simplify_UNLE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR, UNGE_EXPR))
 					      return true;
@@ -51297,7 +51297,7 @@ gimple_simplify_UNLE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR, UNGE_EXPR))
 			    return true;
@@ -51317,7 +51317,7 @@ gimple_simplify_UNLE_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNLE_EXPR))
 	    return true;
@@ -51338,7 +51338,7 @@ gimple_simplify_UNGE_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1871 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1871 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_141 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR))
 	  return true;
@@ -51373,7 +51373,7 @@ gimple_simplify_UNGE_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR, UNLE_EXPR))
 					      return true;
@@ -51390,7 +51390,7 @@ gimple_simplify_UNGE_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR, UNLE_EXPR))
 			    return true;
@@ -51410,7 +51410,7 @@ gimple_simplify_UNGE_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNGE_EXPR))
 	    return true;
@@ -51431,7 +51431,7 @@ gimple_simplify_UNEQ_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1871 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1871 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
 	if (gimple_simplify_141 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR))
 	  return true;
@@ -51466,7 +51466,7 @@ gimple_simplify_UNEQ_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR, UNEQ_EXPR))
 					      return true;
@@ -51483,7 +51483,7 @@ gimple_simplify_UNEQ_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR, UNEQ_EXPR))
 			    return true;
@@ -51503,7 +51503,7 @@ gimple_simplify_UNEQ_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNEQ_EXPR))
 	    return true;
@@ -51524,9 +51524,9 @@ gimple_simplify_LTGT_EXPR (code_helper *res_code, tree *res_ops,
   if (op1 == op0 || operand_equal_p (op1, op0, 0))
     {
       {
-/* #line 1874 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1874 "match.pd" */
 	tree captures[1] ATTRIBUTE_UNUSED = { op0 };
-/* #line 1874 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1874 "match.pd" */
 	if (!flag_trapping_math)
 	  {
 	    gimple_seq *lseq = seq;
@@ -51566,7 +51566,7 @@ gimple_simplify_LTGT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, LTGT_EXPR, LTGT_EXPR))
 					      return true;
@@ -51583,7 +51583,7 @@ gimple_simplify_LTGT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, LTGT_EXPR, LTGT_EXPR))
 			    return true;
@@ -51603,7 +51603,7 @@ gimple_simplify_LTGT_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, LTGT_EXPR))
 	    return true;
@@ -51650,7 +51650,7 @@ gimple_simplify_UNORDERED_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNORDERED_EXPR, UNORDERED_EXPR))
 					      return true;
@@ -51667,7 +51667,7 @@ gimple_simplify_UNORDERED_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNORDERED_EXPR, UNORDERED_EXPR))
 			    return true;
@@ -51687,7 +51687,7 @@ gimple_simplify_UNORDERED_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNORDERED_EXPR))
 	    return true;
@@ -51734,7 +51734,7 @@ gimple_simplify_ORDERED_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, ORDERED_EXPR, ORDERED_EXPR))
 					      return true;
@@ -51751,7 +51751,7 @@ gimple_simplify_ORDERED_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, ORDERED_EXPR, ORDERED_EXPR))
 			    return true;
@@ -51771,7 +51771,7 @@ gimple_simplify_ORDERED_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, ORDERED_EXPR))
 	    return true;
@@ -51818,7 +51818,7 @@ gimple_simplify_UNLT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNLT_EXPR, UNGT_EXPR))
 					      return true;
@@ -51835,7 +51835,7 @@ gimple_simplify_UNLT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNLT_EXPR, UNGT_EXPR))
 			    return true;
@@ -51855,7 +51855,7 @@ gimple_simplify_UNLT_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNLT_EXPR))
 	    return true;
@@ -51902,7 +51902,7 @@ gimple_simplify_UNGT_EXPR (code_helper *res_code, tree *res_ops,
 				      if ((o40 = do_valueize (valueize, o40)))
 				        {
 					  {
-/* #line 2134 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2134 "match.pd" */
 					    tree captures[2] ATTRIBUTE_UNUSED = { o20, o40 };
 					    if (gimple_simplify_137 (res_code, res_ops, seq, valueize, type, captures, UNGT_EXPR, UNLT_EXPR))
 					      return true;
@@ -51919,7 +51919,7 @@ gimple_simplify_UNGT_EXPR (code_helper *res_code, tree *res_ops,
 		    if (CONSTANT_CLASS_P (op1))
 		      {
 			{
-/* #line 2140 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2140 "match.pd" */
 			  tree captures[2] ATTRIBUTE_UNUSED = { o20, op1 };
 			  if (gimple_simplify_124 (res_code, res_ops, seq, valueize, type, captures, UNGT_EXPR, UNLT_EXPR))
 			    return true;
@@ -51939,7 +51939,7 @@ gimple_simplify_UNGT_EXPR (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2421 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2421 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	  if (gimple_simplify_35 (res_code, res_ops, seq, valueize, type, captures, UNGT_EXPR))
 	    return true;
@@ -51960,7 +51960,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXPF (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -51969,7 +51969,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXPF (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -51980,9 +51980,9 @@ gimple_simplify_CFN_BUILT_IN_LDEXPF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52008,7 +52008,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXP (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52017,7 +52017,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXP (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52028,9 +52028,9 @@ gimple_simplify_CFN_BUILT_IN_LDEXP (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52056,7 +52056,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXPL (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52065,7 +52065,7 @@ gimple_simplify_CFN_BUILT_IN_LDEXPL (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52076,9 +52076,9 @@ gimple_simplify_CFN_BUILT_IN_LDEXPL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52104,7 +52104,7 @@ gimple_simplify_CFN_LDEXP (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52113,7 +52113,7 @@ gimple_simplify_CFN_LDEXP (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52124,9 +52124,9 @@ gimple_simplify_CFN_LDEXP (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52152,7 +52152,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBNF (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52161,7 +52161,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBNF (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52172,9 +52172,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBNF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52200,7 +52200,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBN (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52209,7 +52209,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBN (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52220,9 +52220,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52248,7 +52248,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBNL (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52257,7 +52257,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBNL (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52268,9 +52268,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBNL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52296,7 +52296,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNF (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52305,7 +52305,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNF (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52316,9 +52316,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNF (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52344,7 +52344,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLN (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52353,7 +52353,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLN (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52364,9 +52364,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBLN (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52392,7 +52392,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNL (code_helper *res_code, tree *res_ops,
   if (real_zerop (op0))
     {
       {
-/* #line 2638 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2638 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_121 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52401,7 +52401,7 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNL (code_helper *res_code, tree *res_ops,
   if (integer_zerop (op1))
     {
       {
-/* #line 2642 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2642 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_70 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52412,9 +52412,9 @@ gimple_simplify_CFN_BUILT_IN_SCALBLNL (code_helper *res_code, tree *res_ops,
     case REAL_CST:
       {
 	{
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2646 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2646 "match.pd" */
 	  if (!real_isfinite (TREE_REAL_CST_PTR (captures[0])))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52440,7 +52440,7 @@ gimple_simplify_CFN_BUILT_IN_POWIF (code_helper *res_code, tree *res_ops,
   if (real_onep (op0))
     {
       {
-/* #line 2939 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2939 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_38 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52451,9 +52451,9 @@ gimple_simplify_CFN_BUILT_IN_POWIF (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  if (wi::eq_p (captures[1], 0))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52464,7 +52464,7 @@ gimple_simplify_CFN_BUILT_IN_POWIF (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2948 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2948 "match.pd" */
 	      if (wi::eq_p (captures[1], 1))
 		{
 		  gimple_seq *lseq = seq;
@@ -52475,7 +52475,7 @@ gimple_simplify_CFN_BUILT_IN_POWIF (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2951 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2951 "match.pd" */
 		  if (wi::eq_p (captures[1], -1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -52505,7 +52505,7 @@ gimple_simplify_CFN_BUILT_IN_POWI (code_helper *res_code, tree *res_ops,
   if (real_onep (op0))
     {
       {
-/* #line 2939 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2939 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_38 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52516,9 +52516,9 @@ gimple_simplify_CFN_BUILT_IN_POWI (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  if (wi::eq_p (captures[1], 0))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52529,7 +52529,7 @@ gimple_simplify_CFN_BUILT_IN_POWI (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2948 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2948 "match.pd" */
 	      if (wi::eq_p (captures[1], 1))
 		{
 		  gimple_seq *lseq = seq;
@@ -52540,7 +52540,7 @@ gimple_simplify_CFN_BUILT_IN_POWI (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2951 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2951 "match.pd" */
 		  if (wi::eq_p (captures[1], -1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -52570,7 +52570,7 @@ gimple_simplify_CFN_BUILT_IN_POWIL (code_helper *res_code, tree *res_ops,
   if (real_onep (op0))
     {
       {
-/* #line 2939 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2939 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	if (gimple_simplify_38 (res_code, res_ops, seq, valueize, type, captures))
 	  return true;
@@ -52581,9 +52581,9 @@ gimple_simplify_CFN_BUILT_IN_POWIL (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
-/* #line 2945 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2945 "match.pd" */
 	  if (wi::eq_p (captures[1], 0))
 	    {
 	      gimple_seq *lseq = seq;
@@ -52594,7 +52594,7 @@ gimple_simplify_CFN_BUILT_IN_POWIL (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 2948 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2948 "match.pd" */
 	      if (wi::eq_p (captures[1], 1))
 		{
 		  gimple_seq *lseq = seq;
@@ -52605,7 +52605,7 @@ gimple_simplify_CFN_BUILT_IN_POWIL (code_helper *res_code, tree *res_ops,
 		}
 	      else
 		{
-/* #line 2951 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 2951 "match.pd" */
 		  if (wi::eq_p (captures[1], -1))
 		    {
 		      gimple_seq *lseq = seq;
@@ -52789,12 +52789,12 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
     case INTEGER_CST:
       {
 	{
-/* #line 1691 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1691 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, op2 };
-/* #line 1691 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1691 "match.pd" */
 	  if (integer_zerop (captures[0]))
 	    {
-/* #line 1692 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1692 "match.pd" */
 	      if (!VOID_TYPE_P (TREE_TYPE (captures[2])) || VOID_TYPE_P (type))
 		{
 		  gimple_seq *lseq = seq;
@@ -52806,7 +52806,7 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 1694 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1694 "match.pd" */
 	      if (!VOID_TYPE_P (TREE_TYPE (captures[1])) || VOID_TYPE_P (type))
 		{
 		  gimple_seq *lseq = seq;
@@ -52844,7 +52844,7 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 				{
 				  {
-/* #line 1707 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1707 "match.pd" */
 				    tree captures[4] ATTRIBUTE_UNUSED = { op0, o31, o32, op2 };
 				    gimple_seq *lseq = seq;
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1707, %s:%d\n", __FILE__, __LINE__);
@@ -52891,7 +52891,7 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 				{
 				  {
-/* #line 1710 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1710 "match.pd" */
 				    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o41, o42 };
 				    gimple_seq *lseq = seq;
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1710, %s:%d\n", __FILE__, __LINE__);
@@ -52905,9 +52905,9 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 			        }
 			      {
-/* #line 1718 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1718 "match.pd" */
 				tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o40, o41, o42 };
-/* #line 1718 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1718 "match.pd" */
 				if (COMPARISON_CLASS_P (captures[0]) && COMPARISON_CLASS_P (captures[2]) && invert_tree_comparison (TREE_CODE (captures[0]), HONOR_NANS (TREE_OPERAND (captures[0], 0))) == TREE_CODE (captures[2]) && operand_equal_p (TREE_OPERAND (captures[0], 0), TREE_OPERAND (captures[2], 0), 0) && operand_equal_p (TREE_OPERAND (captures[0], 1), TREE_OPERAND (captures[2], 1), 0))
 				  {
 				    gimple_seq *lseq = seq;
@@ -52953,9 +52953,9 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
 			  if ((o32 = do_valueize (valueize, o32)))
 			    {
 			      {
-/* #line 1727 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1727 "match.pd" */
 				tree captures[5] ATTRIBUTE_UNUSED = { op0, o30, o31, o32, op2 };
-/* #line 1727 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1727 "match.pd" */
 				if (COMPARISON_CLASS_P (captures[0]) && COMPARISON_CLASS_P (captures[1]) && invert_tree_comparison (TREE_CODE (captures[0]), HONOR_NANS (TREE_OPERAND (captures[0], 0))) == TREE_CODE (captures[1]) && operand_equal_p (TREE_OPERAND (captures[0], 0), TREE_OPERAND (captures[1], 0), 0) && operand_equal_p (TREE_OPERAND (captures[0], 1), TREE_OPERAND (captures[1], 1), 0))
 				  {
 				    gimple_seq *lseq = seq;
@@ -52983,7 +52983,7 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
   if (op2 == op1 || operand_equal_p (op2, op1, 0))
     {
       {
-/* #line 1738 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1738 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1738, %s:%d\n", __FILE__, __LINE__);
@@ -52999,7 +52999,7 @@ gimple_simplify_COND_EXPR (code_helper *res_code, tree *res_ops,
       if (gimple_truth_valued_p (o20, valueize))
 	{
 	  {
-/* #line 1743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1743 "match.pd" */
 	    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, op2 };
 	    gimple_seq *lseq = seq;
 	    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1743, %s:%d\n", __FILE__, __LINE__);
@@ -53026,9 +53026,9 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
     case VECTOR_CST:
       {
 	{
-/* #line 1698 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1698 "match.pd" */
 	  tree captures[3] ATTRIBUTE_UNUSED = { op0, op1, op2 };
-/* #line 1698 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1698 "match.pd" */
 	  if (integer_all_onesp (captures[0]))
 	    {
 	      gimple_seq *lseq = seq;
@@ -53039,7 +53039,7 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
 	    }
 	  else
 	    {
-/* #line 1700 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1700 "match.pd" */
 	      if (integer_zerop (captures[0]))
 		{
 		  gimple_seq *lseq = seq;
@@ -53077,7 +53077,7 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (o30 == op0 || operand_equal_p (o30, op0, 0))
 				{
 				  {
-/* #line 1707 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1707 "match.pd" */
 				    tree captures[4] ATTRIBUTE_UNUSED = { op0, o31, o32, op2 };
 				    gimple_seq *lseq = seq;
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1707, %s:%d\n", __FILE__, __LINE__);
@@ -53124,7 +53124,7 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
 			      if (o40 == op0 || operand_equal_p (o40, op0, 0))
 				{
 				  {
-/* #line 1710 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1710 "match.pd" */
 				    tree captures[4] ATTRIBUTE_UNUSED = { op0, op1, o41, o42 };
 				    gimple_seq *lseq = seq;
 				    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1710, %s:%d\n", __FILE__, __LINE__);
@@ -53138,9 +53138,9 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
 				  }
 			        }
 			      {
-/* #line 1718 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1718 "match.pd" */
 				tree captures[5] ATTRIBUTE_UNUSED = { op0, op1, o40, o41, o42 };
-/* #line 1718 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1718 "match.pd" */
 				if (COMPARISON_CLASS_P (captures[0]) && COMPARISON_CLASS_P (captures[2]) && invert_tree_comparison (TREE_CODE (captures[0]), HONOR_NANS (TREE_OPERAND (captures[0], 0))) == TREE_CODE (captures[2]) && operand_equal_p (TREE_OPERAND (captures[0], 0), TREE_OPERAND (captures[2], 0), 0) && operand_equal_p (TREE_OPERAND (captures[0], 1), TREE_OPERAND (captures[2], 1), 0))
 				  {
 				    gimple_seq *lseq = seq;
@@ -53186,9 +53186,9 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
 			  if ((o32 = do_valueize (valueize, o32)))
 			    {
 			      {
-/* #line 1727 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1727 "match.pd" */
 				tree captures[5] ATTRIBUTE_UNUSED = { op0, o30, o31, o32, op2 };
-/* #line 1727 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1727 "match.pd" */
 				if (COMPARISON_CLASS_P (captures[0]) && COMPARISON_CLASS_P (captures[1]) && invert_tree_comparison (TREE_CODE (captures[0]), HONOR_NANS (TREE_OPERAND (captures[0], 0))) == TREE_CODE (captures[1]) && operand_equal_p (TREE_OPERAND (captures[0], 0), TREE_OPERAND (captures[1], 0), 0) && operand_equal_p (TREE_OPERAND (captures[0], 1), TREE_OPERAND (captures[1], 1), 0))
 				  {
 				    gimple_seq *lseq = seq;
@@ -53216,7 +53216,7 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
   if (op2 == op1 || operand_equal_p (op2, op1, 0))
     {
       {
-/* #line 1738 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1738 "match.pd" */
 	tree captures[2] ATTRIBUTE_UNUSED = { op0, op1 };
 	gimple_seq *lseq = seq;
 	if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1738, %s:%d\n", __FILE__, __LINE__);
@@ -53232,7 +53232,7 @@ gimple_simplify_VEC_COND_EXPR (code_helper *res_code, tree *res_ops,
       if (gimple_truth_valued_p (o20, valueize))
 	{
 	  {
-/* #line 1743 "/android/gcc/gcc-6.4.0/gcc/match.pd" */
+/* #line 1743 "match.pd" */
 	    tree captures[3] ATTRIBUTE_UNUSED = { o20, op1, op2 };
 	    gimple_seq *lseq = seq;
 	    if (dump_file && (dump_flags & TDF_DETAILS)) fprintf (dump_file, "Applying pattern match.pd:1743, %s:%d\n", __FILE__, __LINE__);

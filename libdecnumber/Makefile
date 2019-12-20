@@ -1,10 +1,8 @@
-#GCC=gcc
-#AR=ar
-#RANLIB=ranlib
+#author: Zhou Weiguo, zhouwg2000@gmail.com
 include ../make.def
 
-CFLAGS=-DHAVE_CONFIG_H -I. -I/android/gcc/gcc-6.4.0/mpc/src -I.. -I/ismp/build/./gmp -I/android/gcc/gcc-6.4.0/mpfr/src -g -O2
-CFLAGS=$(CCFLAGS) -I/android/gcc/gcc-6.4.0/libdecnumber -I.  -g -O2 -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -pedantic -Wno-long-long  -I/android/gcc/gcc-6.4.0/libdecnumber -I.  
+CFLAGS=-DHAVE_CONFIG_H  -I../mpc/src -I.. -I../gmp -I../mpfr/src -O2
+CFLAGS=$(CCFLAGS) -I. -I./  -g -O2 -W -Wall -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wmissing-format-attribute -Wcast-qual -pedantic -Wno-long-long
 
 
 SRCS=`find ./ -name "*.c" -print`
@@ -14,10 +12,11 @@ TARGET=libdecnumber.a
 
 all:$(OBJS)
 	$(AR) $(TARGET) $(OBJS)
+	$(RANLIB) $(TARGET)
 
 
 $(OBJS): %.o: %.c
-	$(GCC) -c $(CFLAGS) $< -o $@
+	if [ ! -f $@ ]; then $(GCC) -c $(CFLAGS) $< -o $@; fi
 
 clean:
 	rm -f $(OBJS)

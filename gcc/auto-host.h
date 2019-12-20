@@ -34,13 +34,13 @@
 /* Define to 1 if you want more run-time sanity checks. This one gets a grab
    bag of miscellaneous but relatively cheap checks. */
 #ifndef USED_FOR_TARGET
-#define CHECKING_P 0
+#define CHECKING_P 1
 #endif
 
 
 /* Define 0/1 to force the choice for exception handling model. */
 #ifndef USED_FOR_TARGET
-#define CONFIG_SJLJ_EXCEPTIONS 0
+/* #undef CONFIG_SJLJ_EXCEPTIONS */
 #endif
 
 
@@ -133,7 +133,7 @@
 /* Define if you want the garbage collector to do object poisoning and other
    memory allocation checks. This is quite expensive. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_GC_CHECKING */
+#define ENABLE_GC_CHECKING 1
 #endif
 
 
@@ -141,7 +141,7 @@
    high-level optimizers) to be checked for dynamic type safety at runtime.
    This is moderately expensive. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_GIMPLE_CHECKING */
+#define ENABLE_GIMPLE_CHECKING 1
 #endif
 
 
@@ -172,7 +172,7 @@
 /* Define to 1 if translation of program messages to the user's native
    language is requested. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_NLS */
+#define ENABLE_NLS 1
 #endif
 
 
@@ -184,7 +184,7 @@
 
 /* Define to enable plugin support. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_PLUGIN */
+#define ENABLE_PLUGIN 1
 #endif
 
 
@@ -199,7 +199,7 @@
 /* Define if you want RTL flag accesses to be checked against the RTL codes
    that are supported for each access macro. This is relatively cheap. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_RTL_FLAG_CHECKING */
+#define ENABLE_RTL_FLAG_CHECKING 1
 #endif
 
 
@@ -210,14 +210,14 @@
    front ends) to be checked for dynamic type safety at runtime. This is
    moderately expensive. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_TREE_CHECKING */
+#define ENABLE_TREE_CHECKING 1
 #endif
 
 
 /* Define if you want all gimple types to be verified after gimplifiation.
    This is cheap. */
 #ifndef USED_FOR_TARGET
-/* #undef ENABLE_TYPES_CHECKING */
+#define ENABLE_TYPES_CHECKING 1
 #endif
 
 
@@ -421,7 +421,7 @@
 
 /* Define if your assembler supports HLE prefixes. */
 #ifndef USED_FOR_TARGET
-#define HAVE_AS_IX86_HLE 1
+/* #undef HAVE_AS_IX86_HLE */
 #endif
 
 
@@ -439,7 +439,7 @@
 
 /* Define if the assembler supports 'rep <insn>, lock <insn>'. */
 #ifndef USED_FOR_TARGET
-#define HAVE_AS_IX86_REP_LOCK_PREFIX 1
+/* #undef HAVE_AS_IX86_REP_LOCK_PREFIX */
 #endif
 
 
@@ -664,7 +664,7 @@
 
 /* Define if your assembler and linker support thread-local storage. */
 #ifndef USED_FOR_TARGET
-/* #undef HAVE_AS_TLS */
+#define HAVE_AS_TLS 1
 #endif
 
 
@@ -1912,7 +1912,7 @@
 
 /* Define if int64_t uses long as underlying type. */
 #ifndef USED_FOR_TARGET
-#define INT64_T_IS_LONG 1
+/* #undef INT64_T_IS_LONG */
 #endif
 
 
@@ -2040,7 +2040,7 @@
 
 /* Define to PREFIX/include if cpp should also search that directory. */
 #ifndef USED_FOR_TARGET
-#define PREFIX_INCLUDE_DIR "/tmp/toolchain/prefix/include"
+/* #undef PREFIX_INCLUDE_DIR */
 #endif
 
 
@@ -2052,7 +2052,7 @@
 
 /* The size of `long', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_LONG 8
+#define SIZEOF_LONG 4
 #endif
 
 
@@ -2070,7 +2070,7 @@
 
 /* The size of `void *', as computed by sizeof. */
 #ifndef USED_FOR_TARGET
-#define SIZEOF_VOID_P 8
+#define SIZEOF_VOID_P 4
 #endif
 
 
@@ -2103,7 +2103,7 @@
 
 /* GNU C Library minor version number used on the target, or 0. */
 #ifndef USED_FOR_TARGET
-#define TARGET_GLIBC_MINOR 19
+#define TARGET_GLIBC_MINOR 14
 #endif
 
 
@@ -2203,7 +2203,7 @@
 
 /* Number of bits in a file offset, on hosts where this is settable. */
 #ifndef USED_FOR_TARGET
-/* #undef _FILE_OFFSET_BITS */
+#define _FILE_OFFSET_BITS 64
 #endif
 
 
