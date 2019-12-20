@@ -1,4 +1,4 @@
-1) History of minigcc
+# History of minigcc
 
    as we know the basic pipeline in gcc as following:
           
@@ -7,12 +7,12 @@
    the earliest start-point of minigcc is came from my first PR in gcc community https://github.com/google/sanitizers/issues/407.
    
   
-2) Purpose of minigcc
+# Purpose of minigcc
 
    minigcc used to learning and research internal mechnism of gcc. The purpose of minigcc is intend to be part of CDEOS(Custom Design Engagement OS, everything in CDEOS created from scratch, the purpose of CDEOS is intend to create another thin/lightweight "Android").
 
 
-3) How to build minigcc in Ubuntu 18.04.2
+# How to build minigcc in Ubuntu 18.04.2
 
 3.1)host dev env:
 
@@ -51,8 +51,10 @@ wgzhou:$ make
 the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is running ok as expected.
 
 
+# License
+This project is licensed under the Apache License.
 
 
-4) Status/Defect
+# Status/Defect
 
    minigcc is under developent and only support target x86-ia32 currently. 
