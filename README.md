@@ -52,18 +52,7 @@ the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is ru
 
 
 
-4) Roadmap
 
-4.1)remove dependency with aux source tree(/android/gcc/gcc-6.4.0/);
-
-4.2)refine the build system in minigcc;
-
-4.3)cc1 bringup in minigcc; (https://github.com/zhouwg/minigcc/issues/3)
-
-4.4)asan feature enablement in minigcc;
-
-
-
-5) Status/Defect
+4) Status/Defect
 
    minigcc is under developent and only support target x86-ia32 currently. 
