@@ -19,7 +19,7 @@ clean:
 	rm -f $(TARGETS)
 
 step1:
-	/bin/mkdir -p build
+	mkdir -p build
 	/bin/rm -f build/print-rtl.o
 	@echo $(GCC_SRC_DIR)
 

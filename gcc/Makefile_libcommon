@@ -46,7 +46,7 @@ clean:
 	
 
 step1:
-	/bin/mkdir -p build
+	mkdir -p build
 	@echo "we need rebuilt print-rtl.c"
 	/bin/rm -f build/print-rtl.o
 	echo $(OBJS)

@@ -43,7 +43,7 @@ clean:
 
 step1:
 	@echo "copying selected object files to avoid basename conflicts..."
-	/bin/mkdir -p .libs/libgmp.lax
+	mkdir -p .libs/libgmp.lax
 	ln mpz/abs.o .libs/libgmp.lax/lt1-abs.o || cp mpz/abs.o .libs/libgmp.lax/lt1-abs.o
 	ln mpz/add.o .libs/libgmp.lax/lt2-add.o || cp mpz/add.o .libs/libgmp.lax/lt2-add.o
 	ln mpz/add_ui.o .libs/libgmp.lax/lt3-add_ui.o || cp mpz/add_ui.o .libs/libgmp.lax/lt3-add_ui.o
