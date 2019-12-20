@@ -25,9 +25,8 @@ clean:
 
 step1:
 	mkdir -p build
-	echo $(OBJS)
+
 step2:$(OBJS) genchecksum genmatch genattrtab genautomata genemit genextract genoutput genpeep genrecog genenums
-	echo "do nothing"
 
 %.o: %.c
 	if [ ! -f ./build/$@ ]; then $(CXX) -c $(CFLAGS) $< -o ./build/$@; fi
@@ -35,7 +34,7 @@ step2:$(OBJS) genchecksum genmatch genattrtab genautomata genemit genextract gen
 
 genchecksum:
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genchecksum build/genchecksum.o ../libiberty/libiberty.a
-	echo "$(CXX)    -g -O2 -DIN_GCC     -fno-exceptions -fno-rtti -fasynchronous-unwind-tables -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wmissing-format-attribute -Woverloaded-virtual -pedantic -Wno-long-long -Wno-variadic-macros -Wno-overlength-strings   -DHAVE_CONFIG_H -static-libstdc++ -static-libgcc " > checksum-options.tmp && ../move-if-change checksum-options.tmp checksum-options
+	@echo "$(CXX)    -g -O2 -DIN_GCC     -fno-exceptions -fno-rtti -fasynchronous-unwind-tables -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wmissing-format-attribute -Woverloaded-virtual -pedantic -Wno-long-long -Wno-variadic-macros -Wno-overlength-strings   -DHAVE_CONFIG_H -static-libstdc++ -static-libgcc " > checksum-options.tmp && ../move-if-change checksum-options.tmp checksum-options
 
 
 genmatch:
@@ -53,7 +52,6 @@ genattrtab:
 
 
 genautomata:
-	@echo "do nothing"
 	$(CXX)  $(CFLAGS) -static-libstdc++ -static-libgcc   -o build/genautomata build/genautomata.o build/rtl.o build/read-rtl.o build/ggc-none.o build/vec.o build/min-insn-modes.o build/gensupport.o build/print-rtl.o build/hash-table.o build/read-md.o build/errors.o ../libiberty/libiberty.a -lm
 	build/genautomata ./common.md ./config/i386/i386.md insn-conditions.md > tmp-automata.c
 	/bin/bash ../move-if-change tmp-automata.c insn-automata.c
