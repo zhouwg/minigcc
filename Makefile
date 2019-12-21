@@ -14,6 +14,7 @@ prebuild:
 		echo "${AUX_DIR} already exist"; \
 	fi 
 	@if [ ! -d ${AUX_GCC_DIR} ]; then \
+			mkdir -p ${AUX_DIR}; \
 			echo "${AUX_GCC_DIR} doesn't exist"; \
 			xzcat ./misc/gcc-6.4.0-org.xz | tar -C ${AUX_DIR} -xf -;\
 	else \

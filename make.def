@@ -23,7 +23,7 @@ endif
 
 
 #global variables as following 
-PWD  = $(shell pwd )
+PWD             = $(shell pwd)
 CC 				= $(CROSS)gcc
 GCC 			= $(CROSS)gcc
 CXX 			= $(CROSS)g++
@@ -41,5 +41,5 @@ CXXFLAGS		= $(G_CFLAGS) $(ALLWARNING) -fpermissive
 CCFLAGS			= $(G_CFLAGS) $(ALLWARNING) -Wmissing-declarations -Wnested-externs -Wmissing-prototypes
 LDFLAGS			= $(G_LDLAGS)
 
-AUX_DIR=/tmp/gcc
-AUX_GCC_DIR=$(AUX_DIR)/gcc-6.4.0
+AUX_DIR         = /tmp/gcc/
+AUX_GCC_DIR     = /tmp/gcc/gcc-6.4.0
