@@ -1,9 +1,10 @@
-#2017-10-27,zhou.weiguo
+#2017-10-27,zhou.weiguo, zhouwg2000@gmail.com
 include make.def
-SUBDIRS=mpfr/src mpc/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc
 
-all: prebuild build
+SUBDIRS 	 = mpc/src mpfr/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc
+DIST_SUBDIRS = $(SUBDIRS)
 
+all: prebuild all-recursive 
 
 
 prebuild:
@@ -19,26 +20,68 @@ prebuild:
 			echo "${AUX_GCC_DIR} already exist"; \
 	fi 
 
-build:
-	make -C mpc/src
-	make -C mpfr/src
-	make -C gmp
-	make -C zlib
-	make -C libdecnumber
-	make -C libiberty
-	make -C libcpp
-	make -C libbacktrace
-	make -C gcc
 
 
-clean:
-	make -C mpc/src clean
-	make -C mpfr/src clean
-	make -C gmp clean
-	make -C zlib clean
-	make -C libdecnumber clean
-	make -C libiberty clean
-	make -C libcpp clean
-	make -C libbacktrace clean
-	make -C gcc clean
 
+clean-generic:
+
+clean: clean-recursive
+	
+clean-am: clean-generic
+
+
+check-am: all-am
+all-am: Makefile
+
+install:
+	make clean;
+
+.PHONY: $(RECURSIVE_TARGETS) all  clean 
+
+RECURSIVE_TARGETS = all-recursive  clean-recursive
+
+clean-recursive:
+	@set fnord $$MAKEFLAGS; amf=$$2; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done && test -z "$$fail"
+
+
+
+$(RECURSIVE_TARGETS):
+	@set fnord $$MAKEFLAGS; amf=$$2; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
