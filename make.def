@@ -40,3 +40,6 @@ G_CFLAGS		+= $(ALLDEFINES)
 CXXFLAGS		= $(G_CFLAGS) $(ALLWARNING) -fpermissive
 CCFLAGS			= $(G_CFLAGS) $(ALLWARNING) -Wmissing-declarations -Wnested-externs -Wmissing-prototypes
 LDFLAGS			= $(G_LDLAGS)
+
+AUX_DIR=/tmp/gcc
+AUX_GCC_DIR=$(AUX_DIR)/gcc-6.4.0
