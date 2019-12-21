@@ -5,7 +5,7 @@
 ;;; This file should be parsed by the same gengtype which wrote it.
 
 (!version  "6.4.0")
-(!srcdir  "/android/gcc/gcc-6.4.0/gcc")
+(!srcdir  "/tmp/gcc/gcc-6.4.0/gcc")
 (!languages 10 ada c cp fortran go java jit lto objc objcp)
 (!fileslist 207
  (!srcfile 1023  "../libcpp/include/line-map.h")
@@ -327,11 +327,11 @@
               (!srcfileloc  "tree-core.h" 865)
               nil )
              (!pair  "u"
-              (!type union 12 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-core.h:867"
+              (!type union 12 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-core.h:867"
                (!srcfileloc  "tree-core.h" 934)
                (!fields 6 
                 (!pair  "bits"
-                 (!type struct 13 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-core.h:870"
+                 (!type struct 13 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-core.h:870"
                   (!srcfileloc  "tree-core.h" 893)
                   (!fields 16 
                    (!pair  "lang_flag_0"
@@ -403,7 +403,7 @@
                  (!srcfileloc  "tree-core.h" 893)
                  nil )
                 (!pair  "int_length"
-                 (!type struct 14 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-core.h:900"
+                 (!type struct 14 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-core.h:900"
                   (!srcfileloc  "tree-core.h" 914)
                   (!fields 3 
                    (!pair  "unextended"
@@ -443,7 +443,7 @@
                  (!srcfileloc  "tree-core.h" 923)
                  nil )
                 (!pair  "dependence_info"
-                 (!type struct 18 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-core.h:930"
+                 (!type struct 18 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-core.h:930"
                   (!srcfileloc  "tree-core.h" 933)
                   (!fields 2 
                    (!pair  "clique"
@@ -2472,7 +2472,7 @@
                   (!srcfileloc  "rtl.h" 387)
                   nil )
                  (!pair  "u2"
-                  (!type union 138 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/rtl.h:389"
+                  (!type union 138 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/rtl.h:389"
                    (!srcfileloc  "rtl.h" 410)
                    (!fields 5 
                     (!pair  "original_regno"
@@ -6573,7 +6573,7 @@
                                )
                               )
                               (!pair  "x"
-                               (!type struct 324 nil  gc_used "anonymous:/android/gcc/gcc-6.4.0/gcc/basic-block.h:140"
+                               (!type struct 324 nil  gc_used "anonymous:/tmp/gcc/gcc-6.4.0/gcc/basic-block.h:140"
                                 (!srcfileloc  "basic-block.h" 143)
                                 (!fields 2 
                                  (!pair  "head_"
@@ -8973,7 +8973,7 @@
                               (!srcfileloc  "dwarf2out.h" 57)
                               nil )
                              (!pair  "dw_cfi_oprnd1"
-                              (!type union 456 nil  gc_used "anonymous:/android/gcc/gcc-6.4.0/gcc/dwarf2out.h:49"
+                              (!type union 456 nil  gc_used "anonymous:/tmp/gcc/gcc-6.4.0/gcc/dwarf2out.h:49"
                                (!srcfileloc  "dwarf2out.h" 54)
                                (!fields 4 
                                 (!pair  "dw_cfi_reg_num"
@@ -9559,7 +9559,7 @@
                                               (!srcfileloc  "dwarf2out.h" 177)
                                               nil )
                                              (!pair  "v"
-                                              (!type union 490 nil  gc_used "anonymous:/android/gcc/gcc-6.4.0/gcc/dwarf2out.h:179"
+                                              (!type union 490 nil  gc_used "anonymous:/tmp/gcc/gcc-6.4.0/gcc/dwarf2out.h:179"
                                                (!srcfileloc  "dwarf2out.h" 182)
                                                (!fields 2 
                                                 (!pair  "sval"
@@ -11379,7 +11379,7 @@
                  )
                 )
                 (!pair  "loc"
-                 (!type union 562 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-core.h:1334"
+                 (!type union 562 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-core.h:1334"
                   (!srcfileloc  "tree-core.h" 1334)
                   (!fields 2 
                    (!pair  "stmt"
@@ -13525,7 +13525,7 @@
                        (!srcfileloc  "c/c-decl.c" 196)
                        (!fields 11 
                         (!pair  "u"
-                         (!type union 651 nil  gc_used "anonymous:/android/gcc/gcc-6.4.0/gcc/c/c-decl.c:182"
+                         (!type union 651 nil  gc_used "anonymous:/tmp/gcc/gcc-6.4.0/gcc/c/c-decl.c:182"
                           (!srcfileloc  "c/c-decl.c" 185)
                           (!fields 2 
                            (!pair  "type"
@@ -14647,7 +14647,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 717 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/java/expr.c:2046"nil 
+ (!type struct 717 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/java/expr.c:2046"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -14839,11 +14839,11 @@
  
  (!type already_seen 732)
  
- (!type struct 733 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/fortran/trans.h:356"nil 
+ (!type struct 733 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/fortran/trans.h:356"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 734 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/fortran/trans.h:344"nil 
+ (!type struct 734 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/fortran/trans.h:344"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -14867,7 +14867,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 740 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/fortran/trans.h:33"nil 
+ (!type struct 740 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/fortran/trans.h:33"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -16628,7 +16628,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 896 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/c/c-parser.c:6511"nil 
+ (!type struct 896 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/c/c-parser.c:6511"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -17360,7 +17360,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 971 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/ada/gcc-interface/decl.c:204"nil 
+ (!type struct 971 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/ada/gcc-interface/decl.c:204"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -18169,7 +18169,7 @@
                 (!srcfileloc  "gimple.h" 351)
                 nil )
                (!pair  "u"
-                (!type union 1076 nil  gc_used "anonymous:/android/gcc/gcc-6.4.0/gcc/gimple.h:354"
+                (!type union 1076 nil  gc_used "anonymous:/tmp/gcc/gcc-6.4.0/gcc/gimple.h:354"
                  (!srcfileloc  "gimple.h" 357)
                  (!fields 2 
                   (!pair  "fntype"
@@ -19407,19 +19407,19 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1178 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/config/i386/i386.c:39977"nil 
+ (!type struct 1178 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/config/i386/i386.c:39977"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1179 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/config/i386/i386.c:39757"nil 
+ (!type struct 1179 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/config/i386/i386.c:39757"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1180 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/config/i386/i386.c:38665"nil 
+ (!type struct 1180 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/config/i386/i386.c:38665"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1181 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/config/i386/i386.c:37986"nil 
+ (!type struct 1181 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/config/i386/i386.c:37986"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -19822,7 +19822,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1258 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/tree-eh.c:49"nil 
+ (!type union 1258 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/tree-eh.c:49"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -20380,7 +20380,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type union 1331 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/mcf.c:343"nil 
+ (!type union 1331 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/mcf.c:343"nil 
   (!fields 0 )
   nil 0 nil )
  
@@ -24947,11 +24947,11 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1772 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/../libcpp/include/cpplib.h:1040"nil 
+ (!type struct 1772 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/../libcpp/include/cpplib.h:1040"nil 
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1773 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/../libcpp/include/cpplib.h:1029"nil 
+ (!type struct 1773 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/../libcpp/include/cpplib.h:1029"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -25029,7 +25029,7 @@
   (!fields 0 )
   nil 0 nil nil )
  
- (!type struct 1788 nil  gc_unused "anonymous:/android/gcc/gcc-6.4.0/gcc/../libcpp/include/line-map.h:1211"nil 
+ (!type struct 1788 nil  gc_unused "anonymous:/tmp/gcc/gcc-6.4.0/gcc/../libcpp/include/line-map.h:1211"nil 
   (!fields 0 )
   nil 0 nil nil )
  

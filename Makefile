@@ -3,8 +3,8 @@ SUBDIRS=mpfr/src mpc/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc
 
 all: prebuild build
 
-AUX_DIR=/android/gcc
-AUX_GCC_DIR=/android/gcc/gcc-6.4.0
+AUX_DIR=/tmp/gcc
+AUX_GCC_DIR=/tmp/gcc/gcc-6.4.0
 
 prebuild:
 	@if [ ! -d ${AUX_DIR} ]; then \

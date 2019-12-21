@@ -10,10 +10,6 @@ TARGETS = gentype genmddeps genmodes version.o gentype genconstants gengenrtl ge
 all: step1 step2
 	
 
-#GCC_SRC_DIR=$(shell pwd)
-GCC_SRC_DIR=/android/gcc/gcc-6.4.0/gcc
-
-
 clean:
 	rm -f $(OBJS)
 	rm -f $(TARGETS)
@@ -21,7 +17,8 @@ clean:
 step1:
 	mkdir -p build
 	/bin/rm -f build/print-rtl.o
-	@echo $(GCC_SRC_DIR)
+
+
 
 step2: $(OBJS) version.o gentype genmddeps genmodes genconstants gengenrtl genpreds genflags genconditions gencondmd genattr genattr-common gencodes genconfig gentarget-def gencheck gcov-iov genhooks  genopinit gencfn-macros
 #step2: genmddeps genmodes 
@@ -47,7 +44,8 @@ genmddeps: build/genmddeps.o build/read-md.o build/errors.o
 	echo timestamp > s-options-h
 	#/bin/bash ../move-if-change tmp-gi.list gtyp-input.list
 	echo timestamp > s-gtyp-input
-	build/gengtype -S $(GCC_SRC_DIR) -I gtyp-input.list -w tmp-gtype.state
+	@echo $(AUX_GCC_DIR)
+	build/gengtype -S $(AUX_GCC_DIR)/gcc -I gtyp-input.list -w tmp-gtype.state
 	/bin/bash ../move-if-change tmp-gtype.state gtype.state
 	build/gengtype  \
                     -r gtype.state
