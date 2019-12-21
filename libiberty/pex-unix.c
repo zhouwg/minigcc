@@ -611,18 +611,18 @@ pex_unix_exec_child (struct pex_obj *obj, int flags, const char *executable,
   //LOGV("path:%s\n", getenv("PATH"));
   char path[256];
   memset(path, 0, 256);
-  snprintf(path, 256, "PATH=%s:%s", getenv("PATH"), get_current_dir_name());
+  snprintf(path, 256, "PATH=/usr/bin:/usr/sbin:/bin:/sbin:%s:%s", getenv("PATH"), get_current_dir_name());
   if (0 == putenv(path)) {
       //LOGV("set path ok");
   } else {
       //LOGV("set path failed");
   }
   //LOGV("path:%s\n", getenv("PATH"));
-  LOGV("cmd:");
+  LOGI("cmd:");
   while (*p != NULL) {
       printf("%s ", *p++);
   }
-  printf("\n");
+  printf("\n\n");
   //LOGV("\n");
   char **q = environ;
   while (*q != NULL) {

@@ -91,6 +91,7 @@ env_manager::init (bool can_restore, bool debug)
 {
     m_can_restore = can_restore;
     m_debug = debug;
+    m_debug = false;
 }
 
 /* Get the value of NAME within the environment.  Essentially
@@ -2920,7 +2921,7 @@ execute (void)
 
     struct command *commands;	/* each command buffer with above info.  */
 
-    LOGV("enter %s", __FUNCTION__);
+    //ENTER_FUNC();
 
     gcc_assert (!processing_spec_function);
 
@@ -3235,8 +3236,8 @@ execute (void)
         if (commands[0].argv[0] != commands[0].prog)
             free (CONST_CAST (char *, commands[0].argv[0]));
 
-        LOGV("return %d", ret_code);
-        LOGV("leave %s", __FUNCTION__);
+        //LOGV("return %d", ret_code);
+        //LEAVE_FUNC();
         return ret_code;
     }
 }
@@ -4820,7 +4821,7 @@ do_spec (const char *spec)
 
     //LOGV("spec:%s", spec);
     value = do_spec_2 (spec);
-    LOGV("value %d", value);
+    //LOGV("value %d", value);
 
     /* Force out any unfinished command.
        If -pipe, this forces out the last command if it ended in `|'.  */
@@ -4832,12 +4833,12 @@ do_spec (const char *spec)
 
         set_collect_gcc_options ();
 
-        LOGV("argbuf.length() %d", argbuf.length());
+        //LOGV("argbuf.length() %d", argbuf.length());
         if (argbuf.length () > 0)
         {
             LOGV("calling execute");
             value = execute ();
-            LOGV("after calling execute, value %d", value);
+            LOGV("execute return %d", value);
         }
     }
 
@@ -5151,7 +5152,7 @@ do_spec_1 (const char *spec, int inswitch, const char *soft_matched_part)
             //LOGV("here \\n");
             end_going_arg ();
 
-            LOGV("argbuf.length() %d", argbuf.length());
+            //LOGV("argbuf.length() %d", argbuf.length());
             if (argbuf.length () > 0
                     && !strcmp (argbuf.last (), "|"))
             {
@@ -5171,13 +5172,12 @@ do_spec_1 (const char *spec, int inswitch, const char *soft_matched_part)
 
             if (argbuf.length () > 0)
             {
-                LOGV("calling execute");
+                //LOGV("calling execute");
                 value = execute ();
-                LOGV("after calling execute, value %d", value);
+                //LOGV("execute return %d", value);
                 if (value)
                 {
-                    LOGV("return value %d", value);
-                    LOGV("leave %s", __FUNCTION__);
+                    //LOGV("return value %d", value);
                     return value;
                 }
             }
@@ -5620,7 +5620,7 @@ create_temp_file:
 
             case 'o':
             {
-                LOGV("here '0'");
+                //LOGV("here 'o'");
                 int max = n_infiles;
                 max += lang_specific_extra_outfiles;
 
@@ -7220,14 +7220,14 @@ driver::driver (bool can_finalize, bool debug) :
     decoded_options (NULL),
     m_option_suggestions (NULL)
 {
-    LOGV("enter %s", __FUNCTION__);
+    //LOGV("enter %s", __FUNCTION__);
     env.init (can_finalize, debug);
-    LOGV("leave %s", __FUNCTION__);
+    //LOGV("leave %s", __FUNCTION__);
 }
 
 driver::~driver ()
 {
-    LOGV("enter %s", __FUNCTION__);
+    //LOGV("enter %s", __FUNCTION__);
     XDELETEVEC (explicit_link_files);
     XDELETEVEC (decoded_options);
     if (m_option_suggestions)
@@ -7238,7 +7238,7 @@ driver::~driver ()
         free (str);
         delete m_option_suggestions;
     }
-    LOGV("leave %s", __FUNCTION__);
+    //LOGV("leave %s", __FUNCTION__);
 }
 
 /* driver::main is implemented as a series of driver:: method calls.  */
@@ -7248,7 +7248,7 @@ driver::main (int argc, char **argv)
 {
     bool early_exit;
 
-    LOGV("enter %s", __FUNCTION__);
+    //ENTER_FUNC();
     set_progname (argv[0]);
     expand_at_files (&argc, &argv);
     decode_argv (argc, const_cast <const char **> (argv));
@@ -7270,7 +7270,7 @@ driver::main (int argc, char **argv)
     do_spec_on_infiles ();
     maybe_run_linker (argv[0]);
     final_actions ();
-    LOGV("leave %s", __FUNCTION__);
+    //LEAVE_FUNC();
     return get_exit_code ();
 }
 
@@ -8142,9 +8142,9 @@ driver::do_spec_on_infiles () const
                     debug_check_temp_file[1] = NULL;
                 }
 
-                LOGV("calling do_spec");
+                //LOGV("calling do_spec");
                 value = do_spec (input_file_compiler->spec);
-                LOGV("after calling do_spec");
+                //LOGV("after calling do_spec");
                 infiles[i].compiled = true;
                 if (value < 0)
                 {
@@ -8278,8 +8278,10 @@ driver::maybe_run_linker (const char *argv0) const
             if (! strcmp (linker_name_spec, "collect2"))
             {
                 char *s = find_a_file (&exec_prefixes, "collect2", X_OK, false);
-                if (s == NULL)
+                if (s == NULL) 
+                {
                     linker_name_spec = "ld";
+                }
             }
 
 #if HAVE_LTO_PLUGIN > 0
@@ -8333,6 +8335,7 @@ driver::maybe_run_linker (const char *argv0) const
                     && !(infiles[i].language && infiles[i].language[0] == '*'))
                 warning (0, "%s: linker input file unused because linking not done",
                          outfiles[i]);
+
 }
 
 /* The end of "main".  */

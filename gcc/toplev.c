@@ -633,6 +633,7 @@ compile_file (void)
 void
 print_version (FILE *file, const char *indent, bool show_global_state)
 {
+  return;
   static const char fmt1[] =
 #ifdef __GNUC__
     N_("%s%s%s %sversion %s (%s)\n%s\tcompiled by GNU C version %s, ")

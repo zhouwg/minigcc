@@ -142,6 +142,13 @@ void  FINAL_LOG_PRI_ORIG_IMPL(const char *file, const char *func, unsigned int l
 #define LOGE(...) LOG_PRI(__FILE__, __FUNCTION__, __LINE__, ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #endif
 
+#ifdef __KERNEL__
+#define ENTER_FUNC()    do { printk(KERN_INFO "[%s,%d]enter %s\n", __FILE__, __LINE__, __FUNCTION__);}while (0)
+#define LEAVE_FUNC()    do { printk(KERN_INFO "[%s,%d]leave %s\n\n", __FILE__, __LINE__, __FUNCTION__);}while (0)
+#else
+#define ENTER_FUNC()    do { printf("[%s,%d]enter %s\n", __FILE__, __LINE__, __FUNCTION__);}while (0)
+#define LEAVE_FUNC()    do { printf("[%s,%d]leave %s\n\n", __FILE__, __LINE__, __FUNCTION__);}while (0)
+#endif
 
 
 #ifdef __cplusplus

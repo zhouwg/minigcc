@@ -466,6 +466,7 @@ register_include_chains (cpp_reader *pfile, const char *sysroot,
   cpp_options *cpp_opts = cpp_get_options (pfile);
   size_t idx = (cpp_opts->objc ? 2: 0);
 
+
   if (cpp_opts->cplusplus)
     idx++;
   else
@@ -474,7 +475,11 @@ register_include_chains (cpp_reader *pfile, const char *sysroot,
   /* CPATH and language-dependent environment variables may add to the
      include chain.  */
   add_env_var_paths ("CPATH", BRACKET);
+  //LOGV("lang_env_vars[idx] %s", lang_env_vars[idx]);
   add_env_var_paths (lang_env_vars[idx], SYSTEM);
+
+  //LOGV("iprefix %s", iprefix);
+  //LOGV("stdinc %d", stdinc);
 
   target_c_incpath.extra_pre_includes (sysroot, iprefix, stdinc);
 

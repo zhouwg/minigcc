@@ -41,15 +41,15 @@ extern int main (int, char **);
 int
 main (int argc, char **argv)
 {
-  LOGV("enter %s", __FUNCTION__);
-  LOGV("initialize driver");
+  //LOGV("enter %s", __FUNCTION__);
+  //LOGV("initialize driver");
   driver d (false, /* can_finalize */
 	    true); /* debug */
 
-  LOGV("calling driver.main()");
+  //LOGV("calling driver.main()");
   int value = d.main (argc, argv);
-  LOGV("after calling driver.main()");
+  //LOGV("after calling driver.main()");
 
-  LOGV("leave %s, return %d", __FUNCTION__, value);
+  //LOGV("leave %s, return %d", __FUNCTION__, value);
   return value;
 }

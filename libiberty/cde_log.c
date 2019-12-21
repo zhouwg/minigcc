@@ -13,7 +13,7 @@
 #define GREEN                "\e[0;32m"
 #define L_GREEN              "\e[1;32m"
 #define BROWN                "\e[0;33m"
-#define L_YELLOW               "\e[1;33m"
+#define L_YELLOW             "\e[1;33m"
 #define BLUE                 "\e[0;34m"
 #define L_BLUE               "\e[1;34m"
 #define PURPLE               "\e[0;35m"
