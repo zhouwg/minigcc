@@ -21,94 +21,6 @@ along with GCC; see the file COPYING3.  If not see
 
 /* GC marker procedures.  */
 /* Macros and declarations.  */
-#define gt_ggc_m_24vec_ivarref_entry_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_ivarref_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_ivarref_entry_va_gc_ (void *);
-#define gt_ggc_m_26vec_prot_list_entry_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_prot_list_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_prot_list_entry_va_gc_ (void *);
-#define gt_ggc_m_23vec_msgref_entry_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_msgref_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_msgref_entry_va_gc_ (void *);
-#define gt_ggc_m_27vec_ident_data_tuple_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_ident_data_tuple_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_ident_data_tuple_va_gc_ (void *);
-#define gt_ggc_m_30hash_table_objc_string_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_objc_string_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_objc_string_hasher_ (void *);
-#define gt_ggc_m_17string_descriptor(X) do { \
-  if (X != NULL) gt_ggc_mx_string_descriptor (X);\
-  } while (0)
-extern void gt_ggc_mx_string_descriptor (void *);
-#define gt_ggc_m_9imp_entry(X) do { \
-  if (X != NULL) gt_ggc_mx_imp_entry (X);\
-  } while (0)
-extern void gt_ggc_mx_imp_entry (void *);
-#define gt_ggc_m_16hashed_attribute(X) do { \
-  if (X != NULL) gt_ggc_mx_hashed_attribute (X);\
-  } while (0)
-extern void gt_ggc_mx_hashed_attribute (void *);
-#define gt_ggc_m_12hashed_entry(X) do { \
-  if (X != NULL) gt_ggc_mx_hashed_entry (X);\
-  } while (0)
-extern void gt_ggc_mx_hashed_entry (void *);
-#define gt_ggc_m_16objc_map_private(X) do { \
-  if (X != NULL) gt_ggc_mx_objc_map_private (X);\
-  } while (0)
-extern void gt_ggc_mx_objc_map_private (void *);
-#define gt_ggc_m_33hash_table_type_assertion_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_type_assertion_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_type_assertion_hasher_ (void *);
-#define gt_ggc_m_23vec_method_entry_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_method_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_method_entry_va_gc_ (void *);
-#define gt_ggc_m_14type_assertion(X) do { \
-  if (X != NULL) gt_ggc_mx_type_assertion (X);\
-  } while (0)
-extern void gt_ggc_mx_type_assertion (void *);
-#define gt_ggc_m_22hash_table_ict_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_ict_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_ict_hasher_ (void *);
-#define gt_ggc_m_26hash_table_treetreehasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_treetreehasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_treetreehasher_ (void *);
-#define gt_ggc_m_18treetreehash_entry(X) do { \
-  if (X != NULL) gt_ggc_mx_treetreehash_entry (X);\
-  } while (0)
-extern void gt_ggc_mx_treetreehash_entry (void *);
-#define gt_ggc_m_5CPool(X) do { \
-  if (X != NULL) gt_ggc_mx_CPool (X);\
-  } while (0)
-extern void gt_ggc_mx_CPool (void *);
-#define gt_ggc_m_3JCF(X) do { \
-  if (X != NULL) gt_ggc_mx_JCF (X);\
-  } while (0)
-extern void gt_ggc_mx_JCF (void *);
-#define gt_ggc_m_30hash_table_module_decl_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_module_decl_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_module_decl_hasher_ (void *);
-#define gt_ggc_m_17module_htab_entry(X) do { \
-  if (X != NULL) gt_ggc_mx_module_htab_entry (X);\
-  } while (0)
-extern void gt_ggc_mx_module_htab_entry (void *);
-#define gt_ggc_m_25hash_table_module_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_module_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_module_hasher_ (void *);
-#define gt_ggc_m_13binding_level(X) do { \
-  if (X != NULL) gt_ggc_mx_binding_level (X);\
-  } while (0)
-extern void gt_ggc_mx_binding_level (void *);
 #define gt_ggc_m_33hash_table_constexpr_call_hasher_(X) do { \
   if (X != NULL) gt_ggc_mx_hash_table_constexpr_call_hasher_ (X);\
   } while (0)
@@ -377,54 +289,6 @@ extern void gt_ggc_mx_c_binding (void *);
   if (X != NULL) gt_ggc_mx_c_label_vars (X);\
   } while (0)
 extern void gt_ggc_mx_c_label_vars (void *);
-#define gt_ggc_m_27hash_table_pad_type_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_pad_type_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_pad_type_hasher_ (void *);
-#define gt_ggc_m_13pad_type_hash(X) do { \
-  if (X != NULL) gt_ggc_mx_pad_type_hash (X);\
-  } while (0)
-extern void gt_ggc_mx_pad_type_hash (void *);
-#define gt_ggc_m_18gnat_binding_level(X) do { \
-  if (X != NULL) gt_ggc_mx_gnat_binding_level (X);\
-  } while (0)
-extern void gt_ggc_mx_gnat_binding_level (void *);
-#define gt_ggc_m_20vec_loop_info_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_loop_info_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_loop_info_va_gc_ (void *);
-#define gt_ggc_m_11loop_info_d(X) do { \
-  if (X != NULL) gt_ggc_mx_loop_info_d (X);\
-  } while (0)
-extern void gt_ggc_mx_loop_info_d (void *);
-#define gt_ggc_m_27vec_range_check_info_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_range_check_info_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_range_check_info_va_gc_ (void *);
-#define gt_ggc_m_18range_check_info_d(X) do { \
-  if (X != NULL) gt_ggc_mx_range_check_info_d (X);\
-  } while (0)
-extern void gt_ggc_mx_range_check_info_d (void *);
-#define gt_ggc_m_9elab_info(X) do { \
-  if (X != NULL) gt_ggc_mx_elab_info (X);\
-  } while (0)
-extern void gt_ggc_mx_elab_info (void *);
-#define gt_ggc_m_10stmt_group(X) do { \
-  if (X != NULL) gt_ggc_mx_stmt_group (X);\
-  } while (0)
-extern void gt_ggc_mx_stmt_group (void *);
-#define gt_ggc_m_20vec_parm_attr_va_gc_(X) do { \
-  if (X != NULL) gt_ggc_mx_vec_parm_attr_va_gc_ (X);\
-  } while (0)
-extern void gt_ggc_mx_vec_parm_attr_va_gc_ (void *);
-#define gt_ggc_m_11parm_attr_d(X) do { \
-  if (X != NULL) gt_ggc_mx_parm_attr_d (X);\
-  } while (0)
-extern void gt_ggc_mx_parm_attr_d (void *);
-#define gt_ggc_m_35hash_table_value_annotation_hasher_(X) do { \
-  if (X != NULL) gt_ggc_mx_hash_table_value_annotation_hasher_ (X);\
-  } while (0)
-extern void gt_ggc_mx_hash_table_value_annotation_hasher_ (void *);
 #define gt_ggc_m_38vec_hsa_decl_kernel_map_element_va_gc_(X) do { \
   if (X != NULL) gt_ggc_mx_vec_hsa_decl_kernel_map_element_va_gc_ (X);\
   } while (0)
@@ -1194,94 +1058,6 @@ extern void gt_ggc_mx_line_maps (void *);
 
 /* PCH type-walking procedures.  */
 /* Macros and declarations.  */
-#define gt_pch_n_24vec_ivarref_entry_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_ivarref_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_ivarref_entry_va_gc_ (void *);
-#define gt_pch_n_26vec_prot_list_entry_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_prot_list_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_prot_list_entry_va_gc_ (void *);
-#define gt_pch_n_23vec_msgref_entry_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_msgref_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_msgref_entry_va_gc_ (void *);
-#define gt_pch_n_27vec_ident_data_tuple_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_ident_data_tuple_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_ident_data_tuple_va_gc_ (void *);
-#define gt_pch_n_30hash_table_objc_string_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_objc_string_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_objc_string_hasher_ (void *);
-#define gt_pch_n_17string_descriptor(X) do { \
-  if (X != NULL) gt_pch_nx_string_descriptor (X);\
-  } while (0)
-extern void gt_pch_nx_string_descriptor (void *);
-#define gt_pch_n_9imp_entry(X) do { \
-  if (X != NULL) gt_pch_nx_imp_entry (X);\
-  } while (0)
-extern void gt_pch_nx_imp_entry (void *);
-#define gt_pch_n_16hashed_attribute(X) do { \
-  if (X != NULL) gt_pch_nx_hashed_attribute (X);\
-  } while (0)
-extern void gt_pch_nx_hashed_attribute (void *);
-#define gt_pch_n_12hashed_entry(X) do { \
-  if (X != NULL) gt_pch_nx_hashed_entry (X);\
-  } while (0)
-extern void gt_pch_nx_hashed_entry (void *);
-#define gt_pch_n_16objc_map_private(X) do { \
-  if (X != NULL) gt_pch_nx_objc_map_private (X);\
-  } while (0)
-extern void gt_pch_nx_objc_map_private (void *);
-#define gt_pch_n_33hash_table_type_assertion_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_type_assertion_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_type_assertion_hasher_ (void *);
-#define gt_pch_n_23vec_method_entry_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_method_entry_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_method_entry_va_gc_ (void *);
-#define gt_pch_n_14type_assertion(X) do { \
-  if (X != NULL) gt_pch_nx_type_assertion (X);\
-  } while (0)
-extern void gt_pch_nx_type_assertion (void *);
-#define gt_pch_n_22hash_table_ict_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_ict_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_ict_hasher_ (void *);
-#define gt_pch_n_26hash_table_treetreehasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_treetreehasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_treetreehasher_ (void *);
-#define gt_pch_n_18treetreehash_entry(X) do { \
-  if (X != NULL) gt_pch_nx_treetreehash_entry (X);\
-  } while (0)
-extern void gt_pch_nx_treetreehash_entry (void *);
-#define gt_pch_n_5CPool(X) do { \
-  if (X != NULL) gt_pch_nx_CPool (X);\
-  } while (0)
-extern void gt_pch_nx_CPool (void *);
-#define gt_pch_n_3JCF(X) do { \
-  if (X != NULL) gt_pch_nx_JCF (X);\
-  } while (0)
-extern void gt_pch_nx_JCF (void *);
-#define gt_pch_n_30hash_table_module_decl_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_module_decl_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_module_decl_hasher_ (void *);
-#define gt_pch_n_17module_htab_entry(X) do { \
-  if (X != NULL) gt_pch_nx_module_htab_entry (X);\
-  } while (0)
-extern void gt_pch_nx_module_htab_entry (void *);
-#define gt_pch_n_25hash_table_module_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_module_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_module_hasher_ (void *);
-#define gt_pch_n_13binding_level(X) do { \
-  if (X != NULL) gt_pch_nx_binding_level (X);\
-  } while (0)
-extern void gt_pch_nx_binding_level (void *);
 #define gt_pch_n_33hash_table_constexpr_call_hasher_(X) do { \
   if (X != NULL) gt_pch_nx_hash_table_constexpr_call_hasher_ (X);\
   } while (0)
@@ -1550,54 +1326,6 @@ extern void gt_pch_nx_c_binding (void *);
   if (X != NULL) gt_pch_nx_c_label_vars (X);\
   } while (0)
 extern void gt_pch_nx_c_label_vars (void *);
-#define gt_pch_n_27hash_table_pad_type_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_pad_type_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_pad_type_hasher_ (void *);
-#define gt_pch_n_13pad_type_hash(X) do { \
-  if (X != NULL) gt_pch_nx_pad_type_hash (X);\
-  } while (0)
-extern void gt_pch_nx_pad_type_hash (void *);
-#define gt_pch_n_18gnat_binding_level(X) do { \
-  if (X != NULL) gt_pch_nx_gnat_binding_level (X);\
-  } while (0)
-extern void gt_pch_nx_gnat_binding_level (void *);
-#define gt_pch_n_20vec_loop_info_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_loop_info_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_loop_info_va_gc_ (void *);
-#define gt_pch_n_11loop_info_d(X) do { \
-  if (X != NULL) gt_pch_nx_loop_info_d (X);\
-  } while (0)
-extern void gt_pch_nx_loop_info_d (void *);
-#define gt_pch_n_27vec_range_check_info_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_range_check_info_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_range_check_info_va_gc_ (void *);
-#define gt_pch_n_18range_check_info_d(X) do { \
-  if (X != NULL) gt_pch_nx_range_check_info_d (X);\
-  } while (0)
-extern void gt_pch_nx_range_check_info_d (void *);
-#define gt_pch_n_9elab_info(X) do { \
-  if (X != NULL) gt_pch_nx_elab_info (X);\
-  } while (0)
-extern void gt_pch_nx_elab_info (void *);
-#define gt_pch_n_10stmt_group(X) do { \
-  if (X != NULL) gt_pch_nx_stmt_group (X);\
-  } while (0)
-extern void gt_pch_nx_stmt_group (void *);
-#define gt_pch_n_20vec_parm_attr_va_gc_(X) do { \
-  if (X != NULL) gt_pch_nx_vec_parm_attr_va_gc_ (X);\
-  } while (0)
-extern void gt_pch_nx_vec_parm_attr_va_gc_ (void *);
-#define gt_pch_n_11parm_attr_d(X) do { \
-  if (X != NULL) gt_pch_nx_parm_attr_d (X);\
-  } while (0)
-extern void gt_pch_nx_parm_attr_d (void *);
-#define gt_pch_n_35hash_table_value_annotation_hasher_(X) do { \
-  if (X != NULL) gt_pch_nx_hash_table_value_annotation_hasher_ (X);\
-  } while (0)
-extern void gt_pch_nx_hash_table_value_annotation_hasher_ (void *);
 #define gt_pch_n_38vec_hsa_decl_kernel_map_element_va_gc_(X) do { \
   if (X != NULL) gt_pch_nx_vec_hsa_decl_kernel_map_element_va_gc_ (X);\
   } while (0)
@@ -2366,50 +2094,6 @@ extern void gt_pch_nx_line_maps (void *);
 /* functions code */
 
 /* Local pointer-walking routines.  */
-extern void gt_pch_p_24vec_ivarref_entry_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_26vec_prot_list_entry_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_23vec_msgref_entry_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_27vec_ident_data_tuple_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_30hash_table_objc_string_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_17string_descriptor
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_9imp_entry
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_16hashed_attribute
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_12hashed_entry
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_16objc_map_private
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_33hash_table_type_assertion_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_23vec_method_entry_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_14type_assertion
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_22hash_table_ict_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_26hash_table_treetreehasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_18treetreehash_entry
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_5CPool
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_3JCF
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_30hash_table_module_decl_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_17module_htab_entry
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_25hash_table_module_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_13binding_level
-    (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_33hash_table_constexpr_call_hasher_
     (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_14constexpr_call
@@ -2543,30 +2227,6 @@ extern void gt_pch_p_7c_scope
 extern void gt_pch_p_9c_binding
     (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_12c_label_vars
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_27hash_table_pad_type_hasher_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_13pad_type_hash
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_18gnat_binding_level
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_20vec_loop_info_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_11loop_info_d
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_27vec_range_check_info_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_18range_check_info_d
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_9elab_info
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_10stmt_group
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_20vec_parm_attr_va_gc_
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_11parm_attr_d
-    (void *, void *, gt_pointer_operator, void *);
-extern void gt_pch_p_35hash_table_value_annotation_hasher_
     (void *, void *, gt_pointer_operator, void *);
 extern void gt_pch_p_38vec_hsa_decl_kernel_map_element_va_gc_
     (void *, void *, gt_pointer_operator, void *);

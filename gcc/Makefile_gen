@@ -34,7 +34,7 @@ genmddeps: build/genmddeps.o build/read-md.o build/errors.o
 	/bin/bash ../move-if-change tmp-mddeps mddeps.mk
 	echo timestamp > s-mddeps
 	export LC_ALL=C 
-	mawk -f opt-gather.awk ada/gcc-interface/lang.opt fortran/lang.opt go/lang.opt java/lang.opt lto/lang.opt c-family/c.opt common.opt config/fused-madd.opt config/i386/i386.opt config/gnu-user.opt config/linux.opt config/linux-android.opt > tmp-optionlist
+	mawk -f opt-gather.awk lto/lang.opt c-family/c.opt common.opt config/fused-madd.opt config/i386/i386.opt config/gnu-user.opt config/linux.opt config/linux-android.opt > tmp-optionlist
 	/bin/bash ../move-if-change tmp-optionlist optionlist
 	echo timestamp > s-options
 	mawk -f opt-functions.awk -f opt-read.awk \
@@ -42,7 +42,10 @@ genmddeps: build/genmddeps.o build/read-md.o build/errors.o
 	       < optionlist > tmp-options.h
 	/bin/bash ../move-if-change tmp-options.h options.h
 	echo timestamp > s-options-h
-	#/bin/bash ../move-if-change tmp-gi.list gtyp-input.list
+	mawk -f opt-functions.awk -f opt-read.awk \
+	       -f optc-gen.awk \
+	       -v header_name="config.h system.h coretypes.h options.h tm.h" < optionlist > tmp-options.c
+	/bin/bash ../move-if-change tmp-options.c options.c
 	echo timestamp > s-gtyp-input
 	@echo $(AUX_GCC_DIR)
 	build/gengtype -S $(AUX_GCC_DIR)/gcc -I gtyp-input.list -w tmp-gtype.state
