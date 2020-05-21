@@ -11,7 +11,7 @@
 
    minigcc used to learning and research internal mechnism of gcc.
 
-# Pre-preparation  in x86-64 host(Ubuntu 18.04.x x86-64, WSL x86-64, ...)
+# Pre-preparation  in x86-64 host(Ubuntu 18.04 x86-64, WSL x86-64, ...)
 sudo apt-get install gcc-multilib g++-multilib 
 
 sudo apt-get install qemu-user-static
