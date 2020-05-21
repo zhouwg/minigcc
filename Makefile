@@ -12,7 +12,6 @@ all: prebuild all-recursive
 
 
 prebuild:
-	mkdir -p build
 	@if [ ! -d ${AUX_DIR} ]; then \
 		mkdir -p ${AUX_DIR}; \
 	else \
