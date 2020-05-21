@@ -1,7 +1,7 @@
 #2017-10-27,zhou.weiguo, zhouwg2000@gmail.com
 
 #following dependency was required when built minigcc in WSL(Windows Subsystem for Linux)
-#sudo apt-get install gcc-multilib 
+#sudo apt-get install gcc-multilib g++-multilib 
 
 include make.def
 
