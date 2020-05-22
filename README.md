@@ -50,6 +50,7 @@ wgzhou:$ make
 
 the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is running ok as expected.
 
+wgzhou:$ ./scripts/run_hello.sh
 
 # License
 This project is licensed under the Apache License.
