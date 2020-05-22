@@ -9,7 +9,7 @@
   
 # Purpose of minigcc
 
-   minigcc used to learning and research internal mechnism of gcc. The purpose of minigcc is intend to be part of CDEOS(Custom Design Engagement OS, everything in CDEOS created from scratch, the purpose of CDEOS is intend to create another thin/lightweight "Android").
+   minigcc used to learning and research internal mechnism of gcc. 
 
 
 # How to build minigcc in Ubuntu 18.04.2
@@ -50,6 +50,7 @@ wgzhou:$ make
 
 the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is running ok as expected.
 
+wgzhou:./scripts/run_hello.sh
 
 # License
 This project is licensed under the Apache License.
