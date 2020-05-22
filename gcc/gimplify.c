@@ -11679,6 +11679,7 @@ gimplify_function_tree (tree fndecl)
 
   gcc_assert (!gimple_body (fndecl));
 
+  /*
   FILE *fp = NULL;
   char filename[128];
   snprintf(filename, 128, "AST-%s.txt", current_function_name());
@@ -11687,6 +11688,7 @@ gimplify_function_tree (tree fndecl)
      dump_node(fndecl, 0x1FFF8, fp);
      fclose(fp);
   }
+  */
 
   if (DECL_STRUCT_FUNCTION (fndecl))
     push_cfun (DECL_STRUCT_FUNCTION (fndecl));
