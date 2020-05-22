@@ -29,6 +29,8 @@ all: prebuilt_1 prebuilt_2
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(OBJS_1)
+	rm -f $(OBJS_2)
 	rm -f $(TARGET)
 
 
@@ -39,8 +41,10 @@ prebuilt_1:
 	  real=`echo $$target | cut -d \. -f 1`;\
 	  sym="L"$$real;\
 	  echo "build $$obj   $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym";\
-	  $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
-	done; 
+      if [ ! -f $$obj ]; then \
+	  	$(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
+	  fi;\
+	done;
 
 prebuilt_2:
 	@list='$(OBJS_2)'; for obj in $$list; do \
@@ -49,10 +53,7 @@ prebuilt_2:
 	  real=`echo $$target | cut -d \. -f 1`;\
 	  sym="L_"$$real;\
 	  echo "build $$obj   $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym";\
-	  $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
-	done; 
-
-
-
-
-
+      if [ ! -f $$obj ]; then \
+	  	$(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
+	  fi;\
+	done;

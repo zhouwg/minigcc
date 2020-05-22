@@ -2,7 +2,7 @@
 
 include make.def
 
-SUBDIRS 	 = mpc/src mpfr/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc
+SUBDIRS 	 = mpc/src mpfr/src gmp zlib libdecnumber libiberty libcpp libbacktrace gcc libgcc
 DIST_SUBDIRS = $(SUBDIRS)
 
 all: prebuild all-recursive 
