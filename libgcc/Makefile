@@ -7,10 +7,10 @@ CFLAGS=-g -O2 -O2  -DIN_GCC -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual 
 CFLAGS=-I../gcc -I./include -I../include -I../gcc/include-fixed/ -D IN_GCC -D USE_ELF_SYMVER -D IN_LIBGCC2 -D USE_ELF_SYMVER -D ENABLE_DECIMAL_BID_FORMAT -D HAVE_CC_TLS -D USE_TLS -D HIDE_EXPORTS 
 
 #good
-CFLAGS=-g -O2 -O2  -DIN_GCC -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wno-format -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition  -mlong-double-80 -DUSE_ELF_SYMVER -g -DIN_LIBGCC2 -fbuilding-libgcc -fno-stack-protector -mlong-double-80 -DUSE_ELF_SYMVER -I. -I. -I../gcc -I../libgcc -I./include -I../libgcc/config/libbid -DENABLE_DECIMAL_BID_FORMAT -DHAVE_CC_TLS  -DUSE_TLS -fvisibility=hidden -DHIDE_EXPORTS -I../gcc  -I./include -I../include -I../gcc/include-fixed/ 
+CFLAGS=-g -O2 -O2  -DIN_GCC -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wno-format -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition  -mlong-double-80 -DUSE_ELF_SYMVER -g -DIN_LIBGCC2 -fbuilding-libgcc -fno-stack-protector -mlong-double-80 -DUSE_ELF_SYMVER -I. -I. -I../gcc -I../libgcc -I./include -I../libgcc/config/libbid -DENABLE_DECIMAL_BID_FORMAT -DHAVE_CC_TLS  -DUSE_TLS -fvisibility=hidden -DHIDE_EXPORTS -I../gcc  -I./include -I../include -I../gcc/include-fixed/ -m32
 
 
-CFLAGS_NOO2=-DIN_GCC -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wno-format -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition  -mlong-double-80 -DUSE_ELF_SYMVER -g -DIN_LIBGCC2 -fbuilding-libgcc -fno-stack-protector -mlong-double-80 -DUSE_ELF_SYMVER -I. -I. -I../gcc -I../libgcc -I./include -I../libgcc/config/libbid -DENABLE_DECIMAL_BID_FORMAT -DHAVE_CC_TLS  -DUSE_TLS -fvisibility=hidden -DHIDE_EXPORTS -I../gcc  -I./include -I../include -I../gcc/include-fixed/ 
+CFLAGS_NOO2=-DIN_GCC -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual -Wno-format -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition  -mlong-double-80 -DUSE_ELF_SYMVER -g -DIN_LIBGCC2 -fbuilding-libgcc -fno-stack-protector -mlong-double-80 -DUSE_ELF_SYMVER -I. -I. -I../gcc -I../libgcc -I./include -I../libgcc/config/libbid -DENABLE_DECIMAL_BID_FORMAT -DHAVE_CC_TLS  -DUSE_TLS -fvisibility=hidden -DHIDE_EXPORTS -I../gcc  -I./include -I../include -I../gcc/include-fixed/ -m32
 
 XGCC=../gcc/xgcc
 #SRCS=$(wildcard *.c)
@@ -96,9 +96,9 @@ prebuilt_3:
 	  sym="L_"$$real;\
 	  src="../libgcc/config/libbid/"$$real".c";\
 	  echo "$$src";\
-	  echo "build $$obj   $(XGCC) -c $$src -o $$target $(CFLAGS_NO) ";\
+	  echo "build $$obj   $(XGCC) -c $$src -o $$target $(CFLAGS) ";\
       if [ ! -f $$obj ]; then \
-         $(XGCC) -c $$src -o $$target $(CFLAGS_NOO2);\
+         $(XGCC) -c $$src -o $$target $(CFLAGS);\
       fi;\
     done;
 
