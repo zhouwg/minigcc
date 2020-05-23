@@ -15,9 +15,9 @@ prebuilt:
 	  real=`echo $$target | cut -d \. -f 1`;\
 	  sym="OPERATION_"$$real;\
 	  echo "build $$obj   $(GCC) $(CCFALGS) -std=gnu99 -DHAVE_CONFIG_H -I. -I../mpn -I../../gmp -D$$sym -O2 -c $$real.c -o $$obj";\
-      if [ ! -f $$obj ]; then \
-	  	$(GCC) $(CCFALGS) -std=gnu99 -DHAVE_CONFIG_H -I. -I../mpn -I../../gmp -D$$sym -O2 -c $$real.c -o $$obj; \
-	  fi;\
+	  if [ ! -f $$obj ]; then \
+          $(GCC) $(CCFALGS) -std=gnu99 -DHAVE_CONFIG_H -I. -I../mpn -I../../gmp -D$$sym -O2 -c $$real.c -o $$obj; \
+      fi;\
 	done;
 
 
