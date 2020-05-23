@@ -29,7 +29,7 @@ OBJS_8=morestack.o
 GCC_EH_OBJS=emutls.o unwind-dw2.o unwind-dw2-fde-dip.o unwind-sjlj.o unwind-c.o
 
 
-all: libgcc libgcc_eh 
+all: libgcc libgcc_eh
 
 
 libgcc: prebuilt_1 prebuilt_2 prebuilt_3 prebuilt_4 prebuilt_5 prebuilt_6 prebuilt_7 prebuilt_8 prebuilt_0
@@ -71,8 +71,8 @@ prebuilt_1:
 	  real=`echo $$target | cut -d \. -f 1`;\
 	  sym="L"$$real;\
 	  echo "build $$obj   $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym";\
-      if [ ! -f $$obj ]; then \
-	  	$(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
+ 	  if [ ! -f $$obj ]; then \
+	      $(XGCC) -c libgcc2.c -o $$target $(CFLAGS) -D$$sym;\
       fi;\
     done;
 
