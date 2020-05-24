@@ -88,7 +88,7 @@ This project is licensed under the Apache License.
 
 华为编译器技术首席科学家周志德[Fred Chow](https://www.linkedin.com/in/fredchow/)2015年加入华为.周志德于1977-1983年在斯坦福读博，毕业后，周志德去了Daisy Systems，该公司是当时最知名的EDA创业公司之一。在Daisy Systems，周志德开发了DABL（一个类似VHDL的硬件设计语言）配套的编译器。周志德后来**陆续在MIPS和SGI任职**，**在SGI期间领衔开发了Pro64编译器，后来演化为著名的Open64编译器**。
 
-2016年8月惠普宣布将以约2.75亿美元收购超级计算机厂商SGI。 
+2016年8月惠普宣布将[以约2.75亿美元收购超级计算机厂商SGI](http://world.xinhua08.com/a/20160814/1654828.shtml)。 
 
 鉴释科技核心产品基于[Open64](http://www.spi-inc.org/projects/open64/)开发,方舟编译器也是基于[Open64](http://www.spi-inc.org/projects/open64/)开发?
 
