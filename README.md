@@ -63,6 +63,18 @@ the cc1,cpp,xgcc,xg++ ... should be founded in directory gcc if everything is ru
 wgzhou:$ ./scripts/run_hello.sh 
 
 
+# How to contribute to minigcc
+wgzhou:$ git clone https://github.com/zhouwg/minigcc
+
+wgzhou:$ cd minigcc
+
+wgzhou:$ git checkout development
+
+wgzhou:$ sudo make prebuild
+
+wgzhou:$ make 
+
+
 # License
 This project is licensed under the Apache License.
 
