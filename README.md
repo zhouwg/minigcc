@@ -3,7 +3,7 @@
 
    the start point of my personal study of GCC was came from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67286 when I was a full-time employee in <a href="https://www.unisoc.com/en_us/">UniSoC</a>.
    
-   minigcc used to learning and research internal mechnism of gcc.
+   minigcc used to learning and research internal mechnism of gcc and how <a href="https://www.linaro.org/">Linaro</a> create their various toolchain from scratch source code.
 
 # Prerequisites in x86-64 host(Ubuntu 18.04 x86-64, WSL x86-64, ...)
 sudo apt-get install gcc-multilib g++-multilib 
