@@ -1,7 +1,7 @@
 
 # Purpose of minigcc
 
-   the start point of my personal study of GCC was came from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67286 when I was a full-time employee in ![UniSoC](https://www.unisoc.com/en_us/).
+   the start point of my personal study of GCC was came from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67286 when I was a full-time employee in <a href="https://www.unisoc.com/en_us/">UniSoC</a>.
    
    minigcc used to learning and research internal mechnism of gcc.
 
