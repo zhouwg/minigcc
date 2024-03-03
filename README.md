@@ -1,7 +1,7 @@
 
 # Purpose of minigcc
 
-   the start point of my personal study of GCC was came from https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67286 when I worked as an Android system software engineer in Platform Software Department of <a href="https://www.unisoc.com/en_us/">UniSoC</a>.
+   the earliest start-point of minigcc was came from my first PR in gcc community https://github.com/google/sanitizers/issues/407 when I worked as an Android system software engineer in Platform Software Department of <a href="https://www.unisoc.com/en_us/">UniSoC</a>.
    
    minigcc used to learning and research internal mechnism of gcc and how <a href="https://www.linaro.org/">Linaro</a> create their various toolchain from scratch source code.
 
