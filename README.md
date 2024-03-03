@@ -1,6 +1,6 @@
 # History of minigcc
 
-   as we know the basic pipeline in gcc as following:
+   as we known the basic pipeline in gcc as following:
           
           preprocess  ----> compile ----> assemble ----> link
 
