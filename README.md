@@ -76,4 +76,4 @@ This project is licensed under the Apache License.
 
 # Status/Defect
 
-   minigcc is under developent and only support target x86-ia32 currently. 
+   minigcc is only support target x86-ia32 and is no longer maintained.
